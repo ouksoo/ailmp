@@ -1,0 +1,39 @@
+{
+	"liveSassCompile.settings.formats": [
+		{
+		"format": "expanded",
+		"extensionName": ".css",
+		"savePath": "/css"
+		}
+	],
+	"liveSassCompile.settings.excludeList": [
+		"**/node_modules/**",
+		".vscode/**"
+	],
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,  
+	"editor.detectIndentation": false,
+	"[javascript]": {
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
+		"editor.suggestOnTriggerCharacters": false,
+		"editor.acceptSuggestionOnEnter": "off"
+	},
+	"[html]": {
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		}
+	},
+	"[css]": {
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		}
+	}
+}
