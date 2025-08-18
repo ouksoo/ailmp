@@ -1,11 +1,8 @@
-@import url("https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css");
 /* ***************  global *************** */
 @font-face {
-  font-family: "Apple SD Gothic Neo";
-  font-weight: 100;
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-style: normal;
-  font-display: swap;
-  src: url("https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo-Thin.woff2") format("woff2"), url("https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo-Thin.ttf") format("truetype");
 }
 * {
   box-sizing: border-box;
@@ -14,9 +11,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Apple SD Gothic Neo", sans-serif;
+  font-family: "Pretendard", sans-serif;
   overscroll-behavior: none;
   font-weight: 300;
+  box-sizing: content-box;
 }
 
 .clearfix:after {
@@ -157,6 +155,342 @@ strong, b {
 
 .border {
   border: 1px solid !important;
+}
+
+.film-normal {
+  display: none;
+  position: fixed;
+  z-index: 50;
+  left: 0%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* title */
+/* list gutters "360: 16, 768 : 16, 1024 : 20, 1280 : 24, 1600 : 24, 1920 : 24" */
+@media screen and (max-width: 1024px) {
+  .mo {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mo {
+    display: none;
+  }
+  .pc {
+    display: block;
+  }
+}
+div.header-wrapper {
+  background: #fff;
+  height: 70px;
+  padding-top: 17px;
+  border-bottom: 1px solid #EAEAEA;
+}
+div.header-wrapper .header-left {
+  float: left;
+  padding-top: 4px;
+}
+div.header-wrapper .header-left h1 {
+  float: left;
+  width: 98px;
+  height: 22px;
+  background: url("../img/logo_top.svg") 0 0 no-repeat;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+div.header-wrapper .header-left a {
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0D0D0D;
+  line-height: 22px;
+  padding-left: 27px;
+  margin-left: 30px;
+}
+div.header-wrapper .header-left a:nth-child(2) {
+  background: url("../img/icons/icon_place.svg") 0 2px no-repeat;
+}
+div.header-wrapper .header-left a:nth-child(3) {
+  background: url("../img/icons/icon_plus.svg") 0 2px no-repeat;
+}
+div.header-wrapper .header-left a span {
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #2EC4B6;
+}
+div.header-wrapper .header-right {
+  position: relative;
+  float: right;
+}
+div.header-wrapper .header-right a.tops {
+  display: inline-block;
+  float: left;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 20px;
+  text-indent: -9999px;
+}
+div.header-wrapper .header-right a.tops.a {
+  background: url("../img/icons/icon_zoom_black.svg") 0 2px no-repeat;
+}
+div.header-wrapper .header-right a.tops.c {
+  position: relative;
+  background: url("../img/icons/icon_bell_black.svg") 0 2px no-repeat;
+}
+div.header-wrapper .header-right a.tops.c span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  right: 5px;
+  top: 7px;
+  border-radius: 50%;
+  background: #2EC4B6;
+}
+div.header-wrapper .header-right a.tops.d {
+  background: url("../img/icons/icon_menu_black.svg") 0 2px no-repeat;
+}
+div.header-wrapper .header-right div.b {
+  display: inline-block;
+  float: left;
+  position: relative;
+  background: url("../img/icons/icon_login_black.svg") 0 2px no-repeat;
+  width: 32px;
+  height: 32px;
+  margin-left: 20px;
+}
+div.header-wrapper .header-right div.b p.bloom-login {
+  display: none;
+  position: absolute;
+  left: -150px;
+  top: -4px;
+  width: 150px;
+  height: 55px;
+  padding: 9px 0 0 25px;
+  background: url("../img/icons/login_right.svg") 0 2px no-repeat;
+}
+div.header-wrapper .header-right div.b p.bloom-login a {
+  font-size: 12px;
+  color: #0D0D0D;
+}
+div.header-wrapper .header-right div.b p.bloom-login span {
+  font-size: 10px;
+  color: #A2A2A4;
+  margin: 0 8px;
+}
+div.header-wrapper .header-right div.search-box {
+  display: none;
+  position: absolute;
+  left: -360px;
+  top: -5px;
+  height: 44px;
+  width: 400px;
+  background: #f0f0f0;
+  border-radius: 22px 0 0 22px;
+}
+div.header-wrapper .header-right div.search-box input[type=text] {
+  width: 85%;
+  margin: 10px 0 0 25px;
+  background: #f0f0f0;
+  border: 0;
+  outline: none;
+}
+div.header-wrapper .header-right div.search-box input[type=text]::-moz-placeholder {
+  color: #C6CAD3;
+}
+div.header-wrapper .header-right div.search-box input[type=text]::placeholder {
+  color: #C6CAD3;
+}
+div.header-wrapper .header-right div.search-box button.search-btn {
+  float: right;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: #2EC4B6 url("../img/icons/icon_zoom_white.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
+  border-radius: 50%;
+  margin-right: -20px;
+}
+div.header-wrapper aside {
+  position: fixed;
+  z-index: 100;
+  right: -400px;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  background: #FFFFFF;
+  padding: 15px 30px 30px 30px;
+  transition: right 0.5s ease-in-out;
+}
+div.header-wrapper aside.active {
+  right: 0px;
+}
+div.header-wrapper aside div.menu-header {
+  position: relative;
+  border-bottom: 1px solid #eaeaea;
+  padding: 0 0 20px 0;
+}
+div.header-wrapper aside div.menu-header div.login-button {
+  background: url("../img/icons/icon_login_black.svg") 0 2px no-repeat;
+  width: 32px;
+  height: 32px;
+}
+div.header-wrapper aside div.menu-header div.login-button p.bloom-login {
+  position: absolute;
+  left: 25px;
+  top: -4px;
+  width: 150px;
+  height: 55px;
+  padding: 9px 0 0 32px;
+  background: url("../img/icons/login_left.svg") 0 2px no-repeat;
+}
+div.header-wrapper aside div.menu-header div.login-button p.bloom-login a {
+  font-size: 12px;
+  color: #0D0D0D;
+}
+div.header-wrapper aside div.menu-header div.login-button p.bloom-login span {
+  font-size: 10px;
+  color: #A2A2A4;
+  margin: 0 8px;
+}
+div.header-wrapper aside div.menu-header div.login-button p.greeting-msg {
+  position: absolute;
+  left: 35px;
+  top: 7px;
+  color: #A2A2A4;
+}
+div.header-wrapper aside div.menu-header div.login-button p.greeting-msg span {
+  color: #0D0D0D;
+  font-weight: 800;
+}
+div.header-wrapper aside div.menu-header a.menu-close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  top: 10px;
+  background: url("../img/icons/icon_close.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
+}
+div.header-wrapper aside ul.menus {
+  padding: 20px 0;
+}
+div.header-wrapper aside ul.menus li {
+  padding-bottom: 10px;
+}
+div.header-wrapper aside ul.menus li a.depth-1 {
+  display: block;
+  font-size: 18px;
+  color: #0D0D0D;
+  font-weight: 800;
+  background: url("../img/icons/icon_arrow_down.png") 100% 50% no-repeat;
+  padding: 15px 0;
+}
+div.header-wrapper aside ul.menus li a.depth-1.active {
+  background: url("../img/icons/icon_arrow_up.png") 100% 50% no-repeat;
+}
+div.header-wrapper aside ul.menus li div.submenus {
+  display: none;
+}
+div.header-wrapper aside ul.menus li div.submenus a {
+  display: block;
+  background: url("../img/icons/bullet_black.svg") 0% 50% no-repeat;
+  padding: 10px 0 10px 12px;
+  font-size: 16px;
+  color: #0D0D0D;
+  font-weight: 400;
+}
+div.header-wrapper aside ul.menus li div.submenus a.on {
+  background: url("../img/icons/bullet_green.svg") 0% 50% no-repeat;
+  color: #2EC4B6;
+}
+div.header-wrapper aside a.logout-button {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  background: url("../img/icons/icon_logout.svg") 0% 46% no-repeat;
+  padding: 10px 0 10px 26px;
+  font-size: 16px;
+  color: #0D0D0D;
+  font-weight: 400;
+}
+
+div.footer-wrapper {
+  background: #0D0D0D;
+  color: #A2A2A4;
+  font-size: 12px;
+  line-height: 21px;
+  padding: 60px 0;
+}
+div.footer-wrapper div.top {
+  padding-bottom: 40px;
+}
+div.footer-wrapper div.top h2 {
+  float: left;
+  width: 98px;
+  height: 22px;
+  background: url("../img/logo_white.svg") 0 0 no-repeat;
+  text-indent: -9999px;
+}
+div.footer-wrapper div.top div.footer-menu {
+  float: right;
+}
+div.footer-wrapper div.top div.footer-menu a {
+  font-size: 12px;
+  color: #FFFFFF;
+}
+div.footer-wrapper div.top div.footer-menu span {
+  margin: 0 9px;
+  font-size: 11px;
+}
+div.footer-wrapper div.bottom p {
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+div.footer-wrapper div.bottom span {
+  margin: 0 7px;
+}
+
+div.header-footer-inner {
+  position: relative;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1920px) {
+  div.header-footer-inner {
+    width: 1440px;
+  }
+}
+@media screen and (min-width: 1600px) and (max-width: 1919px) {
+  div.header-footer-inner {
+    margin: 0 122px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+  div.header-footer-inner {
+    margin: 0 100px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  div.header-footer-inner {
+    margin: 0 42px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  div.header-footer-inner {
+    margin: 0 32px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  div.header-footer-inner {
+    margin: 0 20px;
+  }
 }
 
 section.main-section-2 .swiper-button-next, section.main-section-2 .swiper-button-prev {
