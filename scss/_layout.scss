@@ -30,7 +30,6 @@ div.header-wrapper {
 		a {
 			float: left;
 			font-size: 14px;
-			font-weight: 500;
 			color: $title-black;
 			line-height: 22px;
 			padding-left: 27px;
@@ -59,7 +58,6 @@ div.header-wrapper {
 			width: 32px;
 			height: 32px;
 			font-size: 14px;
-			font-weight: 500;
 			margin-left: 20px;
 			text-indent: -9999px;
 
@@ -197,7 +195,7 @@ div.header-wrapper {
 
 					span {
 						color: $title-black;
-						font-weight: 800;
+						font-family: 'Pretendard-SemiBold';
 					}
 				}
 			}
@@ -220,7 +218,7 @@ div.header-wrapper {
 					display: block;
 					font-size: 18px;
 					color: $title-black;
-					font-weight: 800;
+					font-family: 'Pretendard-SemiBold';
 					background: url('../img/icons/icon_arrow_down.png') 100% 50% no-repeat;
 					padding: 15px 0;
 
@@ -237,7 +235,6 @@ div.header-wrapper {
 						padding: 10px 0 10px 12px;
 						font-size: 16px;
 						color: $title-black;
-						font-weight: 400;
 
 						&.on {
 							background: url('../img/icons/bullet_green.svg') 0% 50% no-repeat;
@@ -255,7 +252,6 @@ div.header-wrapper {
 			padding: 10px 0 10px 26px;
 			font-size: 16px;
 			color: $title-black;
-			font-weight: 400;
 		}
 	}
 }
