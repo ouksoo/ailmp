@@ -73,6 +73,8 @@ $(document).ready(function() {
 		new bootstrap.Tooltip(this);
 	});
 
+	$('.selectpicker').selectpicker();
+
 	//document click node show/hide
 	$(document).click(function () {
 		$('div.header-right .search-box').fadeOut();

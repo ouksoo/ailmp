@@ -62,6 +62,9 @@
 	&.gray {
 		background: #6C757D;
 	}
+	&.light-gray {
+		background: #C6CAD3;
+	}
 }
 
 div.terms-content {
@@ -138,6 +141,13 @@ div.terms-content {
 .w-660 {
 	width: 660px !important;
 	max-width: 660px !important;
+}
+
+.w-30-per {
+	width: 30% !important;
+}
+.w-40-per {
+	width: 40% !important;
 }
 .w-100-per {
 	width: 100% !important;

@@ -628,6 +628,9 @@ div.header-footer-inner {
 .modal-button.gray {
   background: #6C757D;
 }
+.modal-button.light-gray {
+  background: #C6CAD3;
+}
 
 div.terms-content {
   width: 600px;
@@ -703,6 +706,14 @@ div.terms-content {
 .w-660 {
   width: 660px !important;
   max-width: 660px !important;
+}
+
+.w-30-per {
+  width: 30% !important;
+}
+
+.w-40-per {
+  width: 40% !important;
 }
 
 .w-100-per {
@@ -830,6 +841,9 @@ div.sign-up-wrapper p.txt-mypage-modify {
   text-align: center;
   color: #6C757D;
 }
+div.sign-up-wrapper p.txt-mypage-modify span {
+  color: #2EC4B6;
+}
 div.sign-up-wrapper div.agreement-wrapper {
   padding-top: 60px;
 }
@@ -908,6 +922,85 @@ div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul li.bg {
 div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul li.rnd {
   border: 2px solid #DEF6F4;
   color: #6C757D;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area {
+  padding-top: 30px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area .both {
+  width: 37% !important;
+  margin-right: 20px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area button.modal-button {
+  width: 16%;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area div.selected-areas {
+  padding-top: 10px;
+  font-size: 14px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area div.selected-areas ul li {
+  padding-bottom: 8px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area div.selected-areas ul li span {
+  display: inline-block;
+  width: 150px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area div.selected-areas ul li a {
+  color: #2EC4B6;
+}
+div.sign-up-wrapper.step03 p.member-step1-tit {
+  padding-bottom: 10px;
+}
+div.sign-up-wrapper.step03 div.member-infos {
+  padding: 60px 0 40px 0;
+}
+div.sign-up-wrapper.step03 div.member-infos ul li {
+  padding-bottom: 20px;
+}
+div.sign-up-wrapper.step03 div.member-infos ul li span.tit {
+  display: inline-block;
+  width: 35%;
+  font-size: 24px;
+  color: #6C757D;
+}
+div.sign-up-wrapper.step03 div.member-infos ul li span.data {
+  display: inline-block;
+  width: 65%;
+  font-size: 24px;
+  color: #0D0D0D;
+}
+div.sign-up-wrapper.step03 div.btm button {
+  margin-bottom: 20px;
+}
+div.sign-up-wrapper.step03 div.btm button:last-child {
+  margin-bottom: 0;
+}
+div.sign-up-wrapper.auth-password span.count {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  color: #2EC4B6;
+  font-size: 18px;
+}
+div.sign-up-wrapper.auth-password p.auth-txt {
+  font-size: 18px;
+  font-family: "Pretendard-Regular";
+  color: #A2A2A4;
+  padding-top: 10px;
+}
+div.sign-up-wrapper.auth-password div.auth-button {
+  text-align: center;
+}
+div.sign-up-wrapper.auth-password div.auth-button button {
+  margin-bottom: 15px;
+}
+div.sign-up-wrapper.auth-password div.auth-button a {
+  color: #2EC4B6;
+}
+div.sign-up-wrapper.password-modify p.member-step1-tit {
+  padding-bottom: 10px;
+}
+div.sign-up-wrapper.password-modify p.txt-mypage-modify {
+  padding-bottom: 60px;
 }
 
 /* global common */
