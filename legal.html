@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+</head>
+<body>
+
+<!-- 공통 -->
+<div class="film-normal"></div>
+<a href="#" class="go-top-btn"></a>
+<!-- //공통 -->
+
+<!-- header -->
+<div class="header-wrapper">
+	<div class="header-footer-inner clearfix">
+		<div class="header-left clearfix">
+			<h1>IT PLACE</h1>
+			<a href="#"><span>공간찾기</span></a>
+			<a href="#"><span>등록하기</span></a>
+		</div>
+		<div class="header-right clearfix">
+			<a href="#" class="tops a">검색</a><div class="b"><p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p></div><a href="#" class="tops c">알림<span class="notice"></span></a><a href="#" class="tops d">메뉴</a>
+			<div class="search-box clearfix">
+				<input type="text" placeholder="어떤 공간을 찾고 있나요? 예) 포근한 가정집" />
+				<button class="search-btn">검색</button>
+			</div>
+			<div class="notification-wrap">
+				<div class="inner" data-simplebar>
+					<ul>
+						<li>
+							<p class="a">예약</p>
+							<p class="b">신청하신 예스스튜디오 예약이 호스트에 의해 승인 되었습니다.</p>
+							<p class="c">2025/06/10 13:55</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<aside class="lnb-wrapper">
+		<div class="menu-header">
+			<div class="login-button">
+				<p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p>
+				<p class="greeting-msg" style="display: none;"><span>홍길동</span>님, 반갑습니다.</p>
+			</div>
+			<a href="#" class="menu-close">닫기</a>
+		</div>
+		<a href="#" class="logout-button">로그아웃</a>
+		<ul class="menus">
+			<li>
+				<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+				<div class="submenus">
+					<a href="#" class="on">예약/결제 내역</a>
+					<a href="#">나의 문의</a>
+					<a href="#">개인 정보 관리</a>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+				<div class="submenus">
+					<a href="#">공간 등록</a>
+					<a href="#">공간 관리</a>
+					<a href="#">예약 관리</a>
+					<a href="#">Q&A 관리</a>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:void(0);" class="depth-1">고객센터</a>
+				<div class="submenus">
+					<a href="#">공지사항</a>
+					<a href="#">이벤트</a>
+					<a href="#">자주 묻는 질문</a>
+					<a href="#">문의하기</a>
+				</div>
+			</li>
+		</ul>
+	</aside>
+</div>
+<!-- //header -->
+
+<div class="container-wrapper">
+	<div class="common-wrapper">
+		<!-- legal start -->
+		<div class="legal-wrapper">
+			<div class="title-area clearfix">
+				<span class="floatl title">서비스 이용 약관</span>
+				<div class="floatr legal-date">
+					<span class="t">시행 일자</span>
+					<select class="selectpicker both" data-container="body">
+						<option>2025. 01. 05</option>
+					</select>
+				</div>
+			</div>
+			<div class="text-area" data-simplebar>
+				제1장 총칙<br /><br />
+
+				제1조 목적<br />
+				본 약관은 쉐어잇(이하 “회사” 라 함)이 제공하는 “공간 및 연계서비스 중개 플랫폼”(이하 "서비스"라 함)과 관련하여 "회사"와 “호스트”, “회원” 간의 권리, 의무, 책임사항 및 "서비스" 사용 절차에 관한 사항을 규정함을 목적으로 합니다.<br /><br />
+
+				제2조 용어의 정의<br />
+				1."서비스"라 함은 구현되는 단말기 (PC, 휴대형단말기 등의 각종 유무선장치를 포함)와 상관없이 서비스를 제공받는 고객이 사용할 수 있는 서비스로, 어플리케이션, 웹페이지, 통화, 이메일 등 회사에서 제공하는 모든 기능, 용역, 재화 등을 의미합니다.<br />
+				2.서비스는 “공간 서비스”와 “플러스 서비스”로 나눌 수 있습니다. “공간 서비스”는 “호스트”의 시설물, 건물 등 공간을 유료로 대여하여 사용할 수 있는 일체의 행위를 의미하며, “플러스 서비스”는 “호스트”의 각종 용역 및 재화를 유료로 사용할 수 있는 일체의 행위를 의미합니다.<br />
+				3."회원"이란 회사의 서비스에 접속하여 이 약관에 따라 회사와 사용계약을 체결하고 회원으로 등록한 자로서 회사가 제공하는 서비스를 사용하는 사람 또는 단체를 의미합니다.<br />
+				4."비회원"이라 함은 회원으로 가입하지 않은 자 중, 회원이 소속된 단체의 소속 원이거나 회원이 소속된 단체의 소속원이 아님에도 회원으로부터 서비스 사용을 안내 받아 회사가 제공하는 서비스를 이용하는 자를 의미합니다.<br />
+				5."호스트"란 공간, 시설물, 용역, 재화 등(이하 “상품”이라 함)을 소유하고 회사와 호스트 서비스 이용계약을 맺고 회원 또는 비회원에게 소유한 상품을 유료로 제공하는 사람이나 단체를 의미합니다.<br />
+				6."그룹"이란 회원 또는 비회원이 소속되어 있는 2명 이상의 단체 또는 기업 등을 의미합니다<br />
+				7.“그룹 대표자”이란 “그룹”을 대표하여 서비스의 사용 및 결제와 관련된 권한과 책임이 있는 자를 의미합니다.<br />
+				8.“바로 결제”란 회원이 서비스를 이용하기 위해 어플리케이션 또는 웹페이지에서 회사 또는 호스트의 승인 없이 서비스 상품을 즉각 결제하고 이용하는 것을 의미합니다.<br />
+				9.“승인 결제”란 회원이 서비스를 이용하기 위해 어플리케이션 또는 웹페이지에서 회사 또는 호스트에게 사용, 이용, 예약, 또는 구매 등의 행위를 요청하고, 회사 또는 호스트가 회원의 요청을 승인하였을 때 비로소 결제 및 서비스 상품 이용이 가능한 것을 의미합니다.<br />
+				10."견적"이란 회원이 서비스를 이용하기 위해 어플리케이션 또는 웹페이지에서 해당 공간에 대한 청약을 신청하는 상품을 의미합니다. 회원은 계약 진행을 위해 행사 상세 내용, 행사 주최자 등의 정보를 입력하며, ′회사′가 이를 검토한 후 계약서 작성 및 진행에 따른 주요 업무는 별도로 이루어지는 상품을 의미합니다.<br />
+				11."게시물"이란 회사가 서비스를 제공함에 있어 서비스 상에 게시한 부호, 문자, 음성 형태의 글, 사진, 동영상 및 각종 파일과 링크 등을 의미하며, “고객”이 상품 사용 후 해당 상품에 대한 종합적인 평가를 기록한 글 등 “이용 후기”를 포함합니다.<br />
+				위 항에서 정의되지 않은 이 약관 상의 용어의 의미는 일반적인 거래관행에 의합니다.<br /><br />
+
+				제3조 약관 등의 명시와 설명 및 개정<br />
+				1.회사는 본 약관의 내용을 회원이 쉽게 알 수 있도록 인터넷 사이트 및 모바일 어플리케이션에 공지합니다. 다만, 약관의 내용은 회원이 연결화면을 통하여 볼 수 있도록 할 수 있습니다.<br />
+				2.회사는 “약관의 규제에 관한 법률”, “정보 통신망 사용 촉진 및 정보보호 등에 관한 법률” 등 관련법을 위배하지 않는 범위에서 본 약관을 개정할 수 있습니다.<br />
+				3.회사가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 적용일자 7일전에 서비스 화면 또는 그 연결화면에 게시하여 회원에게 공지합니다. 다만, 회원에게 불리하거나 중대한 사항의 변경인 경우에는 그 적용일자 30일 이전까지 회원이 등록한 전자우편 등
+			</div>
+		</div>
+		<!-- //legal end -->
+	</div>
+</div>
+
+<!-- footer -->
+<div class="footer-wrapper">
+	<div class="header-footer-inner">
+		<div class="top clearfix">
+			<h2>IT PLACE</h2>
+			<div class="footer-menu">
+				<a href="#">이용약관</a><span>|</span><a href="#">개인정보처리방침</a><span>|</span><a href="#">자주묻는질문</a><span>|</span><a href="#">문의하기</a>
+			</div>
+		</div>
+		<div class="bottom clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호 <span>|</span> 전화 : +82-2-516-1703<br />
+			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 홍길동<br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/lenis.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+  
+</script>
+</body>
+</html>
+
+

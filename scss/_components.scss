@@ -91,33 +91,25 @@ div.terms-content {
 .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
   border-top-color: #fff !important;
 }
-
 .bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
   border-bottom-color: #fff !important;
 }
-
 .bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
   border-left-color: #fff !important;
 }
-
 .bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
   border-right-color: #fff !important;
 }
 
 /* checkbox */
-/* 기본 체크박스 숨기기 */
 .custom-checkbox {
   display: none;
 }
-
-/* 체크박스 + 라벨 묶기 */
 .custom-label {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
 }
-
-/* 체크박스 대신 아이콘 표시 */
 .custom-label::before {
   content: "";
   display: inline-block;
@@ -127,12 +119,38 @@ div.terms-content {
   background: url("../img/icons/icon_check.svg") no-repeat center/cover;
   border-radius: 4px;
 }
-
-/* 체크 상태일 때 이미지 변경 */
 .custom-checkbox:checked + .custom-label::before {
   background: url("../img/icons/icon_checked.svg") no-repeat center/cover;
 }
 
+/* selectbox */
+.bootstrap-select > .dropdown-toggle {
+	border: 1px solid #A2A2A4;
+	border-radius: 8px;
+	color: #6C757D;
+	padding: 15px 20px;
+	font-size: 18px;
+	background: #fff !important;
+}
+.dropdown-toggle::after {
+	width: 16px;
+	height: 16px;
+	background: url('../img/icons/icon_arrow_down.png') 50% 50% no-repeat;
+	border: 0;
+}
+.dropdown-toggle.show::after {
+	background: url('../img/icons/icon_arrow_up.png') 50% 50% no-repeat;
+}
+.bootstrap-select button {
+  outline: none;
+}
+.dropdown-item.active, .dropdown-item:active {
+	background: $light-dim;
+}
+.bootstrap-select .dropdown-toggle:focus,.bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+    outline: 0px auto -webkit-focus-ring-color!important;
+    outline-offset: 0px
+}
 
 /* modal size */
 .w-480 {

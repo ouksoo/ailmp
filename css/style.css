@@ -247,6 +247,8 @@ div.header-wrapper .header-left a:nth-child(3) {
 div.header-wrapper .header-left a span {
   display: inline-block;
   padding-bottom: 5px;
+}
+div.header-wrapper .header-left a span.on {
   border-bottom: 2px solid #2EC4B6;
 }
 div.header-wrapper .header-right {
@@ -495,6 +497,10 @@ div.header-wrapper aside a.logout-button {
   color: #0D0D0D;
 }
 
+div.container-wrapper div.common-wrapper {
+  padding: 100px 0 200px 0;
+}
+
 div.footer-wrapper {
   background: #0D0D0D;
   color: #A2A2A4;
@@ -531,38 +537,45 @@ div.footer-wrapper div.bottom span {
   margin: 0 7px;
 }
 
-/* header, footer 공통 */
-div.header-footer-inner {
+/* header, footer 공통 / common-wrapper 는 나머지 레이아숫에서 100% 아닌 것 */
+div.header-footer-inner,
+div.common-wrapper {
   position: relative;
   margin: 0 auto;
 }
 @media screen and (min-width: 1920px) {
-  div.header-footer-inner {
+  div.header-footer-inner,
+  div.common-wrapper {
     width: 1440px;
   }
 }
 @media screen and (min-width: 1600px) and (max-width: 1919px) {
-  div.header-footer-inner {
+  div.header-footer-inner,
+  div.common-wrapper {
     margin: 0 122px;
   }
 }
 @media screen and (min-width: 1280px) and (max-width: 1599px) {
-  div.header-footer-inner {
+  div.header-footer-inner,
+  div.common-wrapper {
     margin: 0 100px;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
-  div.header-footer-inner {
+  div.header-footer-inner,
+  div.common-wrapper {
     margin: 0 42px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  div.header-footer-inner {
+  div.header-footer-inner,
+  div.common-wrapper {
     margin: 0 32px;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  div.header-footer-inner {
+  div.header-footer-inner,
+  div.common-wrapper {
     margin: 0 20px;
   }
 }
@@ -670,19 +683,16 @@ div.terms-content {
 }
 
 /* checkbox */
-/* 기본 체크박스 숨기기 */
 .custom-checkbox {
   display: none;
 }
 
-/* 체크박스 + 라벨 묶기 */
 .custom-label {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
 }
 
-/* 체크박스 대신 아이콘 표시 */
 .custom-label::before {
   content: "";
   display: inline-block;
@@ -693,9 +703,42 @@ div.terms-content {
   border-radius: 4px;
 }
 
-/* 체크 상태일 때 이미지 변경 */
 .custom-checkbox:checked + .custom-label::before {
   background: url("../img/icons/icon_checked.svg") no-repeat center/cover;
+}
+
+/* selectbox */
+.bootstrap-select > .dropdown-toggle {
+  border: 1px solid #A2A2A4;
+  border-radius: 8px;
+  color: #6C757D;
+  padding: 15px 20px;
+  font-size: 18px;
+  background: #fff !important;
+}
+
+.dropdown-toggle::after {
+  width: 16px;
+  height: 16px;
+  background: url("../img/icons/icon_arrow_down.png") 50% 50% no-repeat;
+  border: 0;
+}
+
+.dropdown-toggle.show::after {
+  background: url("../img/icons/icon_arrow_up.png") 50% 50% no-repeat;
+}
+
+.bootstrap-select button {
+  outline: none;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background: #C6CAD3;
+}
+
+.bootstrap-select .dropdown-toggle:focus, .bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
+  outline: 0px auto -webkit-focus-ring-color !important;
+  outline-offset: 0px;
 }
 
 /* modal size */
@@ -1001,6 +1044,47 @@ div.sign-up-wrapper.password-modify p.member-step1-tit {
 }
 div.sign-up-wrapper.password-modify p.txt-mypage-modify {
   padding-bottom: 60px;
+}
+
+/* account disabled */
+div.account-disabled-wrapper {
+  width: 600px;
+  margin: 200px auto 200px auto;
+  text-align: center;
+  padding-top: 185px;
+  background: url("../img/icons/icon_under.svg") 50% 0% no-repeat;
+}
+div.account-disabled-wrapper p.txt-1 {
+  font-family: "Pretendard-SemiBold";
+  font-size: 24px;
+  color: #0D0D0D;
+  padding-bottom: 10px;
+}
+div.account-disabled-wrapper p.txt-2 {
+  font-size: 18px;
+  color: #6C757D;
+}
+
+/* 서비스 이용 약관 */
+div.legal-wrapper div.title-area {
+  border-bottom: 1px solid #C6CAD3;
+  padding-bottom: 30px;
+}
+div.legal-wrapper div.title-area span.title {
+  font-size: 40px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+}
+div.legal-wrapper div.title-area div.legal-date span.t {
+  margin-right: 20px;
+}
+div.legal-wrapper div.text-area {
+  margin-top: 60px;
+  height: 800px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 18px;
+  color: #6C757D;
 }
 
 /* global common */

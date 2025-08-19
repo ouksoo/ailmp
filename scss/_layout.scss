@@ -44,7 +44,10 @@ div.header-wrapper {
 			span {
 				display: inline-block;
 				padding-bottom: 5px;
-				border-bottom: 2px solid $main-color;
+				
+				&.on {
+					border-bottom: 2px solid $main-color;
+				}
 			}
 		}
 	}
@@ -318,6 +321,9 @@ div.header-wrapper {
 
 div.container-wrapper {
 	
+	div.common-wrapper {
+		padding: 100px 0 200px 0;
+	}
 }
 
 div.footer-wrapper {
@@ -363,8 +369,9 @@ div.footer-wrapper {
 	}
 }
 
-/* header, footer 공통 */
-div.header-footer-inner {
+/* header, footer 공통 / common-wrapper 는 나머지 레이아숫에서 100% 아닌 것 */
+div.header-footer-inner,
+div.common-wrapper {
 	position: relative;
 	margin: 0 auto;
 
