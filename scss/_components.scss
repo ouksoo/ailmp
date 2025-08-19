@@ -19,13 +19,14 @@
 	a.modal-close-button {
 		position: absolute;
 		right: 30px;
-		top: 18px;
+		top: 20px;
 		width: 20px; height: 20px;
 		background: url('../img/icons/icon_close.svg') 50% 50% no-repeat;
 		text-indent: -9999px;
 	}
 }
 .modal-body {
+	padding: 30px;
 
 	p.only-text-center {
 		text-align: center;
@@ -52,7 +53,7 @@
 	font-size: 18px;
 	font-weight: 700;
 	text-align: center;
-	padding: 18px 0;
+	padding: 17px 0;
 	border-radius: 8px;
 
 	&.green {
@@ -71,6 +72,65 @@ div.terms-content {
 	margin: 20px auto 20px auto;
 }
 
+/* 툴팁 박스 */
+.tooltip-inner {
+  background-color: #fff !important;   /* 배경 흰색 */
+  color: $title-black !important;              /* 글자색 */
+  border: 1px solid #fff !important;   /* 흰색 테두리 */
+  box-shadow: 0 15px 15px rgba(0,0,0,0.15); /* 그림자 */
+  padding: 6px 14px;
+  border-radius: 17px;
+  opacity: 1;
+  font-size: 14px;
+}
+
+/* 툴팁 화살표 (방향별) */
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+  border-top-color: #fff !important;
+}
+
+.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+  border-bottom-color: #fff !important;
+}
+
+.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+  border-left-color: #fff !important;
+}
+
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+  border-right-color: #fff !important;
+}
+
+/* checkbox */
+/* 기본 체크박스 숨기기 */
+.custom-checkbox {
+  display: none;
+}
+
+/* 체크박스 + 라벨 묶기 */
+.custom-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 체크박스 대신 아이콘 표시 */
+.custom-label::before {
+  content: "";
+  display: inline-block;
+  width: 26px;  /* 아이콘 크기 */
+  height: 26px;
+  margin-right: 10px;
+  background: url("../img/icons/icon_check.svg") no-repeat center/cover;
+  border-radius: 4px;
+}
+
+/* 체크 상태일 때 이미지 변경 */
+.custom-checkbox:checked + .custom-label::before {
+  background: url("../img/icons/icon_checked.svg") no-repeat center/cover;
+}
+
+
 /* modal size */
 .w-480 {
 	width: 480px !important;
@@ -78,4 +138,7 @@ div.terms-content {
 .w-660 {
 	width: 660px !important;
 	max-width: 660px !important;
+}
+.w-100-per {
+	width: 100% !important;
 }

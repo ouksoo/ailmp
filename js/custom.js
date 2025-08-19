@@ -49,6 +49,17 @@ var AILMP = {
 			}
 		});
 
+		//상단 공지사항 활성
+		$('.header-right a.tops.c, div.notification-wrap').on('mouseenter mouseleave', function(e) {
+			const $target = $('div.notification-wrap');
+
+			if (e.type === 'mouseenter') {
+				$target.css('display', 'block');
+			} else if (e.type === 'mouseleave') {
+				$target.css('display', 'none');
+			}
+		});
+
 		//prevent document click 
 		$(AILMP.stopDocumentClick).on('click', function(e) {
 			e.stopPropagation();
@@ -58,7 +69,11 @@ var AILMP = {
 
 $(document).ready(function() {
 	AILMP.gnbMenuActive();
+	$('[data-tooltip="true"]').each(function () {
+		new bootstrap.Tooltip(this);
+	});
 
+	//document click node show/hide
 	$(document).click(function () {
 		$('div.header-right .search-box').fadeOut();
 	});

@@ -1,8 +1,15 @@
+@charset "UTF-8";
 /* ***************  global *************** */
 @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Medium";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
@@ -159,6 +166,10 @@ strong, b {
   font-weight: normal;
 }
 
+.pos-r {
+  position: relative;
+}
+
 .dp-b {
   display: block;
 }
@@ -175,19 +186,12 @@ strong, b {
   float: right;
 }
 
-.border {
-  border: 1px solid !important;
+.bd0 {
+  border: 0;
 }
 
-.film-normal {
-  display: none;
-  position: fixed;
-  z-index: 50;
-  left: 0%;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+.border {
+  border: 1px solid !important;
 }
 
 /* title */
@@ -338,6 +342,57 @@ div.header-wrapper .header-right div.search-box button.search-btn {
   border-radius: 50%;
   margin-right: -20px;
 }
+div.header-wrapper .header-right div.notification-wrap {
+  display: none;
+  position: absolute;
+  width: 260px;
+  top: 40px;
+  right: 0;
+  border-radius: 8px;
+  border: 1px solid #D9D9D9;
+  background: #fff;
+  z-index: 10;
+  padding: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+div.header-wrapper .header-right div.notification-wrap::after {
+  content: "";
+  position: absolute;
+  top: -6px; /* 박스 위에 걸치도록 */
+  right: 63px; /* 화살표 좌우 위치 조정 */
+  width: 10px;
+  height: 10px;
+  background: #fff; /* 박스 배경색 */
+  border-top: 1px solid #D9D9D9;
+  border-left: 1px solid #D9D9D9;
+  transform: rotate(45deg); /* 정사각형을 45도 돌려서 삼각형처럼 보이게 */
+}
+div.header-wrapper .header-right div.notification-wrap div.inner {
+  height: 470px;
+  overflow-x: hidden;
+  overflow: auto;
+}
+div.header-wrapper .header-right div.notification-wrap ul li {
+  padding: 14px;
+  border-radius: 8px;
+}
+div.header-wrapper .header-right div.notification-wrap ul li:hover {
+  background: #DEF6F4;
+}
+div.header-wrapper .header-right div.notification-wrap ul li p {
+  font-size: 14px;
+  color: #0D0D0D;
+}
+div.header-wrapper .header-right div.notification-wrap ul li p.a {
+  font-family: "Pretendard-Medium";
+}
+div.header-wrapper .header-right div.notification-wrap ul li p.b {
+  line-height: 17px;
+  padding: 8px 0;
+}
+div.header-wrapper .header-right div.notification-wrap ul li p.c {
+  color: #6C757D;
+}
 div.header-wrapper aside {
   position: fixed;
   z-index: 100;
@@ -431,7 +486,7 @@ div.header-wrapper aside ul.menus li div.submenus a.on {
   color: #2EC4B6;
 }
 div.header-wrapper aside a.logout-button {
-  position: fixed;
+  position: absolute;
   bottom: 20px;
   right: 30px;
   background: url("../img/icons/icon_logout.svg") 0% 46% no-repeat;
@@ -476,6 +531,7 @@ div.footer-wrapper div.bottom span {
   margin: 0 7px;
 }
 
+/* header, footer 공통 */
 div.header-footer-inner {
   position: relative;
   margin: 0 auto;
@@ -532,13 +588,16 @@ div.header-footer-inner {
 .modal-header a.modal-close-button {
   position: absolute;
   right: 30px;
-  top: 18px;
+  top: 20px;
   width: 20px;
   height: 20px;
   background: url("../img/icons/icon_close.svg") 50% 50% no-repeat;
   text-indent: -9999px;
 }
 
+.modal-body {
+  padding: 30px;
+}
 .modal-body p.only-text-center {
   text-align: center;
   color: #0D0D0D;
@@ -560,7 +619,7 @@ div.header-footer-inner {
   font-size: 18px;
   font-weight: 700;
   text-align: center;
-  padding: 18px 0;
+  padding: 17px 0;
   border-radius: 8px;
 }
 .modal-button.green {
@@ -578,6 +637,64 @@ div.terms-content {
   margin: 20px auto 20px auto;
 }
 
+/* 툴팁 박스 */
+.tooltip-inner {
+  background-color: #fff !important; /* 배경 흰색 */
+  color: #0D0D0D !important; /* 글자색 */
+  border: 1px solid #fff !important; /* 흰색 테두리 */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15); /* 그림자 */
+  padding: 6px 14px;
+  border-radius: 17px;
+  opacity: 1;
+  font-size: 14px;
+}
+
+/* 툴팁 화살표 (방향별) */
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+  border-top-color: #fff !important;
+}
+
+.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+  border-bottom-color: #fff !important;
+}
+
+.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+  border-left-color: #fff !important;
+}
+
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+  border-right-color: #fff !important;
+}
+
+/* checkbox */
+/* 기본 체크박스 숨기기 */
+.custom-checkbox {
+  display: none;
+}
+
+/* 체크박스 + 라벨 묶기 */
+.custom-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 체크박스 대신 아이콘 표시 */
+.custom-label::before {
+  content: "";
+  display: inline-block;
+  width: 26px; /* 아이콘 크기 */
+  height: 26px;
+  margin-right: 10px;
+  background: url("../img/icons/icon_check.svg") no-repeat center/cover;
+  border-radius: 4px;
+}
+
+/* 체크 상태일 때 이미지 변경 */
+.custom-checkbox:checked + .custom-label::before {
+  background: url("../img/icons/icon_checked.svg") no-repeat center/cover;
+}
+
 /* modal size */
 .w-480 {
   width: 480px !important;
@@ -586,4 +703,214 @@ div.terms-content {
 .w-660 {
   width: 660px !important;
   max-width: 660px !important;
+}
+
+.w-100-per {
+  width: 100% !important;
+}
+
+.film-normal {
+  display: none;
+  position: fixed;
+  z-index: 50;
+  left: 0%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+a.go-top-btn {
+  position: fixed;
+  z-index: 50;
+  right: 100px;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #E1E1E1;
+  border-radius: 50%;
+  background: rgb(255, 255, 255) url("../img/icons/icon_go_top.svg") 50% 50% no-repeat;
+}
+
+/* login */
+div.login-wrapper button.kakao, div.sign-up-wrapper button.kakao {
+  border: 0;
+  background: #FEE500 url("../img/icons/icon_kakao.svg") 20px 50% no-repeat;
+  color: #0D0D0D;
+  margin-bottom: 20px;
+}
+div.login-wrapper button.google, div.sign-up-wrapper button.google {
+  border: 1px solid #C6CAD3;
+  background: #F7F7F7 url("../img/icons/icon_google.svg") 18px 50% no-repeat;
+  color: #0D0D0D;
+}
+div.login-wrapper input.login-inputs, div.sign-up-wrapper input.login-inputs {
+  background: #fff;
+  border: 1px solid #C6CAD3;
+  outline: none;
+  font-size: 18px;
+  color: #0D0D0D;
+  text-align: left;
+  padding-left: 20px;
+  font-weight: 500;
+}
+div.login-wrapper input.login-inputs::-moz-placeholder, div.sign-up-wrapper input.login-inputs::-moz-placeholder {
+  color: #C6CAD3;
+}
+div.login-wrapper input.login-inputs::placeholder, div.sign-up-wrapper input.login-inputs::placeholder {
+  color: #C6CAD3;
+}
+div.login-wrapper p.and-txt, div.sign-up-wrapper p.and-txt {
+  font-size: 18px;
+  font-family: "Pretendard-Medium";
+  color: #A2A2A4;
+  padding: 30px 0;
+  text-align: center;
+}
+div.login-wrapper p.login-title, div.sign-up-wrapper p.login-title {
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+  color: #1D1E1F;
+  padding-bottom: 10px;
+}
+div.login-wrapper p.login-title.pw, div.sign-up-wrapper p.login-title.pw {
+  padding-top: 20px;
+}
+div.login-wrapper div.pww, div.sign-up-wrapper div.pww {
+  margin-bottom: 30px;
+}
+div.login-wrapper div.login-buttom, div.sign-up-wrapper div.login-buttom {
+  font-size: 14px;
+  font-family: "Pretendard-Regular";
+  color: #A2A2A4;
+  padding-top: 10px;
+}
+div.login-wrapper div.login-buttom a, div.sign-up-wrapper div.login-buttom a {
+  color: #2EC4B6;
+  text-decoration: underline;
+}
+div.login-wrapper div.guide-pop, div.sign-up-wrapper div.guide-pop {
+  position: absolute;
+  top: -120%;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 8px;
+  background: #6C757D url("../img/icons/icon_x_white.svg") 96% 50% no-repeat;
+  box-sizing: border-box;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+}
+div.login-wrapper .guide-pop::after, div.sign-up-wrapper .guide-pop::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* 박스 바로 아래 */
+  left: 50%; /* 중앙 맞춤 */
+  transform: translateX(-50%);
+  border-width: 10px 10px 0 10px; /* 위쪽 없는 삼각형 */
+  border-style: solid;
+  border-color: #6C757D transparent transparent transparent; /* 위쪽만 색상 */
+}
+
+/* sign up */
+div.sign-up-wrapper {
+  width: 600px;
+  margin: 100px auto 200px auto;
+}
+div.sign-up-wrapper p.member-step1-tit {
+  font-size: 40px;
+  text-align: center;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 60px;
+  line-height: 47px;
+}
+div.sign-up-wrapper p.txt-mypage-modify {
+  font-size: 24px;
+  text-align: center;
+  color: #6C757D;
+}
+div.sign-up-wrapper div.agreement-wrapper {
+  padding-top: 60px;
+}
+div.sign-up-wrapper div.agreement-wrapper ul li {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+div.sign-up-wrapper div.agreement-wrapper ul li label.all {
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+}
+div.sign-up-wrapper div.agreement-wrapper ul li a {
+  font-size: 20px;
+  color: #6C757D;
+  text-decoration: underline;
+}
+div.sign-up-wrapper.step02 p.member-step1-tit {
+  padding-bottom: 10px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper {
+  padding: 60px 0 0 0;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 {
+  padding-bottom: 60px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 p.t-1 {
+  font-size: 24px;
+  font-family: "Pretendard-Medium";
+  color: #0D0D0D;
+  padding-bottom: 8px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 p.t-2 {
+  font-size: 18px;
+  font-family: "Pretendard-Medium";
+  color: #A2A2A4;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner {
+  border-top: 1px solid #EAEAEA;
+  padding: 30px 0;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner.a {
+  margin-top: 30px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner:last-child {
+  border-bottom: 1px solid #EAEAEA;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner p.inner-tit {
+  font-size: 18px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 20px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul li {
+  flex: 0 0 calc(33% - 5px); /* 3등분 (여백 고려해서) */
+  background: #fff;
+  padding: 7px 12px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul li:nth-child(3n-1) {
+  margin: 0 10px 10px 10px;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul li.bg {
+  background: #DEF6F4;
+}
+div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul li.rnd {
+  border: 2px solid #DEF6F4;
+  color: #6C757D;
+}
+
+/* global common */
+.tooltip {
+  margin-top: -10px !important;
 }/*# sourceMappingURL=style.css.map */

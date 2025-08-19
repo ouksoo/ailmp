@@ -8,3 +8,225 @@
 	height: 100%;
 	background: rgba(0,0,0,0.5);
 }
+
+a.go-top-btn {
+	position: fixed;
+	z-index: 50;
+	right: 100px;
+	bottom: 50px; 
+	width: 50px;
+	height: 50px;
+	border: 1px solid #E1E1E1;
+	border-radius: 50%;
+	background: rgb(255, 255, 255) url('../img/icons/icon_go_top.svg') 50% 50% no-repeat;
+}
+
+/* login */
+div.login-wrapper, div.sign-up-wrapper {
+
+	button.kakao {
+		border: 0;
+		background: #FEE500 url('../img/icons/icon_kakao.svg') 20px 50% no-repeat;
+		color: $title-black;
+		margin-bottom: 20px;
+	}
+	button.google {
+		border: 1px solid #C6CAD3;
+		background: #F7F7F7 url('../img/icons/icon_google.svg') 18px 50% no-repeat;
+		color: $title-black;
+	}
+	input.login-inputs {
+		background: #fff;
+		border: 1px solid #C6CAD3;
+		outline: none;
+		font-size: 18px;
+		color: $title-black;
+		text-align: left;
+		padding-left: 20px;
+		font-weight: 500;
+
+		&::placeholder {
+			color: #C6CAD3;
+		}
+	}
+	p.and-txt {
+		font-size: 18px;
+		font-family: 'Pretendard-Medium';
+		color: #A2A2A4;
+		padding: 30px 0;
+		text-align: center;
+	}
+	p.login-title {
+		font-size: 18px;
+		font-family: 'Pretendard-SemiBold';
+		color: #1D1E1F;
+		padding-bottom: 10px;
+
+		&.pw {
+			padding-top: 20px;
+
+		}
+	}
+	div.pww {
+		margin-bottom: 30px;
+	}
+	div.login-buttom {
+		font-size: 14px;
+		font-family: 'Pretendard-Regular';
+		color: #A2A2A4;
+		padding-top: 10px;
+
+		span {
+
+		}
+		a {
+			color: $main-color;
+			text-decoration: underline;
+		}
+	}
+
+	div.guide-pop {
+		position: absolute;
+		top: -120%;
+		left: 0;
+		width: 100%;
+		padding: 15px;
+		color: #fff;
+		font-size: 14px;
+		border-radius: 8px;
+		background: #6C757D url('../img/icons/icon_x_white.svg') 96% 50% no-repeat;
+		box-sizing: border-box;
+		box-shadow: 0 15px 15px rgba(0,0,0,0.15);
+	}
+
+	.guide-pop::after {
+		content: "";
+		position: absolute;
+		bottom: -10px; /* 박스 바로 아래 */
+		left: 50%;      /* 중앙 맞춤 */
+		transform: translateX(-50%);
+		border-width: 10px 10px 0 10px; /* 위쪽 없는 삼각형 */
+		border-style: solid;
+		border-color: #6C757D transparent transparent transparent; /* 위쪽만 색상 */
+	}
+}
+
+/* sign up */
+div.sign-up-wrapper {
+	width: 600px;
+	margin: 100px auto 200px auto;
+
+	p.member-step1-tit {
+		font-size: 40px;
+		text-align: center;
+		font-family: 'Pretendard-SemiBold';
+		padding-bottom: 60px;
+		line-height: 47px;
+	}
+	p.txt-mypage-modify {
+		font-size: 24px;
+		text-align: center;
+		color: #6C757D;
+	}
+	div.agreement-wrapper {
+		padding-top: 60px;
+
+		ul {
+			li {
+				font-size: 20px;
+				margin-bottom: 25px;
+
+				label.all {
+					color: $title-black;
+					font-family: 'Pretendard-SemiBold';
+				}
+
+				a {
+					font-size: 20px;
+					color: #6C757D;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	&.step02 {
+
+		p.member-step1-tit {
+			padding-bottom: 10px;
+		}
+
+		div.setting-wrapper {
+			padding: 60px 0 0 0; 
+
+			div.area-1 {
+				padding-bottom: 60px;
+
+				p.t-1 {
+					font-size: 24px;
+					font-family: 'Pretendard-Medium';
+					color: $title-black;
+					padding-bottom: 8px;
+				}
+				p.t-2 {
+					font-size: 18px;
+					font-family: 'Pretendard-Medium';
+					color: $dark-dim;
+				}
+				div.inner {
+					border-top: 1px solid #EAEAEA;
+					padding: 30px 0;
+
+					&.a {
+						margin-top: 30px;
+					}
+					&:last-child {
+						border-bottom: 1px solid #EAEAEA;
+					}
+					p.inner-tit {
+						font-size: 18px;
+						color: $title-black;
+						font-family: 'Pretendard-SemiBold';
+						padding-bottom: 20px;
+					}
+					ul {
+						display: flex;
+						flex-wrap: wrap;
+						gap: 0;
+						list-style: none;
+						padding: 0;
+						margin: 0;
+
+						li {
+							flex: 0 0 calc(33% - 5px); /* 3등분 (여백 고려해서) */
+							background: #fff;
+							padding: 7px 12px;
+							box-sizing: border-box;
+							margin-bottom: 10px;
+							border-radius: 8px;
+							font-size: 14px;
+
+							&:nth-child(3n-1) {
+								margin: 0 10px 10px 10px;
+							}
+
+							&.bg {
+								background: #DEF6F4;
+							}
+							&.rnd {
+								border: 2px solid #DEF6F4;
+								color: #6C757D;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* global common */
+.tooltip {
+	margin-top: -10px !important;
+}

@@ -7,6 +7,12 @@
     font-style: normal;
 }
 @font-face {
+    font-family: 'Pretendard-Medium';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
     font-family: 'Pretendard-SemiBold"';
     src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold".woff') format('woff');
     font-weight: 600;
@@ -60,6 +66,10 @@ th {font-weight:normal;}
 h1, h2, h3, h4, h5, h6, h7 { margin:0; padding:0;  font-weight:normal;}
 strong, b {font-weight:normal;}
 
+.pos-r {
+	position: relative;
+}
+
 .dp-b {
 	display: block; 
 }
@@ -68,5 +78,5 @@ strong, b {font-weight:normal;}
 }
 .floatl {float: left;}
 .floatr {float: right;}
-
+.bd0 {border: 0;}
 .border {border: 1px solid !important;}

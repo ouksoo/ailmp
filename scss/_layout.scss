@@ -143,6 +143,66 @@ div.header-wrapper {
 				margin-right: -20px;
 			}
 		}
+
+		div.notification-wrap {
+			display: none;
+			position: absolute;
+			width: 260px;
+			top: 40px;
+			right: 0;
+			border-radius: 8px;
+			border: 1px solid #D9D9D9;
+			background: #fff;
+			z-index: 10;
+			padding: 10px;
+			box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: -6px;   /* 박스 위에 걸치도록 */
+				right: 63px;  /* 화살표 좌우 위치 조정 */
+				width: 10px;
+				height: 10px;
+				background: #fff; /* 박스 배경색 */
+				border-top: 1px solid #D9D9D9;
+				border-left: 1px solid #D9D9D9;
+				transform: rotate(45deg); /* 정사각형을 45도 돌려서 삼각형처럼 보이게 */
+			}
+
+			div.inner {
+				height: 470px;
+				overflow-x: hidden;
+				overflow: auto;
+			}
+			ul {
+
+				li {
+					padding: 14px;
+					border-radius: 8px;
+
+					&:hover {
+						background: #DEF6F4;
+					}
+					
+					p {
+						font-size: 14px;
+						color: $title-black;
+
+						&.a {
+							font-family: 'Pretendard-Medium';
+						}
+						&.b {
+							line-height: 17px;
+							padding: 8px 0;
+						}
+						&.c {
+							color: #6C757D;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	aside {
@@ -245,7 +305,7 @@ div.header-wrapper {
 			} 
 		}
 		a.logout-button {
-			position: fixed;
+			position: absolute;
 			bottom: 20px;
 			right: 30px;
 			background: url('../img/icons/icon_logout.svg') 0% 46% no-repeat;
@@ -303,6 +363,7 @@ div.footer-wrapper {
 	}
 }
 
+/* header, footer 공통 */
 div.header-footer-inner {
 	position: relative;
 	margin: 0 auto;

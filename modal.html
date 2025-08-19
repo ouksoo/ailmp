@@ -17,7 +17,10 @@
 	margin-bottom: 5px;
 }
 </style>
+
 <!-- Button trigger modal -->
+<button type="button fade" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#memberLoginSection">- 로그인</button><br />
+
 <button type="button fade" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#memberOnlyPages">- 회원 전용 페이지 입니다. 지금 바로 로그인/회원가입으로 이동 하시겠습니까?</button><br />
 <button type="button fade" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hostOnlyPages">- 호스트 전용 페이지 입니다. 지금 바로 호스트 등록으로 이동 하시겠습니까?</button><br />
 <button type="button fade" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#memberOnlyLogin">- 회원 전용 페이지 입니다. 로그인 후 이용해 주세요.</button><br />
@@ -31,6 +34,44 @@
 <button type="button fade" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#transmitCountExceeded">- 재전송 횟수를 초과하였습니다. 30분 뒤에 다시 시도해 주세요.</button><br />
 <button type="button fade" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#passwordChanged">- 비밀번호가 변경되었습니다. 변경된 계정으로 로그인 해주세요.</button><br />
 <button type="button fade" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#termsAndService">- 서비스 이용 약관</button>
+
+<!-- login -->
+<div class="modal fade" id="memberLoginSection" tabindex="-1" role="dialog" aria-labelledby="termsAndService" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<h5 class="modal-title" id="exampleModalLongTitle">로그인</h5>
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<div class="login-wrapper">
+					<button class="modal-button w-100-per kakao" data-tooltip="true" data-bs-placement="bottom" title="최근에 이용했어요!">카카오 계정으로 로그인</button>
+					<button class="modal-button w-100-per google" data-tooltip="true" data-bs-placement="bottom" title="최근에 이용했어요!">구글 계정으로 로그인</button>
+					<p class="and-txt">또는</p>
+					<p class="login-title">이메일 주소</p>
+					<div class="pos-r">
+						<div class="guide-pop">이메일을 입력해 주세요.</div>
+						<div class="guide-pop">올바른 이메일 형식을 입력해주세요.</div>
+						<input type="text" class="modal-button w-100-per login-inputs" placeholder="이메일 주소를 입력해주세요." />
+					</div>
+					<p class="login-title pw">비밀번호</p>
+					<div class="pos-r pww">
+						<input type="password" class="modal-button w-100-per login-inputs" placeholder="비밀번호를 입력해주세요." />
+					</div>
+					<div class="pos-r">
+						<div class="guide-pop">일치하는 계정 정보를 찾을 수 없습니다.</div>
+						<button class="modal-button w-100-per green bd0 login-button" data-tooltip="true" data-bs-placement="bottom"title="최근에 이용했어요!">로그인</button>
+					</div>
+					<div class="login-buttom clearfix">
+						<div class="floatl"><span>아직 계정이 없으신가요?</span> <a href="#">회원가입</a></div>
+						<div class="floatr"><a href="#">비밀번호 찾기</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //login -->
 
 <!-- Modal : 회원 전용 페이지 입니다. 지금 바로 로그인/회원가입으로 이동 하시겠습니까? -->
 <div class="modal fade" id="memberOnlyPages" tabindex="-1" role="dialog" aria-labelledby="memberOnlyPages" aria-hidden="true">
