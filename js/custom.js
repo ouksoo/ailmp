@@ -50,7 +50,7 @@ var AILMP = {
 		});
 
 		//상단 공지사항 활성
-		$('.header-right a.tops.c, div.notification-wrap').on('mouseenter mouseleave', function(e) {
+		$('.header-right a.tops.c, .menu-header a.tops.c, div.notification-wrap').on('mouseenter mouseleave', function(e) {
 			const $target = $('div.notification-wrap');
 
 			if (e.type === 'mouseenter') {

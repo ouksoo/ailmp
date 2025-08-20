@@ -98,29 +98,68 @@
 <!-- //header -->
 
 <div class="container-wrapper">
-	<!-- 비밀번호 찾기 start -->
-	 <div class="sign-up-wrapper auth-password">
+	<!-- sign up start step02 -->
+	 <div class="sign-up-wrapper step02">
 
-		<p class="member-step1-tit">비밀번호 찾기</p>
-		<p class="login-title">이메일 주소</p>
+		<p class="member-step1-tit">회원 가입 마지막 단계 입니다.<br />관심 정보를 설정해 주세요.</p>
+		<p class="txt-mypage-modify">관심 정보는 마이페이지에서 수정하실 수 있습니다.</p>
+		<div class="setting-wrapper">
+			<div class="area-1">
+				<p class="t-1">1. 관심 지역 (최대 5개)</p>
+				<p class="t-2">관심 지역을 선택하고 추가 버튼을 눌러 주세요.</p>
+				<div class="select-area">
+					<select class="selectpicker both" data-container="body">
+						<option>시/도 선택</option>
+					</select>
+					<select class="selectpicker both" data-container="body">
+						<option>시/군/구 선택</option>
+					</select>
+					<button class="modal-button bd0 green">추가</button>
+					<div class="selected-areas">
+						<ul>
+							<li><span>서울시 강남구</span><a href="#">삭제</a></li>
+							<li><span>서울시 강남구</span><a href="#">삭제</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="area-1">
+				<p class="t-1">2. 관심 카테고리</p>
+				<p class="t-2">관심 있는 카테고리를 모두 선택해주세요.</p>
+				<div class="inner a">
+					<p class="inner-tit">실내 공간</p>
+					<ul>
+						<li class="bg">촬영 스튜디오</li>
+						<li class="rnd">촬영 스튜디오</li>
+						<li>촬영 스튜디오</li>
+						<li>촬영 스튜디오</li>
+						<li>촬영 스튜디오</li>
+						<li>촬영 스튜디오</li>
+						<li>촬영 스튜디오</li>
+						<li>촬영 스튜디오</li>
+						<li>촬영 스튜디오</li>
+						<li>촬영 스튜디오</li>
+					</ul>
+				</div>
+				<div class="inner">
+					<p class="inner-tit">상업·서비스 공간</p>
+					<ul>
+						<li class="bg">카페</li>
+						<li class="rnd">바/술집</li>
+						<li>식당</li>
+						<li>병원/약국</li>
+						<li>학원</li>
+						<li>빨래방</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div class="pos-r">
-			<input type="text" class="modal-button w-100-per login-inputs" placeholder="이메일 주소를 입력해주세요." />
-		</div>
-		<p class="login-title pw">인증번호</p>
-		<div class="pos-r pww">
-			<input type="password" class="modal-button w-100-per login-inputs" placeholder="인증번호를 입력해주세요." />
-			<span class="count">10:00</span>
-			<p class="auth-txt">
-				인증 번호가 이메일로 발송되었습니다. 메일이 도착하지 않았다면 스팸함 또는 정크 메일함을 확인해 주세요
-			</p>
-		</div>
-		<div class="pos-r auth-button">
-			<button class="modal-button w-100-per bd0 light-gray login-button">인증 번호 발송</button><!-- 활성화 시 클래스를 "light-gray" -> "green" 으로 변경 -->
-			<a href="#">재전송</a>
+			<button class="modal-button w-100-per green bd0 login-button">저장 후 나가기</button>
 		</div>
 
 	 </div>
-	<!-- //비밀번호 찾기 end -->
+	<!-- //sign up end -->
 </div>
 
 <!-- footer -->

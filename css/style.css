@@ -196,7 +196,7 @@ strong, b {
 
 /* title */
 /* list gutters "360: 16, 768 : 16, 1024 : 20, 1280 : 24, 1600 : 24, 1920 : 24" */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .mo {
     display: block;
   }
@@ -204,7 +204,7 @@ strong, b {
     display: none;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 769px) {
   .mo {
     display: none;
   }
@@ -212,15 +212,36 @@ strong, b {
     display: block;
   }
 }
+/* header */
 div.header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 45;
+  width: 100%;
   background: #fff;
   height: 70px;
   padding-top: 17px;
   border-bottom: 1px solid #EAEAEA;
 }
+@media screen and (max-width: 768px) {
+  div.header-wrapper {
+    height: 60px;
+    padding-top: 0px;
+  }
+}
 div.header-wrapper .header-left {
   float: left;
   padding-top: 4px;
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-left {
+    width: 100%;
+    height: 60px;
+    margin-top: 60px;
+    background: #fff;
+    border-bottom: 1px solid #EAEAEA;
+  }
 }
 div.header-wrapper .header-left h1 {
   float: left;
@@ -230,6 +251,14 @@ div.header-wrapper .header-left h1 {
   text-indent: -9999px;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-left h1 {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+}
 div.header-wrapper .header-left a {
   float: left;
   font-size: 14px;
@@ -238,11 +267,44 @@ div.header-wrapper .header-left a {
   padding-left: 27px;
   margin-left: 30px;
 }
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-left a {
+    display: inline-block;
+    width: 50%;
+    padding-left: 0;
+    padding-top: 13px;
+    padding-bottom: 10px;
+    margin-left: 0;
+    text-align: center;
+  }
+}
 div.header-wrapper .header-left a:nth-child(2) {
   background: url("../img/icons/icon_place.svg") 0 2px no-repeat;
 }
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-left a:nth-child(2) {
+    background-image: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-left a:nth-child(2) span {
+    padding-left: 25px;
+    background: url("../img/icons/icon_place.svg") 0 2px no-repeat;
+  }
+}
 div.header-wrapper .header-left a:nth-child(3) {
   background: url("../img/icons/icon_plus.svg") 0 2px no-repeat;
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-left a:nth-child(3) {
+    background-image: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-left a:nth-child(3) span {
+    padding-left: 25px;
+    background: url("../img/icons/icon_plus.svg") 0 2px no-repeat;
+  }
 }
 div.header-wrapper .header-left a span {
   display: inline-block;
@@ -267,9 +329,22 @@ div.header-wrapper .header-right a.tops {
 div.header-wrapper .header-right a.tops.a {
   background: url("../img/icons/icon_zoom_black.svg") 0 2px no-repeat;
 }
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right a.tops.a {
+    position: fixed;
+    left: 14px;
+    top: 12px;
+    margin-left: 0;
+  }
+}
 div.header-wrapper .header-right a.tops.c {
   position: relative;
   background: url("../img/icons/icon_bell_black.svg") 0 2px no-repeat;
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right a.tops.c {
+    display: none;
+  }
 }
 div.header-wrapper .header-right a.tops.c span {
   position: absolute;
@@ -283,6 +358,13 @@ div.header-wrapper .header-right a.tops.c span {
 div.header-wrapper .header-right a.tops.d {
   background: url("../img/icons/icon_menu_black.svg") 0 2px no-repeat;
 }
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right a.tops.d {
+    position: fixed;
+    right: 14px;
+    top: 12px;
+  }
+}
 div.header-wrapper .header-right div.b {
   display: inline-block;
   float: left;
@@ -291,6 +373,11 @@ div.header-wrapper .header-right div.b {
   width: 32px;
   height: 32px;
   margin-left: 20px;
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right div.b {
+    display: none;
+  }
 }
 div.header-wrapper .header-right div.b p.bloom-login {
   display: none;
@@ -321,12 +408,29 @@ div.header-wrapper .header-right div.search-box {
   background: #f0f0f0;
   border-radius: 22px 0 0 22px;
 }
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right div.search-box {
+    position: fixed;
+    left: 15px;
+    top: 10px;
+    height: 36px;
+    width: 70%;
+    background: #f0f0f0;
+    border-radius: 22px 0 0 22px;
+  }
+}
 div.header-wrapper .header-right div.search-box input[type=text] {
   width: 85%;
   margin: 10px 0 0 25px;
   background: #f0f0f0;
   border: 0;
   outline: none;
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right div.search-box input[type=text] {
+    margin: 6px 0 0 20px;
+    font-size: 14px;
+  }
 }
 div.header-wrapper .header-right div.search-box input[type=text]::-moz-placeholder {
   color: #C6CAD3;
@@ -344,7 +448,13 @@ div.header-wrapper .header-right div.search-box button.search-btn {
   border-radius: 50%;
   margin-right: -20px;
 }
-div.header-wrapper .header-right div.notification-wrap {
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right div.search-box button.search-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+div.header-wrapper div.notification-wrap {
   display: none;
   position: absolute;
   width: 260px;
@@ -357,7 +467,16 @@ div.header-wrapper .header-right div.notification-wrap {
   padding: 10px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
-div.header-wrapper .header-right div.notification-wrap::after {
+@media screen and (max-width: 768px) {
+  div.header-wrapper div.notification-wrap {
+    position: fixed;
+    width: 260px;
+    top: 55px;
+    right: 20px;
+    z-index: 101;
+  }
+}
+div.header-wrapper div.notification-wrap::after {
   content: "";
   position: absolute;
   top: -6px; /* 박스 위에 걸치도록 */
@@ -369,30 +488,30 @@ div.header-wrapper .header-right div.notification-wrap::after {
   border-left: 1px solid #D9D9D9;
   transform: rotate(45deg); /* 정사각형을 45도 돌려서 삼각형처럼 보이게 */
 }
-div.header-wrapper .header-right div.notification-wrap div.inner {
+div.header-wrapper div.notification-wrap div.inner {
   height: 470px;
   overflow-x: hidden;
   overflow: auto;
 }
-div.header-wrapper .header-right div.notification-wrap ul li {
+div.header-wrapper div.notification-wrap ul li {
   padding: 14px;
   border-radius: 8px;
 }
-div.header-wrapper .header-right div.notification-wrap ul li:hover {
+div.header-wrapper div.notification-wrap ul li:hover {
   background: #DEF6F4;
 }
-div.header-wrapper .header-right div.notification-wrap ul li p {
+div.header-wrapper div.notification-wrap ul li p {
   font-size: 14px;
   color: #0D0D0D;
 }
-div.header-wrapper .header-right div.notification-wrap ul li p.a {
+div.header-wrapper div.notification-wrap ul li p.a {
   font-family: "Pretendard-Medium";
 }
-div.header-wrapper .header-right div.notification-wrap ul li p.b {
+div.header-wrapper div.notification-wrap ul li p.b {
   line-height: 17px;
   padding: 8px 0;
 }
-div.header-wrapper .header-right div.notification-wrap ul li p.c {
+div.header-wrapper div.notification-wrap ul li p.c {
   color: #6C757D;
 }
 div.header-wrapper aside {
@@ -405,6 +524,12 @@ div.header-wrapper aside {
   background: #FFFFFF;
   padding: 15px 30px 30px 30px;
   transition: right 0.5s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper aside {
+    width: 100%;
+    right: -100%;
+  }
 }
 div.header-wrapper aside.active {
   right: 0px;
@@ -446,6 +571,32 @@ div.header-wrapper aside div.menu-header div.login-button p.greeting-msg {
 div.header-wrapper aside div.menu-header div.login-button p.greeting-msg span {
   color: #0D0D0D;
   font-family: "Pretendard-SemiBold";
+}
+div.header-wrapper aside div.menu-header a.tops {
+  position: absolute;
+  right: 42px;
+  top: 1px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  text-indent: -9999px;
+}
+@media screen and (min-width: 769px) {
+  div.header-wrapper aside div.menu-header a.tops {
+    display: none;
+  }
+}
+div.header-wrapper aside div.menu-header a.tops.c {
+  background: url("../img/icons/icon_bell_black.svg") 0 2px no-repeat;
+}
+div.header-wrapper aside div.menu-header a.tops.c span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  right: 5px;
+  top: 7px;
+  border-radius: 50%;
+  background: #2EC4B6;
 }
 div.header-wrapper aside div.menu-header a.menu-close {
   position: absolute;
@@ -497,10 +648,25 @@ div.header-wrapper aside a.logout-button {
   color: #0D0D0D;
 }
 
+/* container */
+div.container-wrapper {
+  padding-top: 70px;
+}
+@media screen and (max-width: 768px) {
+  div.container-wrapper {
+    padding-top: 120px;
+  }
+}
 div.container-wrapper div.common-wrapper {
   padding: 100px 0 200px 0;
 }
+@media screen and (max-width: 768px) {
+  div.container-wrapper div.common-wrapper {
+    padding: 50px 0 50px 0;
+  }
+}
 
+/* footer */
 div.footer-wrapper {
   background: #0D0D0D;
   color: #A2A2A4;
@@ -508,8 +674,18 @@ div.footer-wrapper {
   line-height: 21px;
   padding: 60px 0;
 }
+@media screen and (max-width: 768px) {
+  div.footer-wrapper {
+    padding: 30px 0;
+  }
+}
 div.footer-wrapper div.top {
   padding-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  div.footer-wrapper div.top {
+    padding-bottom: 20px;
+  }
 }
 div.footer-wrapper div.top h2 {
   float: left;
@@ -521,6 +697,13 @@ div.footer-wrapper div.top h2 {
 div.footer-wrapper div.top div.footer-menu {
   float: right;
 }
+@media screen and (max-width: 768px) {
+  div.footer-wrapper div.top div.footer-menu {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
 div.footer-wrapper div.top div.footer-menu a {
   font-size: 12px;
   color: #FFFFFF;
@@ -529,6 +712,11 @@ div.footer-wrapper div.top div.footer-menu span {
   margin: 0 9px;
   font-size: 11px;
 }
+@media screen and (max-width: 768px) {
+  div.footer-wrapper div.top div.footer-menu span {
+    margin: 0 5px;
+  }
+}
 div.footer-wrapper div.bottom p {
   font-size: 14px;
   padding-bottom: 8px;
@@ -536,7 +724,14 @@ div.footer-wrapper div.bottom p {
 div.footer-wrapper div.bottom span {
   margin: 0 7px;
 }
+@media screen and (max-width: 768px) {
+  div.footer-wrapper div.bottom span {
+    display: block;
+    font-size: 0;
+  }
+}
 
+/* 공간찾기 */
 /* header, footer 공통 / common-wrapper 는 나머지 레이아숫에서 100% 아닌 것 */
 div.header-footer-inner,
 div.common-wrapper {
@@ -579,14 +774,25 @@ div.common-wrapper {
     margin: 0 20px;
   }
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  div.header-footer-inner.nomobile,
+  div.common-wrapper.nomobile {
+    margin: 0 0px;
+  }
+}
 
 /* modal default */
+@media screen and (max-width: 768px) {
+  .modal-dialog {
+    width: 320px !important;
+  }
+}
+
 .modal-content {
   border-radius: 20px;
   border: 0;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
-
 .modal-header {
   border-bottom: 0;
 }
@@ -594,9 +800,19 @@ div.common-wrapper {
   border-bottom: 1px solid #EAEAEA;
   padding: 15px 25px;
 }
+@media screen and (max-width: 768px) {
+  .modal-header.bordered {
+    padding: 11px 20px;
+  }
+}
 .modal-header h5 {
   font-size: 22px;
   font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 768px) {
+  .modal-header h5 {
+    font-size: 18px;
+  }
 }
 .modal-header a.modal-close-button {
   position: absolute;
@@ -607,9 +823,20 @@ div.common-wrapper {
   background: url("../img/icons/icon_close.svg") 50% 50% no-repeat;
   text-indent: -9999px;
 }
+@media screen and (max-width: 768px) {
+  .modal-header a.modal-close-button {
+    top: 16px;
+    right: 20px;
+  }
+}
 
 .modal-body {
   padding: 30px;
+}
+@media screen and (max-width: 768px) {
+  .modal-body {
+    padding: 20px;
+  }
 }
 .modal-body p.only-text-center {
   text-align: center;
@@ -617,11 +844,23 @@ div.common-wrapper {
   font-size: 18px;
   padding: 5px 0 15px 0;
 }
+@media screen and (max-width: 768px) {
+  .modal-body p.only-text-center {
+    font-size: 16px;
+    padding: 0px 0 0px 0;
+    line-height: 22px;
+  }
+}
 
 .modal-footer {
   display: block;
   padding: 30px;
   border-top: 1px solid #EAEAEA;
+}
+@media screen and (max-width: 768px) {
+  .modal-footer {
+    padding: 20px;
+  }
 }
 .modal-footer div.two-buttons a {
   width: 48%;
@@ -651,6 +890,15 @@ div.terms-content {
   overflow-y: auto;
   overflow-x: hidden;
   margin: 20px auto 20px auto;
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  div.terms-content {
+    margin: 0px auto 0px auto;
+    width: 100%;
+    height: 420px;
+    font-size: 16px;
+  }
 }
 
 /* 툴팁 박스 */
@@ -743,12 +991,12 @@ div.terms-content {
 
 /* modal size */
 .w-480 {
-  width: 480px !important;
+  width: 480px;
 }
 
 .w-660 {
-  width: 660px !important;
-  max-width: 660px !important;
+  width: 660px;
+  max-width: 660px;
 }
 
 .w-30-per {
@@ -761,6 +1009,23 @@ div.terms-content {
 
 .w-100-per {
   width: 100% !important;
+}
+
+/* 아주 작은 화면에서 강제 중앙(예외 처리) */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 0.5rem auto;
+  }
+}
+.film-common {
+  display: none;
+  position: fixed;
+  z-index: 102;
+  left: 0%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .film-normal {
@@ -776,7 +1041,7 @@ div.terms-content {
 
 a.go-top-btn {
   position: fixed;
-  z-index: 50;
+  z-index: 40;
   right: 100px;
   bottom: 50px;
   width: 50px;
@@ -784,6 +1049,14 @@ a.go-top-btn {
   border: 1px solid #E1E1E1;
   border-radius: 50%;
   background: rgb(255, 255, 255) url("../img/icons/icon_go_top.svg") 50% 50% no-repeat;
+}
+@media screen and (max-width: 768px) {
+  a.go-top-btn {
+    right: 30px;
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* login */
@@ -821,6 +1094,11 @@ div.login-wrapper p.and-txt, div.sign-up-wrapper p.and-txt {
   padding: 30px 0;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  div.login-wrapper p.and-txt, div.sign-up-wrapper p.and-txt {
+    padding: 15px 0;
+  }
+}
 div.login-wrapper p.login-title, div.sign-up-wrapper p.login-title {
   font-size: 18px;
   font-family: "Pretendard-SemiBold";
@@ -838,6 +1116,11 @@ div.login-wrapper div.login-buttom, div.sign-up-wrapper div.login-buttom {
   font-family: "Pretendard-Regular";
   color: #A2A2A4;
   padding-top: 10px;
+}
+@media screen and (max-width: 768px) {
+  div.login-wrapper div.login-buttom span, div.sign-up-wrapper div.login-buttom span {
+    display: none;
+  }
 }
 div.login-wrapper div.login-buttom a, div.sign-up-wrapper div.login-buttom a {
   color: #2EC4B6;
@@ -1070,13 +1353,34 @@ div.legal-wrapper div.title-area {
   border-bottom: 1px solid #C6CAD3;
   padding-bottom: 30px;
 }
+@media screen and (max-width: 768px) {
+  div.legal-wrapper div.title-area {
+    padding-bottom: 15px;
+  }
+}
 div.legal-wrapper div.title-area span.title {
   font-size: 40px;
   font-family: "Pretendard-SemiBold";
   color: #0D0D0D;
 }
+@media screen and (max-width: 768px) {
+  div.legal-wrapper div.title-area span.title {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  div.legal-wrapper div.title-area div.legal-date {
+    width: 100%;
+  }
+}
 div.legal-wrapper div.title-area div.legal-date span.t {
   margin-right: 20px;
+}
+@media screen and (max-width: 768px) {
+  div.legal-wrapper div.title-area div.legal-date span.t {
+    display: block;
+    padding: 5px 0 10px 0;
+  }
 }
 div.legal-wrapper div.text-area {
   margin-top: 60px;
@@ -1085,6 +1389,12 @@ div.legal-wrapper div.text-area {
   overflow-y: auto;
   font-size: 18px;
   color: #6C757D;
+}
+@media screen and (max-width: 768px) {
+  div.legal-wrapper div.text-area {
+    margin-top: 30px;
+    font-size: 16px;
+  }
 }
 
 /* global common */

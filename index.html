@@ -17,13 +17,14 @@
 <body>
 
 <!-- 공통 -->
-<div class="film-normal"></div>
+<div class="film-common"></div>
 <a href="#" class="go-top-btn"></a>
 <!-- //공통 -->
 
 <!-- header -->
 <div class="header-wrapper">
-	<div class="header-footer-inner clearfix">
+	<div class="header-footer-inner nomobile clearfix">
+		<div class="film-normal"></div>
 		<div class="header-left clearfix">
 			<h1>IT PLACE</h1>
 			<a href="#"><span>공간찾기</span></a>
@@ -35,58 +36,64 @@
 				<input type="text" placeholder="어떤 공간을 찾고 있나요? 예) 포근한 가정집" />
 				<button class="search-btn">검색</button>
 			</div>
-			<div class="notification-wrap">
-				<div class="inner" data-simplebar>
-					<ul>
-						<li>
-							<p class="a">예약</p>
-							<p class="b">신청하신 예스스튜디오 예약이 호스트에 의해 승인 되었습니다.</p>
-							<p class="c">2025/06/10 13:55</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<aside class="lnb-wrapper">
-		<div class="menu-header">
-			<div class="login-button">
-				<p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p>
-				<p class="greeting-msg" style="display: none;"><span>홍길동</span>님, 반갑습니다.</p>
-			</div>
-			<a href="#" class="menu-close">닫기</a>
 		</div>
-		<a href="#" class="logout-button">로그아웃</a>
-		<ul class="menus">
-			<li>
-				<a href="javascript:void(0);" class="depth-1">마이페이지</a>
-				<div class="submenus">
-					<a href="#" class="on">예약/결제 내역</a>
-					<a href="#">나의 문의</a>
-					<a href="#">개인 정보 관리</a>
+
+		<!-- 공지 알람 -->
+		<div class="notification-wrap">
+			<div class="inner" data-simplebar>
+				<ul>
+					<li>
+						<p class="a">예약</p>
+						<p class="b">신청하신 예스스튜디오 예약이 호스트에 의해 승인 되었습니다.</p>
+						<p class="c">2025/06/10 13:55</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- aside -->
+		<aside class="lnb-wrapper">
+			<div class="menu-header">
+				<div class="login-button">
+					<p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p>
+					<p class="greeting-msg" style="display: none;"><span>홍길동</span>님, 반갑습니다.</p>
 				</div>
-			</li>
-			<li>
-				<a href="javascript:void(0);" class="depth-1">호스트센터</a>
-				<div class="submenus">
-					<a href="#">공간 등록</a>
-					<a href="#">공간 관리</a>
-					<a href="#">예약 관리</a>
-					<a href="#">Q&A 관리</a>
-				</div>
-			</li>
-			<li>
-				<a href="javascript:void(0);" class="depth-1">고객센터</a>
-				<div class="submenus">
-					<a href="#">공지사항</a>
-					<a href="#">이벤트</a>
-					<a href="#">자주 묻는 질문</a>
-					<a href="#">문의하기</a>
-				</div>
-			</li>
-		</ul>
-	</aside>
+				<a href="#" class="tops c">알림<span class="notice"></span></a>
+				<a href="#" class="menu-close">닫기</a>
+			</div>
+			<a href="#" class="logout-button">로그아웃</a>
+			<ul class="menus">
+				<li>
+					<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+					<div class="submenus">
+						<a href="#" class="on">예약/결제 내역</a>
+						<a href="#">나의 문의</a>
+						<a href="#">개인 정보 관리</a>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+					<div class="submenus">
+						<a href="#">공간 등록</a>
+						<a href="#">공간 관리</a>
+						<a href="#">예약 관리</a>
+						<a href="#">Q&A 관리</a>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="depth-1">고객센터</a>
+					<div class="submenus">
+						<a href="#">공지사항</a>
+						<a href="#">이벤트</a>
+						<a href="#">자주 묻는 질문</a>
+						<a href="#">문의하기</a>
+					</div>
+				</li>
+			</ul>
+		</aside>
+		<!-- //aside -->
+	</div>
 </div>
 <!-- //header -->
 
