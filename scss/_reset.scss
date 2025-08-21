@@ -20,7 +20,9 @@
 }
 
 :root {
-	--gutter: 24px;
+	--gutter-large: 24px;
+	--gutter-middle: 20px;
+	--gutter-small: 16px;
 }
 * {box-sizing: border-box}
 html, body {

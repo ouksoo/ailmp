@@ -19,7 +19,9 @@
   font-style: normal;
 }
 :root {
-  --gutter: 24px;
+  --gutter-large: 24px;
+  --gutter-middle: 20px;
+  --gutter-small: 16px;
 }
 
 * {
@@ -736,6 +738,29 @@ div.footer-wrapper div.bottom span {
 }
 
 /* 공간찾기 */
+div.search-place {
+  position: fixed;
+  z-index: 40;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  height: 850px;
+  background: #F7F7F7;
+}
+div.search-place div.search-wrapper div.category-search {
+  float: left;
+  width: 44%;
+}
+div.search-place div.search-wrapper div.location-search {
+  float: left;
+  margin: 0 24px;
+  width: calc(28% - 48px);
+}
+div.search-place div.search-wrapper div.date-search {
+  float: right;
+  width: 28%;
+}
+
 /* header, footer 공통 / common-wrapper 는 나머지 레이아숫에서 100% 아닌 것 */
 div.header-footer-inner,
 div.common-wrapper {
@@ -1030,8 +1055,20 @@ div.terms-content {
 .masonry-section {
   -moz-column-count: 3;
        column-count: 3; /* 3열 고정 */
-  -moz-column-gap: var(--gutter);
-       column-gap: var(--gutter); /* 열 간 간격 24px */
+  -moz-column-gap: var(--gutter-large);
+       column-gap: var(--gutter-large); /* 열 간 간격 24px */
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .masonry-section {
+    -moz-column-gap: var(--gutter-middle);
+         column-gap: var(--gutter-middle);
+  }
+}
+@media screen and (max-width: 768px) {
+  .masonry-section {
+    -moz-column-gap: var(--gutter-small);
+         column-gap: var(--gutter-small);
+  }
 }
 
 @media (max-width: 767px) {
