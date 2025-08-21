@@ -221,3 +221,25 @@ div.terms-content {
 @media (max-width: 576px) {
   .modal-dialog { margin: .5rem auto; }
 }
+
+/* masonry list */
+.masonry-list { 
+	width: min(1440px, calc(100%)); 
+	margin: 0 auto 48px; 
+}
+.masonry-section {
+	column-count: 3;          /* 3열 고정 */
+	column-gap: var(--gutter); /* 열 간 간격 24px */
+}
+@media (max-width: 767px) { 
+	.masonry-section { 
+		column-count: 2; 
+	} 
+}
+/*
+@media (max-width: 600px) { 
+	.masonry-section { 
+		column-count: 1; 
+	} 
+}
+*/

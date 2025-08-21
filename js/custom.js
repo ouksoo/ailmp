@@ -2,22 +2,21 @@ var AILMP = {
 	stopDocumentClick : 'div.header-right, .search-box',
 	gnbMenuActive : function(){ 
 		//메뉴 활성화 시 서브메뉴 아코디언
-		$(".depth-1").click(function (e) {
+		$(".depth-1").on("click", function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 
-			let submenu = $(this).next(".submenus");
-			let parentLink = $(this);
+			const $submenu = $(this).next(".submenus");
+			const $link = $(this);
 
-			if (!submenu.is(":visible")) {
-				$(".submenus").slideUp();
-				$(".depth-1").removeClass("active");
-
-				submenu.stop(true, true).slideDown();
-				parentLink.addClass("active");
+			if ($submenu.is(":visible")) {
+				// 자기 것 닫기
+				$submenu.stop(true, true).slideUp(200);
+				$link.removeClass("active");
 			} else {
-				submenu.stop(true, true).slideUp();
-				parentLink.removeClass("active");
+				// 자기 것 열기 (다른 것들은 건드리지 않음)
+				$submenu.stop(true, true).slideDown(200);
+				$link.addClass("active");
 			}
 		});
 
@@ -69,10 +68,13 @@ var AILMP = {
 
 $(document).ready(function() {
 	AILMP.gnbMenuActive();
+
+	//bootstrap tooltip init
 	$('[data-tooltip="true"]').each(function () {
 		new bootstrap.Tooltip(this);
 	});
 
+	//bootstrap selectpicker init
 	$('.selectpicker').selectpicker();
 
 	//document click node show/hide

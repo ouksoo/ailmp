@@ -356,23 +356,52 @@ div.sign-up-wrapper {
 	}
 }
 
-/* account disabled */
-div.account-disabled-wrapper {
+/* 에러 화면 */
+div.error-container {
 	width: 600px;
 	margin: 200px auto 200px auto;
 	text-align: center;
 	padding-top: 185px;
-	background: url('../img/icons/icon_under.svg') 50% 0% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		margin: 50px auto 50px auto;
+		padding-top: 100px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
 
 	p.txt-1 {
 		font-family: 'Pretendard-SemiBold';
 		font-size: 24px;
 		color: $title-black;
 		padding-bottom: 10px;
+
+		@media screen and (max-width: 768px) {
+			font-size: 16px;
+		}
 	}
 	p.txt-2 {
 		font-size: 18px;
 		color: #6C757D;
+
+		@media screen and (max-width: 768px) {
+			font-size: 16px;
+		}
+	}
+}
+div.account-disabled-wrapper {
+	background: url('../img/icons/icon_under.svg') 50% 0% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 80px auto;
+	}
+}
+div.no-data-wrapper {
+	background: url('../img/icons/icon_nodata.svg') 50% 0% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
 	}
 }
 
@@ -409,6 +438,11 @@ div.legal-wrapper {
 					padding: 5px 0 10px 0;
 				}
 			}
+			.bootstrap-select {
+				@media screen and (max-width: 768px) {
+					width: 100%;
+				}	
+			}
 		}
 	}
 	div.text-area {
@@ -426,7 +460,17 @@ div.legal-wrapper {
 	}
 }
 
+/* common title */
+.common-title-area {
+	p.title {
+		font-size: 60px;
+		font-family: 'Pretendard-SemiBold';
 
+		@media screen and (max-width: 768px) {
+			font-size: 30px;
+		}
+	}
+}
 
 /* global common */
 .tooltip {

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>핀터레스트형 Masonry (CSS만 사용 / 3열 / 간격 24px)</title>
+  <style>
+    :root { --gutter: 24px; --bg:#f6f7fb; --card:#fff; --text:#111; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); }
+
+    .header { padding: 24px; text-align: center; }
+    .page { width: min(1100px, calc(100% - 48px)); margin: 0 auto 48px; }
+
+    /* 🔹 CSS 멀티컬럼으로 Masonry 구현 (JS 불필요) */
+    .masonry {
+      column-count: 3;          /* 3열 고정 */
+      column-gap: var(--gutter);/* 열 간 간격 24px */
+    }
+
+    /* 카드가 열 사이에서 쪼개지지 않도록 */
+    .card {
+      break-inside: avoid;      /* 최신 표준 */
+      -webkit-column-break-inside: avoid; /* Safari 구버전 */
+      -moz-column-break-inside: avoid;    /* Firefox 구버전 */
+      display: inline-block;    /* 멀티컬럼에서 너비 계산 안정화 */
+      width: 100%;
+      margin: 0 0 var(--gutter);
+      background: var(--card);
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .card img { width: 100%; height: auto; display: block; }
+    .card .content { padding: 12px 14px 16px; }
+    .card h3 { margin: 0 0 6px; font-size: 16px; }
+    .card p { margin: 0; font-size: 14px; opacity: .8; }
+
+    .note { color:#666; font-size: 14px; line-height:1.6; }
+
+    /* (선택) 반응형: 뷰포트가 좁아지면 2열/1열로 자동 전환 */
+    @media (max-width: 960px) { .masonry { column-count: 2; } }
+    @media (max-width: 600px) { .masonry { column-count: 1; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>핀터레스트형 Masonry (CSS만 사용 / 3열 / 간격 24px)</h1>
+    <p>JS 플러그인 없이 <code>column-count</code>로 구현한 간단 데모야.</p>
+  </header>
+
+  <main class="page">
+    <section class="masonry">
+      <!-- 데모 카드들: 이미지 높이를 다양하게 해서 효과 확인 -->
+      <article class="card">
+        <img src="https://picsum.photos/600/380?random=1" alt="샘플 이미지 1">
+        <div class="content"><h3>아이템 1</h3><p>임의 텍스트</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/500?random=2" alt="샘플 이미지 2">
+        <div class="content"><h3>아이템 2</h3><p>간단 설명</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/320?random=3" alt="샘플 이미지 3">
+        <div class="content"><h3>아이템 3</h3><p>라벨/태그 자리</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/720?random=4" alt="샘플 이미지 4">
+        <div class="content"><h3>아이템 4</h3><p>설명 텍스트</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/410?random=5" alt="샘플 이미지 5">
+        <div class="content"><h3>아이템 5</h3><p>짧은 설명</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/660?random=6" alt="샘플 이미지 6">
+        <div class="content"><h3>아이템 6</h3><p>콘텐츠 요약</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/300?random=7" alt="샘플 이미지 7">
+        <div class="content"><h3>아이템 7</h3><p>임의 텍스트</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/560?random=8" alt="샘플 이미지 8">
+        <div class="content"><h3>아이템 8</h3><p>간단 설명</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/450?random=9" alt="샘플 이미지 9">
+        <div class="content"><h3>아이템 9</h3><p>라벨/태그 자리</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/640?random=10" alt="샘플 이미지 10">
+        <div class="content"><h3>아이템 10</h3><p>설명 텍스트</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/360?random=11" alt="샘플 이미지 11">
+        <div class="content"><h3>아이템 11</h3><p>짧은 설명</p></div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/600/580?random=12" alt="샘플 이미지 12">
+        <div class="content"><h3>아이템 12</h3><p>콘텐츠 요약</p></div>
+      </article>
+    </section>
+
+    <p class="note">
+      🔎 참고:
+      <br>• 멀티컬럼 방식은 소스 순서가 열 단위로 채워져(1열 위→아래, 그 다음 2열…) DOM 순서와 시각 순서가 달라질 수 있어.
+      <br>• 동일한 행에서 카드의 가로 정렬/정렬 제어가 어렵고, 각 열의 하단 정렬도 제어가 제한적이야.
+      <br>• 이런 제약이 문제면 JS 기반 Masonry(이전 버전 캔버스)나 CSS Grid Masonry(브라우저 지원 확대 시)로 가는 게 좋아.
+    </p>
+  </main>
+</body>
+</html>

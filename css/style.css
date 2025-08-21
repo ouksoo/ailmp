@@ -18,6 +18,10 @@
   font-weight: 600;
   font-style: normal;
 }
+:root {
+  --gutter: 24px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -1017,6 +1021,32 @@ div.terms-content {
     margin: 0.5rem auto;
   }
 }
+/* masonry list */
+.masonry-list {
+  width: min(1440px, 100%);
+  margin: 0 auto 48px;
+}
+
+.masonry-section {
+  -moz-column-count: 3;
+       column-count: 3; /* 3열 고정 */
+  -moz-column-gap: var(--gutter);
+       column-gap: var(--gutter); /* 열 간 간격 24px */
+}
+
+@media (max-width: 767px) {
+  .masonry-section {
+    -moz-column-count: 2;
+         column-count: 2;
+  }
+}
+/*
+@media (max-width: 600px) { 
+	.masonry-section { 
+		column-count: 1; 
+	} 
+}
+*/
 .film-common {
   display: none;
   position: fixed;
@@ -1329,23 +1359,59 @@ div.sign-up-wrapper.password-modify p.txt-mypage-modify {
   padding-bottom: 60px;
 }
 
-/* account disabled */
-div.account-disabled-wrapper {
+/* 에러 화면 */
+div.error-container {
   width: 600px;
   margin: 200px auto 200px auto;
   text-align: center;
   padding-top: 185px;
-  background: url("../img/icons/icon_under.svg") 50% 0% no-repeat;
 }
-div.account-disabled-wrapper p.txt-1 {
+@media screen and (max-width: 768px) {
+  div.error-container {
+    width: 100%;
+    margin: 50px auto 50px auto;
+    padding-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+div.error-container p.txt-1 {
   font-family: "Pretendard-SemiBold";
   font-size: 24px;
   color: #0D0D0D;
   padding-bottom: 10px;
 }
-div.account-disabled-wrapper p.txt-2 {
+@media screen and (max-width: 768px) {
+  div.error-container p.txt-1 {
+    font-size: 16px;
+  }
+}
+div.error-container p.txt-2 {
   font-size: 18px;
   color: #6C757D;
+}
+@media screen and (max-width: 768px) {
+  div.error-container p.txt-2 {
+    font-size: 16px;
+  }
+}
+
+div.account-disabled-wrapper {
+  background: url("../img/icons/icon_under.svg") 50% 0% no-repeat;
+}
+@media screen and (max-width: 768px) {
+  div.account-disabled-wrapper {
+    background-size: 80px auto;
+  }
+}
+
+div.no-data-wrapper {
+  background: url("../img/icons/icon_nodata.svg") 50% 0% no-repeat;
+}
+@media screen and (max-width: 768px) {
+  div.no-data-wrapper {
+    background-size: 60px auto;
+  }
 }
 
 /* 서비스 이용 약관 */
@@ -1382,6 +1448,11 @@ div.legal-wrapper div.title-area div.legal-date span.t {
     padding: 5px 0 10px 0;
   }
 }
+@media screen and (max-width: 768px) {
+  div.legal-wrapper div.title-area div.legal-date .bootstrap-select {
+    width: 100%;
+  }
+}
 div.legal-wrapper div.text-area {
   margin-top: 60px;
   height: 800px;
@@ -1397,7 +1468,162 @@ div.legal-wrapper div.text-area {
   }
 }
 
+/* common title */
+.common-title-area p.title {
+  font-size: 60px;
+  font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 768px) {
+  .common-title-area p.title {
+    font-size: 30px;
+  }
+}
+
 /* global common */
 .tooltip {
   margin-top: -10px !important;
+}
+
+div.place-list-wrapper p.txt-1 {
+  font-family: "Pretendard-SemiBold";
+  font-size: 24px;
+  padding-top: 15px;
+}
+@media screen and (max-width: 768px) {
+  div.place-list-wrapper p.txt-1 {
+    padding-top: 5px;
+    font-size: 16px;
+  }
+}
+div.place-list-wrapper p.txt-1 span {
+  color: #2EC4B6;
+}
+div.place-list-wrapper div.place-tag-area {
+  padding: 60px 0 20px 0;
+  border-bottom: 1px solid #C6CAD3;
+}
+@media screen and (max-width: 768px) {
+  div.place-list-wrapper div.place-tag-area {
+    padding: 45px 0 5px 0;
+  }
+}
+div.place-list-wrapper div.place-tag-area ul li {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+div.place-list-wrapper div.place-tag-area ul li a {
+  display: block;
+  padding: 9px 12px;
+  border: 1px solid #A2A2A4;
+  border-radius: 100px;
+  color: #A2A2A4;
+  font-size: 12px;
+}
+div.place-list-wrapper div.place-tag-area ul li a.on {
+  border: 1px solid #2EC4B6;
+  background: #2EC4B6;
+  color: #FFFFFF;
+}
+div.place-list-wrapper main.masonry-list section.masonry-section {
+  padding-top: 60px;
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article {
+  position: relative;
+  border: 0;
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 40px;
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card div.infos {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+@media screen and (max-width: 768px) {
+  div.place-list-wrapper main.masonry-list section.masonry-section article.card div.infos {
+    display: none;
+  }
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card div.infos span {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #fff;
+  color: #0D0D0D;
+  font-size: 14px;
+  border-radius: 100px;
+  margin-right: 10px;
+  border: 1px solid #F5F5F5;
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card div.image {
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card div.image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card .content {
+  padding: 0px 0 0 15px;
+}
+@media screen and (max-width: 768px) {
+  div.place-list-wrapper main.masonry-list section.masonry-section article.card .content {
+    padding: 0px 0 0 0px;
+  }
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card p.text-1 {
+  font-size: 20px;
+  color: #6C757D;
+  padding-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  div.place-list-wrapper main.masonry-list section.masonry-section article.card p.text-1 {
+    font-size: 14px;
+    padding-top: 10px;
+  }
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card p.text-2 {
+  font-size: 24px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  padding-top: 5px;
+}
+@media screen and (max-width: 768px) {
+  div.place-list-wrapper main.masonry-list section.masonry-section article.card p.text-2 {
+    font-size: 16px;
+    padding-top: 2px;
+  }
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card p.text-3 {
+  font-size: 24px;
+  color: #2EC4B6;
+  padding-top: 10px;
+}
+@media screen and (max-width: 768px) {
+  div.place-list-wrapper main.masonry-list section.masonry-section article.card p.text-3 {
+    font-size: 16px;
+    padding-top: 5px;
+  }
+}
+div.place-list-wrapper main.masonry-list section.masonry-section article.card p.text-3 span {
+  font-size: 18px;
+  color: #A2A2A4;
+}
+@media screen and (max-width: 768px) {
+  div.place-list-wrapper main.masonry-list section.masonry-section article.card p.text-3 span {
+    font-size: 16px;
+  }
+}
+div.place-list-wrapper main.masonry-list a.more {
+  display: block;
+  color: #0D0D0D;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 60px;
 }/*# sourceMappingURL=style.css.map */

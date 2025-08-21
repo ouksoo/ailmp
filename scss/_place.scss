@@ -1,0 +1,156 @@
+div.place-list-wrapper {
+
+	p.txt-1 {
+		font-family: 'Pretendard-SemiBold';
+		font-size: 24px;
+		padding-top: 15px;
+
+		@media screen and (max-width: 768px) {
+			padding-top: 5px;
+			font-size: 16px;
+		}
+		span {
+			color: $main-color;
+		}
+	}
+	div.place-tag-area {
+		padding: 60px 0 20px 0;
+		border-bottom: 1px solid #C6CAD3;
+
+		@media screen and (max-width: 768px) {
+			padding: 45px 0 5px 0;
+		}
+
+		ul {
+
+			li {
+				float: left;
+				margin-right: 10px;
+				margin-bottom: 10px;
+
+				a {
+					display: block;
+					padding: 9px 12px;
+					border: 1px solid #A2A2A4;
+					border-radius: 100px;
+					color: #A2A2A4;
+					font-size: 12px;
+
+					&.on {
+						border: 1px solid $main-color;
+						background: $main-color;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+	main.masonry-list {
+
+		section.masonry-section {
+			padding-top: 60px;
+
+			article {
+				position: relative;
+				border: 0;
+
+				&.card {
+					break-inside: avoid;
+					-webkit-column-break-inside: avoid;
+					-moz-column-break-inside: avoid;
+					display: inline-block;
+					width: 100%;
+					margin-bottom: 40px;
+					
+					
+					div.infos {
+						position: absolute;
+						top: 20px; left: 20px;
+
+						@media screen and (max-width: 768px) {
+							display: none; 
+						}
+
+						span {
+							display: inline-block;
+							padding: 8px 14px;
+							background: #fff;
+							color: $title-black;
+							font-size: 14px;
+							border-radius: 100px;
+							margin-right: 10px;
+							border: 1px solid #F5F5F5;
+						}
+					}
+					div.image {
+						border-radius: 14px; 
+						box-shadow: 0 10px 20px rgba(0,0,0,.06);
+						
+						img {
+							width: 100%; 
+							height: auto; 
+							display: block; 
+						}
+					}
+					.content {
+						padding: 0px 0 0 15px; 
+
+						@media screen and (max-width: 768px) {
+							padding: 0px 0 0 0px; 
+						}
+					}
+					p {
+						&.text-1 {
+							font-size: 20px;
+							color: #6C757D;
+							padding-top: 20px;
+
+							@media screen and (max-width: 768px) {
+								font-size: 14px;
+								padding-top: 10px;
+							}
+						}
+						&.text-2 {
+							font-size: 24px;
+							color: $title-black;
+							font-family: 'Pretendard-SemiBold';
+							padding-top: 5px;
+
+							@media screen and (max-width: 768px) {
+								font-size: 16px;
+								padding-top: 2px;
+							}
+						}
+						&.text-3 {
+							font-size: 24px;
+							color: $main-color;
+							padding-top: 10px;
+
+							@media screen and (max-width: 768px) {
+								font-size: 16px;
+								padding-top: 5px;
+							}
+
+							span {
+								font-size: 18px;
+								color: #A2A2A4;
+
+								@media screen and (max-width: 768px) {
+									font-size: 16px
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		a.more {
+			display: block;
+			color: $title-black;
+			font-size: 24px;
+			text-align: center;
+			margin-top: 60px;
+		}
+	}
+}
+
