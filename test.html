@@ -1,112 +1,129 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>핀터레스트형 Masonry (CSS만 사용 / 3열 / 간격 24px)</title>
+  <meta charset="utf-8">
+  <title>Flatpickr Inline Range (가로 100%)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <style>
-    :root { --gutter: 24px; --bg:#f6f7fb; --card:#fff; --text:#111; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); }
-
-    .header { padding: 24px; text-align: center; }
-    .page { width: min(1100px, calc(100% - 48px)); margin: 0 auto 48px; }
-
-    /* 🔹 CSS 멀티컬럼으로 Masonry 구현 (JS 불필요) */
-    .masonry {
-      column-count: 3;          /* 3열 고정 */
-      column-gap: var(--gutter);/* 열 간 간격 24px */
+    body {
+      margin: 24px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif;
     }
 
-    /* 카드가 열 사이에서 쪼개지지 않도록 */
-    .card {
-      break-inside: avoid;      /* 최신 표준 */
-      -webkit-column-break-inside: avoid; /* Safari 구버전 */
-      -moz-column-break-inside: avoid;    /* Firefox 구버전 */
-      display: inline-block;    /* 멀티컬럼에서 너비 계산 안정화 */
+    /* ▽ 달력 전체를 항상 부모 폭에 맞게 */
+    .flatpickr-calendar {
+      width: 100% !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    .flatpickr-innerContainer,
+    .flatpickr-days {
+      width: 100% !important;
+    }
+
+    /* ▽ 셀(일자) 크기를 %로 계산해서 꽉 채우기 (7열 기준) */
+    .flatpickr-day {
+      width: calc(100% / 7);
+      max-width: none;
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+    }
+
+    /* 요일 헤더도 동일하게 7등분 */
+    .flatpickr-weekdays {
+      display: flex;
       width: 100%;
-      margin: 0 0 var(--gutter);
-      background: var(--card);
-      border-radius: 14px; overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
     }
-    .card img { width: 100%; height: auto; display: block; }
-    .card .content { padding: 12px 14px 16px; }
-    .card h3 { margin: 0 0 6px; font-size: 16px; }
-    .card p { margin: 0; font-size: 14px; opacity: .8; }
+    .flatpickr-weekday {
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+    }
 
-    .note { color:#666; font-size: 14px; line-height:1.6; }
+    /* ▽ 기본 월/년 UI 숨김 → 커스텀 헤더 사용 */
+    .flatpickr-current-month .cur-month,
+    .flatpickr-current-month input.cur-year,
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+      display: none !important;
+    }
 
-    /* (선택) 반응형: 뷰포트가 좁아지면 2열/1열로 자동 전환 */
-    @media (max-width: 960px) { .masonry { column-count: 2; } }
-    @media (max-width: 600px) { .masonry { column-count: 1; } }
+    /* ▽ 커스텀 헤더 */
+    .fp-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 0 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .fp-header .fp-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      background: #fff;
+      cursor: pointer;
+    }
+    .fp-header .fp-label {
+      flex: none;
+      min-width: 90px;
+      text-align: center;
+    }
+
+	
   </style>
 </head>
 <body>
-  <header class="header">
-    <h1>핀터레스트형 Masonry (CSS만 사용 / 3열 / 간격 24px)</h1>
-    <p>JS 플러그인 없이 <code>column-count</code>로 구현한 간단 데모야.</p>
-  </header>
+  <h3>항상 표시되는 날짜 범위 (100% 폭, 1달력)</h3>
+  <div id="calendar"></div>
 
-  <main class="page">
-    <section class="masonry">
-      <!-- 데모 카드들: 이미지 높이를 다양하게 해서 효과 확인 -->
-      <article class="card">
-        <img src="https://picsum.photos/600/380?random=1" alt="샘플 이미지 1">
-        <div class="content"><h3>아이템 1</h3><p>임의 텍스트</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/500?random=2" alt="샘플 이미지 2">
-        <div class="content"><h3>아이템 2</h3><p>간단 설명</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/320?random=3" alt="샘플 이미지 3">
-        <div class="content"><h3>아이템 3</h3><p>라벨/태그 자리</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/720?random=4" alt="샘플 이미지 4">
-        <div class="content"><h3>아이템 4</h3><p>설명 텍스트</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/410?random=5" alt="샘플 이미지 5">
-        <div class="content"><h3>아이템 5</h3><p>짧은 설명</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/660?random=6" alt="샘플 이미지 6">
-        <div class="content"><h3>아이템 6</h3><p>콘텐츠 요약</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/300?random=7" alt="샘플 이미지 7">
-        <div class="content"><h3>아이템 7</h3><p>임의 텍스트</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/560?random=8" alt="샘플 이미지 8">
-        <div class="content"><h3>아이템 8</h3><p>간단 설명</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/450?random=9" alt="샘플 이미지 9">
-        <div class="content"><h3>아이템 9</h3><p>라벨/태그 자리</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/640?random=10" alt="샘플 이미지 10">
-        <div class="content"><h3>아이템 10</h3><p>설명 텍스트</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/360?random=11" alt="샘플 이미지 11">
-        <div class="content"><h3>아이템 11</h3><p>짧은 설명</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/580?random=12" alt="샘플 이미지 12">
-        <div class="content"><h3>아이템 12</h3><p>콘텐츠 요약</p></div>
-      </article>
-    </section>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script>
+    function updateHeaderLabel(instance) {
+      const d = new Date(instance.currentYear, instance.currentMonth, 1);
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      instance._fpLabel.textContent = `${y}.${m}`;
+    }
 
-    <p class="note">
-      🔎 참고:
-      <br>• 멀티컬럼 방식은 소스 순서가 열 단위로 채워져(1열 위→아래, 그 다음 2열…) DOM 순서와 시각 순서가 달라질 수 있어.
-      <br>• 동일한 행에서 카드의 가로 정렬/정렬 제어가 어렵고, 각 열의 하단 정렬도 제어가 제한적이야.
-      <br>• 이런 제약이 문제면 JS 기반 Masonry(이전 버전 캔버스)나 CSS Grid Masonry(브라우저 지원 확대 시)로 가는 게 좋아.
-    </p>
-  </main>
+    flatpickr('#calendar', {
+      inline: true,
+      mode: 'range',
+      dateFormat: 'Y-m-d',
+      defaultDate: [
+        new Date(Date.now() - 7*24*60*60*1000),
+        new Date()
+      ],
+      locale: flatpickr.l10ns.ko,
+      monthSelectorType: 'static',
+      onReady(selectedDates, dateStr, instance) {
+        const monthsEl = instance.calendarContainer.querySelector('.flatpickr-months');
+        if (!instance._fpHeader) {
+          const header = document.createElement('div');
+          header.className = 'fp-header';
+          const prev = document.createElement('button');
+          prev.type = 'button'; prev.className = 'fp-btn'; prev.innerHTML = '&#9664;';
+          const label = document.createElement('div');
+          label.className = 'fp-label';
+          const next = document.createElement('button');
+          next.type = 'button'; next.className = 'fp-btn'; next.innerHTML = '&#9654;';
+          header.append(prev, label, next);
+          monthsEl.appendChild(header);
+          instance._fpHeader = header;
+          instance._fpLabel = label;
+          prev.addEventListener('click', () => { instance.changeMonth(-1); updateHeaderLabel(instance); });
+          next.addEventListener('click', () => { instance.changeMonth(1);  updateHeaderLabel(instance); });
+        }
+        updateHeaderLabel(instance);
+      },
+      onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
+      onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
+    });
+  </script>
 </body>
 </html>

@@ -344,6 +344,7 @@ div.header-wrapper .header-right a.tops.a {
   }
 }
 div.header-wrapper .header-right a.tops.c {
+  display: none;
   position: relative;
   background: url("../img/icons/icon_bell_black.svg") 0 2px no-repeat;
 }
@@ -407,12 +408,13 @@ div.header-wrapper .header-right div.b p.bloom-login span {
 div.header-wrapper .header-right div.search-box {
   display: none;
   position: absolute;
-  left: -360px;
+  right: 118px;
   top: -5px;
   height: 44px;
-  width: 400px;
+  width: 0px;
   background: #f0f0f0;
   border-radius: 22px 0 0 22px;
+  transition: width 0.5s ease-in-out;
 }
 @media screen and (max-width: 768px) {
   div.header-wrapper .header-right div.search-box {
@@ -420,17 +422,19 @@ div.header-wrapper .header-right div.search-box {
     left: 15px;
     top: 10px;
     height: 36px;
-    width: 70%;
+    width: 0%;
     background: #f0f0f0;
     border-radius: 22px 0 0 22px;
   }
 }
 div.header-wrapper .header-right div.search-box input[type=text] {
   width: 85%;
-  margin: 10px 0 0 25px;
+  /*margin: 10px 0 0 25px;*/
+  margin: 10px 0 0 0;
   background: #f0f0f0;
   border: 0;
   outline: none;
+  transition: margin 0.5s ease-in-out;
 }
 @media screen and (max-width: 768px) {
   div.header-wrapper .header-right div.search-box input[type=text] {
@@ -445,7 +449,9 @@ div.header-wrapper .header-right div.search-box input[type=text]::placeholder {
   color: #C6CAD3;
 }
 div.header-wrapper .header-right div.search-box button.search-btn {
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 44px;
   height: 44px;
   border: 0;
@@ -456,8 +462,32 @@ div.header-wrapper .header-right div.search-box button.search-btn {
 }
 @media screen and (max-width: 768px) {
   div.header-wrapper .header-right div.search-box button.search-btn {
+    right: -12px;
     width: 36px;
     height: 36px;
+    transition: right 0.5s ease-in-out;
+  }
+}
+div.header-wrapper .header-right div.search-box.active {
+  width: 400px;
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right div.search-box.active {
+    width: 70%;
+  }
+}
+div.header-wrapper .header-right div.search-box.active input[type=text] {
+  margin: 10px 0 0 25px;
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right div.search-box.active input[type=text] {
+    margin: 6px 0 0 20px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-right div.search-box.active button.search-btn {
+    right: 0px;
   }
 }
 div.header-wrapper div.notification-wrap {
@@ -742,23 +772,312 @@ div.search-place {
   position: fixed;
   z-index: 40;
   left: 0;
-  top: 70px;
+  top: -850px;
   width: 100%;
   height: 850px;
   background: #F7F7F7;
+  transition: top 0.7s ease-in-out;
+}
+div.search-place.show {
+  top: 70px;
+}
+div.search-place div.search-wrapper {
+  position: relative;
+  padding-top: 46px;
+}
+div.search-place div.search-wrapper a.search-place-close {
+  position: absolute;
+  right: 0;
+  top: 14px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons/icon_close.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
+}
+div.search-place div.search-wrapper div.title {
+  border-bottom: 1px solid #EAEAEA;
+  padding: 22px 20px;
+}
+div.search-place div.search-wrapper div.title span {
+  float: left;
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+  padding-left: 35px;
+  height: 26px;
+  color: #0D0D0D;
+}
+div.search-place div.search-wrapper div.title span.a {
+  background: url("../img/icons/icon_category.svg") 0% 0% no-repeat;
+}
+div.search-place div.search-wrapper div.title span.b {
+  background: url("../img/icons/icon_location.svg") 0% 0% no-repeat;
+}
+div.search-place div.search-wrapper div.title span.c {
+  background: url("../img/icons/icon_date.svg") 0% 0% no-repeat;
+}
+div.search-place div.search-wrapper div.title a {
+  float: right;
+  font-size: 12px;
+  background: url("../img/icons/icon_refresh.svg") 0% 50% no-repeat;
+  margin-top: 5px;
+  padding-left: 15px;
+  color: #0D0D0D;
 }
 div.search-place div.search-wrapper div.category-search {
   float: left;
-  width: 44%;
+  width: 46%;
+  height: 675px;
+  background: #fff;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1600px) {
+  div.search-place div.search-wrapper div.category-search {
+    width: 42%;
+  }
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f {
+  float: left;
+  width: 42%;
+  height: 605px;
+  border-right: 1px solid #EAEAEA;
+  padding: 22px 25px;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a {
+  display: block;
+  height: 26px;
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+  margin-bottom: 44px;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a span {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 100px;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.a span {
+  background: #C6CAD3 url("../img/icons/icon_category_1.svg") 50% 46% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.a.on span {
+  background: #2EC4B6 url("../img/icons/icon_category_1.svg") 50% 46% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.b span {
+  background: #C6CAD3 url("../img/icons/icon_category_2.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.b.on span {
+  background: #2EC4B6 url("../img/icons/icon_category_2.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.c span {
+  background: #C6CAD3 url("../img/icons/icon_category_3.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.c.on span {
+  background: #2EC4B6 url("../img/icons/icon_category_3.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.d span {
+  background: #C6CAD3 url("../img/icons/icon_category_4.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.d.on span {
+  background: #2EC4B6 url("../img/icons/icon_category_4.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.e span {
+  background: #C6CAD3 url("../img/icons/icon_category_5.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.e.on span {
+  background: #2EC4B6 url("../img/icons/icon_category_5.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.f span {
+  background: #C6CAD3 url("../img/icons/icon_category_6.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.f.on span {
+  background: #2EC4B6 url("../img/icons/icon_category_6.svg") 50% 50% no-repeat;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.f a.on {
+  color: #2EC4B6;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s {
+  float: right;
+  width: 58%;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll {
+  padding: 0 25px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 600px;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont {
+  padding: 25px 0 10px 0;
+  border-bottom: 1px solid #EAEAEA;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont div.semi-title {
+  padding-bottom: 15px;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont div.semi-title span {
+  float: left;
+  font-size: 16px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont div.semi-title a {
+  float: right;
+  font-size: 12px;
+  color: #2EC4B6;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li {
+  float: left;
+  display: flex;
+  align-items: center;
+  margin: 0 10px 10px 0;
+  width: calc(34% - 10px);
+  border-radius: 8px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 15px;
+  cursor: pointer;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li:nth-child(3n) {
+  margin: 0 0px 10px 0;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li.on {
+  background: #2EC4B6;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li.on a {
+  color: #FFFFFF;
+}
+div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li a {
+  display: block;
+  color: #6C757D;
+  padding: 0 10px;
 }
 div.search-place div.search-wrapper div.location-search {
   float: left;
   margin: 0 24px;
-  width: calc(28% - 48px);
+  width: calc(30% - 48px);
+  height: 675px;
+  background: #fff;
+  border-radius: 10px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  div.search-place div.search-wrapper div.location-search {
+    margin: 0 20px;
+    width: calc(28% - 40px);
+  }
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap {
+  padding: 0 25px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 600px;
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont {
+  padding: 25px 0 10px 0;
+  border-bottom: 1px solid #EAEAEA;
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont div.semi-title {
+  padding-bottom: 15px;
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont div.semi-title span {
+  float: left;
+  font-size: 16px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont div.semi-title a {
+  float: right;
+  font-size: 12px;
+  color: #2EC4B6;
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li {
+  float: left;
+  display: flex;
+  align-items: center;
+  margin: 0 10px 10px 0;
+  width: calc(34% - 10px);
+  border-radius: 8px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 15px;
+  cursor: pointer;
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li:nth-child(3n) {
+  margin: 0 0px 10px 0;
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li.on {
+  background: #2EC4B6;
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li.on a {
+  color: #FFFFFF;
+}
+div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li a {
+  display: block;
+  color: #6C757D;
+  padding: 0 10px;
 }
 div.search-place div.search-wrapper div.date-search {
   float: right;
-  width: 28%;
+  width: 24%;
+  height: 675px;
+  background: #fff;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1600px) {
+  div.search-place div.search-wrapper div.date-search {
+    width: 28%;
+  }
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap {
+  padding: 0 25px;
+  height: 600px;
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont {
+  padding: 15px 0 25px 0;
+  border-bottom: 1px solid #EAEAEA;
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont.se {
+  padding: 15px 0 0px 0;
+  border-bottom: 0;
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.semi-title {
+  padding-bottom: 15px;
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.semi-title span {
+  font-size: 16px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.area-1 a {
+  display: inline-block;
+  width: 46.5%;
+  padding: 10px 0px;
+  font-size: 14px;
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.area-1 a.a {
+  float: left;
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.area-1 a.b {
+  float: right;
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.area .bootstrap-select > .dropdown-toggle {
+  padding: 9px 15px;
+  font-size: 14px;
+}
+div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.area .both {
+  width: 46.5% !important;
+}
+@media screen and (max-width: 1600px) {
+  div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.area .both {
+    width: 46% !important;
+  }
+}
+div.search-place div.search-apply {
+  text-align: center;
+  padding-top: 30px;
+}
+div.search-place div.search-apply a {
+  display: inline-block;
+  padding: 17px 80px;
 }
 
 /* header, footer 공통 / common-wrapper 는 나머지 레이아숫에서 100% 아닌 것 */
@@ -808,6 +1127,131 @@ div.common-wrapper {
   div.common-wrapper.nomobile {
     margin: 0 0px;
   }
+}
+
+/* flatpickr calendar */
+.flatpickr-calendar {
+  width: 100% !important;
+  box-shadow: none !important;
+  border: none !important;
+  /* ▽ 셀(일자) 크기를 %로 계산해서 꽉 채우기 (7열 기준) */
+  /* 요일 헤더도 동일하게 7등분 */
+  /* ▽ 기본 월/년 UI 숨김 → 커스텀 헤더 사용 */
+}
+.flatpickr-calendar .dayContainer {
+  min-width: 100%;
+  max-width: 100%;
+}
+.flatpickr-calendar .flatpickr-day.today {
+  border-color: #fff;
+}
+.flatpickr-calendar .flatpickr-innerContainer,
+.flatpickr-calendar .flatpickr-days {
+  display: block;
+  width: 100% !important;
+}
+.flatpickr-calendar .flatpickr-months, .flatpickr-calendar .flatpickr-rContainer {
+  display: block;
+}
+.flatpickr-calendar .flatpickr-day {
+  width: 14.2857142857%;
+  max-width: none;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.flatpickr-calendar .flatpickr-weekdays {
+  display: flex;
+  width: 100%;
+}
+.flatpickr-calendar .flatpickr-weekday {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+}
+.flatpickr-calendar .flatpickr-current-month .cur-month,
+.flatpickr-calendar .flatpickr-current-month input.cur-year,
+.flatpickr-calendar .flatpickr-prev-month,
+.flatpickr-calendar .flatpickr-next-month {
+  display: none !important;
+}
+.flatpickr-calendar .fp-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.flatpickr-calendar .fp-header .fp-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 0;
+  background: #fff;
+  cursor: pointer;
+}
+.flatpickr-calendar .fp-header .fp-btn.preview {
+  background: url("../img/icons/icon_preview.svg") 50% 50% no-repeat;
+}
+.flatpickr-calendar .fp-header .fp-btn.next {
+  background: url("../img/icons/icon_next.svg") 50% 50% no-repeat;
+}
+.flatpickr-calendar .fp-header .fp-label {
+  flex: none;
+  min-width: 90px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Pretendard-SemiBold";
+}
+.flatpickr-calendar .flatpickr-day.selected,
+.flatpickr-calendar .flatpickr-day.startRange,
+.flatpickr-calendar .flatpickr-day.endRange,
+.flatpickr-calendar .flatpickr-day.selected.inRange,
+.flatpickr-calendar .flatpickr-day.startRange.inRange,
+.flatpickr-calendar .flatpickr-day.endRange.inRange,
+.flatpickr-calendar .flatpickr-day.selected:focus,
+.flatpickr-calendar .flatpickr-day.startRange:focus,
+.flatpickr-calendar .flatpickr-day.endRange:focus,
+.flatpickr-calendar .flatpickr-day.selected:hover,
+.flatpickr-calendar .flatpickr-day.startRange:hover,
+.flatpickr-calendar .flatpickr-day.endRange:hover,
+.flatpickr-calendar .flatpickr-day.selected.prevMonthDay,
+.flatpickr-calendar .flatpickr-day.startRange.prevMonthDay,
+.flatpickr-calendar .flatpickr-day.endRange.prevMonthDay,
+.flatpickr-calendar .flatpickr-day.selected.nextMonthDay,
+.flatpickr-calendar .flatpickr-day.startRange.nextMonthDay,
+.flatpickr-calendar .flatpickr-day.endRange.nextMonthDay {
+  background: #2EC4B6;
+  border: 1px solid #2EC4B6;
+}
+.flatpickr-calendar .flatpickr-day.inRange,
+.flatpickr-calendar .flatpickr-day.prevMonthDay.inRange,
+.flatpickr-calendar .flatpickr-day.nextMonthDay.inRange,
+.flatpickr-calendar .flatpickr-day.today.inRange,
+.flatpickr-calendar .flatpickr-day.prevMonthDay.today.inRange,
+.flatpickr-calendar .flatpickr-day.nextMonthDay.today.inRange,
+.flatpickr-calendar .flatpickr-day:hover,
+.flatpickr-calendar .flatpickr-day.prevMonthDay:hover,
+.flatpickr-calendar .flatpickr-day.nextMonthDay:hover,
+.flatpickr-calendar .flatpickr-day:focus,
+.flatpickr-calendar .flatpickr-day.prevMonthDay:focus,
+.flatpickr-calendar .flatpickr-day.nextMonthDay:focus {
+  background: #A8E4DF;
+  border: 1px solid #A8E4DF;
+  color: #fff;
+}
+.flatpickr-calendar .flatpickr-day.inRange {
+  border-radius: 0;
+  box-shadow: -5px 0 0 #A8E4DF, 5px 0 0 #A8E4DF;
+}
+.flatpickr-calendar .flatpickr-months .flatpickr-month {
+  display: none;
+}
+.flatpickr-calendar .flatpickr-calendar .flatpickr-weekday {
+  font-size: 14px;
+  color: #A2A2A4;
 }
 
 /* modal default */
@@ -911,6 +1355,9 @@ div.common-wrapper {
 }
 .modal-button.light-gray {
   background: #C6CAD3;
+}
+.modal-button.dark-gray {
+  background: #6C757D;
 }
 
 div.terms-content {
