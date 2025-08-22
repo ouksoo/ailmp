@@ -1253,6 +1253,11 @@ div.common-wrapper {
   font-size: 14px;
   color: #A2A2A4;
 }
+.flatpickr-calendar .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),
+.flatpickr-calendar .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)),
+.flatpickr-calendar .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
+  box-shadow: -10px 0 0 #2EC4B6;
+}
 
 /* modal default */
 @media screen and (max-width: 768px) {
@@ -1851,6 +1856,11 @@ div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul li {
   font-size: 14px;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul li {
+    flex: 0 0 calc(33% - 6px);
+  }
+}
 div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.inner ul li:nth-child(3n-1) {
   margin: 0 10px 10px 10px;
 }
@@ -1902,8 +1912,18 @@ div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area div.se
   display: inline-block;
   width: 150px;
 }
+@media screen and (max-width: 768px) {
+  div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area div.selected-areas ul li span {
+    float: left;
+  }
+}
 div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area div.selected-areas ul li a {
   color: #2EC4B6;
+}
+@media screen and (max-width: 768px) {
+  div.sign-up-wrapper.step02 div.setting-wrapper div.area-1 div.select-area div.selected-areas ul li a {
+    float: right;
+  }
 }
 div.sign-up-wrapper.step03 p.member-step1-tit {
   padding-bottom: 10px;

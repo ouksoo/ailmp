@@ -300,6 +300,10 @@ div.sign-up-wrapper {
 							font-size: 14px;
 							cursor: pointer;
 
+							@media screen and (max-width: 768px) {
+								flex: 0 0 calc(33% - 6px);
+							}
+
 							&:nth-child(3n-1) {
 								margin: 0 10px 10px 10px;
 							}
@@ -355,9 +359,17 @@ div.sign-up-wrapper {
 								span {
 									display: inline-block;
 									width: 150px;
+
+									@media screen and (max-width: 768px) {
+										float: left;
+									}
 								}
 								a {
 									color: $main-color;
+
+									@media screen and (max-width: 768px) {
+										float: right;
+									}
 								}
 							}
 						}
