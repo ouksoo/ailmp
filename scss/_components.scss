@@ -36,6 +36,7 @@
 	}
 	a.modal-close-button {
 		position: absolute;
+		z-index: 10;
 		right: 30px;
 		top: 20px;
 		width: 20px; height: 20px;
@@ -93,6 +94,10 @@
 	text-align: center;
 	padding: 17px 0;
 	border-radius: 8px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
 
 	&.green {
 		background: $main-color;
@@ -152,24 +157,29 @@ div.terms-content {
 
 /* checkbox */
 .custom-checkbox {
-  display: none;
+	display: none;
 }
 .custom-label {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	font-size: 20px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 14px;
+	}
 }
 .custom-label::before {
-  content: "";
-  display: inline-block;
-  width: 26px;  /* 아이콘 크기 */
-  height: 26px;
-  margin-right: 10px;
-  background: url("../img/icons/icon_check.svg") no-repeat center/cover;
-  border-radius: 4px;
+	content: "";
+	display: inline-block;
+	width: 26px;  /* 아이콘 크기 */
+	height: 26px;
+	margin-right: 10px;
+	background: url("../img/icons/icon_check.svg") no-repeat center/cover;
+	border-radius: 4px;
 }
 .custom-checkbox:checked + .custom-label::before {
-  background: url("../img/icons/icon_checked.svg") no-repeat center/cover;
+	background: url("../img/icons/icon_checked.svg") no-repeat center/cover;
 }
 
 /* selectbox */
@@ -180,6 +190,10 @@ div.terms-content {
 	padding: 15px 20px;
 	font-size: 18px;
 	background: #fff !important;
+
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
 }
 .dropdown-toggle::after {
 	width: 16px;

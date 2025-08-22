@@ -62,6 +62,10 @@ div.login-wrapper, div.sign-up-wrapper {
 		padding-left: 20px;
 		font-weight: 500;
 
+		@media screen and (max-width: 768px) {
+			font-size: 16px;
+		}
+
 		&::placeholder {
 			color: #C6CAD3;
 		}
@@ -74,7 +78,8 @@ div.login-wrapper, div.sign-up-wrapper {
 		text-align: center;
 
 		@media screen and (max-width: 768px) {
-			padding: 15px 0;
+			font-size: 16px;
+			padding: 12px 0;
 		}
 	}
 	p.login-title {
@@ -83,13 +88,25 @@ div.login-wrapper, div.sign-up-wrapper {
 		color: #1D1E1F;
 		padding-bottom: 10px;
 
+		@media screen and (max-width: 768px) {
+			font-size: 14px;
+			padding-bottom: 5px;
+		}
+
 		&.pw {
 			padding-top: 20px;
 
+			@media screen and (max-width: 768px) {
+				padding-top: 10px;
+			}
 		}
 	}
 	div.pww {
 		margin-bottom: 30px;
+
+		@media screen and (max-width: 768px) {
+			margin-bottom: 10px;
+		}
 	}
 	div.login-buttom {
 		font-size: 14px;
@@ -137,7 +154,12 @@ div.login-wrapper, div.sign-up-wrapper {
 /* sign up */
 div.sign-up-wrapper {
 	width: 600px;
-	margin: 100px auto 200px auto;
+	margin: 100px auto 0px auto;
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		margin: 0px auto 0px auto;
+	}
 
 	p.member-step1-tit {
 		font-size: 40px;
@@ -145,11 +167,25 @@ div.sign-up-wrapper {
 		font-family: 'Pretendard-SemiBold';
 		padding-bottom: 60px;
 		line-height: 47px;
+
+		@media screen and (max-width: 768px) {
+			font-size: 30px;
+			line-height: 38px;
+			padding-bottom: 35px;
+
+			span {
+				display: block;
+			}
+		}
 	}
 	p.txt-mypage-modify {
 		font-size: 24px;
 		text-align: center;
 		color: #6C757D;
+
+		@media screen and (max-width: 768px) {
+			font-size: 16px;
+		}
 
 		span {
 			color: $main-color;
@@ -158,10 +194,19 @@ div.sign-up-wrapper {
 	div.agreement-wrapper {
 		padding-top: 60px;
 
+		@media screen and (max-width: 768px) {
+			padding-top: 0px;
+			padding-bottom: 15px;
+		}
+
 		ul {
 			li {
 				font-size: 20px;
 				margin-bottom: 25px;
+
+				@media screen and (max-width: 768px) {
+					margin-bottom: 12px;
+				}
 
 				label.all {
 					color: $title-black;
@@ -172,6 +217,10 @@ div.sign-up-wrapper {
 					font-size: 20px;
 					color: #6C757D;
 					text-decoration: underline;
+
+					@media screen and (max-width: 768px) {
+						font-size: 14px;
+					}
 				}
 			}
 		}
@@ -186,19 +235,36 @@ div.sign-up-wrapper {
 		div.setting-wrapper {
 			padding: 60px 0 0 0; 
 
+			@media screen and (max-width: 768px) {
+				padding: 30px 0 0 0; 
+			}
+
 			div.area-1 {
 				padding-bottom: 60px;
+
+				@media screen and (max-width: 768px) {
+					padding-bottom: 30px;
+				}
 
 				p.t-1 {
 					font-size: 24px;
 					font-family: 'Pretendard-Medium';
 					color: $title-black;
 					padding-bottom: 8px;
+
+					@media screen and (max-width: 768px) {
+						font-size: 18px;
+						padding-bottom: 4px;
+					}
 				}
 				p.t-2 {
 					font-size: 18px;
 					font-family: 'Pretendard-Medium';
 					color: $dark-dim;
+
+					@media screen and (max-width: 768px) {
+						font-size: 16px;
+					}
 				}
 				div.inner {
 					border-top: 1px solid #EAEAEA;
@@ -232,6 +298,7 @@ div.sign-up-wrapper {
 							margin-bottom: 10px;
 							border-radius: 8px;
 							font-size: 14px;
+							cursor: pointer;
 
 							&:nth-child(3n-1) {
 								margin: 0 10px 10px 10px;
@@ -251,12 +318,30 @@ div.sign-up-wrapper {
 				div.select-area {
 					padding-top: 30px;
 
+						@media screen and (max-width: 768px) {
+							padding-top: 20px;
+						}
+
 					.both {
 						width: 37% !important;
 						margin-right: 20px;
+
+						@media screen and (max-width: 768px) {
+							width: 49% !important;
+							margin-right: 0px;
+
+							&:nth-child(1) {
+								margin-right: 2%;
+							}
+						}
 					}
 					button.modal-button {
 						width: 16%;
+
+						@media screen and (max-width: 768px) {
+							width: 100%;
+							margin-top: 8px;
+						}
 					}
 					div.selected-areas {
 						padding-top: 10px;
@@ -289,6 +374,11 @@ div.sign-up-wrapper {
 		div.member-infos {
 			padding: 60px 0 40px 0;
 
+			@media screen and (max-width: 768px) {
+				width: 70%;
+				margin: 0 auto;
+			}
+
 			ul {
 
 				li {
@@ -299,12 +389,20 @@ div.sign-up-wrapper {
 						width: 35%;
 						font-size: 24px;
 						color: #6C757D;
+
+						@media screen and (max-width: 768px) {
+							font-size: 16px;
+						}
 					}
 					span.data {
 						display: inline-block;
 						width: 65%;
 						font-size: 24px;
 						color: #0D0D0D;
+
+						@media screen and (max-width: 768px) {
+							font-size: 16px;
+						}
 					}
 				}
 			}
@@ -333,6 +431,10 @@ div.sign-up-wrapper {
 			font-family: 'Pretendard-Regular';
 			color: #A2A2A4;
 			padding-top: 10px;
+
+			@media screen and (max-width: 768px) {
+				font-size: 16px;
+			}
 		}
 		div.auth-button {
 			text-align: center;
@@ -352,6 +454,10 @@ div.sign-up-wrapper {
 		}
 		p.txt-mypage-modify {
 			padding-bottom: 60px;
+
+			@media screen and (max-width: 768px) {
+				padding-bottom: 30px;
+			}
 		}
 	}
 }
