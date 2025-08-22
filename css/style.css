@@ -778,6 +778,11 @@ div.search-place {
   background: #F7F7F7;
   transition: top 0.7s ease-in-out;
 }
+@media screen and (max-width: 1024px) {
+  div.search-place {
+    background: #fff;
+  }
+}
 div.search-place.show {
   top: 70px;
 }
@@ -794,9 +799,19 @@ div.search-place div.search-wrapper a.search-place-close {
   background: url("../img/icons/icon_close.svg") 50% 50% no-repeat;
   text-indent: -9999px;
 }
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-wrapper a.search-place-close {
+    display: none;
+  }
+}
 div.search-place div.search-wrapper div.title {
   border-bottom: 1px solid #EAEAEA;
   padding: 22px 20px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.title {
+    padding: 15px 14px;
+  }
 }
 div.search-place div.search-wrapper div.title span {
   float: left;
@@ -830,17 +845,34 @@ div.search-place div.search-wrapper div.category-search {
   background: #fff;
   border-radius: 10px;
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-wrapper div.category-search {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
   div.search-place div.search-wrapper div.category-search {
     width: 42%;
   }
 }
 div.search-place div.search-wrapper div.category-search div.category-wrap div.f {
   float: left;
-  width: 42%;
+  width: 44%;
   height: 605px;
   border-right: 1px solid #EAEAEA;
   padding: 22px 25px;
+}
+@media screen and (max-width: 1024px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.f {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.f {
+    padding: 15px 14px;
+    width: 45%;
+    height: 620px;
+  }
 }
 div.search-place div.search-wrapper div.category-search div.category-wrap div.f a {
   display: block;
@@ -849,6 +881,12 @@ div.search-place div.search-wrapper div.category-search div.category-wrap div.f 
   font-family: "Pretendard-SemiBold";
   color: #0D0D0D;
   margin-bottom: 44px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.f a {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
 }
 div.search-place div.search-wrapper div.category-search div.category-wrap div.f a span {
   display: inline-block;
@@ -899,7 +937,17 @@ div.search-place div.search-wrapper div.category-search div.category-wrap div.f 
 }
 div.search-place div.search-wrapper div.category-search div.category-wrap div.s {
   float: right;
-  width: 58%;
+  width: 56%;
+}
+@media screen and (max-width: 1024px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.s {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.s {
+    width: 55%;
+  }
 }
 div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll {
   padding: 0 25px;
@@ -907,9 +955,19 @@ div.search-place div.search-wrapper div.category-search div.category-wrap div.s 
   overflow-y: auto;
   height: 600px;
 }
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll {
+    padding: 0 15px;
+  }
+}
 div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont {
   padding: 25px 0 10px 0;
   border-bottom: 1px solid #EAEAEA;
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont {
+    padding: 14px 0 10px 0;
+  }
 }
 div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont div.semi-title {
   padding-bottom: 15px;
@@ -937,8 +995,21 @@ div.search-place div.search-wrapper div.category-search div.category-wrap div.s 
   line-height: 15px;
   cursor: pointer;
 }
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li {
+    width: calc(52% - 10px);
+  }
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li:nth-child(2n) {
+    margin: 0 0px 10px 0;
+  }
+}
 div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li:nth-child(3n) {
   margin: 0 0px 10px 0;
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li:nth-child(3n) {
+    margin: 0 10px 10px 0;
+  }
 }
 div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li.on {
   background: #2EC4B6;
@@ -959,10 +1030,15 @@ div.search-place div.search-wrapper div.location-search {
   background: #fff;
   border-radius: 10px;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
   div.search-place div.search-wrapper div.location-search {
     margin: 0 20px;
-    width: calc(28% - 40px);
+    width: calc(30% - 40px);
+  }
+}
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-wrapper div.location-search {
+    display: none; /* 임시 */
   }
 }
 div.search-place div.search-wrapper div.location-search div.location-wrap {
@@ -971,9 +1047,19 @@ div.search-place div.search-wrapper div.location-search div.location-wrap {
   overflow-y: auto;
   height: 600px;
 }
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.location-search div.location-wrap {
+    padding: 0 15px;
+  }
+}
 div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont {
   padding: 25px 0 10px 0;
   border-bottom: 1px solid #EAEAEA;
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont {
+    padding: 14px 0 10px 0;
+  }
 }
 div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont div.semi-title {
   padding-bottom: 15px;
@@ -1001,8 +1087,21 @@ div.search-place div.search-wrapper div.location-search div.location-wrap div.in
   line-height: 15px;
   cursor: pointer;
 }
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li {
+    width: calc(51% - 10px);
+  }
+  div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li:nth-child(2n) {
+    margin: 0 0px 10px 0;
+  }
+}
 div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li:nth-child(3n) {
   margin: 0 0px 10px 0;
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li:nth-child(3n) {
+    margin: 0 10px 10px 0;
+  }
 }
 div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li.on {
   background: #2EC4B6;
@@ -1022,14 +1121,24 @@ div.search-place div.search-wrapper div.date-search {
   background: #fff;
   border-radius: 10px;
 }
-@media screen and (max-width: 1600px) {
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
   div.search-place div.search-wrapper div.date-search {
     width: 28%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  div.search-place div.search-wrapper div.date-search {
+    display: none; /* 임시 */
   }
 }
 div.search-place div.search-wrapper div.date-search div.date-wrap {
   padding: 0 25px;
   height: 600px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  div.search-place div.search-wrapper div.date-search div.date-wrap {
+    padding: 0 14px;
+  }
 }
 div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont {
   padding: 15px 0 25px 0;
@@ -1066,14 +1175,23 @@ div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont
 div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.area .both {
   width: 46.5% !important;
 }
-@media screen and (max-width: 1600px) {
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
   div.search-place div.search-wrapper div.date-search div.date-wrap div.inner-cont div.area .both {
-    width: 46% !important;
+    width: 45% !important;
   }
 }
 div.search-place div.search-apply {
   text-align: center;
   padding-top: 30px;
+}
+@media screen and (max-width: 1024px) {
+  div.search-place div.search-apply {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #F7F7F7;
+  }
 }
 div.search-place div.search-apply a {
   display: inline-block;

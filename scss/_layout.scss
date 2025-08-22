@@ -581,6 +581,10 @@ div.search-place {
 	background: #F7F7F7;
 	transition: top 0.7s ease-in-out;
 
+	@media screen and (max-width: 1024px) {
+		background: #fff;
+	}
+
 	&.show {
 		top: 70px;
 	}
@@ -596,11 +600,19 @@ div.search-place {
 			height: 20px;
 			background: url('../img/icons/icon_close.svg') 50% 50% no-repeat;
 			text-indent: -9999px;
+
+			@media screen and (max-width: 1023px) {
+				display: none;
+			}
 		}
 
 		div.title {
 			border-bottom: 1px solid #EAEAEA;
 			padding: 22px 20px;
+
+			@media screen and (min-width: 1024px) and (max-width: 1400px) {
+				padding: 15px 14px;
+			}
 
 			span {
 				float: left;
@@ -637,7 +649,10 @@ div.search-place {
 			background: #fff;
 			border-radius: 10px;
 
-			@media screen and (max-width: 1600px) {
+			@media screen and (max-width: 1023px) {
+				width: 100%;
+			}
+			@media screen and (min-width: 1024px) and (max-width: 1600px) {
 				width: 42%;
 			}
 
@@ -645,10 +660,19 @@ div.search-place {
 
 				div.f {
 					float: left;
-					width: 42%;
+					width: 44%;
 					height: 605px;
 					border-right: 1px solid #EAEAEA;
 					padding: 22px 25px;
+
+					@media screen and (max-width: 1024px) {
+						display: none;
+					}
+					@media screen and (min-width: 1024px) and (max-width: 1400px) {
+						padding: 15px 14px;
+						width: 45%;
+						height: 620px;
+					}
 
 					a {
 						display: block;
@@ -657,6 +681,11 @@ div.search-place {
 						font-family: 'Pretendard-SemiBold';
 						color: $title-black;
 						margin-bottom: 44px;
+
+						@media screen and (min-width: 1024px) and (max-width: 1400px) {
+							font-size: 16px;
+							margin-bottom: 30px;
+						}
 
 						span {
 							display: inline-block;
@@ -709,7 +738,14 @@ div.search-place {
 				}
 				div.s {
 					float: right;
-					width: 58%;
+					width: 56%;
+
+					@media screen and (max-width: 1024px) {
+						width: 100%;
+					}
+					@media screen and (min-width: 1024px) and (max-width: 1400px) {
+						width: 55%;
+					}
 					
 					div.category-scroll {
 						padding: 0 25px;
@@ -717,9 +753,17 @@ div.search-place {
 						overflow-y: auto;
 						height: 600px;
 
+						@media screen and (min-width: 1024px) and (max-width: 1400px) {
+							padding: 0 15px;
+						}
+
 						div.inner-cont {
 							padding: 25px 0 10px 0;
 							border-bottom: 1px solid #EAEAEA;
+
+							@media screen and (min-width: 1024px) and (max-width: 1400px) {
+								padding: 14px 0 10px 0;
+							}
 
 							div.semi-title {
 								padding-bottom: 15px;
@@ -750,8 +794,20 @@ div.search-place {
 									line-height: 15px;
 									cursor: pointer;
 
+									@media screen and (min-width: 1024px) and (max-width: 1400px) {
+										width: calc(52% - 10px);
+
+										&:nth-child(2n) {
+											margin: 0 0px 10px 0;
+										}
+									}
+
 									&:nth-child(3n) {
 										margin: 0 0px 10px 0;
+
+										@media screen and (min-width: 1024px) and (max-width: 1400px) {
+											margin: 0 10px 10px 0;
+										}
 									}
 									&.on {
 										background: $main-color;
@@ -781,9 +837,12 @@ div.search-place {
 			background: #fff;
 			border-radius: 10px;
 
-			@media screen and (min-width: 768px) and (max-width: 1023px) { 
+			@media screen and (min-width: 1024px) and (max-width: 1600px) {
 				margin: 0 20px;
-  				width: calc(28% - 40px);
+  				width: calc(30% - 40px);
+			}
+			@media screen and (max-width: 1023px) {
+				display: none; /* 임시 */
 			}
 
 			div.location-wrap {
@@ -792,9 +851,17 @@ div.search-place {
 				overflow-y: auto;
 				height: 600px;
 
+				@media screen and (min-width: 1024px) and (max-width: 1400px) {
+					padding: 0 15px;
+				}
+
 				div.inner-cont {
 					padding: 25px 0 10px 0;
 					border-bottom: 1px solid #EAEAEA;
+
+					@media screen and (min-width: 1024px) and (max-width: 1400px) {
+						padding: 14px 0 10px 0;
+					}
 
 					div.semi-title {
 						padding-bottom: 15px;
@@ -825,8 +892,20 @@ div.search-place {
 							line-height: 15px;
 							cursor: pointer;
 
+							@media screen and (min-width: 1024px) and (max-width: 1400px) {
+								width: calc(51% - 10px);
+
+								&:nth-child(2n) {
+									margin: 0 0px 10px 0;
+								}
+							}
+
 							&:nth-child(3n) {
 								margin: 0 0px 10px 0;
+
+								@media screen and (min-width: 1024px) and (max-width: 1400px) {
+									margin: 0 10px 10px 0;
+								}
 							}
 							&.on {
 								background: $main-color;
@@ -853,13 +932,20 @@ div.search-place {
 			background: #fff;
 			border-radius: 10px;
 
-			@media screen and (max-width: 1600px) {
+			@media screen and (min-width: 1024px) and (max-width: 1600px) {
 				width: 28%;
+			}
+			@media screen and (max-width: 1024px) {
+				display: none; /* 임시 */
 			}
 
 			div.date-wrap {
 				padding: 0 25px;
 				height: 600px;
+
+				@media screen and (min-width: 1024px) and (max-width: 1400px) {
+					padding: 0 14px;
+				}
 
 				div.inner-cont {
 					padding: 15px 0 25px 0;
@@ -900,8 +986,8 @@ div.search-place {
 						.both {
 							width: 46.5% !important;
 
-							@media screen and (max-width: 1600px) {
-								width: 46% !important;
+							@media screen and (min-width: 1024px) and (max-width: 1600px) {
+								width: 45% !important;
 							}
 						}
 					}
@@ -913,6 +999,14 @@ div.search-place {
 	div.search-apply {
 		text-align: center;
 		padding-top: 30px;
+
+		@media screen and (max-width: 1024px) {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background: #F7F7F7;
+		}
 
 		a {
 			display: inline-block;
