@@ -169,8 +169,8 @@ div.sign-up-wrapper {
 		line-height: 47px;
 
 		@media screen and (max-width: 768px) {
-			font-size: 30px;
-			line-height: 38px;
+			font-size: 20px;
+			line-height: 30px;
 			padding-bottom: 35px;
 
 			span {
@@ -517,6 +517,13 @@ div.account-disabled-wrapper {
 }
 div.no-data-wrapper {
 	background: url('../img/icons/icon_nodata.svg') 50% 0% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
+div.place-reserve-completed {
+	background: url('../img/icons/icon_completed.svg') 50% 0% no-repeat;
 
 	@media screen and (max-width: 768px) {
 		background-size: 60px auto;

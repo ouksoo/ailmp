@@ -1,3 +1,48 @@
+/* 공간찾기 slide 해상도 적용 */
+let placeSearchSwiper = null;
+
+const searchPlaceOptions = {
+	loop: true,
+	spaceBetween: 40,
+	pagination: { 
+		el: '.swiper-pagination', clickable: true 
+	},
+	navigation: { 
+		nextEl: '.swiper-button-next', 
+		prevEl: '.swiper-button-prev' 
+	},
+	autoplay: false
+};
+
+function ensureSwiperOn() {
+	if (!document.querySelector('.place-search-swiper')) return;
+	if (placeSearchSwiper && !placeSearchSwiper.destroyed) return;
+	placeSearchSwiper = new Swiper('.place-search-swiper', searchPlaceOptions);
+	// console.info('on');
+}
+
+function ensureSwiperOff() {
+	if (placeSearchSwiper && !placeSearchSwiper.destroyed && typeof placeSearchSwiper.destroy === 'function') {
+		placeSearchSwiper.destroy(true, true);
+	}
+	placeSearchSwiper = null;
+	// console.info('off');
+}
+
+function applyByWidth() { // 현재 폭에 맞게 적용
+	if (window.innerWidth <= 1023) ensureSwiperOn();
+	else ensureSwiperOff();
+}
+
+document.addEventListener('DOMContentLoaded', applyByWidth); // init
+
+let resizeBounceTimer; // 리사이즈(debounce)
+	window.addEventListener('resize', () => {
+		clearTimeout(resizeBounceTimer);
+		resizeBounceTimer = setTimeout(applyByWidth, 150);
+});
+/* //공간찾기 slide 해상도 적용 */
+
 var AILMP = {
 	stopDocumentClick : 'div.header-right, .search-box',
 	gnbMenuActive : function(){ 
@@ -23,11 +68,12 @@ var AILMP = {
 		//상단 "공간찾기" 버튼
 		$('div.header-left a.find-search-show').on('click', function(e) {
 			$('div.search-place').addClass('show');
-			$(this).find('span').addClass('on');
+			applyByWidth();
+			$(this).addClass('on');
 		});
-		$('a.search-place-close').on('click', function(e) {
+		$('a.search-place-close, a.search-place-off').on('click', function(e) {
 			$('div.search-place').removeClass('show');
-			$('div.header-left a.find-search-show span').removeClass('on');
+			$('div.header-left a.find-search-show').removeClass('on');
 		});
 
 		//우측 메뉴 활성
@@ -75,11 +121,36 @@ var AILMP = {
 		$(AILMP.stopDocumentClick).on('click', function(e) {
 			e.stopPropagation();
 		});
+	},
+	//공간 리스트 형태 구현
+	placeListSortingAnimation : function() {
+		const cards = document.querySelectorAll('.masonry-section .card');
+
+		// 모션 최소화 환경이면 바로 표시
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (prefersReduced) {
+			cards.forEach(c => c.classList.add('reveal'));
+			return;
+		}
+
+		const io = new IntersectionObserver((entries) => {
+			entries.forEach((e) => {
+				if (!e.isIntersecting) return;
+				const i = [...cards].indexOf(e.target);
+				// 같은 프레임에 여러 개 들어와도 약간씩 딜레이
+				e.target.style.animationDelay = `${(i % 8) * 80}ms`;
+				e.target.classList.add('reveal');
+				io.unobserve(e.target);
+			});
+		}, { threshold: 0.1 });
+
+		cards.forEach(c => io.observe(c));
 	}
 }
 
 $(document).ready(function() {
 	AILMP.gnbMenuActive();
+	AILMP.placeListSortingAnimation();
 
 	//bootstrap tooltip init
 	$('[data-tooltip="true"]').each(function () {
@@ -152,4 +223,5 @@ $(document).ready(function() {
 		onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
 		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
     });
+
 });

@@ -129,6 +129,29 @@ div.terms-content {
 	}
 }
 
+.button-both {
+	text-align: center;
+	padding-top: 60px;
+
+	a {
+		display: inline-block;
+
+		&.w220 {
+			width: 220px;
+			margin: 0 12px;
+
+			@media screen and (max-width: 768px) {
+				width: calc(50% - 10px);
+				margin: 0 0px;
+
+				&:nth-child(1) {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+
 /* 툴팁 박스 */
 .tooltip-inner {
   background-color: #fff !important;   /* 배경 흰색 */
@@ -267,3 +290,18 @@ div.terms-content {
 	} 
 }
 */
+
+/* 페이드업 애니메이션 */
+@keyframes fadeUp {
+	from { opacity: 0; transform: translateY(12px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+.card.reveal {
+	animation: fadeUp .6s ease forwards;
+}
+
+/* 접근성: 모션 최소화 존중 */
+@media (prefers-reduced-motion: reduce) {
+	.card { opacity: 1; transform: none; }
+	.card.reveal { animation: none; }
+}

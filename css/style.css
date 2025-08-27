@@ -204,18 +204,18 @@ strong, b {
 /* list gutters "360: 16, 768 : 16, 1024 : 20, 1280 : 24, 1600 : 24, 1920 : 24" */
 @media screen and (max-width: 768px) {
   .mo {
-    display: block;
+    display: block !important;
   }
   .pc {
-    display: none;
+    display: none !important;
   }
 }
 @media screen and (min-width: 769px) {
   .mo {
-    display: none;
+    display: none !important;
   }
   .pc {
-    display: block;
+    display: block !important;
   }
 }
 /* header */
@@ -279,7 +279,7 @@ div.header-wrapper .header-left a {
     width: 50%;
     padding-left: 0;
     padding-top: 13px;
-    padding-bottom: 10px;
+    padding-bottom: 14px;
     margin-left: 0;
     text-align: center;
   }
@@ -316,8 +316,18 @@ div.header-wrapper .header-left a span {
   display: inline-block;
   padding-bottom: 5px;
 }
-div.header-wrapper .header-left a span.on {
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-left a.on {
+    border-bottom: 2px solid #2EC4B6;
+  }
+}
+div.header-wrapper .header-left a.on span {
   border-bottom: 2px solid #2EC4B6;
+}
+@media screen and (max-width: 768px) {
+  div.header-wrapper .header-left a.on span {
+    border-bottom: 0;
+  }
 }
 div.header-wrapper .header-right {
   position: relative;
@@ -772,15 +782,18 @@ div.search-place {
   position: fixed;
   z-index: 40;
   left: 0;
-  top: -850px;
+  top: -100%;
   width: 100%;
   height: 850px;
   background: #F7F7F7;
   transition: top 0.7s ease-in-out;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   div.search-place {
     background: #fff;
+  }
+  div.search-place .common-wrapper {
+    height: calc(100vh - 230px);
   }
 }
 div.search-place.show {
@@ -789,6 +802,11 @@ div.search-place.show {
 div.search-place div.search-wrapper {
   position: relative;
   padding-top: 46px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  div.search-place div.search-wrapper {
+    padding-top: 0px;
+  }
 }
 div.search-place div.search-wrapper a.search-place-close {
   position: absolute;
@@ -808,9 +826,14 @@ div.search-place div.search-wrapper div.title {
   border-bottom: 1px solid #EAEAEA;
   padding: 22px 20px;
 }
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-wrapper div.title {
+    padding: 20px 0px;
+  }
+}
 @media screen and (min-width: 1024px) and (max-width: 1400px) {
   div.search-place div.search-wrapper div.title {
-    padding: 15px 14px;
+    padding: 20px 14px;
   }
 }
 div.search-place div.search-wrapper div.title span {
@@ -845,14 +868,15 @@ div.search-place div.search-wrapper div.category-search {
   background: #fff;
   border-radius: 10px;
 }
-@media screen and (max-width: 1023px) {
-  div.search-place div.search-wrapper div.category-search {
-    width: 100%;
-  }
-}
 @media screen and (min-width: 1024px) and (max-width: 1600px) {
   div.search-place div.search-wrapper div.category-search {
     width: 42%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-wrapper div.category-search {
+    width: 100%;
+    height: calc(100vh - 230px);
   }
 }
 div.search-place div.search-wrapper div.category-search div.category-wrap div.f {
@@ -939,9 +963,10 @@ div.search-place div.search-wrapper div.category-search div.category-wrap div.s 
   float: right;
   width: 56%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   div.search-place div.search-wrapper div.category-search div.category-wrap div.s {
     width: 100%;
+    height: calc(100vh - 270px);
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1400px) {
@@ -954,6 +979,12 @@ div.search-place div.search-wrapper div.category-search div.category-wrap div.s 
   overflow-x: hidden;
   overflow-y: auto;
   height: 600px;
+}
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll {
+    padding: 0 0px;
+    height: calc(100vh - 330px);
+  }
 }
 @media screen and (min-width: 1024px) and (max-width: 1400px) {
   div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll {
@@ -994,6 +1025,11 @@ div.search-place div.search-wrapper div.category-search div.category-wrap div.s 
   height: 40px;
   line-height: 15px;
   cursor: pointer;
+}
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li {
+    width: calc(33.3% - 10px);
+  }
 }
 @media screen and (min-width: 1024px) and (max-width: 1400px) {
   div.search-place div.search-wrapper div.category-search div.category-wrap div.s div.category-scroll div.inner-cont ul li {
@@ -1038,7 +1074,10 @@ div.search-place div.search-wrapper div.location-search {
 }
 @media screen and (max-width: 1023px) {
   div.search-place div.search-wrapper div.location-search {
-    display: none; /* 임시 */
+    /*display: none;*/
+    width: 100%;
+    margin: 0 0px;
+    height: calc(100vh - 230px);
   }
 }
 div.search-place div.search-wrapper div.location-search div.location-wrap {
@@ -1046,6 +1085,12 @@ div.search-place div.search-wrapper div.location-search div.location-wrap {
   overflow-x: hidden;
   overflow-y: auto;
   height: 600px;
+}
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-wrapper div.location-search div.location-wrap {
+    padding: 0 0px;
+    height: calc(100vh - 330px);
+  }
 }
 @media screen and (min-width: 1024px) and (max-width: 1400px) {
   div.search-place div.search-wrapper div.location-search div.location-wrap {
@@ -1087,6 +1132,11 @@ div.search-place div.search-wrapper div.location-search div.location-wrap div.in
   line-height: 15px;
   cursor: pointer;
 }
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li {
+    width: calc(33.3% - 10px);
+  }
+}
 @media screen and (min-width: 1024px) and (max-width: 1400px) {
   div.search-place div.search-wrapper div.location-search div.location-wrap div.inner-cont ul li {
     width: calc(51% - 10px);
@@ -1126,9 +1176,9 @@ div.search-place div.search-wrapper div.date-search {
     width: 28%;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   div.search-place div.search-wrapper div.date-search {
-    display: none; /* 임시 */
+    width: 100%;
   }
 }
 div.search-place div.search-wrapper div.date-search div.date-wrap {
@@ -1184,18 +1234,45 @@ div.search-place div.search-apply {
   text-align: center;
   padding-top: 30px;
 }
-@media screen and (max-width: 1024px) {
+div.search-place div.search-apply .navigate {
+  display: none;
+  height: 52px;
+}
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-apply .navigate {
+    display: block;
+  }
+}
+@media screen and (max-width: 1023px) {
   div.search-place div.search-apply {
     position: fixed;
+    z-index: 10;
     left: 0;
     bottom: 0;
     width: 100%;
     background: #F7F7F7;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 div.search-place div.search-apply a {
   display: inline-block;
   padding: 17px 80px;
+}
+div.search-place div.search-apply a.search-place-off {
+  display: none;
+}
+@media screen and (max-width: 1023px) {
+  div.search-place div.search-apply a {
+    padding: 17px 0;
+    width: calc(50% - 8px);
+  }
+  div.search-place div.search-apply a.search-place-off {
+    display: inline-block;
+    margin-right: 16px;
+  }
 }
 
 /* header, footer 공통 / common-wrapper 는 나머지 레이아숫에서 100% 아닌 것 */
@@ -1506,6 +1583,27 @@ div.terms-content {
   }
 }
 
+.button-both {
+  text-align: center;
+  padding-top: 60px;
+}
+.button-both a {
+  display: inline-block;
+}
+.button-both a.w220 {
+  width: 220px;
+  margin: 0 12px;
+}
+@media screen and (max-width: 768px) {
+  .button-both a.w220 {
+    width: calc(50% - 10px);
+    margin: 0 0px;
+  }
+  .button-both a.w220:nth-child(1) {
+    margin-right: 10px;
+  }
+}
+
 /* 툴팁 박스 */
 .tooltip-inner {
   background-color: #fff !important; /* 배경 흰색 */
@@ -1671,6 +1769,31 @@ div.terms-content {
 	} 
 }
 */
+/* 페이드업 애니메이션 */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card.reveal {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* 접근성: 모션 최소화 존중 */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1;
+    transform: none;
+  }
+  .card.reveal {
+    animation: none;
+  }
+}
 .film-common {
   display: none;
   position: fixed;
@@ -1846,8 +1969,8 @@ div.sign-up-wrapper p.member-step1-tit {
 }
 @media screen and (max-width: 768px) {
   div.sign-up-wrapper p.member-step1-tit {
-    font-size: 30px;
-    line-height: 38px;
+    font-size: 20px;
+    line-height: 30px;
     padding-bottom: 35px;
   }
   div.sign-up-wrapper p.member-step1-tit span {
@@ -2180,6 +2303,15 @@ div.no-data-wrapper {
   }
 }
 
+div.place-reserve-completed {
+  background: url("../img/icons/icon_completed.svg") 50% 0% no-repeat;
+}
+@media screen and (max-width: 768px) {
+  div.place-reserve-completed {
+    background-size: 60px auto;
+  }
+}
+
 /* 서비스 이용 약관 */
 div.legal-wrapper div.title-area {
   border-bottom: 1px solid #C6CAD3;
@@ -2305,6 +2437,8 @@ div.place-list-wrapper main.masonry-list section.masonry-section article.card {
   display: inline-block;
   width: 100%;
   margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(12px);
 }
 div.place-list-wrapper main.masonry-list section.masonry-section article.card div.infos {
   position: absolute;

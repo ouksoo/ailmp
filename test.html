@@ -10,10 +10,10 @@
     body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); }
 
     .header { padding: 24px; text-align: center; }
-    .page { width: min(1100px, calc(100% - 48px)); margin: 0 auto 48px; }
+    .masonry-list { width: min(1100px, calc(100% - 48px)); margin: 0 auto 48px; }
 
     /* Masonry: 멀티컬럼 */
-    .masonry {
+    .masonry-section {
       column-count: 3;
       column-gap: var(--gutter);
     }
@@ -42,8 +42,8 @@
     .note { color:#666; font-size: 14px; line-height:1.6; }
 
     /* 반응형(선택) */
-    @media (max-width: 960px) { .masonry { column-count: 2; } }
-    @media (max-width: 600px) { .masonry { column-count: 1; } }
+    @media (max-width: 960px) { .masonry-section { column-count: 2; } }
+    @media (max-width: 600px) { .masonry-section { column-count: 1; } }
 
     /* 페이드업 애니메이션 */
     @keyframes fadeUp {
@@ -67,57 +67,165 @@
     <p>JS 없이 컬럼 레이아웃, <code>IntersectionObserver</code>로 뷰포트 진입 시 페이드업.</p>
   </header>
 
-  <main class="page">
-    <section class="masonry">
+  <main class="masonry-list">
+    <section class="masonry-section">
       <!-- 데모 카드들 -->
       <article class="card">
-        <img src="https://picsum.photos/600/380?random=1" alt="샘플 이미지 1">
-        <div class="content"><h3>아이템 1</h3><p>임의 텍스트</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/500?random=2" alt="샘플 이미지 2">
-        <div class="content"><h3>아이템 2</h3><p>간단 설명</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/320?random=3" alt="샘플 이미지 3">
-        <div class="content"><h3>아이템 3</h3><p>라벨/태그 자리</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/720?random=4" alt="샘플 이미지 4">
-        <div class="content"><h3>아이템 4</h3><p>설명 텍스트</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/410?random=5" alt="샘플 이미지 5">
-        <div class="content"><h3>아이템 5</h3><p>짧은 설명</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/660?random=6" alt="샘플 이미지 6">
-        <div class="content"><h3>아이템 6</h3><p>콘텐츠 요약</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/300?random=7" alt="샘플 이미지 7">
-        <div class="content"><h3>아이템 7</h3><p>임의 텍스트</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/560?random=8" alt="샘플 이미지 8">
-        <div class="content"><h3>아이템 8</h3><p>간단 설명</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/450?random=9" alt="샘플 이미지 9">
-        <div class="content"><h3>아이템 9</h3><p>라벨/태그 자리</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/640?random=10" alt="샘플 이미지 10">
-        <div class="content"><h3>아이템 10</h3><p>설명 텍스트</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/360?random=11" alt="샘플 이미지 11">
-        <div class="content"><h3>아이템 11</h3><p>짧은 설명</p></div>
-      </article>
-      <article class="card">
-        <img src="https://picsum.photos/600/580?random=12" alt="샘플 이미지 12">
-        <div class="content"><h3>아이템 12</h3><p>콘텐츠 요약</p></div>
-      </article>
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_1.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_2.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_3.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_4.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_5.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_6.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_7.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_1.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_2.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_3.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_4.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
+					<article class="card">
+						<div class="infos">
+							<span>사전예약 가능</span><span>15평</span>
+						</div>
+						<div class="image">
+							<img src="img/sample/sample_5.png" />
+						</div>
+						<div class="content">
+							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
+							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
+							<p class="text-3">50,000 <span>원/시간</span></p>
+						</div>
+					</article>
     </section>
 
     <p class="note">
@@ -130,7 +238,7 @@
   <!-- 가벼운 스크롤 등장 스크립트 -->
   <script>
     (function() {
-      const cards = document.querySelectorAll('.masonry .card');
+      const cards = document.querySelectorAll('.masonry-section .card');
 
       // 모션 최소화 환경이면 바로 표시
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

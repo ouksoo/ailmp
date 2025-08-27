@@ -1,12 +1,12 @@
 /* list gutters "360: 16, 768 : 16, 1024 : 20, 1280 : 24, 1600 : 24, 1920 : 24" */
 
 @media screen and (max-width: 768px) { //mobile
-	.mo {display: block;}
-	.pc {display: none;}
+	.mo {display: block !important;}
+	.pc {display: none !important;}
 }
 @media screen and (min-width: 769px) { //pc
-	.mo {display: none;}
-	.pc {display: block;}
+	.mo {display: none !important;}
+	.pc {display: block !important;}
 }
 
 /* header */
@@ -66,7 +66,7 @@ div.header-wrapper {
 				width: 50%;
 				padding-left: 0;
 				padding-top: 13px;
-				padding-bottom: 10px;
+				padding-bottom: 14px;
 				margin-left: 0;
 				text-align: center;
 			}
@@ -101,12 +101,21 @@ div.header-wrapper {
 			}
 			span {
 				display: inline-block;
-				padding-bottom: 5px;
-
-				&.on {
+				padding-bottom: 5px;	
+			}
+			&.on {
+				@media screen and (max-width: 768px) {
 					border-bottom: 2px solid $main-color;
 				}
+	
+				span {
+					border-bottom: 2px solid $main-color;
+					@media screen and (max-width: 768px) {
+						border-bottom: 0;
+					}
+				}
 			}
+			
 		}
 	}
 	.header-right {
@@ -575,14 +584,18 @@ div.search-place {
 	position: fixed;
 	z-index: 40;
 	left: 0;
-	top: -850px;
+	top: -100%;
 	width: 100%;
 	height: 850px;
 	background: #F7F7F7;
 	transition: top 0.7s ease-in-out;
 
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1023px) {
 		background: #fff;
+
+		.common-wrapper {
+			height: calc(100vh - 230px);
+		}
 	}
 
 	&.show {
@@ -592,6 +605,10 @@ div.search-place {
 	div.search-wrapper {
 		position: relative;
 		padding-top: 46px;
+
+		@media screen and (min-width: 768px) and (max-width: 1023px) {
+			padding-top: 0px;
+		}
 
 		a.search-place-close {
 			position: absolute;
@@ -610,8 +627,11 @@ div.search-place {
 			border-bottom: 1px solid #EAEAEA;
 			padding: 22px 20px;
 
+			@media screen and (max-width: 1023px) {
+				padding: 20px 0px;
+			}
 			@media screen and (min-width: 1024px) and (max-width: 1400px) {
-				padding: 15px 14px;
+				padding: 20px 14px;
 			}
 
 			span {
@@ -649,14 +669,16 @@ div.search-place {
 			background: #fff;
 			border-radius: 10px;
 
-			@media screen and (max-width: 1023px) {
-				width: 100%;
-			}
 			@media screen and (min-width: 1024px) and (max-width: 1600px) {
 				width: 42%;
 			}
+			@media screen and (max-width: 1023px) {
+				width: 100%;
+				height: calc(100vh - 230px);
 
-			div.category-wrap {
+			}
+
+			div.category-wrap { 
 
 				div.f {
 					float: left;
@@ -740,8 +762,9 @@ div.search-place {
 					float: right;
 					width: 56%;
 
-					@media screen and (max-width: 1024px) {
+					@media screen and (max-width: 1023px) {
 						width: 100%;
+						height: calc(100vh - 270px);
 					}
 					@media screen and (min-width: 1024px) and (max-width: 1400px) {
 						width: 55%;
@@ -753,6 +776,10 @@ div.search-place {
 						overflow-y: auto;
 						height: 600px;
 
+						@media screen and (max-width: 1023px) {
+							padding: 0 0px;
+							height: calc(100vh - 330px);
+						}
 						@media screen and (min-width: 1024px) and (max-width: 1400px) {
 							padding: 0 15px;
 						}
@@ -794,6 +821,9 @@ div.search-place {
 									line-height: 15px;
 									cursor: pointer;
 
+									@media screen and (max-width: 1023px) {
+										width: calc(33.3% - 10px);
+									}
 									@media screen and (min-width: 1024px) and (max-width: 1400px) {
 										width: calc(52% - 10px);
 
@@ -842,7 +872,10 @@ div.search-place {
   				width: calc(30% - 40px);
 			}
 			@media screen and (max-width: 1023px) {
-				display: none; /* 임시 */
+				/*display: none;*/
+				width: 100%;
+				margin: 0 0px;
+				height: calc(100vh - 230px);
 			}
 
 			div.location-wrap {
@@ -851,6 +884,10 @@ div.search-place {
 				overflow-y: auto;
 				height: 600px;
 
+				@media screen and (max-width: 1023px) {
+					padding: 0 0px;
+					height: calc(100vh - 330px);
+				}
 				@media screen and (min-width: 1024px) and (max-width: 1400px) {
 					padding: 0 15px;
 				}
@@ -892,6 +929,9 @@ div.search-place {
 							line-height: 15px;
 							cursor: pointer;
 
+							@media screen and (max-width: 1023px) {
+								width: calc(33.3% - 10px);
+							}
 							@media screen and (min-width: 1024px) and (max-width: 1400px) {
 								width: calc(51% - 10px);
 
@@ -935,8 +975,8 @@ div.search-place {
 			@media screen and (min-width: 1024px) and (max-width: 1600px) {
 				width: 28%;
 			}
-			@media screen and (max-width: 1024px) {
-				display: none; /* 임시 */
+			@media screen and (max-width: 1023px) {
+				width: 100%;
 			}
 
 			div.date-wrap {
@@ -1000,17 +1040,44 @@ div.search-place {
 		text-align: center;
 		padding-top: 30px;
 
-		@media screen and (max-width: 1024px) {
+		.navigate {
+			display: none;
+			height: 52px;
+
+			@media screen and (max-width: 1023px) {
+				display: block;
+			}
+		}
+
+		@media screen and (max-width: 1023px) {
 			position: fixed;
+			z-index: 10;
 			left: 0;
 			bottom: 0;
 			width: 100%;
 			background: #F7F7F7;
+			padding-top: 0px;
+			padding-bottom: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
 		}
 
 		a {
 			display: inline-block;
 			padding: 17px 80px;
+
+			&.search-place-off {
+				display: none;
+			}
+			@media screen and (max-width: 1023px) {
+				padding: 17px 0;
+				width: calc(50% - 8px);
+
+				&.search-place-off {
+					display: inline-block;
+					margin-right: 16px;
+				}
+			}
 		}
 	}
 }
@@ -1179,3 +1246,4 @@ div.common-wrapper {
 		box-shadow: -10px 0 0 #2EC4B6;
 	}
 }
+
