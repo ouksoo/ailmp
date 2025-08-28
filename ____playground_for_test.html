@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Swiper Full Visual (Zoom-out on Active)</title>
+
+  <!-- Swiper v11 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    }
+
+    /* 100vh 이슈 대비: 최신 브라우저에선 100svh 우선 */
+    .visual-swiper {
+      width: 100%;
+      height: 100svh;   /* 모바일 주소창 고려 */
+      height: 100vh;    /* 폴백 */
+      position: relative;
+      overflow: hidden;
+      --nav-size: 48px; /* 내비 버튼 크기 */
+      --nav-gap: 16px;  /* 좌/우 여백 */
+      --bullet-size: 10px;
+      --bullet-gap: 8px;
+    }
+
+    /* 각 슬라이드: 내부에 이미지 꽉 채우기 */
+    .swiper-slide {
+      position: relative;
+      background: #000; /* 로딩 중 배경 */
+	  overflow: hidden; 
+    }
+
+    /* 배경 이미지(img) 커버 */
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;     /* 화면 가득 채우기 */
+      transform: scale(1.10);/* 기본 110%에서 시작 */
+      will-change: transform;
+    }
+
+    /* 활성 슬라이드일 때만 서서히 110% -> 100% */
+    .swiper-slide-active .slide-bg {
+      animation: zoomOut 1500ms ease-out forwards;
+    }
+
+    @keyframes zoomOut {
+      from { transform: scale(1.10); }
+      to   { transform: scale(1.00); }
+    }
+
+    /* 하단 그라데이션(가독성용, 선택사항) */
+    .slide-gradient {
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 35%;
+      background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+      pointer-events: none;
+    }
+
+    /* 캡션(선택사항 예시) */
+    .caption {
+      position: absolute;
+      left: 24px;
+      bottom: 72px; /* 페이지네이션 위에 뜨도록 */
+      color: #fff;
+      font-weight: 600;
+      font-size: clamp(18px, 3vw, 32px);
+      letter-spacing: .01em;
+      text-shadow: 0 2px 8px rgba(0,0,0,.6);
+      z-index: 2;
+    }
+
+    /* 페이지네이션: 슬라이드 내부 하단 중앙 */
+    .swiper-pagination {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 24px;
+      text-align: center;
+      z-index: 3;
+    }
+    .swiper-pagination-bullet {
+      width: var(--bullet-size);
+      height: var(--bullet-size);
+      margin: 0 var(--bullet-gap);
+      background: rgba(255,255,255,.5);
+      opacity: 1; /* Swiper 기본 투명도 제거 */
+    }
+    .swiper-pagination-bullet-active {
+      background: #fff;
+    }
+
+    /* 내비게이션: 슬라이드 내부 좌/우에 고정 */
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #fff;
+      width: var(--nav-size);
+      height: var(--nav-size);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 4;
+      /* 배경 원형 버튼 느낌 (가독성 업) */
+      background: rgba(0,0,0,.35);
+      border-radius: 999px;
+      backdrop-filter: blur(2px);
+    }
+    .swiper-button-prev { left: var(--nav-gap); }
+    .swiper-button-next { right: var(--nav-gap); }
+
+    /* 화살표 크기 미세 조정 */
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    /* 반응형: 작은 화면에서 버튼/불릿 살짝 줄이기 */
+    @media (max-width: 480px) {
+      .visual-swiper {
+        --nav-size: 40px;
+        --nav-gap: 10px;
+        --bullet-size: 8px;
+        --bullet-gap: 6px;
+      }
+      .caption { left: 16px; bottom: 64px; }
+      .swiper-pagination { bottom: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Swiper -->
+  <div class="swiper visual-swiper">
+    <div class="swiper-wrapper">
+      <!-- 슬라이드 1 -->
+      <div class="swiper-slide">
+        <img class="slide-bg" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1920&auto=format&fit=crop" alt="slide 1" />
+        <div class="slide-gradient"></div>
+        <div class="caption">비주얼 1 — 알프스 산맥</div>
+      </div>
+      <!-- 슬라이드 2 -->
+      <div class="swiper-slide">
+        <img class="slide-bg" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1920&auto=format&fit=crop" alt="slide 2" />
+        <div class="slide-gradient"></div>
+        <div class="caption">비주얼 2 — 사막의 노을</div>
+      </div>
+      <!-- 슬라이드 3 -->
+      <div class="swiper-slide">
+        <img class="slide-bg" src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=1920&auto=format&fit=crop" alt="slide 3" />
+        <div class="slide-gradient"></div>
+        <div class="caption">비주얼 3 — 도심의 밤</div>
+      </div>
+      <!-- 슬라이드 4 -->
+      <div class="swiper-slide">
+        <img class="slide-bg" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1920&auto=format&fit=crop" alt="slide 4" />
+        <div class="slide-gradient"></div>
+        <div class="caption">비주얼 4 — 해변의 아침</div>
+      </div>
+    </div>
+
+    <!-- 내비게이션 & 페이지네이션 (슬라이드 내부) -->
+    <div class="swiper-button-prev" aria-label="이전 슬라이드"></div>
+    <div class="swiper-button-next" aria-label="다음 슬라이드"></div>
+    <div class="swiper-pagination" aria-label="페이지 네비게이션"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // Swiper 초기화
+    const visualSwiper = new Swiper('.visual-swiper', {
+      loop: true,                   // 무한 루프
+      speed: 800,                   // 슬라이드 전환 속도
+      // autoplay: { delay: 4000, disableOnInteraction: false }, // 원하면 자동재생 활성화
+      allowTouchMove: true,         // 터치/드래그 허용
+      watchSlidesProgress: true,    // 성능보다 효과 안정성 위주 설정
+      preloadImages: true,
+      updateOnWindowResize: true,
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      on: {
+        // (선택) 슬라이드 활성화 때마다 애니메이션 리셋을 확실히 보장하고 싶다면 아래 핸들러 사용
+        slideChangeTransitionStart(swiper) {
+          // 모든 슬라이드의 이미지에 '애니메이션 초기값(110%)' 강제 적용 -> 새 active에서 다시 애니메이션
+
+		console.info(1);
+
+          swiper.slides.forEach(slide => {
+            const img = slide.querySelector('.slide-bg');
+            if (!img) return;
+            // 애니메이션 강제 리셋 트릭
+            img.style.animation = 'none';
+            img.style.transform = 'scale(1.10)';
+            // 리플로우 후 애니메이션 속성 제거(활성 슬라이드 CSS 선택자가 다시 적용되며 재생)
+            // eslint-disable-next-line no-unused-expressions
+            img.offsetHeight; // reflow
+            img.style.animation = '';
+          });
+        },
+      }
+    });
+
+    // 최초 진입 시에도 .swiper-slide-active 에 의해 자동으로 줌-아웃 애니메이션이 실행됨
+  </script>
+</body>
+</html>
+
+
+=======================================================

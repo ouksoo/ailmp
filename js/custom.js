@@ -1,3 +1,75 @@
+// main visual swipe 초기화
+const mainVisualSwiper = new Swiper('.main-visual-swiper', {
+	loop: true,
+	speed: 800,
+	autoplay: { 
+		delay: 4000, disableOnInteraction: false 
+	},
+	allowTouchMove: true,
+	watchSlidesProgress: true,
+	preloadImages: true,
+	updateOnWindowResize: true,
+
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	on: {
+		slideChangeTransitionStart(swiper) {
+			swiper.slides.forEach(slide => {
+				const img = slide.querySelector('.slide-visual-bg');
+				if (!img) return;
+				// 애니메이션 강제 리셋
+				img.style.animation = 'none';
+				img.style.transform = 'scale(1.10)';
+				// 리플로우 후 애니메이션 속성 제거(활성 슬라이드 CSS 선택자가 다시 적용되며 재생)
+				img.offsetHeight; // reflow
+				img.style.animation = '';
+			});
+		},
+	}
+});
+
+// 잇플레이스 PICK swipe 초기화
+const mainItSwiper = new Swiper('.main-it-swiper', {
+	loop: true,
+	speed: 800,
+	autoplay: { 
+		delay: 4000, disableOnInteraction: false 
+	},
+	allowTouchMove: true,
+	watchSlidesProgress: true,
+	preloadImages: true,
+	updateOnWindowResize: true,
+
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	on: {
+		slideChangeTransitionStart(swiper) {
+			swiper.slides.forEach(slide => {
+				const img = slide.querySelector('.slide-it-bg');
+				if (!img) return;
+				// 애니메이션 강제 리셋
+				img.style.animation = 'none';
+				//img.style.transform = 'scale(1.10)';
+				// 리플로우 후 애니메이션 속성 제거(활성 슬라이드 CSS 선택자가 다시 적용되며 재생)
+				img.offsetHeight; // reflow
+				img.style.animation = '';
+			});
+		},
+	}
+});
+
 /* 공간찾기 slide 해상도 적용 */
 let placeSearchSwiper = null;
 
@@ -151,6 +223,7 @@ var AILMP = {
 $(document).ready(function() {
 	AILMP.gnbMenuActive();
 	AILMP.placeListSortingAnimation();
+	AOS.init();
 
 	//bootstrap tooltip init
 	$('[data-tooltip="true"]').each(function () {

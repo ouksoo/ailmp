@@ -1,265 +1,90 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>핀터레스트형 Masonry (CSS만 사용 / 3열 / 간격 24px / 스크롤 페이드업)</title>
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
   <style>
-    :root { --gutter: 24px; --bg:#f6f7fb; --card:#fff; --text:#111; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); }
-
-    .header { padding: 24px; text-align: center; }
-    .masonry-list { width: min(1100px, calc(100% - 48px)); margin: 0 auto 48px; }
-
-    /* Masonry: 멀티컬럼 */
-    .masonry-section {
-      column-count: 3;
-      column-gap: var(--gutter);
+    html,
+    body {
+      position: relative;
+      height: 100%;
     }
 
-    /* 카드 */
-    .card {
-      break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-      -moz-column-break-inside: avoid;
-      display: inline-block;
+    body {
+      background: #000;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
       width: 100%;
-      margin: 0 0 var(--gutter);
-      background: var(--card);
-      border-radius: 14px; overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
-
-      /* ▼ B안: 스크롤 시 등장할 준비 상태 */
-      opacity: 0;
-      transform: translateY(12px);
-    }
-    .card img { width: 100%; height: auto; display: block; }
-    .card .content { padding: 12px 14px 16px; }
-    .card h3 { margin: 0 0 6px; font-size: 16px; }
-    .card p { margin: 0; font-size: 14px; opacity: .8; }
-
-    .note { color:#666; font-size: 14px; line-height:1.6; }
-
-    /* 반응형(선택) */
-    @media (max-width: 960px) { .masonry-section { column-count: 2; } }
-    @media (max-width: 600px) { .masonry-section { column-count: 1; } }
-
-    /* 페이드업 애니메이션 */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .card.reveal {
-      animation: fadeUp .6s ease forwards;
+      height: 100%;
     }
 
-    /* 접근성: 모션 최소화 존중 */
-    @media (prefers-reduced-motion: reduce) {
-      .card { opacity: 1; transform: none; }
-      .card.reveal { animation: none; }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-slide {
+      width: 60%;
+    }
+
+
   </style>
 </head>
+
 <body>
-  <header class="header">
-    <h1>핀터레스트형 Masonry (CSS만 / 3열 / 24px / 스크롤 페이드업)</h1>
-    <p>JS 없이 컬럼 레이아웃, <code>IntersectionObserver</code>로 뷰포트 진입 시 페이드업.</p>
-  </header>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
 
-  <main class="masonry-list">
-    <section class="masonry-section">
-      <!-- 데모 카드들 -->
-      <article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_1.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_2.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_3.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_4.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_5.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_6.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_7.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_1.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_2.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_3.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_4.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-					<article class="card">
-						<div class="infos">
-							<span>사전예약 가능</span><span>15평</span>
-						</div>
-						<div class="image">
-							<img src="img/sample/sample_5.png" />
-						</div>
-						<div class="content">
-							<p class="text-1">서울시 강남구 ∙ 단독 주택</p>
-							<p class="text-2">따뜻함이 가득한 자연광 스튜디오</p>
-							<p class="text-3">50,000 <span>원/시간</span></p>
-						</div>
-					</article>
-    </section>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <p class="note">
-      🔎 참고:<br>
-      • 멀티컬럼은 열 단위로 채워져 DOM 순서와 시각 순서가 다를 수 있어.<br>
-      • 행 개념이 없어 가로 정렬 제어가 제한적. 필요 시 JS Masonry나 CSS Grid Masonry 고려!
-    </p>
-  </main>
-
-  <!-- 가벼운 스크롤 등장 스크립트 -->
+  <!-- Initialize Swiper -->
   <script>
-    (function() {
-      const cards = document.querySelectorAll('.masonry-section .card');
-
-      // 모션 최소화 환경이면 바로 표시
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduced) {
-        cards.forEach(c => c.classList.add('reveal'));
-        return;
-      }
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          const i = [...cards].indexOf(e.target);
-          // 간단 스태거: 같은 프레임에 여러 개 들어와도 약간씩 딜레이
-          e.target.style.animationDelay = `${(i % 8) * 80}ms`;
-          e.target.classList.add('reveal');
-          io.unobserve(e.target);
-        });
-      }, { threshold: 0.1 });
-
-      cards.forEach(c => io.observe(c));
-    })();
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
   </script>
 </body>
+
 </html>
