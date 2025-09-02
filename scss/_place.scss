@@ -50,6 +50,10 @@ div.place-list-wrapper {
 		section.masonry-section {
 			padding-top: 60px;
 
+			@media screen and (max-width: 767px) {
+				padding-top: 30px;
+			}
+
 			article {
 				position: relative;
 				border: 0;
@@ -152,6 +156,11 @@ div.place-list-wrapper {
 			font-size: 24px;
 			text-align: center;
 			margin-top: 60px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				margin-top: 30px;
+			}
 		}
 	}
 }

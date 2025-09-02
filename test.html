@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,18 +40,22 @@
       align-items: center;
     }
 
+	.swiper-slide.swiper-slide-active {
+		width: 60% !important;
+	}
+	.swiper-slide.swiper-slide-next {
+		width: 20% !important;
+	}
+	.swiper-slide {
+		width: 20%;
+	}
+
     .swiper-slide img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
-    .swiper-slide {
-      width: 60%;
-    }
-
-
   </style>
 </head>
 
@@ -77,12 +82,24 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+		direction: 'horizontal',
+		loop: true,
+		spaceBetween: 24,
+		slidesPerView: 2.1,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
+		on: {
+			slideChangeTransitionStart: function(se) {
+				var thisIndex = se.realIndex+1;
+				$('.area-10 div.inner a').fadeOut();
+				$('.area-10 div.inner a.story-img-'+thisIndex).fadeIn();
+			},
+		}
     });
   </script>
 </body>

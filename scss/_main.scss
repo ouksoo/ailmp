@@ -13,6 +13,10 @@ div.main-visual-area {
 		--bullet-size: 14px;
 		--bullet-gap: 6px;
 
+		@media screen and (max-width: 767px) {
+			--bullet-size: 10px;
+		}
+
 		/* 각 슬라이드: 내부에 이미지 꽉 채우기 */
 		.swiper-slide {
 			position: relative;
@@ -31,7 +35,7 @@ div.main-visual-area {
 		}
 		/* 활성 슬라이드일 때만 서서히 110% -> 100% */
 		.swiper-slide-active .slide-visual-bg {
-			animation: zoomOut 1500ms ease-out forwards;
+			animation: zoomOut 3000ms ease-out forwards;
 		}
 		@keyframes zoomOut {
 			from { transform: scale(1.10); }
@@ -43,6 +47,10 @@ div.main-visual-area {
 			color: #fff;
 			font-size: 60px;
 			z-index: 2;
+
+			@media screen and (max-width: 767px) {
+				font-size: 30px;
+			}
 
 			@media screen and (min-width: 1920px) { 
 				left: 50%; top: 50%;
@@ -65,17 +73,28 @@ div.main-visual-area {
 				transform: translate(0%, -50%);
 			}
 			@media screen and (min-width: 320px) and (max-width: 767px) {
-				left: 20px; top: 50%;
+				left: 20px; top: 45%;
 				transform: translate(0%, -50%);
 			}
 
 			p.txt-1 {
 				font-family: 'Pretendard-Regular';
-				line-height: 50px;
 				line-height: 80px;
 
+				@media screen and (max-width: 767px) {
+					line-height: 35px;
+
+					span {
+						display: block;
+					}
+				}
 				span.in {
+					display: block;
 					font-family: 'Pretendard-SemiBold';
+
+					@media screen and (max-width: 767px) {
+						margin-top: 20px;
+					}
 				}
 			}
 			p.txt-2 {
@@ -83,6 +102,11 @@ div.main-visual-area {
 				margin-top: 40px;
 				font-family: 'Pretendard-SemiBold';
 				font-size: 24px;
+
+				@media screen and (max-width: 767px) {
+					margin-top: 20px;
+					font-size: 16px;
+				}
 
 				.arrow-right{
 					vertical-align: middle;
@@ -154,11 +178,19 @@ div.main-visual-area {
 div.main-place-area {
 	padding: 200px 0;
 
+	@media screen and (max-width: 767px) {
+		padding: 100px 0;
+	}
+
 	p.txt-1 {
 		font-size: 60px;
 		font-family: 'Pretendard-SemiBold';
 		text-align: center;
 		padding-bottom: 60px;
+
+		@media screen and (max-width: 767px) {
+			font-size: 30px;
+		}
 	}
 	ul {
 		li {
@@ -170,18 +202,35 @@ div.main-place-area {
 			border: 1px solid #EAEAEA;
 			border-radius: 14px;
 
+			@media screen and (max-width: 767px) {
+				float: none;
+				padding: 80px 0 15px 0;
+			}
+
 			&:nth-child(1) {
 				width: calc((100% - 48px) / 3);
 				background: url('../img/icons/icon_object_1.svg') 50% 20% no-repeat;
+				@media screen and (max-width: 767px) {
+					width: 100%;
+				}
 			}
 			&:nth-child(2) {
 				background: url('../img/icons/icon_object_2.svg') 50% 20% no-repeat;
 				margin: 0 24px;
 				width: calc((100% - 48px) / 3);
+
+				@media screen and (max-width: 767px) {
+					width: 100%;
+					margin: 12px 0px;
+				}
 			}
 			&:nth-child(3) {
 				width: calc((100% - 48px) / 3);
 				background: url('../img/icons/icon_object_3.svg') 50% 20% no-repeat;
+
+				@media screen and (max-width: 767px) {
+					width: 100%;
+				}
 			}
 			p.t1 {
 				color: $title-black;
@@ -189,6 +238,11 @@ div.main-place-area {
 				font-family: 'Pretendard-SemiBold';
 				line-height: 30px;
 				padding-bottom: 10px;
+
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					padding-bottom: 5px;
+				}
 
 				span.arrow-right {
 					vertical-align: middle;
@@ -206,6 +260,10 @@ div.main-place-area {
 				font-size: 14px;
 				line-height: 18px;
 				color: #9E9E9E;
+
+				@media screen and (max-width: 767px) {
+					font-size: 12px;
+				}
 			}
 		}
 	}
@@ -214,6 +272,12 @@ div.main-place-area {
 /* 잇플레이스 pick */
 div.main-it-area {
 	height: 100vh;
+
+	@media screen and (max-width: 767px) {
+		height: auto;
+		background: #F7F7F7;
+		padding: 100px 0 150px 0;
+	}
 
 	.main-it-swiper {
 		width: 100%;
@@ -226,11 +290,19 @@ div.main-it-area {
 		--bullet-size: 14px;
 		--bullet-gap: 6px;
 
+		@media screen and (max-width: 767px) {
+			height: auto;
+			overflow: visible;
+		}
+
 		/* 각 슬라이드: 내부에 이미지 꽉 채우기 */
 		.swiper-slide {
 			position: relative;
-			background: #000; /* 로딩 중 배경 */
 			overflow: hidden; 
+
+			@media screen and (max-width: 767px) {
+				overflow: visible;
+			}
 		}
 		/* 배경 이미지(img) 커버 */
 		.slide-it-bg {
@@ -241,6 +313,10 @@ div.main-it-area {
 			object-fit: cover;
 			/*transform: scale(1.10);*/
 			will-change: transform;
+
+			@media screen and (max-width: 767px) {
+				position: inherit;
+			}
 		}
 		/* 활성 슬라이드일 때만 서서히 110% -> 100% */
 		.swiper-slide-active .slide-it-bg {
@@ -256,7 +332,13 @@ div.main-it-area {
 			color: #fff;
 			font-size: 60px;
 			z-index: 2;
+			width: 100%;
+			height: 100%;
 
+			@media screen and (max-width: 767px) {
+				position: static;
+			}
+			/*
 			@media screen and (min-width: 1920px) { 
 				left: 50%; top: 32%;
 				transform: translate(-110%, -50%);
@@ -281,24 +363,167 @@ div.main-it-area {
 				left: 20px; top: 32%;
 				transform: translate(0%, -50%);
 			}
+				*/
 
 			p.txt-1 {
+				position: absolute;
+				z-index: 3;
 				font-size: 24px;
 
+				@media screen and (min-width: 1920px) { 
+					width: 1440px;
+					left: 50%; top: 23%;
+					transform: translate(-50%, -50%);
+				}
+				@media screen and (min-width: 1600px) and (max-width: 1919px) { 
+					left: 112px; top: 23%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1280px) and (max-width: 1599px) { 
+					left: 100px; top: 23%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1024px) and (max-width: 1279px) { 
+					left: 42px; top: 23%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 768px) and (max-width: 1023px) { 
+					left: 32px; top: 23%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 320px) and (max-width: 767px) {
+					left: 20px; top: 23%;
+					transform: translate(0%, -50%);
+				}
+
+				@media screen and (max-width: 767px) {
+					position: static;
+					font-size: 16px;
+					color: #6C757D;
+					padding: 0 20px;
+					transform: translate(0%, 0%);
+				}
 				span {
 					font-family: 'Pretendard-SemiBold';	
 				}
 			}
 			p.txt-2 {
+				position: absolute;
+				z-index: 3;
 				font-size: 60px;
 				font-family: 'Pretendard-SemiBold';
 				padding: 0px 0;
+
+				@media screen and (min-width: 1920px) { 
+					width: 1440px;
+					left: 50%; top: 28%;
+					transform: translate(-50%, -50%);
+				}
+				@media screen and (min-width: 1600px) and (max-width: 1919px) { 
+					left: 112px; top: 28%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1280px) and (max-width: 1599px) { 
+					left: 100px; top: 28%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1024px) and (max-width: 1279px) { 
+					left: 42px; top: 28%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 768px) and (max-width: 1023px) { 
+					left: 32px; top: 28%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 320px) and (max-width: 767px) {
+					left: 20px; top: 28%;
+					transform: translate(0%, -50%);
+				}
+
+				@media screen and (max-width: 767px) {
+					position: static;
+					font-size: 30px;
+					color: $title-black;
+					padding: 0 20px 10px 20px;
+					transform: translate(0%, 0%);
+				}
 			}
 			p.txt-3 {
+				position: absolute;
+				z-index: 3;
 				font-size: 24px;
+
+				@media screen and (min-width: 1920px) { 
+					width: 1440px;
+					left: 50%; top: 33%;
+					transform: translate(-50%, -50%);
+				}
+				@media screen and (min-width: 1600px) and (max-width: 1919px) { 
+					left: 112px; top: 33%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1280px) and (max-width: 1599px) { 
+					left: 100px; top: 33%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1024px) and (max-width: 1279px) { 
+					left: 42px; top: 33%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 768px) and (max-width: 1023px) { 
+					left: 32px; top: 33%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 320px) and (max-width: 767px) {
+					left: 20px; top: 33%;
+					transform: translate(0%, -50%);
+				}
+
+				@media screen and (max-width: 767px) {
+					position: static;
+					font-size: 16px;
+					color: #6C757D;
+					padding: 20px 20px 0 20px;
+					transform: translate(0%, 0%);
+				}
 			}
 			div.btns {
+				position: absolute;
+				z-index: 3;
 				padding-top: 25px;
+
+				@media screen and (min-width: 1920px) { 
+					width: 1440px;
+					left: 50%; top: 40%;
+					transform: translate(-50%, -50%);
+				}
+				@media screen and (min-width: 1600px) and (max-width: 1919px) { 
+					left: 112px; top: 40%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1280px) and (max-width: 1599px) { 
+					left: 100px; top: 40%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1024px) and (max-width: 1279px) { 
+					left: 42px; top: 40%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 768px) and (max-width: 1023px) { 
+					left: 32px; top: 40%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 320px) and (max-width: 767px) {
+					left: 20px; top: 40%;
+					transform: translate(0%, -50%);
+				}
+
+				@media screen and (max-width: 767px) {
+					position: static;
+					padding-top: 0;
+					text-align: center;
+					transform: translate(0%, 0%);
+				}
 
 				a {
 					display: inline-block;
@@ -308,6 +533,17 @@ div.main-it-area {
 					background: #fff;
 					color: $title-black;
 					font-family: 'Pretendard-SemiBold';
+
+					@media screen and (max-width: 767px) {
+						width: calc(50% - 28px);
+						background: $main-color;
+						color: $white;
+						margin-right: 0px;
+
+						&:nth-child(1) {
+							margin-right: 16px;
+						}
+					}
 				}
 			}
 		}
@@ -319,6 +555,10 @@ div.main-it-area {
 			bottom: 100px;
 			text-align: center;
 			z-index: 3;
+
+			@media (max-width: 767px) {
+				bottom: -65px;
+			}
 		}
 		.swiper-pagination-bullet {
 			width: var(--bullet-size);
@@ -326,9 +566,21 @@ div.main-it-area {
 			margin: 0 var(--bullet-gap);
 			background: rgba(255,255,255,.5);
 			opacity: 1;
+
+			@media (max-width: 767px) {
+				width: 8px;
+				height: 8px;
+				background: #C6CAD3;
+			}
 		}
 		.swiper-pagination-bullet-active {
 			background: #fff;
+			/*
+			width: 8px;
+			height: 16px;
+			border-radius: 4px;
+			margin-top: -10px
+			*/
 		}
 		/* 내비게이션: 슬라이드 내부 좌/우에 고정 */
 		.swiper-button-prev,
@@ -341,43 +593,65 @@ div.main-it-area {
 			z-index: 4;
 			background: rgba(0,0,0,.35);
 			border-radius: 999px;
-			backdrop-filter: blur(2px);
+
+			@media (max-width: 767px) {
+				top: 46%;
+				background: transparent;
+			}
 		}
-		.swiper-button-prev { left: var(--nav-gap); }
-		.swiper-button-next { right: var(--nav-gap); }
+		.swiper-button-prev { 
+			left: var(--nav-gap); 
+
+			@media (max-width: 767px) {
+				left: 0px;
+			}
+		}
+		.swiper-button-next { 
+			right: var(--nav-gap); 
+
+			@media (max-width: 767px) {
+				right: 0px;
+			}
+		}
 		/* 화살표 크기 조정 */
 		.swiper-button-prev::after,
 		.swiper-button-next::after {
 			font-size: 18px;
 			font-weight: 700;
 		}
-		/* 반응형: 버튼/불릿 */
-		@media (max-width: 480px) {
-			.visual-swiper {
-				--nav-size: 40px;
-				--nav-gap: 10px;
-				--bullet-size: 8px;
-				--bullet-gap: 6px;
-			}
-			.caption { left: 16px; bottom: 64px; }
-			.swiper-pagination { bottom: 18px; }
-		}
+		
 	}
 }
 
 /* 촬영 컨셉에 맞는 공간 찾기 */
 div.main-concept-area {
 	div.concept-wrapper {
+		position: relative;
 		height: 70vh;
 		margin: 200px 0 200px 0;
 		
+		@media screen and (max-width: 768px) {
+			margin: 100px 0 100px 0;
+			height: auto;
+			padding-left: 20px;
+		}
+
 		div.left {
+			position: relative;
 			float: left;
 			width: 30%;
 			height: 100%;
-			background: #eee;
+
+			@media screen and (max-width: 768px) {
+				display: none;
+			}
 
 			div.concept-lists {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				/*transform: translate(-50%, -70%);*/
+				margin: -265px 0 0 -75px;
 
 				a {
 					display: block;
@@ -396,11 +670,19 @@ div.main-concept-area {
 			float: right;
 			width: 70%;
 			height: 100%;
-			background: orange;
+
+			@media screen and (max-width: 768px) {
+				float: none;
+				width: 100%;
+			}
 
 			p.txt-1 {
 				font-size: 24px;
 				color: #6C757D;
+
+				@media screen and (max-width: 768px) {
+					font-size: 16px;
+				}
 				span {
 					font-family: 'Pretendard-SemiBold';	
 				}
@@ -409,10 +691,55 @@ div.main-concept-area {
 				font-size: 60px;
 				font-family: 'Pretendard-SemiBold';
 				padding-bottom: 60px;
+
+				@media screen and (max-width: 768px) {
+					font-size: 30px;
+					padding-bottom: 20px;
+				}
+			}
+
+			div.concept-list-mobile {
+				display: none;
+				width: calc(100% - 20px);
+				overflow-x: auto;
+				overflow-y: hidden;
+
+				@media screen and (max-width: 768px) {
+					display: block;
+				}
+
+				div.inner {
+					width: 865px;
+					height: 45px;
+
+					a {
+						display: inline-block;
+						font-size: 16px;
+						color: #A2A2A4;
+						padding: 0 16px;
+						border-right: 1px solid #A2A2A4;
+						line-height: 16px;
+
+						&:nth-child(1) {
+							padding-left: 0;
+						}
+						&:last-child {
+							border-right: 0;
+						}
+						&.on {
+							font-family: 'Pretendard-SemiBold';
+							color: $main-color;
+						}
+					}
+				}
 			}
 
 			div.concept-slide-wrapper {
 				height: 50%;
+
+				@media screen and (max-width: 768px) {
+					height: 300px;
+				}
 			}
 
 			div.concept-info {
@@ -420,6 +747,10 @@ div.main-concept-area {
 				p {
 					font-size: 20px;
 					color: #6C757D;
+
+					@media screen and (max-width: 768px) {
+						font-size: 14px;
+					}
 
 					&.t-1 {
 						padding-top: 20px;
@@ -429,17 +760,37 @@ div.main-concept-area {
 						font-size: 24px;
 						color: $title-black;
 						padding: 5px 0;
+
+						@media screen and (max-width: 768px) {
+							font-size: 16px;
+							padding: 2px 0;
+						}
 					}
 					&.t-3 {
 						padding-top: 5px;
 						color: $main-color;
 						font-size: 24px;
 
+						@media screen and (max-width: 768px) {
+							padding-top: 3px;
+							font-size: 16px;
+						}
+
 						span {
 							font-size: 18px;
 							color: $dark-dim;
+
+							@media screen and (max-width: 768px) {
+								font-size: 16px;
+							}
 						}
 					}
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.concept-slide-button {
+					display: none;
 				}
 			}
 		}
@@ -464,6 +815,55 @@ div.main-concept-area {
 			
 			}
 		}
+
+		.concept-slide-button {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			bottom: -280px;
+
+			.swiper-button-next, .swiper-button-prev {
+				width: 50px;
+				height: 50px;
+			}
+			.swiper-button-prev {
+				left: 0;
+				background: url('../img/icons/icon_gallery_left.svg') 0 0 no-repeat;
+
+				&::after {
+					content: '';
+				}
+			}
+			.swiper-button-next {
+				left: 60px;
+				right: 0;
+				background: url('../img/icons/icon_gallery_right.svg') 0 0 no-repeat;
+
+				&::after {
+					content: '';
+				}
+			}
+		}
+	}
+
+	.swiper {
+		height: 100%;
+		overflow: hidden;
+	}
+	.swiper-slide.swiper-slide-active {
+		width: 60% !important;
+
+		@media screen and (max-width: 768px) {
+			width: 80% !important;
+		}
+	}
+	.swiper-slide.swiper-slide-next {
+		width: 20% !important;
+	}
+	.swiper-slide {
+		width: 20%;
+		overflow: hidden;
+		border-radius: 14px;
 	}
 }
 
@@ -471,14 +871,25 @@ div.main-concept-area {
 div.main-hot-area {
 	background: #F7F7F7;
 	padding-bottom: 200px;
+	overflow: hidden; 
+
+	@media screen and (max-width: 767px) {
+		padding-bottom: 100px;
+	}
 
 	div.it-visual-1 {
 		height: 70vh;
 		margin-top: 60px;
+
+		@media screen and (max-width: 767px) {
+			height: 250px;
+			margin-top: 30px;
+			padding: 0 20px;
+		}
 		
 		div.visual {
 			height: 100%;
-			width:100%;
+			width: 100%;
 			background: url('../img/sample/it_place_1.png') 0 0 no-repeat;
 			background-size: cover;
 			border-radius: 0 30px 30px 0;
@@ -499,7 +910,8 @@ div.main-hot-area {
 				width: calc(100% - 32px);
 			}
 			@media screen and (min-width: 320px) and (max-width: 767px) {
-				width: calc(100% - 20px);
+				border-radius: 8px;
+				width: calc(100% - 0px);
 			}
 		}
 	}
@@ -507,6 +919,12 @@ div.main-hot-area {
 	div.it-visual-2 {
 		height: 70vh;
 		margin-top: 100px;
+
+		@media screen and (max-width: 767px) {
+			height: 250px;
+			margin-top: 50px;
+			padding: 0 20px;
+		}
 		
 		div.visual {
 			float: right;
@@ -532,7 +950,8 @@ div.main-hot-area {
 				width: calc(100% - 32px);
 			}
 			@media screen and (min-width: 320px) and (max-width: 767px) {
-				width: calc(100% - 20px);
+				border-radius: 8px;
+				width: calc(100% - 0px);
 			}
 		}
 	}
@@ -544,6 +963,11 @@ div.main-hot-area {
 			padding-top: 200px;
 			color: #6C757D;
 
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				padding-top: 100px;
+			}
+
 			span {
 				font-family: 'Pretendard-SemiBold';
 			}
@@ -552,12 +976,20 @@ div.main-hot-area {
 			float: left;
 			font-size: 60px;
 			font-family: 'Pretendard-SemiBold';
+
+			@media screen and (max-width: 767px) {
+				font-size: 30px;
+			}
 		}
 		a.more {
 			float: right;
 			font-size: 18px;
 			color: $title-black;
 			margin: 45px 0 0 0;
+
+			@media screen and (max-width: 767px) {
+				display: none;
+			}
 
 			span.arrow-right {
 				vertical-align: middle;
@@ -574,38 +1006,79 @@ div.main-hot-area {
 
 		div.f, div.s {
 			text-align: right;
+
+			@media screen and (max-width: 767px) {
+				text-align: left;
+			}
 			
 			p {
 				font-size: 18px;
 				color: #6C757D;
 
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+				}
+
 				&.t-1 {
 					padding-top: 60px;
+
+					@media screen and (max-width: 767px) {
+						padding-top: 30px;
+					}
 				}
 				&.t-2 {
 					font-family: 'Pretendard-SemiBold';
 					font-size: 40px;
 					color: $title-black;
 					padding: 5px 0;
+
+					@media screen and (max-width: 767px) {
+						font-size: 20px;
+					}
 				}
 				&.t-4 {
 					padding-top: 30px;
 					color: $main-color;
 					font-size: 30px;
 
+					@media screen and (max-width: 767px) {
+						padding-top: 15px;
+						font-size: 16px;
+					}
+
 					span {
 						font-size: 18px;
 						color: $dark-dim;
+
+						@media screen and (max-width: 767px) {
+							font-size: 16px;
+						}
 					}
 				}
 			}
 			div.btns {
 				padding-top: 60px;
 
+				@media screen and (max-width: 767px) {
+					padding-top: 30px;
+				}
+
 				a {
 					display: inline-block;
 					width: 220px;
 					margin-left: 24px;
+
+					@media screen and (max-width: 767px) {
+						width: calc(50% - 8px);
+						margin-left: 0px;
+
+						&:nth-child(1) {
+							margin-right: 16px;
+						}
+						&:nth-child(2) {
+							margin-right: 0px;
+						}
+					}
 				}
 			}
 		}
@@ -622,14 +1095,44 @@ div.main-hot-area {
 			}
 		}
 	}
+
+	a.more {
+		display: block;
+		text-align: center;
+		font-size: 16px;
+		color: $title-black;
+		margin: 45px 0 0 0;
+
+		@media screen and (min-width: 767px) {
+			display: none;
+		}
+
+		span.arrow-right {
+			vertical-align: middle;
+			display: inline-block;
+			width: 9px; 
+			height: 9px; 
+			border-top: 2px solid $title-black; 
+			border-right: 2px solid $title-black; 
+			box-sizing: border-box;
+			transform: rotate(45deg); 
+			margin-top: -4px;
+		}
+	}
 }
 
 /* 나만의 장소를 등록해 보세요. */
 div.main-myplace-area {
 	position: relative;
-	height: 55vh;
+	height: 75vh;
 	background: url('../img/sample/main_myplace.png') 0 0 no-repeat;
 	background-size: cover;
+
+	@media screen and (max-width: 767px) {
+		height: 80vh;
+		background: url('../img/sample/main_myplace_mobile.png') 50% 50% no-repeat;
+		background-size: cover;
+	}
 
 	.caption {
 		position: absolute;
@@ -637,24 +1140,64 @@ div.main-myplace-area {
 		font-size: 60px;
 		z-index: 2;
 
+		@media screen and (max-width: 767px) {
+			position: static;
+			color: $white;
+			font-size: 30px;
+			padding: 100px 20px 0 20px;
+		}
+
 		p.txt-1 {
 			font-size: 60px;
 			font-family: 'Pretendard-SemiBold';
 			padding: 0px 0;
+
+			@media screen and (max-width: 767px) {
+				font-size: 30px;
+				line-height: 35px;
+				padding: 0px 0 20px 0;
+
+				span {
+					display: block;
+				}
+			}
 		}
 		p.txt-2 {
 			font-family: 'Pretendard-Regular';
 			font-size: 24px;
 			color: #6C757D;
 			padding-bottom: 45px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				color: #fff;
+			}
 		}
-		a {
-			display: inline-block;
-			padding: 18px 0;
-			width: 220px;
-			margin-right: 24px;
-			font-family: 'Pretendard-SemiBold';
+
+		div.btns {
+			@media screen and (max-width: 767px) {
+				position: absolute;
+				width: calc(100% - 40px);
+				left: 50%;
+				bottom: 100px;
+				transform: translateX(-50%);
+				margin-right: 0px;
+			}
+
+			a {
+				display: inline-block;
+				padding: 18px 0;
+				width: 220px;
+				margin-right: 24px;
+				font-family: 'Pretendard-SemiBold';
+
+				@media screen and (max-width: 767px) {
+					width: 100%;
+					margin-right: 0px;
+				}
+			}
 		}
+		
 
 		@media screen and (min-width: 1920px) { 
 			left: 50%; top: 50%;
@@ -677,8 +1220,7 @@ div.main-myplace-area {
 			transform: translate(0%, -50%);
 		}
 		@media screen and (min-width: 320px) and (max-width: 767px) {
-			left: 20px; top: 50%;
-			transform: translate(0%, -50%);
+			
 		}
 	}
 }

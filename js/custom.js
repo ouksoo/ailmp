@@ -1,6 +1,7 @@
 // main visual swipe 초기화
 const mainVisualSwiper = new Swiper('.main-visual-swiper', {
 	loop: true,
+	effect: "fade",
 	speed: 800,
 	autoplay: { 
 		delay: 4000, disableOnInteraction: false 
@@ -9,38 +10,68 @@ const mainVisualSwiper = new Swiper('.main-visual-swiper', {
 	watchSlidesProgress: true,
 	preloadImages: true,
 	updateOnWindowResize: true,
-
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
 	},
 	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		nextEl: '.main-visual-next',
+		prevEl: '.main-visual-prev',
 	},
 	on: {
-		slideChangeTransitionStart(swiper) {
-			swiper.slides.forEach(slide => {
-				const img = slide.querySelector('.slide-visual-bg');
-				if (!img) return;
-				// 애니메이션 강제 리셋
-				img.style.animation = 'none';
-				img.style.transform = 'scale(1.10)';
-				// 리플로우 후 애니메이션 속성 제거(활성 슬라이드 CSS 선택자가 다시 적용되며 재생)
-				img.offsetHeight; // reflow
-				img.style.animation = '';
-			});
-		},
-	}
+    slideChangeTransitionStart(swiper) {
+      // 1) 방금까지 활성(slide) → 떠나는 슬라이드로 표시하고 1.00에 고정
+      const prev = swiper.slides[swiper.previousIndex];
+      if (prev) {
+        prev.classList.add('is-leaving');
+        const img = prev.querySelector('.slide-visual-bg');
+        if (img) {
+          img.style.animation = 'none';
+          img.style.transform = 'scale(1.00)'; // 튐 방지: 1.00으로 유지
+        }
+      }
+
+      // 2) 새로 활성될 슬라이드: 애니메이션 재생을 확실히 트리거
+      const cur = swiper.slides[swiper.activeIndex];
+      if (cur) {
+        const img = cur.querySelector('.slide-visual-bg');
+        if (img) {
+          // 리셋 → 리플로우 → CSS(.swiper-slide-active) 애니메이션 재적용
+          img.style.animation = 'none';
+          img.style.transform = 'scale(1.10)';
+          // 강제 리플로우
+          // eslint-disable-next-line no-unused-expressions
+          img.offsetHeight;
+          img.style.animation = '';
+        }
+      }
+    },
+
+    slideChangeTransitionEnd(swiper) {
+      // 3) 이제 전환이 끝났으니, 떠났던 슬라이드를 원래 준비 상태(1.10)로 리셋
+      swiper.slides.forEach(slide => {
+        if (slide.classList.contains('is-leaving')) {
+          const img = slide.querySelector('.slide-visual-bg');
+          if (img) {
+            img.style.animation = 'none';
+            img.style.transform = 'scale(1.10)'; // 화면 밖에서 조용히 리셋
+            // 리플로우 후 깔끔히 정리
+            // eslint-disable-next-line no-unused-expressions
+            img.offsetHeight;
+            img.style.animation = '';
+          }
+          slide.classList.remove('is-leaving');
+        }
+      });
+    },
+  }
 });
 
 // 잇플레이스 PICK swipe 초기화
 const mainItSwiper = new Swiper('.main-it-swiper', {
 	loop: true,
 	speed: 800,
-	autoplay: { 
-		delay: 4000, disableOnInteraction: false 
-	},
+	autoplay: false,
 	allowTouchMove: true,
 	watchSlidesProgress: true,
 	preloadImages: true,
@@ -51,8 +82,8 @@ const mainItSwiper = new Swiper('.main-it-swiper', {
 		clickable: true,
 	},
 	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		nextEl: '.it-next',
+		prevEl: '.it-prev',
 	},
 	on: {
 		slideChangeTransitionStart(swiper) {
@@ -66,6 +97,33 @@ const mainItSwiper = new Swiper('.main-it-swiper', {
 				img.offsetHeight; // reflow
 				img.style.animation = '';
 			});
+		},
+	}
+});
+
+//촬영 컨셉에 맞는 공간 찾기 swipe 초기화
+var mainConceptSwiper = new Swiper(".concept-slide", {
+	direction: 'horizontal',
+	loop: true,
+	spaceBetween: 24,
+	slidesPerView: 2,
+	breakpoints: {
+		768: {
+			slidesPerView: 2.1
+		}
+	},
+	navigation: {
+		nextEl: '.concept-next',
+		prevEl: '.concept-prev',
+	},
+	scrollbar: {
+		el: '.swiper-scrollbar',
+	},
+	on: {
+		slideChangeTransitionStart: function(se) {
+			var thisIndex = se.realIndex+1;
+			$('.area-10 div.inner a').fadeOut();
+			$('.area-10 div.inner a.story-img-'+thisIndex).fadeIn();
 		},
 	}
 });
@@ -140,11 +198,13 @@ var AILMP = {
 		//상단 "공간찾기" 버튼
 		$('div.header-left a.find-search-show').on('click', function(e) {
 			$('div.search-place').addClass('show');
+			$('div.search-apply').css('display', 'block');
 			applyByWidth();
 			$(this).addClass('on');
 		});
 		$('a.search-place-close, a.search-place-off').on('click', function(e) {
 			$('div.search-place').removeClass('show');
+			$('div.search-apply').css('display', 'none');
 			$('div.header-left a.find-search-show').removeClass('on');
 		});
 
