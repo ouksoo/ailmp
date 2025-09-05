@@ -128,6 +128,56 @@ var mainConceptSwiper = new Swiper(".concept-slide", {
 	}
 });
 
+/** 리뷰 전체보기 리스트 pc */
+var reviewThumbSwiper = new Swiper(".review-thumb-wiper", {
+	loop: true,
+	spaceBetween: 10,
+	slidesPerView: 10,
+	freeMode: true,
+	watchSlidesProgress: true,
+});
+var reviewDetailSwiper = new Swiper(".review-detail-swiper", {
+	loop: true,
+	spaceBetween: 10,
+	pagination: {
+        el: ".pagination-review",
+        type: "fraction",
+	},
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+		thumbs: {
+		swiper: reviewThumbSwiper,
+	},
+});
+/** //리뷰 전체보기 리스트 pc */
+
+/** 공간사진 전체 보기 */
+var reviewThumbSwiper = new Swiper(".picture-total-thumb-wiper", {
+	loop: true,
+	spaceBetween: 24,
+	slidesPerView: 10,
+	freeMode: true,
+	watchSlidesProgress: true,
+});
+var reviewDetailSwiper = new Swiper(".picture-totalview-swiper", {
+	loop: true,
+	spaceBetween: 10,
+	pagination: {
+        el: ".pagination-pictures",
+        type: "fraction",
+	},
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+		thumbs: {
+		swiper: reviewThumbSwiper,
+	},
+});
+/** //공간사진 전체 보기 */
+
 /* 공간찾기 slide 해상도 적용 */
 let placeSearchSwiper = null;
 
@@ -135,7 +185,8 @@ const searchPlaceOptions = {
 	loop: true,
 	spaceBetween: 40,
 	pagination: { 
-		el: '.swiper-pagination', clickable: true 
+		el: '.swiper-pagination', 
+		clickable: true,
 	},
 	navigation: { 
 		nextEl: '.swiper-button-next', 
@@ -324,6 +375,40 @@ $(document).ready(function() {
     }
 
     flatpickr('#calendar', {
+		inline: true,
+		mode: 'range',
+		dateFormat: 'Y-m-d',
+		defaultDate: [
+			new Date(Date.now() - 7*24*60*60*1000),
+			new Date()
+		],
+		locale: flatpickr.l10ns.ko,
+		monthSelectorType: 'static',
+		onReady(selectedDates, dateStr, instance) {
+			const monthsEl = instance.calendarContainer.querySelector('.flatpickr-months');
+			if (!instance._fpHeader) {
+				const header = document.createElement('div');
+				header.className = 'fp-header';
+				const prev = document.createElement('button');
+				prev.type = 'button'; prev.className = 'fp-btn preview';
+				const label = document.createElement('div');
+				label.className = 'fp-label';
+				const next = document.createElement('button');
+				next.type = 'button'; next.className = 'fp-btn next';
+				header.append(prev, label, next);
+				monthsEl.appendChild(header);
+				instance._fpHeader = header;
+				instance._fpLabel = label;
+				prev.addEventListener('click', () => { instance.changeMonth(-1); updateHeaderLabel(instance); });
+				next.addEventListener('click', () => { instance.changeMonth(1);  updateHeaderLabel(instance); });
+			}
+			updateHeaderLabel(instance);
+		},
+		onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
+		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
+    });
+
+	flatpickr('#reservePlaceDateSelectBox', {
 		inline: true,
 		mode: 'range',
 		dateFormat: 'Y-m-d',

@@ -161,7 +161,7 @@ div.main-visual-area {
 			font-weight: 700;
 		}
 		/* 반응형: 버튼/불릿 */
-		@media (max-width: 480px) {
+		@media (max-width: 767px) {
 			.visual-swiper {
 				--nav-size: 40px;
 				--nav-gap: 10px;

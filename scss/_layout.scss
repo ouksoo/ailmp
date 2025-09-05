@@ -508,10 +508,8 @@ div.header-wrapper {
 
 		.header-left {
 
-			@media screen and (max-width: 768px) {
-				background: transparent;
-				border-top: 1px solid #EAEAEA;
-			}
+			
+			
 
 			h1 {
 				background: url('../img/logo_top_white.svg') 0 0 no-repeat;
@@ -623,7 +621,7 @@ div.footer-wrapper {
 			float: left;
 			width: 98px;
 			height: 22px;
-			background: url('../img/logo_white.svg') 0 0 no-repeat;
+			background: url('../img/logo_top_white.svg') 0 0 no-repeat;
 			text-indent: -9999px;
 		}
 		div.footer-menu {

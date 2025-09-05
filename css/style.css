@@ -704,12 +704,6 @@ div.header-wrapper.main-only {
   background: transparent;
   border-bottom: 0px;
 }
-@media screen and (max-width: 768px) {
-  div.header-wrapper.main-only .header-left {
-    background: transparent;
-    border-top: 1px solid #EAEAEA;
-  }
-}
 div.header-wrapper.main-only .header-left h1 {
   background: url("../img/logo_top_white.svg") 0 0 no-repeat;
 }
@@ -807,7 +801,7 @@ div.footer-wrapper div.top h2 {
   float: left;
   width: 98px;
   height: 22px;
-  background: url("../img/logo_white.svg") 0 0 no-repeat;
+  background: url("../img/logo_top_white.svg") 0 0 no-repeat;
   text-indent: -9999px;
 }
 div.footer-wrapper div.top div.footer-menu {
@@ -1683,6 +1677,51 @@ div.terms-content {
   }
 }
 
+/* 예외적인 모달 */
+div.extra-modal-op p.title-normal {
+  font-size: 22px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 20px;
+}
+div.extra-modal-op p.title-normal span {
+  color: #2EC4B6;
+}
+div.extra-modal-op p.reserve-name-info span.name {
+  display: block;
+  font-size: 22px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  line-height: 22px;
+}
+div.extra-modal-op p.reserve-name-info span.date {
+  display: block;
+  font-size: 14px;
+  color: #62717E;
+  padding: 5px 0 30px 0;
+}
+div.extra-modal-op a.modal-close-button {
+  position: absolute;
+  z-index: 10;
+  right: 30px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons/icon_close.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
+}
+@media screen and (max-width: 768px) {
+  div.extra-modal-op a.modal-close-button {
+    top: 16px;
+    right: 20px;
+  }
+}
+div.extra-modal-op div.scroll-modal-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 800px;
+}
+
 /* 툴팁 박스 */
 .tooltip-inner {
   background-color: #fff !important; /* 배경 흰색 */
@@ -1790,6 +1829,11 @@ div.terms-content {
 .w-660 {
   width: 660px;
   max-width: 660px;
+}
+
+.w-800 {
+  width: 800px;
+  max-width: 800px;
 }
 
 .w-30-per {
@@ -2337,7 +2381,7 @@ div.error-container {
 @media screen and (max-width: 768px) {
   div.error-container {
     width: 100%;
-    margin: 50px auto 50px auto;
+    margin: 100px auto 100px auto;
     padding-top: 100px;
     padding-left: 30px;
     padding-right: 30px;
@@ -2653,7 +2697,7 @@ div.main-visual-area .main-visual-swiper .swiper-button-next::after {
   font-size: 18px;
   font-weight: 700;
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   div.main-visual-area .main-visual-swiper .visual-swiper {
     --nav-size: 40px;
     --nav-gap: 10px;
@@ -3952,4 +3996,721 @@ div.place-list-wrapper main.masonry-list a.more {
     font-size: 16px;
     margin-top: 30px;
   }
+}
+
+/* 상세 보기 */
+div.place-view-wrapper {
+  /* 기본정보, 위치 */
+  /* 리뷰 */
+  /* 이용 안내 */
+  /* 이곳과 비슷한 추천공간 */
+}
+div.place-view-wrapper p.title {
+  font-size: 40px;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 60px;
+}
+div.place-view-wrapper p.title span.warnning {
+  display: inline-block;
+  padding-left: 35px;
+  font-size: 18px;
+  color: #A2A2A4;
+  font-family: "Pretendard-Medium";
+  background: url("../img/icons/icon_warnning.svg") 0 50% no-repeat;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+div.place-view-wrapper p.title span.counter {
+  color: #2EC4B6;
+  margin-left: 10px;
+}
+div.place-view-wrapper a.normal {
+  display: inline-block;
+  border: 1px solid #C6CAD3;
+  background: #fff;
+  color: #0D0D0D;
+  width: 220px;
+  margin-top: 30px;
+}
+div.place-view-wrapper div.common-area {
+  padding-bottom: 200px;
+  /* 좌측 */
+  /* 우측 */
+}
+div.place-view-wrapper div.common-area div.infos {
+  float: left;
+  width: calc(100% - 364px);
+}
+div.place-view-wrapper div.common-area div.infos ul.detail-list li {
+  float: left;
+  width: 100px;
+  margin-right: 225px;
+}
+div.place-view-wrapper div.common-area div.infos ul.detail-list li:last-child {
+  margin-right: 0;
+}
+div.place-view-wrapper div.common-area div.infos ul.detail-list li span.t1 {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #A2A2A4;
+  padding-top: 10px;
+}
+div.place-view-wrapper div.common-area div.infos ul.detail-list li span.t2 {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #0D0D0D;
+  line-height: 18px;
+  padding-top: 5px;
+}
+div.place-view-wrapper div.common-area div.infos div.detail-view {
+  border-top: 1px solid #C6CAD3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 200px;
+}
+div.place-view-wrapper div.common-area div.infos div.detail-view div.inner {
+  font-size: 16px;
+  line-height: 24px;
+  color: #62717E;
+}
+div.place-view-wrapper div.common-area div.infos div.map-wrapper {
+  height: 522px;
+  border-radius: 14px;
+  border: 1px solid #eee;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap {
+  float: right;
+  width: 340px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select {
+  border: 1px solid #EAEAEA;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.total-count {
+  padding-bottom: 15px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.total-count div.count {
+  float: left;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.total-count div.count p.f {
+  font-size: 12px;
+  color: #62717E;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.total-count div.count p.s {
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+  color: #2EC4B6;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.total-count div.count p.s span {
+  font-size: 14px;
+  color: #0D0D0D;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.total-count span.count-guide {
+  float: right;
+  font-size: 12px;
+  color: #62717E;
+  padding-top: 22px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap {
+  padding: 20px 0;
+  border-top: 1px solid #EAEAEA;
+  border-bottom: 1px solid #EAEAEA;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-date a {
+  display: block;
+  line-height: 41px;
+  border: 1px solid #A2A2A4;
+  font-size: 14px;
+  color: #6C757D;
+  background: url("../img/icons/icon_plus_black.svg") 94% 50% no-repeat;
+  padding: 0 15px;
+  border-radius: 8px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.reserve-place-select {
+  margin-bottom: 10px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.reserve-place-select div.close-btn {
+  padding: 20px 0;
+  border-bottom: 1px solid #EAEAEA;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.reserve-place-select div.close-btn a {
+  display: block;
+  border-radius: 8px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #FFFFFF;
+  background: #62717E;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.time-select {
+  padding: 10px 0;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.time-select .bootstrap-select > .dropdown-toggle {
+  padding: 9px 15px;
+  font-size: 14px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.time-select .both {
+  width: 46.5% !important;
+}
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.time-select .both {
+    width: 45% !important;
+  }
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man .whole {
+  width: 100%;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man .bootstrap-select > .dropdown-toggle {
+  padding: 9px 15px;
+  font-size: 14px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.reserve-btn-wrap {
+  padding-top: 20px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.reserve-btn-wrap a {
+  display: inline-block;
+  width: 100%;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.reserve-btn-wrap p.guide {
+  font-size: 12px;
+  color: #62717E;
+  line-height: 16px;
+  padding-top: 10px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-etc {
+  border: 1px solid #EAEAEA;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-etc div.apply-to-host p.f {
+  float: left;
+  font-size: 14px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+  line-height: 18px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-etc div.apply-to-host a.s {
+  float: right;
+  font-size: 14px;
+  color: #2EC4B6;
+  padding-right: 15px;
+  background: url("../img/icons/icon_arrow_green.svg") 100% 50% no-repeat;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply {
+  border: 1px solid #EAEAEA;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.up {
+  border-bottom: 1px solid #EAEAEA;
+  padding-bottom: 20px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.up div.f {
+  float: left;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.up div.f div.a {
+  float: left;
+  width: 36px;
+  height: 36px;
+  background: #D9D9D9;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.up div.f div.b {
+  float: left;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.up div.f div.b p.t-1 {
+  font-size: 14px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 2px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.up div.f div.b p.t-2 {
+  font-size: 12px;
+  color: #62717E;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.up a.s {
+  float: right;
+  font-size: 14px;
+  color: #2EC4B6;
+  padding-right: 15px;
+  background: url("../img/icons/icon_arrow_green.svg") 100% 50% no-repeat;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.down {
+  padding-top: 20px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.down div.a {
+  float: left;
+  margin-right: 10px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.down div.b {
+  float: left;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.down div.b p.t-1 {
+  font-size: 14px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 2px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.down div.b p.t-2 {
+  font-size: 12px;
+  color: #62717E;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.down div.b p.t-2 span {
+  color: #0D0D0D;
+}
+div.place-view-wrapper div.review-area {
+  padding-bottom: 200px;
+}
+div.place-view-wrapper div.review-area ul.review-list li {
+  float: left;
+  border: 1px solid #EAEAEA;
+  padding: 30px;
+  border-radius: 14px;
+  width: calc(33.8% - 24px);
+  margin-right: 24px;
+}
+div.place-view-wrapper div.review-area ul.review-list li:nth-child(3n) {
+  margin-right: 0;
+}
+div.place-view-wrapper div.review-area ul.review-list li div.up {
+  min-height: 102px;
+}
+div.place-view-wrapper div.review-area ul.review-list li div.up span.thumb {
+  float: left;
+  width: 102px;
+  height: 102px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-right: 24px;
+}
+div.place-view-wrapper div.review-area ul.review-list li div.up span.thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: block;
+}
+div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info {
+  float: left;
+  width: calc(100% - 126px);
+}
+div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info span {
+  display: block;
+}
+div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info span.a {
+  font-size: 18px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  padding-top: 8px;
+}
+div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info span.b {
+  margin: 8px 0 0 0;
+  line-height: 18px;
+}
+div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info span.c {
+  font-size: 14px;
+  color: #62717E;
+}
+div.place-view-wrapper div.review-area ul.review-list li p.down {
+  font-size: 16px;
+  color: #62717E;
+  line-height: 20px;
+  padding-top: 20px;
+}
+div.place-view-wrapper div.useinfo-area {
+  padding-bottom: 170px;
+}
+div.place-view-wrapper div.useinfo-area div.user-guide {
+  border-top: 1px solid #C6CAD3;
+  line-height: 24px;
+  font-size: 16px;
+  color: #62717E;
+  padding-top: 30px;
+}
+div.place-view-wrapper div.useinfo-area div.user-guide ul.use-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li {
+  float: left;
+  width: calc(33.8% - 24px);
+  margin-right: 24px;
+  padding-bottom: 50px;
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li:nth-child(3n) {
+  margin-right: 0;
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: block;
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb div.info-tag {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb div.info-tag span {
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 14px;
+  color: #0D0D0D;
+  background: #fff;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li p.a {
+  font-size: 20px;
+  color: #62717E;
+  padding-top: 20px;
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li p.b {
+  font-size: 24px;
+  font-family: "Pretendard-SemiBold";
+  padding: 5px 0 10px 0;
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li p.c {
+  font-size: 24px;
+  color: #2EC4B6;
+}
+div.place-view-wrapper div.recommand-area ul.recommand-list li p.c span {
+  font-size: 18px;
+  color: #A2A2A4;
+}
+
+/* 리뷰 전체 보기 */
+ul.review-all-list li {
+  position: relative;
+  border: 1px solid #EAEAEA;
+  padding: 20px;
+  border-radius: 14px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+ul.review-all-list li a.view-detail {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 14px;
+  color: #2EC4B6;
+  padding-right: 15px;
+  background: url("../img/icons/icon_arrow_green.svg") 100% 50% no-repeat;
+}
+ul.review-all-list li div.up span.thumb {
+  position: relative;
+  float: left;
+  width: 102px;
+  height: 102px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-right: 24px;
+}
+ul.review-all-list li div.up span.thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: block;
+}
+ul.review-all-list li div.up span.thumb span {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  background: #fff;
+  color: #0D0D0D;
+  font-size: 14px;
+  border-radius: 100px;
+  padding: 3px 6px;
+  border: 1px solid #EAEAEA;
+}
+ul.review-all-list li div.up div.review-info {
+  float: left;
+  width: calc(100% - 126px);
+}
+ul.review-all-list li div.up div.review-info span {
+  display: block;
+}
+ul.review-all-list li div.up div.review-info span.a {
+  font-size: 18px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  padding-top: 8px;
+}
+ul.review-all-list li div.up div.review-info span.b {
+  margin: 8px 0 0 0;
+  line-height: 18px;
+}
+ul.review-all-list li div.up div.review-info span.c {
+  font-size: 14px;
+  color: #62717E;
+}
+ul.review-all-list li p.down {
+  font-size: 16px;
+  color: #62717E;
+  line-height: 20px;
+  padding-top: 20px;
+}
+
+/* 리뷰 상세보기 */
+div.review-place-detailview .gallery-review-pc {
+  position: relative;
+  height: 585px;
+}
+div.review-place-detailview .gallery-review-pc .pagination-review {
+  position: absolute;
+  z-index: 10;
+  top: 365px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 36px;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 20px;
+  line-height: 36px;
+}
+div.review-place-detailview .gallery-review-pc .swiper {
+  height: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.review-place-detailview .gallery-review-pc .swiper-slide {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  background: #0D0D0D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+div.review-place-detailview .gallery-review-pc .swiper-slide .slide-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.review-place-detailview .gallery-review-pc .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+div.review-place-detailview .gallery-review-pc .review-detail-swiper {
+  height: 416px !important;
+  width: 100%;
+}
+div.review-place-detailview .gallery-review-pc .review-thumb-wiper {
+  height: 16.5%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+div.review-place-detailview .gallery-review-pc .review-thumb-wiper .swiper-slide {
+  width: 58px !important;
+  height: 58px !important;
+  opacity: 0.4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+div.review-place-detailview .gallery-review-pc .review-thumb-wiper .swiper-slide-thumb-active {
+  border: 2px solid #2EC4B6;
+}
+div.review-place-detailview .gallery-review-pc .review-thumb-wiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+div.review-place-detailview .gallery-review-pc .swiper-button-next, div.review-place-detailview .gallery-review-pc .swiper-button-prev {
+  position: static;
+  display: inline-block;
+}
+div.review-place-detailview .gallery-review-pc .swiper-button-next {
+  width: 50px;
+  height: 50px;
+  background: url("../img/icons/icon_gallery_right_black.svg") 0 0 no-repeat;
+}
+div.review-place-detailview .gallery-review-pc .swiper-button-next::after {
+  content: "";
+}
+div.review-place-detailview .gallery-review-pc .swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  background: url("../img/icons/icon_gallery_left_black.svg") 0 0 no-repeat;
+}
+div.review-place-detailview .gallery-review-pc .swiper-button-prev::after {
+  content: "";
+}
+div.review-place-detailview .gallery-review-pc .prevnext-wrapper {
+  text-align: center;
+  padding-bottom: 10px;
+}
+div.review-place-detailview .gallery-review-pc .prevnext-wrapper .swiper-button-next, div.review-place-detailview .gallery-review-pc .prevnext-wrapper .swiper-button-prev {
+  margin: 0 5px;
+}
+div.review-place-detailview .review-content {
+  font-size: 16px;
+  line-height: 22px;
+  color: #62717E;
+}
+
+/* 사진 전체보기 */
+div.picture-backface {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+div.picture-backface div.place-total-picture-view {
+  position: absolute;
+  width: 1440px;
+  z-index: 100;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc {
+  position: relative;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .pagination-pictures {
+  position: absolute;
+  z-index: 10;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 36px;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 20px;
+  line-height: 36px;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper {
+  height: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper-slide {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  background: #0D0D0D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper-slide .slide-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .picture-totalview-swiper {
+  height: 800px !important;
+  width: 100%;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .picture-total-thumb-wiper {
+  height: 16.5%;
+  box-sizing: border-box;
+  padding: 24px 0;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .picture-total-thumb-wiper .swiper-slide {
+  width: 98px !important;
+  height: 98px !important;
+  opacity: 0.4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .picture-total-thumb-wiper .swiper-slide-thumb-active {
+  border: 2px solid #2EC4B6;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .picture-total-thumb-wiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper-button-next, div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper-button-prev {
+  position: static;
+  display: inline-block;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper-button-next {
+  width: 50px;
+  height: 50px;
+  background: url("../img/icons/icon_gallery_right_black.svg") 0 0 no-repeat;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper-button-next::after {
+  content: "";
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  background: url("../img/icons/icon_gallery_left_black.svg") 0 0 no-repeat;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .swiper-button-prev::after {
+  content: "";
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .prevnext-wrapper {
+  text-align: center;
+  padding-bottom: 10px;
+}
+div.picture-backface div.place-total-picture-view .gallery-review-pc .prevnext-wrapper .swiper-button-next, div.picture-backface div.place-total-picture-view .gallery-review-pc .prevnext-wrapper .swiper-button-prev {
+  margin: 0 5px;
+}
+div.picture-backface div.place-total-picture-view .review-content {
+  font-size: 16px;
+  line-height: 22px;
+  color: #62717E;
 }/*# sourceMappingURL=style.css.map */

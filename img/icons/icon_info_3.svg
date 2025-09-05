@@ -1,0 +1,24 @@
+<svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="98" height="98" rx="14" fill="url(#paint0_linear_181_6613)"/>
+<path d="M73 73H25V25" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 30L25 25L30 30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 68L73 73L68 78" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="35.5" cy="25" r="2" fill="white"/>
+<circle cx="43" cy="25" r="2" fill="white"/>
+<circle cx="50.5" cy="25" r="2" fill="white"/>
+<circle cx="58" cy="25" r="2" fill="white"/>
+<circle cx="65.5" cy="25" r="2" fill="white"/>
+<circle cx="73" cy="25" r="2" fill="white"/>
+<circle cx="73" cy="62.5" r="2" transform="rotate(-90 73 62.5)" fill="white"/>
+<circle cx="73" cy="55" r="2" transform="rotate(-90 73 55)" fill="white"/>
+<circle cx="73" cy="47.5" r="2" transform="rotate(-90 73 47.5)" fill="white"/>
+<circle cx="73" cy="40" r="2" transform="rotate(-90 73 40)" fill="white"/>
+<circle cx="73" cy="32.5" r="2" transform="rotate(-90 73 32.5)" fill="white"/>
+<circle cx="73" cy="25" r="2" transform="rotate(-90 73 25)" fill="white"/>
+<defs>
+<linearGradient id="paint0_linear_181_6613" x1="54" y1="98" x2="54" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2EC4B6"/>
+<stop offset="1" stop-color="#34DBBF"/>
+</linearGradient>
+</defs>
+</svg>

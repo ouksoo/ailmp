@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<!-- 공통 -->
+<div class="film-common"></div>
+<a href="#" class="go-top-btn"></a>
+<!-- //공통 -->
+
+<!-- header -->
+<div class="header-wrapper">
+	<div class="header-footer-inner nomobile clearfix">
+		<div class="film-normal"></div>
+		<div class="header-left clearfix">
+			<h1>IT PLACE</h1>
+			<a href="#" class="find-search-show"><span>공간찾기</span></a>
+			<a href="#" class="reg-place-show"><span>등록하기</span></a>
+		</div>
+		<div class="header-right clearfix">
+			<a href="#" class="tops a">검색</a><div class="b"><p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p></div><a href="#" class="tops c">알림<span class="notice"></span></a><a href="#" class="tops d">메뉴</a>
+			<div class="search-box clearfix">
+				<input type="text" placeholder="어떤 공간을 찾고 있나요? 예) 포근한 가정집" />
+				<button class="search-btn">검색</button>
+			</div>
+
+		</div>
+
+		<!-- 공지 알람 -->
+		<div class="notification-wrap">
+			<div class="inner" data-simplebar>
+				<ul>
+					<li>
+						<p class="a">예약</p>
+						<p class="b">신청하신 예스스튜디오 예약이 호스트에 의해 승인 되었습니다.</p>
+						<p class="c">2025/06/10 13:55</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- aside -->
+		<aside class="lnb-wrapper">
+			<div class="menu-header">
+				<div class="login-button">
+					<p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p>
+					<p class="greeting-msg" style="display: none;"><span>홍길동</span>님, 반갑습니다.</p>
+				</div>
+				<a href="#" class="tops c">알림<span class="notice"></span></a>
+				<a href="#" class="menu-close">닫기</a>
+			</div>
+			<a href="#" class="logout-button">로그아웃</a>
+			<div class="menu-wrapper">
+				<ul class="menus">
+					<li>
+						<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+						<div class="submenus">
+							<a href="#" class="on">예약/결제 내역</a>
+							<a href="#">나의 문의</a>
+							<a href="#">관심 장소</a>
+							<a href="#">개인 정보 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+						<div class="submenus">
+							<a href="#">공간 등록</a>
+							<a href="#">공간 관리</a>
+							<a href="#">예약 관리</a>
+							<a href="#">Q&A 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">고객센터</a>
+						<div class="submenus">
+							<a href="#">공지사항</a>
+							<a href="#">이벤트</a>
+							<a href="#">자주 묻는 질문</a>
+							<a href="#">문의하기</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<!-- //aside -->
+	</div>
+</div>
+<!-- //header -->
+ 
+<!-- main visual -->
+<div class="main-visual-area">
+	<div class="swiper main-visual-swiper">
+		<div class="swiper-wrapper">
+			<!-- 1 -->
+			<div class="swiper-slide">
+				<img class="slide-visual-bg" src="img/sample/main_visual_1.png" />
+				<div class="slide-gradient"></div>
+				<div class="caption">
+					<p class="txt-1">
+						<span>어떤 공간이</span> <span>필요하세요?</span>
+						<span class="in">
+							<span>잇플레이스가</span> <span>찾아드릴게요.</span>
+						</span>
+					</p>
+					<p class="txt-2">유쾌한 연출, 비비드한 컬러의 팝아트 공간 <span class="arrow-right" aria-hidden="true"></span></p>
+				</div>
+			</div>
+			<!-- 2 -->
+			<div class="swiper-slide">
+				<img class="slide-visual-bg" src="img/sample/main_visual_2.png" />
+				<div class="slide-gradient"></div>
+				<div class="caption">
+					<p class="txt-1">
+						<span>어떤 공간이</span> <span>필요하세요?</span>
+						<span class="in">
+							<span>잇플레이스가</span> <span>찾아드릴게요.</span>
+						</span>
+					</p>
+					<p class="txt-2">자유로움이 담긴 현대의  도심속 공간 <span class="arrow-right" aria-hidden="true"></span></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 내비게이션 & 페이지네이션 (슬라이드 내부) -->
+		<div class="swiper-button-prev main-visual-prev" aria-label="이전 슬라이드"></div>
+		<div class="swiper-button-next main-visual-next" aria-label="다음 슬라이드"></div>
+		<div class="swiper-pagination" aria-label="페이지 네비게이션"></div>
+	</div>
+</div>
+<!-- //main visual -->
+
+<div class="container-wrapper">
+	<div class="common-wrapper">
+		
+		<!-- place view start -->
+		<div class="place-view-wrapper">
+
+			<!-- 기본정보 / 위치 -->
+			<div class="common-area clearfix">
+				<div class="infos">
+					<p class="title">기본 정보</p>
+					<ul class="detail-list clearfix">
+						<li>
+							<img class="slide-visual-bg" src="img/icons/icon_info_1.svg" />
+							<span class="t1">위치</span>
+							<span class="t2">서울시 역삼동</span>
+						</li>
+						<li>
+							<img class="slide-visual-bg" src="img/icons/icon_info_2.svg" />
+							<span class="t1">최대 인원</span>
+							<span class="t2">서울시 역삼동</span>
+						</li>
+						<li>
+							<img class="slide-visual-bg" src="img/icons/icon_info_3.svg" />
+							<span class="t1">면적</span>
+							<span class="t2">15평 (49.5m2)</span>
+						</li>
+						<li>
+							<img class="slide-visual-bg" src="img/icons/icon_info_4.svg" />
+							<span class="t1">주차</span>
+							<span class="t2">3대 (무료)</span>
+						</li>
+					</ul>
+					<div class="detail-view">
+						<div class="inner">
+							물결이 흐르는 듯한 지중해 풍 베이지톤 내츄럴 컨셉의 리빙룸.<br /><br />
+
+							룸사이즈는 대략 30평이며, 테라스가 있습니다.<br />
+							천정이 마감되어 있어 주택 분위기로 촬영 가능합니다.<br />
+							채광은 남서향이며 전면 창문부터 오전에 해가 들어와서<br />
+							테라스가 있는 통창으로 오후에 해가 넘어가 하루종일 채광이 좋습니다.<br /><br />
+
+							아뜰리에8 스튜디오 소개<br />
+							7층 빌딩 단독, 강남에서 10분거리, 뚝섬역 도보 5분거리, 서울숲과 인접한 곳에 위치한 성수동의 렌탈 스튜디오 ‘아뜰리에8’ 입니다.<br />
+							1,2층 카페, 3~7층 주차가능한 주차장을 보유하고 있습니다. 
+						</div>
+						<a href="#" class="modal-button dark-gray bd0 normal">전체 보기</a>
+					</div>
+
+					<p class="title">위치<span class="warnning">상세 주소는 예약 확정 후 확인하실 수 있어요.</span></p>
+					<div class="map-wrapper">
+a
+					</div>
+				</div>
+
+				<!-- 우측 예약 -->
+				<div class="reserve-wrap">
+					<div class="reservation-select">
+						<div class="total-count clearfix">
+							<div class="count">
+								<p class="f">결제 금액 0.1% 적립</p>
+								<p class="s">55,000 <span>원/시간</span></p>
+							</div>
+							<span class="count-guide">최소예약 3시간</span>
+						</div>
+						<div class="selects-wrap">
+							<div class="select-date">
+								<a href="#">날짜 선택</a>
+							</div>
+
+							<div class="reserve-place-select">
+								<div id="reservePlaceDateSelectBox"></div>
+								<div class="close-btn">
+									<a href="#">닫기</a>
+								</div>
+							</div>
+
+							<div class="time-select">
+								<select class="selectpicker both" data-container="body">
+									<option>시작 시간</option>
+								</select>
+								~
+								<select class="selectpicker both" data-container="body">
+									<option>종료 시간</option>
+								</select>
+							</div>
+							<div class="select-man">
+								<select class="selectpicker whole" data-container="body">
+									<option>인원 선택(기본 5명)</option>
+								</select>
+							</div>
+						</div>
+						<div class="reserve-btn-wrap">
+							<a href="#" class="modal-button green bd0">공간 예약하기</a>
+							<p class="guide">예약 신청 후 24시간 이내  예약이 확정되며,<br />예약 확정 후 결제가 진행됩니다.</p>
+						</div>
+					</div>
+					<div class="reserve-etc">
+						<div class="apply-to-host clearfix">
+							<p class="f">호스트에게 사전답사를<br />신청해 보세요.</p>
+							<a href="#" class="s">사전답사 신청</a>
+						</div>
+					</div>
+					<div class="reserve-info-apply">
+						<div class="up">
+							<div class="clearfix">
+								<div class="f clearfix">
+									<div class="a"></div>
+									<div class="b">
+										<p class="t-1">그라디언트 스튜디오</p>
+										<p class="t-2">1시간 이내 응답 ∙ 호스팅 100회</p>
+									</div>
+								</div>
+								<a href="#" class="s">문의하기</a>
+							</div>
+						</div>
+						<div class="down clearfix">
+							<div class="a"><img src="img/icons/icon_trophy.svg" alt="" /></div>
+							<div class="b">
+								<p class="t-1">좋아요 4.9</p>
+								<p class="t-2">잇플레이스의 <span>신뢰받는 공간</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //기본정보 / 위치 -->
+
+			<!-- 리뷰 -->
+			<div class="review-area">
+				<p class="title">리뷰<span class="counter">24</span></p>	
+				<ul class="review-list clearfix">
+					<li>
+						<div class="up clearfix">
+							<span class="thumb"><img src="img/sample/sample_1.png" alt="" /></span>
+							<div class="review-info">
+								<span class="a">김에어리</span>
+								<span class="b">
+									<img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_half.svg" /><img src="img/icons/icon_star_empty.svg" />
+								</span>
+								<span class="c">2025. 03. 25</span>
+							</div>
+						</div>
+						<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
+					</li>
+					<li>
+						<div class="up clearfix">
+							<span class="thumb"><img src="img/sample/sample_2.png" alt="" /></span>
+							<div class="review-info">
+								<span class="a">김에어리</span>
+								<span class="b">
+									<img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_half.svg" /><img src="img/icons/icon_star_empty.svg" />
+								</span>
+								<span class="c">2025. 03. 25</span>
+							</div>
+						</div>
+						<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
+					</li>
+					<li>
+						<div class="up clearfix">
+							
+							<div class="review-info">
+								<span class="a">김에어리</span>
+								<span class="b">
+									<img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_half.svg" /><img src="img/icons/icon_star_empty.svg" />
+								</span>
+								<span class="c">2025. 03. 25</span>
+							</div>
+						</div>
+						<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
+					</li>
+				</ul>
+				<a href="#" class="modal-button dark-gray bd0 normal">리뷰 전체보기</a>
+			</div>
+			<!-- //리뷰 -->
+
+			<!-- 이용 안내 -->
+			<div class="useinfo-area">
+				<p class="title">이용 안내</p>	
+				<div class="user-guide">
+					[시간 엄수]<br />
+					<ul class="use-list">
+						<li>계약된 시간을 꼭 준수하여 주시기 바랍니다.</li>
+						<li>이용요금은 [시작시간] 및 [종료 시간]으로 계약됩니다.</li>
+						<li>촬영 준비 및 세팅, 장비 철수 및 장소 원상복구 시간은 계약 시간에 포함 되어있습니다.</li>
+						<li>계약된 찰영 시간을 초과할 경우 호스트가 추가결제를 요청할 수 있습니다.</li>
+					</ul>
+					[파손 주의]<br />
+					<ul class="use-list">
+						<li>삼각대, 조명, 철제박스, 감독 의자, 기타 장비로 인한 나무 바닥과 벽지 파손에 주의해주세요.</li>
+						<li>준비물 : 간단한 돗자리나 모포, 테니스공을 준비해서 장비 밑에 꼭 깔아 놓아주세요.</li>
+						<li>파손 시 : 현장에서 함께 확인 > 사진 촬영 > 견적 확인 후, 배상 요청을 진행하게 됩니다.</li>
+					</ul>
+					[스텝 인원]
+					<ul class="use-list">
+						<li>설정한 최대 스탭 인원이 지켜지지 않을 경우, 호스트가 촬영을 취소하거나 추가결제를 요청할 수 있습니다.</li>
+					</ul>
+					[취식 금지]
+					<ul class="use-list">
+						<li>공간에서 취식은 항상 금지되어 있습니다. 부득이한 경우 호스트에게 먼저 양해를 꼭 구해주세요.</li>
+					</ul>
+					[에티켓]
+					<ul class="use-list">
+						<li>주변 주민들을 위해 기본 에티켓을 지켜주세요.</li>
+						<li>주변 야외 촬영은 불가능합니다.</li>
+						<li>촬영 도중 발생한 쓰레기는 모두 정리해주셔야 합니다.</li>
+						<li>주차는 안내된 주차대수만 제공됩니다.</li>
+						<li>기존의 가구 세팅 및 구조를 필요에 의해 변경하신 경우 마감시간 전에 원상복구 해주셔야 합니다.</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //이용 안내 -->
+
+			<!-- 이곳과 비슷한 추천공간 -->
+			<div class="recommand-area">
+				<p class="title">이곳과 비슷한 추천공간</p>	
+				<ul class="recommand-list clearfix">
+					<li>
+						<div class="thumb"><div class="info-tag"><span>사전예약 가능</span><span>15평</span></div><img src="img/sample/sample_1.png" alt="" /></div>
+						<p class="a">서울시 강남구 ∙ 단독 주택</p>
+						<p class="b">따뜻함이 가득한 자연광 스튜디오</p>
+						<p class="c">50,000 <span>원/시간</span></p>
+					</li>
+					<li>
+						<div class="thumb"><div class="info-tag"><span>사전예약 가능</span><span>15평</span></div><img src="img/sample/sample_2.png" alt="" /></div>
+						<p class="a">서울시 강남구 ∙ 단독 주택</p>
+						<p class="b">따뜻함이 가득한 자연광 스튜디오</p>
+						<p class="c">50,000 <span>원/시간</span></p>
+					</li>
+					<li>
+						<div class="thumb"><div class="info-tag"><span>사전예약 가능</span><span>15평</span></div><img src="img/sample/sample_3.png" alt="" /></div>
+						<p class="a">서울시 강남구 ∙ 단독 주택</p>
+						<p class="b">따뜻함이 가득한 자연광 스튜디오</p>
+						<p class="c">50,000 <span>원/시간</span></p>
+					</li>
+				</ul>
+			</div>
+			<!-- //이곳과 비슷한 추천공간 -->
+		</div>
+		<!-- //place view start -->
+
+	</div>
+</div>
+
+<!-- footer -->
+<div class="footer-wrapper">
+	<div class="header-footer-inner">
+		<div class="top clearfix">
+			<h2>IT PLACE</h2>
+			<div class="footer-menu">
+				<a href="#">이용약관</a><span>|</span><a href="#">개인정보처리방침</a><span>|</span><a href="#">자주묻는질문</a><span>|</span><a href="#">문의하기</a>
+			</div>
+		</div>
+		<div class="bottom pc clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호 <span>|</span> 전화 : +82-2-516-1703<br />
+			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 홍길동<br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+		<div class="bottom mo clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			사업자등록번호 :  000-00-0000<br />
+			통신판매업신고번호 :  2025-서울성동-0000호<br />
+			개인정보보호 책임자 : 홍길동<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호<br />
+			전화 : +82-2-516-1703<br /><br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+
+<!-- Modal : 리뷰 전체보기 리스트 -->
+<div class="modal fade" id="reviewListModal" tabindex="-1" role="dialog" aria-labelledby="reviewListModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-800" role="document">
+		<div class="modal-content">
+			<div class="modal-body extra-modal-op">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+				<p class="title-normal">리뷰 <span>75</span></p>
+				<div class="scroll-modal-content">
+					<ul class="review-all-list clearfix">
+						<li>
+							<a href="#" class="view-detail">자세히 보기</a>
+							<div class="up clearfix">
+								<span class="thumb"><span>+13</span><img src="img/sample/sample_1.png" alt="" /></span>
+								<div class="review-info">
+									<span class="a">김에어리</span>
+									<span class="b">
+										<img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_half.svg" /><img src="img/icons/icon_star_empty.svg" />
+									</span>
+									<span class="c">2025. 03. 25</span>
+								</div>
+							</div>
+							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
+						</li>
+						<li>
+							<a href="#" class="view-detail">자세히 보기</a>
+							<div class="up clearfix">
+								<span class="thumb"><img src="img/sample/sample_2.png" alt="" /></span>
+								<div class="review-info">
+									<span class="a">김에어리</span>
+									<span class="b">
+										<img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_half.svg" /><img src="img/icons/icon_star_empty.svg" />
+									</span>
+									<span class="c">2025. 03. 25</span>
+								</div>
+							</div>
+							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
+						</li>
+						<li>
+							<a href="#" class="view-detail">자세히 보기</a>
+							<div class="up clearfix">
+								<div class="review-info">
+									<span class="a">김에어리</span>
+									<span class="b">
+										<img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_half.svg" /><img src="img/icons/icon_star_empty.svg" />
+									</span>
+									<span class="c">2025. 03. 25</span>
+								</div>
+							</div>
+							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 리뷰 전체보기 리스트 -->
+
+<!-- Modal : 자세히 보기 -->
+<div class="modal fade" id="reviewDetailViewModal" tabindex="-1" role="dialog" aria-labelledby="reviewDetailViewModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-800" role="document">
+		<div class="modal-content">
+			<div class="modal-body extra-modal-op review-place-detailview">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+				<p class="reserve-name-info">
+					<span class="name">김에어리 <span class="stars"><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_half.svg" /><img src="img/icons/icon_star_empty.svg" /></span></span>
+					<span class="date">2025. 03. 25</span>
+				</p>
+				<div class="scroll-modal-content">
+					<div class="gallery-review-pc">
+						<div class="pagination-review"></div>
+						<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper review-detail-swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_1.png" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_2.png" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_3.png" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_4.png" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_5.png" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div thumbsSlider="" class="swiper review-thumb-wiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="img/sample/sample_1.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="img/sample/sample_2.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="img/sample/sample_3.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="img/sample/sample_4.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="img/sample/sample_5.png" />
+								</div>
+							</div>
+						</div>
+
+						<div class="prevnext-wrapper">
+							<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>
+						</div>
+					</div>
+					<div class="review-content">
+						물결이 흐르는 듯한 지중해 풍 베이지톤 내츄럴 컨셉의 리빙룸. 룸사이즈는 대략 30평이며, 테라스가 있습니다.<br />
+						천정이 마감되어 있어 주택 분위기로 촬영 가능합니다.<br /><br />
+						채광은 남서향이며 전면 창문부터 오전에 해가 들어와서 테라스가 있는 통창으로 오후에 해가 넘어가 하루종일 채광이 좋습니다. 아뜰리에8 스튜디오 소개 7층 빌딩 단독, 강남에서 10분거리, 뚝섬역 도보 5분거리, 서울숲과 인접한  <br />
+						물결이 흐르는 듯한 지중해 풍 베이지톤 내츄럴 컨셉의 리빙룸. 룸사이즈는 대략 30평이며, 테라스가 있습니다.<br /><br />
+						천정이 마감되어 있어 주택 분위기로 촬영 가능합니다.<br />
+						물결이 흐르는 듯한 지중해 풍 베이지톤 내츄럴 컨셉의 리빙룸. 룸사이즈는 대략 30평이며, 테라스가 있습니다.<br /><br />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 자세히 보기 -->
+
+
+
+<!-- Modal : 공간사진 전체 보기 -->
+<div class="picture-backface" style="display: none;">
+	<div class="place-total-picture-view">
+		<div class="gallery-review-pc">
+			<div class="pagination-pictures"></div>
+			<div class="swiper picture-totalview-swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="slide-center">
+							<img src="img/sample/sample_1.png" />
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="slide-center">
+							<img src="img/sample/sample_2.png" />
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="slide-center">
+							<img src="img/sample/sample_3.png" />
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="slide-center">
+							<img src="img/sample/sample_4.png" />
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="slide-center">
+							<img src="img/sample/sample_5.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper picture-total-thumb-wiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="img/sample/sample_1.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/sample/sample_2.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/sample/sample_3.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/sample/sample_4.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="img/sample/sample_5.png" />
+					</div>
+				</div>
+			</div>
+			<!--
+			<div class="prevnext-wrapper">
+				<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>
+			</div>
+			-->
+		</div>
+	</div>
+</div>
+<!-- //Modal : 공간사진 전체 보기 -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/lenis.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+  
+</script>
+</body>
+</html>
+
+

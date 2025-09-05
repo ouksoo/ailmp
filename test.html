@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,15 +39,45 @@
       align-items: center;
     }
 
-	.swiper-slide.swiper-slide-active {
-		width: 60% !important;
-	}
-	.swiper-slide.swiper-slide-next {
-		width: 20% !important;
-	}
-	.swiper-slide {
-		width: 20%;
-	}
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .review-detail-swiper {
+      height: 80%;
+      width: 100%;
+    }
+
+    .review-thumb-wiper {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    .review-thumb-wiper .swiper-slide {
+      width: 25%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .review-thumb-wiper .swiper-slide-thumb-active {
+      opacity: 1;
+    }
 
     .swiper-slide img {
       display: block;
@@ -61,47 +90,104 @@
 
 <body>
   <!-- Swiper -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper review-detail-swiper">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+		</div>
+	</div>
+</div>
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-		direction: 'horizontal',
-		loop: true,
-		spaceBetween: 24,
-		slidesPerView: 2.1,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		scrollbar: {
-			el: '.swiper-scrollbar',
-		},
-		on: {
-			slideChangeTransitionStart: function(se) {
-				var thisIndex = se.realIndex+1;
-				$('.area-10 div.inner a').fadeOut();
-				$('.area-10 div.inner a.story-img-'+thisIndex).fadeIn();
-			},
-		}
-    });
-  </script>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+
+<div thumbsSlider="" class="swiper review-thumb-wiper">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+		</div>
+		<div class="swiper-slide">
+			<img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+		</div>
+	</div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+var reviewThumbSwiper = new Swiper(".review-thumb-wiper", {
+	loop: true,
+	spaceBetween: 10,
+	slidesPerView: 4,
+	freeMode: true,
+	watchSlidesProgress: true,
+});
+var reviewDetailSwiper = new Swiper(".review-detail-swiper", {
+	loop: true,
+	spaceBetween: 10,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+		thumbs: {
+		swiper: reviewThumbSwiper,
+	},
+});
+</script>
 </body>
 
 </html>
