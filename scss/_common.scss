@@ -595,6 +595,22 @@ div.legal-wrapper {
 			font-size: 30px;
 		}
 	}
+	p.s-title {
+		font-size: 40px;
+		font-family: 'Pretendard-SemiBold';
+
+		@media screen and (max-width: 768px) {
+			font-size: 20px;
+		}
+	}
+	p.s-txt {
+		font-size: 24px;
+		color: #6C757D;
+
+		@media screen and (max-width: 768px) {
+			font-size: 16px;
+		}
+	}
 }
 
 /* global common */

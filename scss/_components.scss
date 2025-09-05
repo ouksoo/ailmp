@@ -172,8 +172,16 @@ div.extra-modal-op {
 			color: $title-black;
 			font-family: 'Pretendard-SemiBold';
 			line-height: 22px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+			}
 			 
 			span.stars {
+
+				@media screen and (max-width: 767px) {
+					display: block;
+				}
 				
 				img {
 					
@@ -185,6 +193,10 @@ div.extra-modal-op {
 			font-size: 14px;
 			color: #62717E;
 			padding: 5px 0 30px 0;
+
+			@media screen and (max-width: 767px) {
+				font-size: 12px;
+			}
 		}
 	}
 	a.modal-close-button {
@@ -199,6 +211,21 @@ div.extra-modal-op {
 		@media screen and (max-width: 768px) {
 			top: 16px;
 			right: 20px;
+		}
+	}
+	a.modal-go-back {
+		display: none;
+		position: absolute;
+		z-index: 10;
+		left: 30px;
+		top: 20px;
+		width: 20px; height: 20px;
+		background: url('../img/icons/icon_arrow_left_only.svg') 50% 50% no-repeat;
+		text-indent: -9999px;
+
+		@media screen and (max-width: 768px) {
+			top: 16px;
+			left: 20px;
 		}
 	}
 	div.scroll-modal-content {
@@ -259,6 +286,31 @@ div.extra-modal-op {
 }
 .custom-checkbox:checked + .custom-label::before {
 	background: url("../img/icons/icon_checked.svg") no-repeat center/cover;
+}
+
+/* forms */
+input.input-txt {
+	border: 1px solid #C6CAD3;
+	height: 60px;
+	border-radius: 8px;
+	font-size: 18px;
+	color: $title-black;
+	padding: 0 20px;
+
+	&::placeholder {
+		color: #C6CAD3;
+	}
+}
+textarea.input-txt {
+	border: 1px solid #C6CAD3;
+	border-radius: 8px;
+	font-size: 18px;
+	color: $title-black;
+	padding: 10px 20px;
+
+	&::placeholder {
+		color: #C6CAD3;
+	}
 }
 
 /* selectbox */

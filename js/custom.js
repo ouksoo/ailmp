@@ -300,6 +300,14 @@ var AILMP = {
 			}
 		});
 
+		//리뷰 이미지 전체보기 모바일
+		$('.reviewinformation span.thumbnail a').on('click', function() {
+			$('#reviewDetailViewModal').addClass('mobile-review');
+			$('.mobile-review .modal-go-back').on('click', function() {
+				$('#reviewDetailViewModal').removeClass('mobile-review');
+			});
+		});
+
 		//prevent document click 
 		$(AILMP.stopDocumentClick).on('click', function(e) {
 			e.stopPropagation();

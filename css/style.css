@@ -1694,11 +1694,26 @@ div.extra-modal-op p.reserve-name-info span.name {
   font-family: "Pretendard-SemiBold";
   line-height: 22px;
 }
+@media screen and (max-width: 767px) {
+  div.extra-modal-op p.reserve-name-info span.name {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  div.extra-modal-op p.reserve-name-info span.name span.stars {
+    display: block;
+  }
+}
 div.extra-modal-op p.reserve-name-info span.date {
   display: block;
   font-size: 14px;
   color: #62717E;
   padding: 5px 0 30px 0;
+}
+@media screen and (max-width: 767px) {
+  div.extra-modal-op p.reserve-name-info span.date {
+    font-size: 12px;
+  }
 }
 div.extra-modal-op a.modal-close-button {
   position: absolute;
@@ -1714,6 +1729,23 @@ div.extra-modal-op a.modal-close-button {
   div.extra-modal-op a.modal-close-button {
     top: 16px;
     right: 20px;
+  }
+}
+div.extra-modal-op a.modal-go-back {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  left: 30px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons/icon_arrow_left_only.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
+}
+@media screen and (max-width: 768px) {
+  div.extra-modal-op a.modal-go-back {
+    top: 16px;
+    left: 20px;
   }
 }
 div.extra-modal-op div.scroll-modal-content {
@@ -1780,6 +1812,36 @@ div.extra-modal-op div.scroll-modal-content {
 
 .custom-checkbox:checked + .custom-label::before {
   background: url("../img/icons/icon_checked.svg") no-repeat center/cover;
+}
+
+/* forms */
+input.input-txt {
+  border: 1px solid #C6CAD3;
+  height: 60px;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #0D0D0D;
+  padding: 0 20px;
+}
+input.input-txt::-moz-placeholder {
+  color: #C6CAD3;
+}
+input.input-txt::placeholder {
+  color: #C6CAD3;
+}
+
+textarea.input-txt {
+  border: 1px solid #C6CAD3;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #0D0D0D;
+  padding: 10px 20px;
+}
+textarea.input-txt::-moz-placeholder {
+  color: #C6CAD3;
+}
+textarea.input-txt::placeholder {
+  color: #C6CAD3;
 }
 
 /* selectbox */
@@ -2497,6 +2559,24 @@ div.legal-wrapper div.text-area {
 @media screen and (max-width: 768px) {
   .common-title-area p.title {
     font-size: 30px;
+  }
+}
+.common-title-area p.s-title {
+  font-size: 40px;
+  font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 768px) {
+  .common-title-area p.s-title {
+    font-size: 20px;
+  }
+}
+.common-title-area p.s-txt {
+  font-size: 24px;
+  color: #6C757D;
+}
+@media screen and (max-width: 768px) {
+  .common-title-area p.s-txt {
+    font-size: 16px;
   }
 }
 
@@ -3252,7 +3332,8 @@ div.main-it-area .main-it-swiper .swiper-button-next::after {
 /* 촬영 컨셉에 맞는 공간 찾기 */
 div.main-concept-area div.concept-wrapper {
   position: relative;
-  height: 70vh;
+  height: 920px;
+  /*height: 70vh;*/
   margin: 200px 0 200px 0;
 }
 @media screen and (max-width: 768px) {
@@ -3472,7 +3553,8 @@ div.main-hot-area {
   }
 }
 div.main-hot-area div.it-visual-1 {
-  height: 70vh;
+  /*height: 70vh;*/
+  height: 950px;
   margin-top: 60px;
 }
 @media screen and (max-width: 767px) {
@@ -3521,7 +3603,8 @@ div.main-hot-area div.it-visual-1 div.visual {
   }
 }
 div.main-hot-area div.it-visual-2 {
-  height: 70vh;
+  /*height: 70vh;*/
+  height: 950px;
   margin-top: 100px;
 }
 @media screen and (max-width: 767px) {
@@ -4010,15 +4093,30 @@ div.place-view-wrapper p.title {
   font-family: "Pretendard-SemiBold";
   padding-bottom: 60px;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper p.title {
+    font-size: 20px;
+    padding-bottom: 25px;
+  }
+}
 div.place-view-wrapper p.title span.warnning {
   display: inline-block;
   padding-left: 35px;
   font-size: 18px;
   color: #A2A2A4;
-  font-family: "Pretendard-Medium";
+  font-family: "Pretendard-Regular";
   background: url("../img/icons/icon_warnning.svg") 0 50% no-repeat;
   vertical-align: middle;
   margin-left: 20px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper p.title span.warnning {
+    display: block;
+    margin-left: 0px;
+    padding-left: 35px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
 }
 div.place-view-wrapper p.title span.counter {
   color: #2EC4B6;
@@ -4032,19 +4130,43 @@ div.place-view-wrapper a.normal {
   width: 220px;
   margin-top: 30px;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper a.normal {
+    margin-top: 0px;
+  }
+}
 div.place-view-wrapper div.common-area {
   padding-bottom: 200px;
   /* 좌측 */
   /* 우측 */
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area {
+    padding-bottom: 100px;
+  }
+}
 div.place-view-wrapper div.common-area div.infos {
   float: left;
   width: calc(100% - 364px);
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.infos {
+    float: none;
+    width: 100%;
+  }
 }
 div.place-view-wrapper div.common-area div.infos ul.detail-list li {
   float: left;
   width: 100px;
   margin-right: 225px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.infos ul.detail-list li {
+    margin-right: 0;
+    width: 50%;
+    text-align: center;
+    padding-bottom: 16px;
+  }
 }
 div.place-view-wrapper div.common-area div.infos ul.detail-list li:last-child {
   margin-right: 0;
@@ -4070,6 +4192,17 @@ div.place-view-wrapper div.common-area div.infos div.detail-view {
   padding-top: 30px;
   padding-bottom: 200px;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.infos div.detail-view {
+    margin-top: 0px;
+    padding-top: 15px;
+    padding-bottom: 100px;
+  }
+  div.place-view-wrapper div.common-area div.infos div.detail-view a.modal-button {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
 div.place-view-wrapper div.common-area div.infos div.detail-view div.inner {
   font-size: 16px;
   line-height: 24px;
@@ -4080,9 +4213,19 @@ div.place-view-wrapper div.common-area div.infos div.map-wrapper {
   border-radius: 14px;
   border: 1px solid #eee;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.infos div.map-wrapper {
+    height: 320px;
+  }
+}
 div.place-view-wrapper div.common-area div.reserve-wrap {
   float: right;
   width: 340px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap {
+    float: none;
+  }
 }
 div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select {
   border: 1px solid #EAEAEA;
@@ -4270,6 +4413,14 @@ div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply d
 div.place-view-wrapper div.review-area {
   padding-bottom: 200px;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.review-area {
+    padding-bottom: 100px;
+  }
+  div.place-view-wrapper div.review-area a.modal-button {
+    width: 100%;
+  }
+}
 div.place-view-wrapper div.review-area ul.review-list li {
   float: left;
   border: 1px solid #EAEAEA;
@@ -4281,8 +4432,23 @@ div.place-view-wrapper div.review-area ul.review-list li {
 div.place-view-wrapper div.review-area ul.review-list li:nth-child(3n) {
   margin-right: 0;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.review-area ul.review-list li {
+    float: none;
+    padding: 16px;
+    border-radius: 14px;
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 16px;
+  }
+}
 div.place-view-wrapper div.review-area ul.review-list li div.up {
   min-height: 102px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.review-area ul.review-list li div.up {
+    min-height: 75px;
+  }
 }
 div.place-view-wrapper div.review-area ul.review-list li div.up span.thumb {
   float: left;
@@ -4291,6 +4457,12 @@ div.place-view-wrapper div.review-area ul.review-list li div.up span.thumb {
   overflow: hidden;
   border-radius: 8px;
   margin-right: 24px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.review-area ul.review-list li div.up span.thumb {
+    width: 70px;
+    height: 70px;
+  }
 }
 div.place-view-wrapper div.review-area ul.review-list li div.up span.thumb img {
   width: 100%;
@@ -4314,6 +4486,11 @@ div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info 
   font-family: "Pretendard-SemiBold";
   padding-top: 8px;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info span.a {
+    font-size: 16px;
+  }
+}
 div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info span.b {
   margin: 8px 0 0 0;
   line-height: 18px;
@@ -4322,14 +4499,29 @@ div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info 
   font-size: 14px;
   color: #62717E;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.review-area ul.review-list li div.up div.review-info span.c {
+    font-size: 12px;
+  }
+}
 div.place-view-wrapper div.review-area ul.review-list li p.down {
   font-size: 16px;
   color: #62717E;
   line-height: 20px;
   padding-top: 20px;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.review-area ul.review-list li p.down {
+    padding-top: 10px;
+  }
+}
 div.place-view-wrapper div.useinfo-area {
   padding-bottom: 170px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.useinfo-area {
+    padding-bottom: 100px;
+  }
 }
 div.place-view-wrapper div.useinfo-area div.user-guide {
   border-top: 1px solid #C6CAD3;
@@ -4337,6 +4529,11 @@ div.place-view-wrapper div.useinfo-area div.user-guide {
   font-size: 16px;
   color: #62717E;
   padding-top: 30px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.useinfo-area div.user-guide {
+    padding-top: 15px;
+  }
 }
 div.place-view-wrapper div.useinfo-area div.user-guide ul.use-list {
   list-style-type: disc;
@@ -4352,6 +4549,14 @@ div.place-view-wrapper div.recommand-area ul.recommand-list li {
 div.place-view-wrapper div.recommand-area ul.recommand-list li:nth-child(3n) {
   margin-right: 0;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.recommand-area ul.recommand-list li {
+    float: none;
+    width: 100%;
+    margin-right: 0px;
+    padding-bottom: 30px;
+  }
+}
 div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb {
   position: relative;
   width: 100%;
@@ -4359,6 +4564,11 @@ div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb {
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb {
+    height: 320px;
+  }
 }
 div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb img {
   width: 100%;
@@ -4383,23 +4593,50 @@ div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb div.inf
   border-radius: 100px;
   margin-right: 10px;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.recommand-area ul.recommand-list li div.thumb div.info-tag span {
+    font-size: 12px;
+    margin-right: 5px;
+  }
+}
 div.place-view-wrapper div.recommand-area ul.recommand-list li p.a {
   font-size: 20px;
   color: #62717E;
   padding-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.recommand-area ul.recommand-list li p.a {
+    font-size: 14px;
+  }
 }
 div.place-view-wrapper div.recommand-area ul.recommand-list li p.b {
   font-size: 24px;
   font-family: "Pretendard-SemiBold";
   padding: 5px 0 10px 0;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.recommand-area ul.recommand-list li p.b {
+    font-size: 16px;
+    padding: 3px 0 5px 0;
+  }
+}
 div.place-view-wrapper div.recommand-area ul.recommand-list li p.c {
   font-size: 24px;
   color: #2EC4B6;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.recommand-area ul.recommand-list li p.c {
+    font-size: 16px;
+  }
+}
 div.place-view-wrapper div.recommand-area ul.recommand-list li p.c span {
   font-size: 18px;
   color: #A2A2A4;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.recommand-area ul.recommand-list li p.c span {
+    font-size: 16px;
+  }
 }
 
 /* 리뷰 전체 보기 */
@@ -4478,9 +4715,55 @@ ul.review-all-list li p.down {
 }
 
 /* 리뷰 상세보기 */
+div.review-place-detailview div.reviewinformation {
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  div.review-place-detailview div.reviewinformation {
+    padding-top: 40px;
+  }
+}
+div.review-place-detailview div.reviewinformation span.thumbnail {
+  position: relative;
+  display: none;
+  width: 70px;
+  height: 70px;
+  margin-right: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  div.review-place-detailview div.reviewinformation span.thumbnail {
+    float: left;
+    display: block;
+  }
+}
+div.review-place-detailview div.reviewinformation span.thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+div.review-place-detailview div.reviewinformation span.thumbnail a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  padding-top: 13px;
+  font-size: 14px;
+}
+div.review-place-detailview div.reviewinformation span.thumbnail a img {
+  width: 16px;
+  height: 16px;
+}
 div.review-place-detailview .gallery-review-pc {
   position: relative;
   height: 585px;
+}
+@media screen and (max-width: 767px) {
+  div.review-place-detailview .gallery-review-pc {
+    display: none;
+  }
 }
 div.review-place-detailview .gallery-review-pc .pagination-review {
   position: absolute;
@@ -4497,6 +4780,14 @@ div.review-place-detailview .gallery-review-pc .pagination-review {
   font-family: "Pretendard-SemiBold";
   font-size: 20px;
   line-height: 36px;
+}
+@media screen and (max-width: 767px) {
+  div.review-place-detailview .gallery-review-pc .pagination-review {
+    top: 10px;
+    background-color: #fff;
+    color: #0D0D0D;
+    font-size: 18px;
+  }
 }
 div.review-place-detailview .gallery-review-pc .swiper {
   height: 100%;
@@ -4516,6 +4807,11 @@ div.review-place-detailview .gallery-review-pc .swiper-slide {
   background-position: center;
   border-radius: 8px;
   overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  div.review-place-detailview .gallery-review-pc .swiper-slide {
+    background: #fff;
+  }
 }
 div.review-place-detailview .gallery-review-pc .swiper-slide .slide-center {
   position: absolute;
@@ -4586,6 +4882,51 @@ div.review-place-detailview .review-content {
   font-size: 16px;
   line-height: 22px;
   color: #62717E;
+}
+
+div.mobile-review div.reviewinformation {
+  display: none;
+}
+div.mobile-review div.scroll-modal-content .review-content {
+  display: none;
+}
+div.mobile-review div.gallery-review-pc {
+  display: block;
+}
+div.mobile-review div.gallery-review-pc .review-thumb-wiper {
+  display: none;
+}
+div.mobile-review div.modal-body {
+  padding: 0;
+}
+div.mobile-review div.review-place-detailview .gallery-review-pc div.review-detail-swiper {
+  height: 100% !important;
+}
+div.mobile-review div.review-place-detailview .prevnext-wrapper {
+  position: absolute;
+  z-index: 10;
+  top: 46%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+div.mobile-review div.review-place-detailview .prevnext-wrapper .swiper-button-prev {
+  position: absolute;
+  left: 0;
+  background: url("../img/icons/icon_arrow_white_left.svg") 50% 50% no-repeat;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+}
+div.mobile-review div.review-place-detailview .prevnext-wrapper .swiper-button-next {
+  position: absolute;
+  right: 0;
+  background: url("../img/icons/icon_arrow_white_right.svg") 50% 50% no-repeat;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+}
+div.mobile-review a.modal-go-back {
+  display: block;
 }
 
 /* 사진 전체보기 */
@@ -4713,4 +5054,114 @@ div.picture-backface div.place-total-picture-view .review-content {
   font-size: 16px;
   line-height: 22px;
   color: #62717E;
+}
+
+/* 공간상세 예약 내역 확인 */
+div.place-basic-info {
+  padding: 60px 0;
+}
+@media screen and (max-width: 767px) {
+  div.place-basic-info {
+    padding: 30px 0;
+  }
+}
+div.place-basic-info div.f {
+  float: left;
+  width: calc(70% - 24px);
+  height: 534px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  div.place-basic-info div.f {
+    float: none;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 30px;
+  }
+}
+div.place-basic-info div.f img {
+  width: 100%;
+}
+div.place-basic-info div.s {
+  float: right;
+  width: 30%;
+}
+@media screen and (max-width: 767px) {
+  div.place-basic-info div.s {
+    float: none;
+    width: 100%;
+  }
+}
+div.place-basic-info div.s span {
+  display: block;
+  font-size: 16px;
+  color: #A2A2A4;
+}
+div.place-basic-info div.s span.in {
+  display: inline-block;
+  font-size: 16px;
+  color: #0D0D0D;
+  vertical-align: middle;
+}
+div.place-basic-info div.s span.b {
+  font-size: 24px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+}
+@media screen and (max-width: 767px) {
+  div.place-basic-info div.s span.b {
+    font-size: 16px;
+  }
+}
+div.place-basic-info div.s span.b.green {
+  color: #2EC4B6;
+}
+div.place-basic-info div.s span strong {
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+}
+div.place-basic-info div.s span.up {
+  padding: 30px 0 0px 0;
+}
+
+div.reserve-info-input p.tt {
+  font-size: 16px;
+  color: #A2A2A4;
+  padding-bottom: 5px;
+}
+div.reserve-info-input p.tt.o {
+  padding-top: 20px;
+}
+div.reserve-info-input div.agree-area {
+  font-size: 20px;
+  padding-top: 20px;
+}
+div.reserve-info-input div.agree-area p {
+  float: left;
+}
+div.reserve-info-input div.agree-area p label {
+  color: #0D0D0D;
+}
+div.reserve-info-input div.agree-area a {
+  float: right;
+  text-decoration: underline;
+  color: #6C757D;
+}
+@media screen and (max-width: 767px) {
+  div.reserve-info-input div.agree-area a {
+    font-size: 14px;
+  }
+}
+div.reserve-info-input div.btn-area {
+  padding-top: 30px;
+  text-align: center;
+}
+div.reserve-info-input div.btn-area button {
+  width: 220px;
+}
+@media screen and (max-width: 767px) {
+  div.reserve-info-input div.btn-area button {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
