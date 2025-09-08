@@ -19,7 +19,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
-<body>
+<body class="no-scroll"><!-- 공간 상세 보기 화면에서 필요 클레스 -->
 
 <!-- 공통 -->
 <div class="film-common"></div>
@@ -105,53 +105,94 @@
 </div>
 <!-- //header -->
  
-<!-- main visual -->
-<div class="main-visual-area">
-	<div class="swiper main-visual-swiper">
+<!-- 공상상세 상단 visual -->
+<div class="place-visual-area" id="placeVisualAreaUserAction">
+	<h2 class="place-view-title">공간 둘러보기.</h2>
+	<div class="place-detail-info">
+		<p class="s1">
+			<span class="a1">서울시 역삼동∙컨셉룸</span>
+			<span class="tag">사전답사 가능</span><span class="tag">15평</span><span class="tag">기준 10명</span>
+		</p>
+		<p class="s2">포근한 디자인의 프리미엄 전시 모임 공간 잇플레이스 파티룸</p>
+		<p class="s3">50,000 <span>원/시간</span></p>
+		<div class="s4">
+			<a href="#" class="modal-button white bd0">예약하기</a>
+		</div>
+	</div>
+	<div class="swiper place-visual-swiper initial">
+		<div class="place-film"></div>
 		<div class="swiper-wrapper">
 			<!-- 1 -->
 			<div class="swiper-slide">
-				<img class="slide-visual-bg" src="img/sample/main_visual_1.png" />
-				<div class="slide-gradient"></div>
-				<div class="caption">
-					<p class="txt-1">
-						<span>어떤 공간이</span> <span>필요하세요?</span>
-						<span class="in">
-							<span>잇플레이스가</span> <span>찾아드릴게요.</span>
-						</span>
-					</p>
-					<p class="txt-2">유쾌한 연출, 비비드한 컬러의 팝아트 공간 <span class="arrow-right" aria-hidden="true"></span></p>
-				</div>
+				<img class="slide-visual-bg" src="img/sample/Hero.png" />
 			</div>
 			<!-- 2 -->
 			<div class="swiper-slide">
 				<img class="slide-visual-bg" src="img/sample/main_visual_2.png" />
-				<div class="slide-gradient"></div>
-				<div class="caption">
-					<p class="txt-1">
-						<span>어떤 공간이</span> <span>필요하세요?</span>
-						<span class="in">
-							<span>잇플레이스가</span> <span>찾아드릴게요.</span>
-						</span>
-					</p>
-					<p class="txt-2">자유로움이 담긴 현대의  도심속 공간 <span class="arrow-right" aria-hidden="true"></span></p>
-				</div>
+			</div>
+			<!-- 3 -->
+			<div class="swiper-slide">
+				<img class="slide-visual-bg" src="img/sample/main_visual_3.png" />
 			</div>
 		</div>
 
 		<!-- 내비게이션 & 페이지네이션 (슬라이드 내부) -->
-		<div class="swiper-button-prev main-visual-prev" aria-label="이전 슬라이드"></div>
-		<div class="swiper-button-next main-visual-next" aria-label="다음 슬라이드"></div>
-		<div class="swiper-pagination" aria-label="페이지 네비게이션"></div>
+		<div class="swiper-button-prev place-visual-prev" aria-label="이전 슬라이드"></div>
+		<div class="swiper-button-next place-visual-next" aria-label="다음 슬라이드"></div>
+		<div class="page-view-btm">
+			<div class="swiper-pagination" aria-label="페이지 네비게이션"></div><a href="#" class="view-all-place-pic">전체보기</a>
+		</div>
 	</div>
 </div>
-<!-- //main visual -->
+<!-- //공상상세 상단 visual -->
 
 <div class="container-wrapper">
 	<div class="common-wrapper">
 		
 		<!-- place view start -->
 		<div class="place-view-wrapper">
+
+			<!-- 모바일 place 정보 only -->
+			<div class="mobile-place-info-wrap">
+				<div class="place-tag-info">
+					<p class="t1">서울시 역삼동∙컨셉룸</p>
+					<ul class="clearfix">
+						<li>사전답사 가능</li>
+						<li>15평</li>
+						<li>기준 10명</li>
+					</ul>
+					<p class="t2">포근한 디자인의 프리미엄 전시 모임 공간 잇플레이스 파티룸</p>
+					<p class="t3">50,000 <span>원/시간</span></p>
+				</div>
+				<div class="reserve-etc">
+					<div class="apply-to-host clearfix">
+						<p class="f">호스트에게 사전답사를<br />신청해 보세요.</p>
+						<a href="#" class="s">사전답사 신청</a>
+					</div>
+				</div>
+				<div class="reserve-info-apply">
+					<div class="up">
+						<div class="clearfix">
+							<div class="f clearfix">
+								<div class="a"></div>
+								<div class="b">
+									<p class="t-1">그라디언트 스튜디오</p>
+									<p class="t-2">1시간 이내 응답 ∙ 호스팅 100회</p>
+								</div>
+							</div>
+							<a href="#" class="s">문의하기</a>
+						</div>
+					</div>
+					<div class="down clearfix">
+						<div class="a"><img src="img/icons/icon_trophy.svg" alt="" /></div>
+						<div class="b">
+							<p class="t-1">좋아요 4.9</p>
+							<p class="t-2">잇플레이스의 <span>신뢰받는 공간</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //모바일 place 정보 only -->
 
 			<!-- 기본정보 / 위치 -->
 			<div class="common-area clearfix">
@@ -204,6 +245,10 @@ a
 				<!-- 우측 예약 -->
 				<div class="reserve-wrap">
 					<div class="reservation-select">
+						<div class="mobile-guide">
+							<a href="#" class="reserve-modal-close-button" data-bs-dismiss="modal">닫기</a>
+							<p class="guide">예약 신청 후 24시간 이내  예약이 확정되며,<br />예약 확정 후 결제가 진행됩니다.</p>
+						</div>
 						<div class="total-count clearfix">
 							<div class="count">
 								<p class="f">결제 금액 0.1% 적립</p>
@@ -225,7 +270,11 @@ a
 
 							<div class="time-select">
 								<select class="selectpicker both" data-container="body">
-									<option>시작 시간</option>
+									<option>00:00</option>
+									<option>01:00</option>
+									<option>02:00</option>
+									<option>03:00</option>
+									<option>04:00</option>
 								</select>
 								~
 								<select class="selectpicker both" data-container="body">
@@ -233,9 +282,17 @@ a
 								</select>
 							</div>
 							<div class="select-man">
-								<select class="selectpicker whole" data-container="body">
-									<option>인원 선택(기본 5명)</option>
-								</select>
+								<a href="#" class="select-person">인원 선택(기본 5명)</a>
+								<div class="man-number">
+									<div class="m1">1~5명 <span>(+0원/시간)</span></div><!-- 추가인원 입력 시 "active" class 추가 -->
+									<div class="m2">
+										추가 인원
+										<span>(추가 인원 당 +5,000원/시간)</span>
+									</div>
+									<div class="m-number">
+										<a href="#" class="minus"></a><span>0</span><!-- 추가인원 입력 시 "active" class 추가 --><a href="#" class="plus"></a>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="reserve-btn-wrap">
@@ -430,7 +487,6 @@ a
 				<div class="scroll-modal-content">
 					<ul class="review-all-list clearfix">
 						<li>
-							<a href="#" class="view-detail">자세히 보기</a>
 							<div class="up clearfix">
 								<span class="thumb"><span>+13</span><img src="img/sample/sample_1.png" alt="" /></span>
 								<div class="review-info">
@@ -442,11 +498,11 @@ a
 								</div>
 							</div>
 							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
+							<a href="#" class="view-detail">자세히 보기</a>
 						</li>
 						<li>
-							<a href="#" class="view-detail">자세히 보기</a>
 							<div class="up clearfix">
-								<span class="thumb"><img src="img/sample/sample_2.png" alt="" /></span>
+								<span class="thumb"><span>+13</span><img src="img/sample/sample_2.png" alt="" /></span>
 								<div class="review-info">
 									<span class="a">김에어리</span>
 									<span class="b">
@@ -456,9 +512,9 @@ a
 								</div>
 							</div>
 							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
+							<a href="#" class="view-detail">자세히 보기</a>
 						</li>
 						<li>
-							<a href="#" class="view-detail">자세히 보기</a>
 							<div class="up clearfix">
 								<div class="review-info">
 									<span class="a">김에어리</span>
@@ -469,6 +525,7 @@ a
 								</div>
 							</div>
 							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
+							<a href="#" class="view-detail">자세히 보기</a>
 						</li>
 					</ul>
 				</div>
@@ -637,8 +694,10 @@ a
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/lenis.min.js"></script>
 <script src="js/custom.js"></script>
+
+<!-- 공간상세 보기 only -->
 <script>
-  
+AILMP.placeDetailInitialVisual();
 </script>
 </body>
 </html>

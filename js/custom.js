@@ -67,6 +67,36 @@ const mainVisualSwiper = new Swiper('.main-visual-swiper', {
   }
 });
 
+
+// main visual swipe 초기화
+const placeVisualSwiper = new Swiper('.place-visual-swiper', {
+	loop: true,
+	effect: "fade",
+	speed: 800,
+	autoplay: false,
+	allowTouchMove: true,
+	watchSlidesProgress: true,
+	preloadImages: true,
+	updateOnWindowResize: true,
+	pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+	},
+	navigation: {
+		nextEl: '.place-visual-next',
+		prevEl: '.place-visual-prev',
+	},
+	on: {
+    slideChangeTransitionStart(swiper) {
+
+    },
+
+    slideChangeTransitionEnd(swiper) {
+      
+    },
+  }
+});
+
 // 잇플레이스 PICK swipe 초기화
 const mainItSwiper = new Swiper('.main-it-swiper', {
 	loop: true,
@@ -226,6 +256,7 @@ let resizeBounceTimer; // 리사이즈(debounce)
 
 var AILMP = {
 	stopDocumentClick : 'div.header-right, .search-box',
+	placeUsertimer : null,
 	gnbMenuActive : function(){ 
 		//메뉴 활성화 시 서브메뉴 아코디언
 		$(".depth-1").on("click", function (e) {
@@ -243,6 +274,25 @@ var AILMP = {
 				// 자기 것 열기 (다른 것들은 건드리지 않음)
 				$submenu.stop(true, true).slideDown(200);
 				$link.addClass("active");
+			}
+		});
+
+		//공간상세보기 "날짜 선택"
+		$('div.reservation-select .select-date a').on('click', function() {
+			$('div.reserve-place-select').css('display', 'block');
+			$('div.reserve-place-select div.close-btn a').on('click', function() {
+				$('div.reserve-place-select').css('display', 'none');
+			});	
+		});
+
+		//공간상세보기 "인원 선택"
+		$('div.select-man a.select-person').on('click', function() {
+			$(this).toggleClass('active');
+			if($(this).next().hasClass('show')) {
+				$(this).next().removeClass('show');
+			}
+			else {
+				$(this).next().addClass('show');
 			}
 		});
 
@@ -336,7 +386,37 @@ var AILMP = {
 		}, { threshold: 0.1 });
 
 		cards.forEach(c => io.observe(c));
-	}
+	},
+	//공간 상세보기 visual
+	placeDetailInitialVisual : function() {
+		$('h2.place-view-title').fadeIn(1300, function() {
+			$(this).addClass('active');
+			$('div.place-visual-area div.initial').addClass('active');
+
+			const mouseWheelStart = setTimeout(function() {
+				window.addEventListener('wheel', AILMP.placeDetailVisualLastScene, { once: true });
+			});
+		});
+	},
+	placeDetailVisualLastScene : function(e) {
+		if (e.deltaY > 0) {
+			$('div.place-visual-area div.initial').removeClass('active, initial');
+			const placeBodyScrollAble = setTimeout(function() {
+				$('body').removeClass('no-scroll');	
+				$('div.place-visual-area div.place-film, div.place-visual-area div.place-detail-info').fadeIn();
+				$('#placeVisualAreaUserAction').on('mousemove', function() {
+					AILMP.placeUserMouseMoveDetect();
+				});
+			}, 2000);
+		}
+	},
+	placeUserMouseMoveDetect : function() {
+		$('div.place-visual-area div.place-film, div.place-visual-area div.place-detail-info').fadeIn();
+		clearTimeout(AILMP.placeUsertimer);
+		AILMP.placeUsertimer = setTimeout(() => {
+			$('div.place-visual-area div.place-film, div.place-visual-area div.place-detail-info').fadeOut();
+		}, 5000);
+	},
 }
 
 $(document).ready(function() {
@@ -450,4 +530,17 @@ $(document).ready(function() {
 		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
     });
 
+});
+
+/** 브라우져 스크롤 이벤트 통합 */
+window.addEventListener('scroll', () => {
+	const y = window.scrollY || window.pageYOffset;
+
+	//메인화면 상단 GNB 컨트롤
+	if (y >= 100) {
+		$('.main-header').removeClass('main-only');
+	}
+	if (y === 0) {
+		$('.main-header').addClass('main-only');
+	}
 });

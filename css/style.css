@@ -223,7 +223,7 @@ div.header-wrapper {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 45;
+  z-index: 50;
   width: 100%;
   background: #fff;
   height: 70px;
@@ -1638,6 +1638,10 @@ div.common-wrapper {
 .modal-button.dark-gray {
   background: #6C757D;
 }
+.modal-button.white {
+  background: #FFFFFF;
+  color: #0D0D0D;
+}
 
 div.terms-content {
   width: 600px;
@@ -2583,6 +2587,10 @@ div.legal-wrapper div.text-area {
 /* global common */
 .tooltip {
   margin-top: -10px !important;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 /* main visual */
@@ -4081,8 +4089,181 @@ div.place-list-wrapper main.masonry-list a.more {
   }
 }
 
+/* 공간상세 상단 */
+div.place-visual-area {
+  position: relative;
+  height: 100svh;
+  height: 100vh;
+  overflow: hidden;
+}
+div.place-visual-area div.place-film {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+div.place-visual-area div.place-detail-info {
+  display: none;
+  position: absolute;
+  width: 1440px;
+  top: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  z-index: 6;
+}
+div.place-visual-area div.place-detail-info p.s1 {
+  font-size: 20px;
+}
+div.place-visual-area div.place-detail-info p.s1 span.a1 {
+  display: inline-block;
+  border-right: 1px solid #fff;
+  padding-right: 20px;
+  margin-right: 20px;
+  line-height: 20px;
+}
+div.place-visual-area div.place-detail-info p.s1 span.tag {
+  display: inline-block;
+  margin-right: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 8px;
+  vertical-align: middle;
+}
+div.place-visual-area div.place-detail-info p.s2 {
+  font-size: 40px;
+  font-family: "Pretendard-SemiBold";
+  width: 50%;
+  line-height: 48px;
+  margin: 10px 0;
+}
+div.place-visual-area div.place-detail-info p.s3 {
+  font-size: 40px;
+  font-family: "Pretendard-SemiBold";
+}
+div.place-visual-area div.place-detail-info p.s3 span {
+  font-size: 24px;
+  font-family: "Pretendard-Regular";
+}
+div.place-visual-area div.place-detail-info div.s4 {
+  margin-top: 60px;
+}
+div.place-visual-area div.place-detail-info div.s4 a {
+  display: inline-block;
+  width: 240px;
+}
+div.place-visual-area h2.place-view-title {
+  display: none;
+  position: absolute;
+  width: 1440px;
+  font-size: 80px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Pretendard-Medium";
+  transition: top 1s cubic-bezier(0, 0, 0.6, 1);
+}
+div.place-visual-area h2.place-view-title.active {
+  top: 15%;
+}
+div.place-visual-area div.place-visual-swiper {
+  position: absolute;
+  width: 100%;
+  height: 100svh;
+  height: 100vh;
+  overflow: hidden;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.5s, bottom 0.5s cubic-bezier(0, 0, 0.6, 1);
+  /* 각 슬라이드: 내부에 이미지 꽉 채우기 */
+  /* 배경 이미지(img) 커버 */
+}
+div.place-visual-area div.place-visual-swiper.initial {
+  width: 1440px;
+  border-radius: 20px;
+  bottom: -100%;
+  transition: bottom 1s cubic-bezier(0, 0, 0.6, 1);
+}
+div.place-visual-area div.place-visual-swiper.initial.active {
+  bottom: -25%;
+}
+@media screen and (max-width: 767px) {
+  div.place-visual-area div.place-visual-swiper {
+    --bullet-size: 10px;
+  }
+}
+div.place-visual-area div.place-visual-swiper .swiper-slide {
+  position: relative;
+  background: #000; /* 로딩 중 배경 */
+  overflow: hidden;
+}
+div.place-visual-area div.place-visual-swiper .slide-visual-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: scale(1.1);
+  will-change: transform;
+}
+div.place-visual-area div.place-visual-swiper .swiper-button-next,
+div.place-visual-area div.place-visual-swiper .swiper-button-prev {
+  top: auto;
+  bottom: 100px;
+  width: 50px;
+  height: 50px;
+}
+div.place-visual-area div.place-visual-swiper .swiper-button-next::after,
+div.place-visual-area div.place-visual-swiper .swiper-button-prev::after {
+  content: "";
+}
+div.place-visual-area div.place-visual-swiper .swiper-button-prev {
+  left: 50%;
+  margin-left: -42px;
+  background: url("../img/icons/icon_gallery_left_black.svg") 50% 50% no-repeat;
+}
+div.place-visual-area div.place-visual-swiper .swiper-button-next {
+  right: 50%;
+  margin-right: -67px;
+  background: url("../img/icons/icon_gallery_right_black.svg") 50% 50% no-repeat;
+}
+div.place-visual-area div.place-visual-swiper .page-view-btm {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  text-align: right;
+  z-index: 6;
+  width: 170px;
+  margin-left: -85px;
+}
+div.place-visual-area div.place-visual-swiper .swiper-pagination-fraction {
+  width: 100px;
+  color: #fff;
+  font-size: 20px;
+  top: 0;
+  width: 80px;
+}
+div.place-visual-area div.place-visual-swiper a.view-all-place-pic {
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  padding-right: 15px;
+  background: url("../img/icons/icon_arrow_white_right.svg") 100% 50% no-repeat;
+  background-size: 5px auto;
+}
+
 /* 상세 보기 */
 div.place-view-wrapper {
+  /* 모바일 place 정보 only */
   /* 기본정보, 위치 */
   /* 리뷰 */
   /* 이용 안내 */
@@ -4135,14 +4316,146 @@ div.place-view-wrapper a.normal {
     margin-top: 0px;
   }
 }
+div.place-view-wrapper div.mobile-place-info-wrap {
+  display: none;
+  width: 100%;
+  padding-bottom: 110px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.mobile-place-info-wrap {
+    display: block;
+  }
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.place-tag-info p.t1 {
+  font-size: 14px;
+  color: #62717E;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.place-tag-info p.t2 {
+  font-size: 2-px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.place-tag-info p.t3 {
+  font-size: 20px;
+  color: #2EC4B6;
+  font-family: "Pretendard-SemiBold";
+  padding: 5px 0;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.place-tag-info p.t3 span {
+  font-size: 16px;
+  color: #62717E;
+  font-family: "Pretendard-Medium";
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.place-tag-info ul {
+  width: 100%;
+  margin: 10px 0;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.place-tag-info ul li {
+  float: left;
+  border: 1px solid #EAEAEA;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-right: 5px;
+  font-size: 12px;
+  color: #fff;
+  padding: 3px 8px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-etc {
+  border: 1px solid #EAEAEA;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-etc div.apply-to-host p.f {
+  float: left;
+  font-size: 14px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+  line-height: 18px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-etc div.apply-to-host a.s {
+  float: right;
+  font-size: 14px;
+  color: #2EC4B6;
+  padding-right: 15px;
+  background: url("../img/icons/icon_arrow_green.svg") 100% 50% no-repeat;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply {
+  border: 1px solid #EAEAEA;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.up {
+  border-bottom: 1px solid #EAEAEA;
+  padding-bottom: 20px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.up div.f {
+  float: left;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.up div.f div.a {
+  float: left;
+  width: 36px;
+  height: 36px;
+  background: #D9D9D9;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.up div.f div.b {
+  float: left;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.up div.f div.b p.t-1 {
+  font-size: 14px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 2px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.up div.f div.b p.t-2 {
+  font-size: 12px;
+  color: #62717E;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.up a.s {
+  float: right;
+  font-size: 14px;
+  color: #2EC4B6;
+  padding-right: 15px;
+  background: url("../img/icons/icon_arrow_green.svg") 100% 50% no-repeat;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.down {
+  padding-top: 20px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.down div.a {
+  float: left;
+  margin-right: 10px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.down div.b {
+  float: left;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.down div.b p.t-1 {
+  font-size: 14px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 2px;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.down div.b p.t-2 {
+  font-size: 12px;
+  color: #62717E;
+}
+div.place-view-wrapper div.mobile-place-info-wrap div.reserve-info-apply div.down div.b p.t-2 span {
+  color: #0D0D0D;
+}
 div.place-view-wrapper div.common-area {
   padding-bottom: 200px;
+  height: 1726px;
   /* 좌측 */
   /* 우측 */
 }
 @media screen and (max-width: 767px) {
   div.place-view-wrapper div.common-area {
     padding-bottom: 100px;
+    height: auto;
   }
 }
 div.place-view-wrapper div.common-area div.infos {
@@ -4219,12 +4532,27 @@ div.place-view-wrapper div.common-area div.infos div.map-wrapper {
   }
 }
 div.place-view-wrapper div.common-area div.reserve-wrap {
+  position: sticky;
   float: right;
   width: 340px;
+  top: 70px;
 }
 @media screen and (max-width: 767px) {
   div.place-view-wrapper div.common-area div.reserve-wrap {
+    position: fixed;
     float: none;
+    width: 100%;
+    background: #fff;
+    top: auto;
+    bottom: -100svh;
+    left: 0;
+    z-index: 50;
+    padding-bottom: 100px;
+    height: calc(100svh - 60px);
+    transition: bottom 0.5s ease-in-out;
+  }
+  div.place-view-wrapper div.common-area div.reserve-wrap.on {
+    bottom: 0;
   }
 }
 div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select {
@@ -4232,6 +4560,37 @@ div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select {
   padding: 20px;
   border-radius: 14px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select {
+    border-radius: 14px 14px 0 0;
+    box-shadow: none;
+    border-bottom: 0;
+  }
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.mobile-guide {
+  display: none;
+  position: relative;
+  font-size: 12px;
+  color: #6C757D;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #EAEAEA;
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.mobile-guide {
+    display: block;
+  }
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.mobile-guide a.reserve-modal-close-button {
+  position: absolute;
+  z-index: 10;
+  right: 0px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons/icon_close.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
 }
 div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.total-count {
   padding-bottom: 15px;
@@ -4263,6 +4622,12 @@ div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select d
   border-top: 1px solid #EAEAEA;
   border-bottom: 1px solid #EAEAEA;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap {
+    height: calc(100svh - 310px);
+    overflow-y: auto;
+  }
+}
 div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-date a {
   display: block;
   line-height: 41px;
@@ -4275,6 +4640,11 @@ div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select d
 }
 div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.reserve-place-select {
   margin-bottom: 10px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.reserve-place-select {
+    display: none;
+  }
 }
 div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.reserve-place-select div.close-btn {
   padding: 20px 0;
@@ -4304,15 +4674,115 @@ div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select d
     width: 45% !important;
   }
 }
-div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man .whole {
-  width: 100%;
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man {
+  position: relative;
+  /*
+  .whole {
+  	width: 100%; 
+  }
+  .bootstrap-select > .dropdown-toggle {
+  	padding: 9px 15px;
+  	font-size: 14px;
+  }
+  	*/
 }
-div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man .bootstrap-select > .dropdown-toggle {
-  padding: 9px 15px;
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man a.select-person {
+  display: block;
+  line-height: 41px;
+  border: 1px solid #A2A2A4;
   font-size: 14px;
+  color: #6C757D;
+  background: url("../img/icons/icon_arrow_down.png") 94% 50% no-repeat;
+  padding: 0 15px;
+  border-radius: 8px;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man a.select-person.active {
+  background: url("../img/icons/icon_arrow_up.png") 94% 50% no-repeat;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 38px;
+  width: 100%;
+  height: 130px;
+  border: 1px solid red;
+  background: #f7f7f7;
+  border: 1px solid #A2A2A4;
+  border-radius: 0 0 8px 8px;
+  z-index: 10;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number.show {
+  display: block;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m1 {
+  border-bottom: 1px solid #A2A2A4;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px 0;
+  color: #2EC4B6;
+  background: #fff;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m1.active {
+  color: #0D0D0D;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m1 span {
+  color: #A2A2A4;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m2 {
+  font-size: 14px;
+  color: #0D0D0D;
+  text-align: center;
+  padding: 8px 0;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m2 span {
+  display: block;
+  text-align: center;
+  color: #A2A2A4;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m-number {
+  text-align: center;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m-number a.minus {
+  display: inline-block;
+  background: url("../img/icons/icon_round_minus.svg") 0 0 no-repeat;
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m-number span {
+  font-size: 20px;
+  font-family: "Pretendard-SemiBold";
+  margin: 0 30px;
+  vertical-align: middle;
+  color: #0D0D0D;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m-number span.active {
+  color: #2EC4B6;
+}
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.select-man div.man-number div.m-number a.plus {
+  display: inline-block;
+  background: url("../img/icons/icon_round_plus.svg") 0 0 no-repeat;
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
 }
 div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.reserve-btn-wrap {
   padding-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.reserve-btn-wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    background: #fff;
+    border: 1px solid #EAEAEA;
+    border-radius: 14px 14px 0 0;
+  }
 }
 div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.reserve-btn-wrap a {
   display: inline-block;
@@ -4324,12 +4794,22 @@ div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select d
   line-height: 16px;
   padding-top: 10px;
 }
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.reserve-btn-wrap p.guide {
+    display: none;
+  }
+}
 div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-etc {
   border: 1px solid #EAEAEA;
   padding: 20px;
   border-radius: 14px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-etc {
+    display: none;
+  }
 }
 div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-etc div.apply-to-host p.f {
   float: left;
@@ -4351,6 +4831,11 @@ div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply {
   border-radius: 14px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply {
+    display: none;
+  }
 }
 div.place-view-wrapper div.common-area div.reserve-wrap div.reserve-info-apply div.up {
   border-bottom: 1px solid #EAEAEA;
@@ -4657,6 +5142,11 @@ ul.review-all-list li a.view-detail {
   padding-right: 15px;
   background: url("../img/icons/icon_arrow_green.svg") 100% 50% no-repeat;
 }
+@media screen and (max-width: 767px) {
+  ul.review-all-list li a.view-detail {
+    position: static;
+  }
+}
 ul.review-all-list li div.up span.thumb {
   position: relative;
   float: left;
@@ -4712,6 +5202,11 @@ ul.review-all-list li p.down {
   color: #62717E;
   line-height: 20px;
   padding-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  ul.review-all-list li p.down {
+    padding-bottom: 10px;
+  }
 }
 
 /* 리뷰 상세보기 */

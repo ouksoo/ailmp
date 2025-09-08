@@ -47,7 +47,6 @@
 			top: 16px;
 			right: 20px;
 		}
-
 	}
 }
 .modal-body {
@@ -110,6 +109,10 @@
 	}
 	&.dark-gray {
 		background: #6C757D;
+	}
+	&.white {
+		background: $white;
+		color: $title-black;
 	}
 }
 

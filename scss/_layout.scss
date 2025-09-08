@@ -14,7 +14,7 @@ div.header-wrapper {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 45;
+	z-index: 50;
 	width: 100%;
 	background: #fff;
 	height: 70px;
@@ -507,9 +507,6 @@ div.header-wrapper {
 		border-bottom: 0px;
 
 		.header-left {
-
-			
-			
 
 			h1 {
 				background: url('../img/logo_top_white.svg') 0 0 no-repeat;
