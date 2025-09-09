@@ -146,7 +146,7 @@
 </div>
 <!-- //공상상세 상단 visual -->
 
-<div class="container-wrapper">
+<div class="container-wrapper place-detail-container"><!-- 모바일로 인하여 공간상세보기 해당 클래스 필요 -->
 	<div class="common-wrapper">
 		
 		<!-- place view start -->
@@ -238,7 +238,16 @@
 
 					<p class="title">위치<span class="warnning">상세 주소는 예약 확정 후 확인하실 수 있어요.</span></p>
 					<div class="map-wrapper">
-a
+						<!-- 셈플 지도 -->
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.043498802599!2d127.02762171564213!3d37.49795267981139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1592a4e3e55%3A0xbfd6d4ab8e0f1e4a!2z7ISc7Jq47Yq567OE7IucIOq1rCDsmKXroZwg7J6Q64-Z!5e0!3m2!1sko!2skr!4v1614069389725!5m2!1sko!2skr"
+							width="100%"
+							height="100%"
+							style="border:0;"
+							allowfullscreen=""
+							loading="lazy">
+						</iframe>
+						<!-- //셈플 지도 -->
 					</div>
 				</div>
 
@@ -269,16 +278,21 @@ a
 							</div>
 
 							<div class="time-select">
-								<select class="selectpicker both" data-container="body">
-									<option>00:00</option>
+								<select class="selectpicker both period-wrapper" data-container="body">
+									<option class="period-selected">2025. 07. 16</option><!--기간 선택시 시작일 표기-->
 									<option>01:00</option>
 									<option>02:00</option>
 									<option>03:00</option>
 									<option>04:00</option>
 								</select>
 								~
-								<select class="selectpicker both" data-container="body">
-									<option>종료 시간</option>
+								<select class="selectpicker both period-wrapper" data-container="body">
+									<option class="period-selected">2025. 07. 19</option><!--기간 선택시 종료일 표기-->
+									<option>00:00</option>
+									<option>01:00</option>
+									<option>02:00</option>
+									<option>03:00</option>
+									<option>04:00</option>
 								</select>
 							</div>
 							<div class="select-man">
@@ -297,6 +311,7 @@ a
 						</div>
 						<div class="reserve-btn-wrap">
 							<a href="#" class="modal-button green bd0">공간 예약하기</a>
+							<a href="#" class="modal-button green bd0 reservation-button">공간 예약하기</a><!-- 모바일용 -->
 							<p class="guide">예약 신청 후 24시간 이내  예약이 확정되며,<br />예약 확정 후 결제가 진행됩니다.</p>
 						</div>
 					</div>
@@ -335,7 +350,7 @@ a
 			<div class="review-area">
 				<p class="title">리뷰<span class="counter">24</span></p>	
 				<ul class="review-list clearfix">
-					<li>
+					<li data-bs-toggle="modal" data-bs-target="#reviewDetailViewModal">
 						<div class="up clearfix">
 							<span class="thumb"><img src="img/sample/sample_1.png" alt="" /></span>
 							<div class="review-info">
@@ -348,7 +363,7 @@ a
 						</div>
 						<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
 					</li>
-					<li>
+					<li data-bs-toggle="modal" data-bs-target="#reviewDetailViewModal">
 						<div class="up clearfix">
 							<span class="thumb"><img src="img/sample/sample_2.png" alt="" /></span>
 							<div class="review-info">
@@ -361,7 +376,7 @@ a
 						</div>
 						<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
 					</li>
-					<li>
+					<li data-bs-toggle="modal" data-bs-target="#reviewDetailViewModal">
 						<div class="up clearfix">
 							
 							<div class="review-info">
@@ -375,7 +390,7 @@ a
 						<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
 					</li>
 				</ul>
-				<a href="#" class="modal-button dark-gray bd0 normal">리뷰 전체보기</a>
+				<a href="#" class="modal-button dark-gray bd0 normal" data-bs-toggle="modal" data-bs-target="#reviewListModal">리뷰 전체보기</a>
 			</div>
 			<!-- //리뷰 -->
 
@@ -498,7 +513,7 @@ a
 								</div>
 							</div>
 							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
-							<a href="#" class="view-detail">자세히 보기</a>
+							<a href="#" class="view-detail" data-bs-toggle="modal" data-bs-target="#reviewDetailViewModal">자세히 보기</a>
 						</li>
 						<li>
 							<div class="up clearfix">
@@ -512,7 +527,7 @@ a
 								</div>
 							</div>
 							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
-							<a href="#" class="view-detail">자세히 보기</a>
+							<a href="#" class="view-detail" data-bs-toggle="modal" data-bs-target="#reviewDetailViewModal">자세히 보기</a>
 						</li>
 						<li>
 							<div class="up clearfix">
@@ -525,7 +540,7 @@ a
 								</div>
 							</div>
 							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
-							<a href="#" class="view-detail">자세히 보기</a>
+							<a href="#" class="view-detail" data-bs-toggle="modal" data-bs-target="#reviewDetailViewModal">자세히 보기</a>
 						</li>
 					</ul>
 				</div>
@@ -632,32 +647,28 @@ a
 <div class="picture-backface" style="display: none;">
 	<div class="place-total-picture-view">
 		<div class="gallery-review-pc">
+			<a href="#" class="picture-backface-close" data-bs-dismiss="modal">닫기</a>
 			<div class="pagination-pictures"></div>
 			<div class="swiper picture-totalview-swiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<div class="slide-center">
-							<img src="img/sample/sample_1.png" />
+							<img src="img/sample/main_visual_1.png" />
 						</div>
 					</div>
 					<div class="swiper-slide">
 						<div class="slide-center">
-							<img src="img/sample/sample_2.png" />
+							<img src="img/sample/main_visual_2.png" />
 						</div>
 					</div>
 					<div class="swiper-slide">
 						<div class="slide-center">
-							<img src="img/sample/sample_3.png" />
+							<img src="img/sample/main_visual_3.png" />
 						</div>
 					</div>
 					<div class="swiper-slide">
 						<div class="slide-center">
-							<img src="img/sample/sample_4.png" />
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="slide-center">
-							<img src="img/sample/sample_5.png" />
+							<img src="img/sample/main_visual_4.png" />
 						</div>
 					</div>
 				</div>
@@ -665,19 +676,16 @@ a
 			<div class="swiper picture-total-thumb-wiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<img src="img/sample/sample_1.png" />
+						<img src="img/sample/main_visual_1.png" />
 					</div>
 					<div class="swiper-slide">
-						<img src="img/sample/sample_2.png" />
+						<img src="img/sample/main_visual_2.png" />
 					</div>
 					<div class="swiper-slide">
-						<img src="img/sample/sample_3.png" />
+						<img src="img/sample/main_visual_3.png" />
 					</div>
 					<div class="swiper-slide">
-						<img src="img/sample/sample_4.png" />
-					</div>
-					<div class="swiper-slide">
-						<img src="img/sample/sample_5.png" />
+						<img src="img/sample/main_visual_4.png" />
 					</div>
 				</div>
 			</div>

@@ -78,10 +78,12 @@
 		padding: 20px;
 	}
 
-	div.two-buttons {
+	&.bordered {
+		border-bottom: 1px solid #EAEAEA;
+		padding: 15px 25px;
 
-		a {
-			width: 48%;
+		@media screen and (max-width: 768px) {
+			padding: 11px 20px;
 		}
 	}
 }
@@ -91,7 +93,7 @@
 	font-size: 18px;
 	font-weight: 700;
 	text-align: center;
-	padding: 17px 0;
+	padding: 16px 0;
 	border-radius: 8px;
 
 	@media screen and (max-width: 768px) {
@@ -113,6 +115,15 @@
 	&.white {
 		background: $white;
 		color: $title-black;
+	}
+	&.white-btn {
+		background: $white;
+		color: $title-black;
+		border: 1px solid #C6CAD3;
+	}
+	&.bluegray-btn {
+		background: #62717E;
+		color: $white;
 	}
 }
 
@@ -347,6 +358,18 @@ textarea.input-txt {
 .bootstrap-select .dropdown-toggle:focus,.bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
     outline: 0px auto -webkit-focus-ring-color!important;
     outline-offset: 0px
+}
+
+div.period-wrapper {
+
+	a {
+		background: #F7F7F7;
+	}
+	a.period-selected {
+		color: #A2A2A4 !important;
+		text-align: center !important;
+		background: #fff !important;
+	}
 }
 
 /* modal size */

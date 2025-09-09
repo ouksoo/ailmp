@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<!-- 공통 -->
+<div class="film-common"></div>
+<a href="#" class="go-top-btn"></a>
+<!-- //공통 -->
+
+<!-- header -->
+<div class="header-wrapper">
+	<div class="header-footer-inner nomobile clearfix">
+		<div class="film-normal"></div>
+		<div class="header-left clearfix">
+			<h1>IT PLACE</h1>
+			<a href="#" class="find-search-show"><span>공간찾기</span></a>
+			<a href="#" class="reg-place-show"><span>등록하기</span></a>
+		</div>
+		<div class="header-right clearfix">
+			<a href="#" class="tops a">검색</a><div class="b"><p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p></div><a href="#" class="tops c">알림<span class="notice"></span></a><a href="#" class="tops d">메뉴</a>
+			<div class="search-box clearfix">
+				<input type="text" placeholder="어떤 공간을 찾고 있나요? 예) 포근한 가정집" />
+				<button class="search-btn">검색</button>
+			</div>
+
+		</div>
+
+		<!-- 공지 알람 -->
+		<div class="notification-wrap">
+			<div class="inner" data-simplebar>
+				<ul>
+					<li>
+						<p class="a">예약</p>
+						<p class="b">신청하신 예스스튜디오 예약이 호스트에 의해 승인 되었습니다.</p>
+						<p class="c">2025/06/10 13:55</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- aside -->
+		<aside class="lnb-wrapper">
+			<div class="menu-header">
+				<div class="login-button">
+					<p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p>
+					<p class="greeting-msg" style="display: none;"><span>홍길동</span>님, 반갑습니다.</p>
+				</div>
+				<a href="#" class="tops c">알림<span class="notice"></span></a>
+				<a href="#" class="menu-close">닫기</a>
+			</div>
+			<a href="#" class="logout-button">로그아웃</a>
+			<div class="menu-wrapper">
+				<ul class="menus">
+					<li>
+						<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+						<div class="submenus">
+							<a href="#" class="on">예약/결제 내역</a>
+							<a href="#">나의 문의</a>
+							<a href="#">관심 장소</a>
+							<a href="#">개인 정보 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+						<div class="submenus">
+							<a href="#">공간 등록</a>
+							<a href="#">공간 관리</a>
+							<a href="#">예약 관리</a>
+							<a href="#">Q&A 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">고객센터</a>
+						<div class="submenus">
+							<a href="#">공지사항</a>
+							<a href="#">이벤트</a>
+							<a href="#">자주 묻는 질문</a>
+							<a href="#">문의하기</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<!-- //aside -->
+	</div>
+</div>
+<!-- //header -->
+ 
+
+<div class="container-wrapper">
+	<div class="common-wrapper">
+		<div class="common-title-area">
+			<p class="s-title">홍길동 님의 <span>예약/결제 내역</span><span>예약 취소 내역</span></p>
+			<p class="s-txt">현재 결제대기 <span class="green">1건</span> 있어요.</p>
+		</div>
+
+		<div class="reservation-tabs clearfix">
+			<div class="tab-btn">
+				<a href="#" class="on">예약/결제 내역</a><a href="#">예약 취소</a>
+			</div>
+			<div class="status">
+				<span>상태</span>
+				<select class="selectpicker both" data-container="body">
+					<option>전체</option>
+					<option>예약 신청</option>
+					<option>결제 대기</option>
+					<option>예약 완료</option>
+					<option>이용 완료</option>
+					<option>예약 불가</option>
+				</select>
+			</div>
+		</div>
+
+		<!-- 예약/결제 내역 -->
+		<div class="mypage-reservation-list clearfix reservatoin-tab-1">
+			<ul>
+				<!--loop-->
+				<li class="clearfix">
+					<div class="f">
+						<p class="tags">
+							<span>사전답사</span>
+						</p>
+						<img src="img/sample/main_visual_1.png" alt="" />
+					</div>
+					<div class="s">
+						<div class="up">
+							<a href="#" class="remove-item">삭제</a>
+							<span class="status a-1">예약 신청</span><!-- 예약신청: a-1, 결제 대기: a-2, 예약 완료: a-3, 이용 완료: a-4, 예약 불가: a-5 -->
+							<p class="t1">잇스튜디오</p>
+							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+						</div>
+					</div>
+					<div class="down clearfix">
+						<div class="f-l">
+							<table class="notable">
+								<tr>
+									<th>이용 일자</th>
+									<td>2025. 07. 03</td>
+								</tr>
+								<tr>
+									<th>이용 시간</th>
+									<td>12:00 ~ 20:00 (총 7시간)</td>
+								</tr>
+								<tr>
+									<th>예약 인원</th>
+									<td>5명</td>
+								</tr>
+							</table>
+							<div class="app-date">
+								<span class="a">예약 신청일</span>
+								<span class="b">2025. 07. 03</span>
+								<a href="#" class="modal-button white-btn">예약 상세보기</a>
+							</div>
+						</div>
+						<div class="f-r">
+							<div class="money clearfix">
+								<span class="a">결제 예정금액</span>
+								<span class="b">350,000원</span>
+							</div>
+							<div class="sta">
+								조금만 기다려 주세요.<br />호스트가 예약 신청내역을 확인 중입니다.
+							</div>
+							<div class="both-buttons">
+								<a href="#" class="modal-button bluegray-btn">예약 취소</a><a href="#" class="modal-button bluegray-btn">문의 하기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!--//loop-->
+				<li class="clearfix">
+					<div class="f">
+						<p class="tags">
+							<span>사전답사</span>
+						</p>
+						<img src="img/sample/main_visual_2.png" alt="" />
+					</div>
+					<div class="s">
+						<div class="up">
+							<span class="status a-2">결제 대기</span>
+							<p class="t1">잇스튜디오</p>
+							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+						</div>
+					</div>
+					<div class="down clearfix">
+						<div class="f-l">
+							<table class="notable">
+								<tr>
+									<th>이용 일자</th>
+									<td>2025. 07. 03</td>
+								</tr>
+								<tr>
+									<th>이용 시간</th>
+									<td>12:00 ~ 20:00 (총 7시간)</td>
+								</tr>
+								<tr>
+									<th>예약 인원</th>
+									<td>5명</td>
+								</tr>
+							</table>
+							<div class="app-date">
+								<span class="a">예약 신청일</span>
+								<span class="b">2025. 07. 03</span>
+								<a href="#" class="modal-button white-btn">예약 상세보기</a>
+							</div>
+						</div>
+						<div class="f-r">
+							<div class="money clearfix">
+								<span class="a">결제 예정금액</span>
+								<span class="b">350,000원</span>
+							</div>
+							<div class="sta">
+								예약이 승인되었어요.<br />예약확정을 위해 <span>2025.08.25까지 결제</span>해주세요.
+							</div>
+							<div class="both-buttons">
+								<a href="#" class="modal-button bluegray-btn">예약 취소</a><a href="#" class="modal-button green">결제 하기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="f">
+						<p class="tags">
+							<span>사전답사</span>
+						</p>
+						<img src="img/sample/main_visual_3.png" alt="" />
+					</div>
+					<div class="s">
+						<div class="up">
+							<span class="status a-3">예약 완료</span>
+							<p class="t1">잇스튜디오</p>
+							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+						</div>
+					</div>
+					<div class="down clearfix">
+						<div class="f-l">
+							<table class="notable">
+								<tr>
+									<th>이용 일자</th>
+									<td>2025. 07. 03</td>
+								</tr>
+								<tr>
+									<th>이용 시간</th>
+									<td>12:00 ~ 20:00 (총 7시간)</td>
+								</tr>
+								<tr>
+									<th>예약 인원</th>
+									<td>5명</td>
+								</tr>
+							</table>
+							<div class="app-date">
+								<span class="a">예약 신청일</span>
+								<span class="b">2025. 07. 03</span>
+								<a href="#" class="modal-button white-btn">예약 상세보기</a>
+							</div>
+						</div>
+						<div class="f-r">
+							<div class="money clearfix">
+								<span class="a">결제 예정금액</span>
+								<span class="b">350,000원</span>
+							</div>
+							<div class="sta">
+								예약이 확정되었어요.<br />이용일자와 시간, 안내사항 확인 후 이용해주세요.
+							</div>
+							<div class="both-buttons">
+								<a href="#" class="modal-button bluegray-btn">예약 취소</a><a href="#" class="modal-button bluegray-btn">문의 하기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="f">
+						<p class="tags">
+							<span>사전답사</span>
+						</p>
+						<img src="img/sample/main_visual_4.png" alt="" />
+					</div>
+					<div class="s">
+						<div class="up">
+							<a href="#" class="remove-item">삭제</a>
+							<span class="status a-4">이용 완료</span>
+							<p class="t1">잇스튜디오</p>
+							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+						</div>
+					</div>
+					<div class="down clearfix">
+						<div class="f-l">
+							<table class="notable">
+								<tr>
+									<th>이용 일자</th>
+									<td>2025. 07. 03</td>
+								</tr>
+								<tr>
+									<th>이용 시간</th>
+									<td>12:00 ~ 20:00 (총 7시간)</td>
+								</tr>
+								<tr>
+									<th>예약 인원</th>
+									<td>5명</td>
+								</tr>
+							</table>
+							<div class="app-date">
+								<span class="a">예약 신청일</span>
+								<span class="b">2025. 07. 03</span>
+								<a href="#" class="modal-button white-btn">예약 상세보기</a>
+							</div>
+						</div>
+						<div class="f-r">
+							<div class="money clearfix">
+								<span class="a">결제 예정금액</span>
+								<span class="b">350,000원</span>
+							</div>
+							<div class="sta">
+								조금만 기다려 주세요.<br />호스트가 예약 신청내역을 확인 중입니다. 
+							</div>
+							<div class="both-buttons">
+								<a href="#" class="modal-button bluegray-btn">예약 취소</a><a href="#" class="modal-button green">리뷰 쓰기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="f">
+						<p class="tags">
+							<span>사전답사</span>
+						</p>
+						<img src="img/sample/main_visual_1.png" alt="" />
+					</div>
+					<div class="s">
+						<div class="up">
+							<a href="#" class="remove-item">삭제</a>
+							<span class="status a-5">예약 불가</span>
+							<p class="t1">잇스튜디오</p>
+							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+						</div>
+					</div>
+					<div class="down clearfix">
+						<div class="f-l">
+							<table class="notable">
+								<tr>
+									<th>이용 일자</th>
+									<td>2025. 07. 03</td>
+								</tr>
+								<tr>
+									<th>이용 시간</th>
+									<td>12:00 ~ 20:00 (총 7시간)</td>
+								</tr>
+								<tr>
+									<th>예약 인원</th>
+									<td>5명</td>
+								</tr>
+							</table>
+							<div class="app-date">
+								<span class="a">예약 신청일</span>
+								<span class="b">2025. 07. 03</span>
+								<a href="#" class="modal-button white-btn">예약 상세보기</a>
+							</div>
+						</div>
+						<div class="f-r">
+							<div class="money clearfix">
+								<span class="a">결제 예정금액</span>
+								<span class="b">0원</span>
+							</div>
+							<div class="sta">
+								호스트의 사정으로 인해 예약이 거절되었어요.<br />자세한 내용은 호스트에게 문의해 주세요.
+							</div>
+							<div class="single-button">
+								<a href="#" class="modal-button bluegray-btn">문의 하기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<a href="#" class="more">+ 더보기</a>
+		</div>
+		<!-- //예약/결제 내역 -->
+
+		 <!-- 예약 취소 목록 -->
+		<div class="mypage-reservation-list clearfix reservatoin-tab-2" style="display: none;">
+			<ul>
+				<!--loop-->
+				<li class="clearfix">
+					<div class="f">
+						<p class="tags">
+							<span>사전답사</span>
+						</p>
+						<img src="img/sample/main_visual_1.png" alt="" />
+					</div>
+					<div class="s">
+						<div class="up">
+							<a href="#" class="remove-item">삭제</a>
+							<span class="status a-5">예약 취소</span><!-- 환불 완료: a-3, 예약 취소: a-5 -->
+							<p class="t1">잇스튜디오</p>
+							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+						</div>
+					</div>
+					<div class="down clearfix">
+						<div class="f-l">
+							<table class="notable">
+								<tr>
+									<th>이용 일자</th>
+									<td>2025. 07. 03</td>
+								</tr>
+								<tr>
+									<th>이용 시간</th>
+									<td>12:00 ~ 20:00 (총 7시간)</td>
+								</tr>
+								<tr>
+									<th>예약 인원</th>
+									<td>5명</td>
+								</tr>
+							</table>
+							<div class="app-date">
+								<span class="a">예약 신청일</span>
+								<span class="b">2025. 07. 03</span>
+								<a href="#" class="modal-button white-btn">예약 상세보기</a>
+							</div>
+						</div>
+						<div class="f-r">
+							<div class="money clearfix">
+								<span class="a">결제 예정금액</span>
+								<span class="b">350,000원</span>
+							</div>
+							<div class="sta">
+								예약 취소가 완료되었습니다.
+							</div>
+							<div class="both-buttons">
+								<a href="#" class="modal-button bluegray-btn">취소 상세내역</a><a href="#" class="modal-button green">다시 예약하기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!--//loop-->
+				<li class="clearfix">
+					<div class="f">
+						<p class="tags">
+							<span>사전답사</span>
+						</p>
+						<img src="img/sample/main_visual_2.png" alt="" />
+					</div>
+					<div class="s">
+						<div class="up">
+							<span class="status a-3">환불 완료</span>
+							<p class="t1">잇스튜디오</p>
+							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+						</div>
+					</div>
+					<div class="down clearfix">
+						<div class="f-l">
+							<table class="notable">
+								<tr>
+									<th>이용 일자</th>
+									<td>2025. 07. 03</td>
+								</tr>
+								<tr>
+									<th>이용 시간</th>
+									<td>12:00 ~ 20:00 (총 7시간)</td>
+								</tr>
+								<tr>
+									<th>예약 인원</th>
+									<td>5명</td>
+								</tr>
+							</table>
+							<div class="app-date">
+								<span class="a">예약 신청일</span>
+								<span class="b">2025. 07. 03</span>
+								<a href="#" class="modal-button white-btn">예약 상세보기</a>
+							</div>
+						</div>
+						<div class="f-r">
+							<div class="money clearfix">
+								<span class="a">결제 예정금액</span>
+								<span class="b">350,000원</span>
+							</div>
+							<div class="sta">
+								정책에 따라 환불처리가 완료되었습니다.<br /><a href="#">환불정책 보기</a>
+							</div>
+							<div class="both-buttons">
+								<a href="#" class="modal-button bluegray-btn">취소 상세내역</a><a href="#" class="modal-button green">다시 예약하기</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- //예약 취소 목록 -->
+	</div>
+</div>
+
+<!-- footer -->
+<div class="footer-wrapper">
+	<div class="header-footer-inner">
+		<div class="top clearfix">
+			<h2>IT PLACE</h2>
+			<div class="footer-menu">
+				<a href="#">이용약관</a><span>|</span><a href="#">개인정보처리방침</a><span>|</span><a href="#">자주묻는질문</a><span>|</span><a href="#">문의하기</a>
+			</div>
+		</div>
+		<div class="bottom pc clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호 <span>|</span> 전화 : +82-2-516-1703<br />
+			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 홍길동<br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+		<div class="bottom mo clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			사업자등록번호 :  000-00-0000<br />
+			통신판매업신고번호 :  2025-서울성동-0000호<br />
+			개인정보보호 책임자 : 홍길동<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호<br />
+			전화 : +82-2-516-1703<br /><br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+
+
+<!-- Modal : 예약 상세보기 -->
+<div class="modal " style="display: block;" id="customReservationDetailView" tabindex="-1" role="dialog" aria-labelledby="customReservationDetailView" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-800" role="document">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<h5 class="modal-title">예약 상세보기</h5>
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+
+			<div class="modal-body">
+				<div class="custom-reserve-detail">
+					<div class="inner clearfix">
+						<div class="f">
+							<p class="tags">
+								<span>사전답사</span>
+							</p>
+							<img src="img/sample/main_visual_1.png" alt="" />
+						</div>
+						<div class="s">
+							<div class="up">
+								<span class="status a-5">예약 취소</span>
+								<p class="t1">잇스튜디오</p>
+								<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+							</div>
+						</div>
+						<div class="down clearfix">
+							<div class="f-l">
+								<table class="notable">
+									<tr>
+										<th>예약 신청일</th>
+										<td>2025. 07. 03</td>
+									</tr>
+									<tr>
+										<th>이용 일자</th>
+										<td>2025. 07. 03</td>
+									</tr>
+									<tr>
+										<th>이용 시간</th>
+										<td>12:00 ~ 20:00 (총 7시간)</td>
+									</tr>
+									<tr>
+										<th>예약 인원</th>
+										<td>5명</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<div class="info">
+						<table class="notable">
+							<tr>
+								<th>예약자</th>
+								<td>김아름</td>
+							</tr>
+							<tr>
+								<th>연락처</th>
+								<td>010 - 1233 - 1231</td>
+							</tr>
+							<tr>
+								<th>이메일</th>
+								<td>rladkfma@gmail.com</td>
+							</tr>
+							<tr>
+								<th>추가 요청사항</th>
+								<td>요청사항 입니다 요청사항 입니다 요청사항 입니다. 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다.</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="pay-info">
+						<table class="notable">
+							<tr>
+								<th>결제 금액</th>
+								<td>350,000원(7시간)</td>
+							</tr>
+							<tr>
+								<th>추가 인원 요금</th>
+								<td>5,000원(+1명)</td>
+							</tr>
+							<tr>
+								<th class="total">합계</th>
+								<td class="total">350,000원</td>
+							</tr>
+						</table>
+					</div>
+
+					<a href="#" class="more">영수증 보기</a>
+				</div>
+			</div>
+
+			<div class="modal-footer bordered custom-reserve-detail-footer">
+				<a href="#" class="modal-button bluegray-btn">예약 취소</a><a href="#" class="modal-button bluegray-btn">문의 하기</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 예약 상세보기 -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/lenis.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+  
+</script>
+</body>
+</html>
+
+

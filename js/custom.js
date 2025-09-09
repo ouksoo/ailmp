@@ -70,7 +70,7 @@ const mainVisualSwiper = new Swiper('.main-visual-swiper', {
 
 // main visual swipe 초기화
 const placeVisualSwiper = new Swiper('.place-visual-swiper', {
-	loop: true,
+	loop: false,
 	effect: "fade",
 	speed: 800,
 	autoplay: false,
@@ -278,15 +278,18 @@ var AILMP = {
 		});
 
 		//공간상세보기 "날짜 선택"
-		$('div.reservation-select .select-date a').on('click', function() {
+		$('div.reservation-select .select-date a').on('click', function(e) {
+			e.preventDefault();
 			$('div.reserve-place-select').css('display', 'block');
-			$('div.reserve-place-select div.close-btn a').on('click', function() {
+			$('div.reserve-place-select div.close-btn a').on('click', function(e) {
+				e.preventDefault();
 				$('div.reserve-place-select').css('display', 'none');
 			});	
 		});
 
 		//공간상세보기 "인원 선택"
-		$('div.select-man a.select-person').on('click', function() {
+		$('div.select-man a.select-person').on('click', function(e) {
+			e.preventDefault();
 			$(this).toggleClass('active');
 			if($(this).next().hasClass('show')) {
 				$(this).next().removeClass('show');
@@ -358,6 +361,29 @@ var AILMP = {
 			});
 		});
 
+		//공간 상세보기 공간 사진 전체 보기
+		$('a.view-all-place-pic').on('click', function(e) {
+			e.preventDefault();
+			$('body').css('overflow', 'hidden');
+			$('.picture-backface').fadeIn();
+
+			$('a.picture-backface-close').on('click', function(e) {
+				e.preventDefault();
+				$('body').css('overflow', 'auto');
+				$('.picture-backface').fadeOut();
+			});
+		});
+
+		//공간 상세보기 "공간 예약하기" 버튼
+		$('a.reservation-button').on('click', function(e) {
+			e.preventDefault();
+			$('div.reserve-wrap').addClass('on');
+			$('a.reserve-modal-close-button').on('click', function(e) {
+				e.preventDefault();
+				$('div.reserve-wrap').removeClass('on');
+			});
+		});
+
 		//prevent document click 
 		$(AILMP.stopDocumentClick).on('click', function(e) {
 			e.stopPropagation();
@@ -389,14 +415,18 @@ var AILMP = {
 	},
 	//공간 상세보기 visual
 	placeDetailInitialVisual : function() {
-		$('h2.place-view-title').fadeIn(1300, function() {
-			$(this).addClass('active');
-			$('div.place-visual-area div.initial').addClass('active');
+		if (window.innerWidth <= 767) {
+			$('body').removeClass('no-scroll');	
+		} else {
+			$('h2.place-view-title').fadeIn(1300, function() {
+				$(this).addClass('active');
+				$('div.place-visual-area div.initial').addClass('active');
 
-			const mouseWheelStart = setTimeout(function() {
-				window.addEventListener('wheel', AILMP.placeDetailVisualLastScene, { once: true });
+				const mouseWheelStart = setTimeout(function() {
+					window.addEventListener('wheel', AILMP.placeDetailVisualLastScene, { once: true });
+				});
 			});
-		});
+		}
 	},
 	placeDetailVisualLastScene : function(e) {
 		if (e.deltaY > 0) {
@@ -407,7 +437,7 @@ var AILMP = {
 				$('#placeVisualAreaUserAction').on('mousemove', function() {
 					AILMP.placeUserMouseMoveDetect();
 				});
-			}, 2000);
+			}, 1000);
 		}
 	},
 	placeUserMouseMoveDetect : function() {
@@ -423,6 +453,11 @@ $(document).ready(function() {
 	AILMP.gnbMenuActive();
 	AILMP.placeListSortingAnimation();
 	AOS.init();
+
+	if ('scrollRestoration' in history) {
+		history.scrollRestoration = 'manual';
+	}
+	window.scrollTo(0, 0);
 
 	//bootstrap tooltip init
 	$('[data-tooltip="true"]').each(function () {

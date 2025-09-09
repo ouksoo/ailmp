@@ -611,6 +611,9 @@ div.legal-wrapper {
 			font-size: 16px;
 		}
 	}
+	span.green {
+		color: $green;
+	}
 }
 
 /* global common */
@@ -620,4 +623,28 @@ div.legal-wrapper {
 .no-scroll {
 	overflow: hidden;
 }
+.ellip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+div.both-buttons {
+	width: 100%;
 
+	a {
+		display: inline-block;
+		width: calc(50% - 10px);
+
+		&:nth-child(1) {
+			margin-right: 20px;
+		}
+	}
+}
+div.single-button {
+	width: 100%;
+
+	a {
+		display: inline-block;
+		width: 100%;
+	}
+}

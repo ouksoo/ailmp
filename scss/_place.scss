@@ -172,6 +172,11 @@ div.place-visual-area {
 	height: 100vh;
 	overflow: hidden;
 
+	@media screen and (max-width: 768px) {
+		height: 360px;
+		margin-top: 120px;
+	}
+
 	div.place-film {
 		display: none;
 		position: absolute;
@@ -181,6 +186,10 @@ div.place-visual-area {
 		height: 100%;
 		background: rgba(0,0,0,0.3);
 		z-index: 5;
+
+		@media screen and (max-width: 768px) {
+			display: none !important;
+		}
 	}
 	div.place-detail-info {
 		display: none;
@@ -191,6 +200,10 @@ div.place-visual-area {
 		transform: translateX(-50%);
 		color: #fff;
 		z-index: 6;
+
+		@media screen and (max-width: 768px) {
+			display: none !important;
+		}
 
 		p.s1 {
 			font-size: 20px;
@@ -251,6 +264,27 @@ div.place-visual-area {
 		font-family: 'Pretendard-Medium';
 		transition: top 1s cubic-bezier(0, 0, 0.6, 1);
 
+		@media screen and (min-width: 1600px) and (max-width: 1919px) { 
+			left: 112px;
+			transform: translate(0%, -50%);
+		}
+		@media screen and (min-width: 1280px) and (max-width: 1599px) { 
+			left: 100px;
+			transform: translate(0%, -50%);
+		}
+		@media screen and (min-width: 1024px) and (max-width: 1279px) { 
+			left: 42px;
+			transform: translate(0%, -50%);
+		}
+		@media screen and (min-width: 768px) and (max-width: 1023px) { 
+			left: 32px;
+			transform: translate(0%, -50%);
+		}
+
+		@media screen and (max-width: 767px) {
+			display: none !important;
+		}
+
 		&.active {
 			top: 15%;
 		}
@@ -266,14 +300,49 @@ div.place-visual-area {
 		transform: translateX(-50%);
 		transition: width 0.5s, bottom 0.5s cubic-bezier(0, 0, 0.6, 1);
 
+		@media screen and (max-width: 767px) {
+			height: 360px;
+		}
+
 		&.initial {
 			width: 1440px;
 			border-radius: 20px;
 			bottom: -100%;
 			transition: bottom 1s cubic-bezier(0, 0, 0.6, 1);
 
+			@media screen and (min-width: 1600px) and (max-width: 1919px) { 
+				left: 112px;
+				transform: translateX(0%);
+				width: 88%;
+			}
+			@media screen and (min-width: 1280px) and (max-width: 1599px) { 
+				left: 100px;
+				transform: translateX(0%);
+				width: 87%;
+			}
+			@media screen and (min-width: 1024px) and (max-width: 1279px) { 
+				left: 42px;
+				transform: translateX(0%);
+				width: 92%;
+			}
+			@media screen and (min-width: 768px) and (max-width: 1023px) { 
+				left: 32px;
+				transform: translateX(0%);
+				width: 93%;
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 100%;
+				border-radius: 0px;
+				bottom: 0%;
+			}
+
 			&.active {
 				bottom: -25%;
+
+				@media screen and (max-width: 768px) {
+					bottom: 0%;
+				}
 			}
 		}
 		
@@ -295,8 +364,6 @@ div.place-visual-area {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			transform: scale(1.10);
-			will-change: transform;
 		}
 
 		.swiper-button-next, 
@@ -306,6 +373,12 @@ div.place-visual-area {
 			width: 50px;
 			height: 50px;
 
+			@media screen and (max-width: 767px) {
+				bottom: 160px;
+				width: 38px;
+				height: 38px;
+			}
+
 			&::after {
 				content: '';
 			}
@@ -314,11 +387,23 @@ div.place-visual-area {
 			left: 50%;
 			margin-left: -42px;
 			background: url('../img/icons/icon_gallery_left_black.svg') 50% 50% no-repeat;
+
+			@media screen and (max-width: 767px) {
+				left: 20px;
+				margin-left: 0;
+				background-size: 100% auto;
+			}
 		}
 		.swiper-button-next {
 			right: 50%;
 			margin-right: -67px;
 			background: url('../img/icons/icon_gallery_right_black.svg') 50% 50% no-repeat;
+
+			@media screen and (max-width: 767px) {
+				right: 20px;
+				margin-right: 0;
+				background-size: 100% auto;
+			}
 		}
 		.page-view-btm {
 			position: absolute;
@@ -327,7 +412,12 @@ div.place-visual-area {
 			text-align: right;
 			z-index: 6;
 			width: 170px;
-			margin-left: -85px;
+			margin-left: -80px;
+
+			@media screen and (max-width: 767px) {
+				bottom: 20px;
+				width: 125px;
+			}
 		}
 		.swiper-pagination-fraction {
 			width: 100px;
@@ -335,6 +425,11 @@ div.place-visual-area {
 			font-size: 20px;
 			top: 0;
 			width: 80px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 14px;
+				width: 60px;
+			}
 		}
 		a.view-all-place-pic {
 			display: inline-block;
@@ -343,11 +438,27 @@ div.place-visual-area {
 			padding-right: 15px;
 			background: url('../img/icons/icon_arrow_white_right.svg') 100% 50% no-repeat;
 			background-size: 5px auto;
+
+			@media screen and (max-width: 767px) {
+				font-size: 14px;
+			}
 		}
 	}
 }
 
 /* 상세 보기 */
+div.place-detail-container {
+
+	@media screen and (max-width: 767px) {
+		padding-top: 0;
+	}
+	div.common-wrapper {
+		@media screen and (max-width: 767px) {
+			padding: 20px 0 50px 0;
+		}	
+	}
+}
+
 div.place-view-wrapper {
 
 	p.title {
@@ -550,6 +661,9 @@ div.place-view-wrapper {
 		padding-bottom: 200px;
 		height: 1726px;
 
+		@media screen and (min-width: 768px) and (max-width: 1160px) { 
+			height: auto;
+		}
 		@media screen and (max-width: 767px) {
 			padding-bottom: 100px;
 			height: auto;
@@ -630,6 +744,7 @@ div.place-view-wrapper {
 				height: 522px;
 				border-radius: 14px;
 				border: 1px solid #eee;
+				overflow: hidden;
 
 				@media screen and (max-width: 767px) {
 					height:320px;
@@ -654,7 +769,7 @@ div.place-view-wrapper {
 				left: 0;
 				z-index: 50;
 				padding-bottom: 100px;
-				height: calc(100svh - 60px);
+				height: calc(100svh - 120px);
 				transition: bottom 0.5s ease-in-out;
 				&.on {
 					bottom: 0;
@@ -731,7 +846,7 @@ div.place-view-wrapper {
 					border-bottom: 1px solid #EAEAEA;
 
 					@media screen and (max-width: 767px) {
-						height: calc(100svh - 310px);
+						height: calc(100svh - 375px);
 						overflow-y: auto;
 					}
 
@@ -906,6 +1021,18 @@ div.place-view-wrapper {
 					a {
 						display: inline-block;
 						width: 100%;
+
+						@media screen and (max-width: 767px) {
+							display: none;
+						}
+
+						&.reservation-button {
+							display: none;
+
+							@media screen and (max-width: 767px) {
+								display: block;
+							}
+						}
 					}
 					p.guide {
 						font-size: 12px;
@@ -1615,9 +1742,34 @@ div.picture-backface {
 		top: 48%;
 		transform: translate(-50%, -50%);
 
+		@media screen and (max-width: 767px) {
+			top: 50%;
+			width: 100%;
+			height: 100%;
+		}
+
 		.gallery-review-pc {
 			position: relative;
 
+			@media screen and (max-width: 767px) {
+				height: 100%;
+			}
+
+			a.picture-backface-close {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				right: -25px;
+				top: 0;
+				background: url('../img/icons/icon_close_white.svg') 0 0 no-repeat;
+				text-indent: -9999px;
+				z-index: 2;
+
+				@media screen and (max-width: 767px) {
+					right: 20px;
+					top: 20px;
+				}
+			}
 			.pagination-pictures {
 				position: absolute;
 				z-index: 10;
@@ -1633,6 +1785,10 @@ div.picture-backface {
 				font-family: 'Pretendard-SemiBold';
 				font-size: 20px;
 				line-height: 36px;
+
+				@media screen and (max-width: 767px) {
+					bottom: 20px;
+				}
 			}
 			.swiper {
 				height: 100%;
@@ -1653,6 +1809,10 @@ div.picture-backface {
 				border-radius: 8px;
 				overflow: hidden;
 
+				@media screen and (max-width: 767px) {
+					background: #000;
+				}
+
 				.slide-center {
 					position: absolute;
 					inset: 0;
@@ -1672,11 +1832,19 @@ div.picture-backface {
 			.picture-totalview-swiper {
 				height: 800px !important;
 				width: 100%;
+
+				@media screen and (max-width: 767px) {
+					height: 100% !important;
+				}
 			}
 			.picture-total-thumb-wiper {
 				height: 16.5%;
 				box-sizing: border-box;
 				padding: 24px 0;
+
+				@media screen and (max-width: 767px) {
+					display: none;
+				}
 			}
 			.picture-total-thumb-wiper .swiper-slide {
 				width: 98px !important;
