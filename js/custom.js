@@ -447,11 +447,33 @@ var AILMP = {
 			$('div.place-visual-area div.place-film, div.place-visual-area div.place-detail-info').fadeOut();
 		}, 5000);
 	},
+	pageTabsInitialize : function() {
+		//결제하기 텝
+		$('div.reservation-tabs div.tab-btn a').on('click', function() {
+			let tabNum = $(this).data('tab');
+			$('div.reservation-tabs div.tab-btn a').removeClass('on');
+			$('div.mypage-reservation-list').css('display', 'none');
+			$(this).addClass('on');
+			$('div.reservatoin-tab-' + tabNum).css('display', 'block');
+
+		});
+
+		//결제하기 텝
+		$('div.payment-method ul.tabs li').on('click', function() {
+			let tabNum = $(this).data('tab');
+			$('div.payment-method ul.tabs li').removeClass('on');
+			$('div.payment-method div.payments').css('display', 'none');
+			$(this).addClass('on');
+			$('div.payment-method div.payment-' + tabNum).css('display', 'block');
+
+		});
+	},
 }
 
 $(document).ready(function() {
 	AILMP.gnbMenuActive();
 	AILMP.placeListSortingAnimation();
+	AILMP.pageTabsInitialize();
 	AOS.init();
 
 	if ('scrollRestoration' in history) {

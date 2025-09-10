@@ -529,6 +529,13 @@ div.place-reserve-completed {
 		background-size: 60px auto;
 	}
 }
+div.no-reserved-lists {
+	background: url('../img/icons/icon_no_list.svg') 50% 0% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
 
 /* 서비스 이용 약관 */
 div.legal-wrapper {
@@ -647,4 +654,7 @@ div.single-button {
 		display: inline-block;
 		width: 100%;
 	}
+}
+span.txt-green {
+	color: $main-color;
 }

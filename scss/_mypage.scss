@@ -313,10 +313,12 @@ div.mypage-reservation-list {
 						padding: 17px 25px 17px 55px;
 						color: #A2A2A4;
 						font-size: 18px;
+						min-height: 88px;
 
 						@media screen and (max-width: 767px) {
 							font-size: 16px;
 							line-height: 20px;
+							min-height: auto;
 						}
 						
 						span {
@@ -392,6 +394,10 @@ div.mypage-reservation-list {
 /* 예약 상세보기 (모달) */
 div.custom-reserve-detail {
 
+	@media screen and (max-width: 767px) {
+		padding-top: 37px;
+	}
+
 	div.inner {
 		margin-bottom: 30px;
 		padding-bottom: 30px;
@@ -406,8 +412,9 @@ div.custom-reserve-detail {
 			overflow: hidden;
 
 			@media screen and (max-width: 767px) {
-				width: 152px;
-				height: 152px;
+				width: 100px;
+				height: 100px;
+				border-radius: 10px;
 			}
 
 			p.tags {
@@ -448,8 +455,9 @@ div.custom-reserve-detail {
 			margin-left: 20px;
 
 			@media screen and (max-width: 767px) {
-				width: calc(100% - 176px);
-				height: 152px;
+				width: calc(100% - 110px);
+				height: 110px;
+				margin-left: 10px;
 			}
 
 			div.up {
@@ -470,7 +478,7 @@ div.custom-reserve-detail {
 
 					@media screen and (max-width: 767px) {
 						font-size: 16px;
-						padding-top: 15px;
+						padding-top: 0px;
 					}
 				}
 				p.t2 {
@@ -483,6 +491,9 @@ div.custom-reserve-detail {
 
 					@media screen and (max-width: 767px) {
 						font-size: 16px;
+						width: 100%;
+						line-height: 19px;
+						padding: 3px 0 10px 0;
 					}
 				}
 			}
@@ -523,6 +534,7 @@ div.custom-reserve-detail {
 						@media screen and (max-width: 767px) {
 							font-size: 16px;
 							padding-bottom: 3px;
+							width: 40%;
 						}
 					}
 					td {
@@ -534,6 +546,11 @@ div.custom-reserve-detail {
 						@media screen and (max-width: 767px) {
 							font-size: 16px;
 							padding-bottom: 3px;
+							width: 60%;
+
+							span.total-time {
+								display: block;
+							}
 						}
 					}
 				}
@@ -550,10 +567,13 @@ div.custom-reserve-detail {
 			top: 0px;
 
 			@media screen and (max-width: 767px) {
-				position: static;
+				position: absolute;
 				font-size: 12px;
 				padding: 3px 8px;
 				margin-top: 5px;
+				right: auto;
+				left: -110px;
+				top: -42px;
 			}
 			
 			&.a-1 {
@@ -604,6 +624,11 @@ div.custom-reserve-detail {
 				@media screen and (max-width: 767px) {
 					font-size: 16px;
 					padding-bottom: 3px;
+					width: 40%;
+
+					&.mo {
+						width: 100%;
+					}
 				}
 			}
 			td {
@@ -615,6 +640,11 @@ div.custom-reserve-detail {
 				@media screen and (max-width: 767px) {
 					font-size: 16px;
 					padding-bottom: 3px;
+					width: 60%;
+
+					&.mo {
+						width: 100%;
+					}
 				}
 			}
 		}
@@ -628,6 +658,112 @@ div.custom-reserve-detail {
 
 		@media screen and (max-width: 767px) {
 			width: 100%;
+		}
+
+		table {
+			width: 100%; 
+
+			@media screen and (max-width: 767px) {
+				margin-top: 0px;
+			}
+
+			th {
+				color: #62717E;
+				font-size: 18px;
+				width: 30%;
+				padding-bottom: 6px;
+				vertical-align: top;
+
+				&.total {
+					font-family:'Pretendard-SemiBold';
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					padding-bottom: 3px;
+					width: 40%;
+				}
+			}
+			td {
+				font-size: 18px;
+				color: $title-black;
+				width: 70%;
+				padding-bottom: 10px;
+				text-align: right;
+
+				&.total {
+					font-family:'Pretendard-SemiBold';
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					padding-bottom: 3px;
+					width: 60%;
+				}
+			}
+		}
+	}
+	a.more {
+		display: block;
+		color: $main-color;
+		font-size: 20px;
+		text-align: center;
+		background: url('../img/icons/icon_arrow_green.svg') 58% 50% no-repeat;
+		margin: 20px 0;
+
+		&.cancel {
+			background: url('../img/icons/icon_arrow_green.svg') 61% 50% no-repeat;
+		}
+
+		@media screen and (max-width: 767px) {
+			text-align: left;
+			font-size: 14px;
+			margin: 10px 0;
+			background: url('../img/icons/icon_arrow_green.svg') 27% 50% no-repeat;
+
+			&.cancel {
+				background: url('../img/icons/icon_arrow_green.svg') 37% 50% no-repeat;
+			}
+		}
+	}
+}
+
+/* 예약 취소하기 (모달) */
+div.custom-reserve-cancel {
+
+	div.money {
+
+		@media screen and (max-width: 767px) {
+			padding: 0px 0;
+		}
+
+		span.a {
+			display: block;
+			font-size: 18px;
+			font-family:'Pretendard-SemiBold';
+			color: $title-black;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				margin-top: 10px;
+			}
+		}
+		span.b {
+			display: block;
+			font-size: 30px;
+			font-family:'Pretendard-SemiBold';
+			color: $title-black;
+
+			@media screen and (max-width: 767px) {
+				
+			}
+		}
+	}
+	div.pay-info {
+		position: relative;
+		margin-top: 30px;
+
+		@media screen and (max-width: 767px) {
+			width: 100%;
+			margin-top: 20px;
 		}
 
 		table {
@@ -650,6 +786,7 @@ div.custom-reserve-detail {
 				@media screen and (max-width: 767px) {
 					font-size: 16px;
 					padding-bottom: 3px;
+					width: 40%;
 				}
 			}
 			td {
@@ -665,20 +802,362 @@ div.custom-reserve-detail {
 				@media screen and (max-width: 767px) {
 					font-size: 16px;
 					padding-bottom: 3px;
+					width: 60%;
 				}
 			}
 		}
 	}
-	a.more {
-		display: block;
-		color: $main-color;
+	div.confirm-check {
+		margin-top: 25px;
+		padding-top: 25px;
+		border-top: 1px solid #EAEAEA;
 		font-size: 20px;
-		text-align: center;
-		background: url('../img/icons/icon_arrow_green.svg') 58% 50% no-repeat;
+		color: #62717E;
+	}
+}
+
+/* 예약 취소하기 (모달) */
+div.custom-host-question {
+
+	div.word-count {
+		text-align: right;
+		color: #A2A2A4;
+		padding-bottom: 6px;
+	}
+	textarea {
+		background: #F7F7F7;
+		border: 1px solid #F7F7F7;
+		border-radius: 8px;
+		height: 330px;
+		width: 100%;
+		padding: 20px;
+
+		&::placeholder {
+			color: #A2A2A4;
+		}
+	}
+}
+
+/* 결제하기 계좌이체 */
+div.payment-account-transfer {
+
+	div.info {
 
 		@media screen and (max-width: 767px) {
-			font-size: 16px;
-			margin-top: 30px;
+			padding: 0px 0;
+		}
+
+		span.a {
+			display: block;
+			font-size: 18px;
+			font-family:'Pretendard-SemiBold';
+			color: #62717E;
+
+			@media screen and (max-width: 767px) {
+				
+				font-size: 16px;
+				margin-top: 10px;
+			}
+		}
+		span.b {
+			display: block;
+			font-size: 24px;
+			font-family:'Pretendard-SemiBold';
+			color: $title-black;
+			line-height: 28px;
+			padding-top: 7px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				line-height: 20px;
+			}
+		}
+	}
+
+	div.pay-info {
+		position: relative;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #EAEAEA;
+
+		@media screen and (max-width: 767px) {
+			width: 100%;
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+
+		table {
+			width: 100%; 
+
+			@media screen and (max-width: 767px) {
+				margin-top: 20px;
+			}
+
+			th {
+				color: #62717E;
+				font-size: 18px;
+				width: 30%;
+				padding-bottom: 6px;
+				vertical-align: top;
+
+				&.total {
+					font-family:'Pretendard-SemiBold';
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					padding-bottom: 3px;
+					width: 40%;
+				}
+			}
+			td {
+				font-size: 18px;
+				color: $title-black;
+				width: 70%;
+				padding-bottom: 10px;
+
+				&.total {
+					font-family:'Pretendard-SemiBold';
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					padding-bottom: 3px;
+					width: 60%;
+
+					span {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	div.point-info {
+		position: relative;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		padding: 0 0 20px 0;
+		border-bottom: 1px solid #EAEAEA;
+
+		@media screen and (max-width: 767px) {
+			width: 100%;
+			margin-top: 15px;
+			margin-bottom: 0px;
+		}
+
+		p.s-tit {
+			font-size: 18px;
+			font-family:'Pretendard-SemiBold';
+		}
+		div.now-point {
+			padding: 20px 0 10px 0;
+
+			p.now {
+				float: left; 
+				width: 70%;
+				padding-top: 8px;
+				font-size: 18px;
+
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					width: 67%;
+				}
+
+				span.a {
+					display: inline-block;
+					width: 40%; 
+					color: #62717E;
+
+					@media screen and (max-width: 767px) {
+						width: 65%; 
+					}
+				}
+				span.b {
+					display: inline-block;
+					width: 60%; 
+
+					@media screen and (max-width: 767px) {
+						width: 35%; 
+					}
+				}
+			}
+			a {
+				float: right;
+				padding: 7px 10px;
+				background: #62717E;
+				color: #fff;
+				border-radius: 8px;
+			}
+		}
+		input {
+			
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+			}
+		}
+		p.txt {
+			font-size: 18px;
+			color: #62717E;
+			padding-top: 8px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				line-height: 20px;
+			}
+		}
+	}
+
+	div.money {
+
+		@media screen and (max-width: 767px) {
+			padding: 0px 0;
+		}
+
+		span.a {
+			display: block;
+			font-size: 18px;
+			font-family:'Pretendard-SemiBold';
+			color: $title-black;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				margin-top: 20px;
+			}
+		}
+		span.b {
+			display: block;
+			font-size: 30px;
+			font-family:'Pretendard-SemiBold';
+			color: $title-black;
+
+			@media screen and (max-width: 767px) {
+				
+			}
+		}
+	}
+	div.final-info {
+		position: relative;
+		margin-top: 30px;
+
+		@media screen and (max-width: 767px) {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		table {
+			width: 100%; 
+
+			@media screen and (max-width: 767px) {
+				margin-top: 20px;
+			}
+
+			th {
+				color: #62717E;
+				font-size: 18px;
+				width: 30%;
+				padding-bottom: 6px;
+				vertical-align: top;
+
+				&.total {
+					font-family:'Pretendard-SemiBold';
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					padding-bottom: 3px;
+					width: 40%;
+				}
+			}
+			td {
+				font-size: 18px;
+				color: $title-black;
+				width: 70%;
+				padding-bottom: 10px;
+				text-align: right;
+
+				&.total {
+					font-family:'Pretendard-SemiBold';
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					padding-bottom: 3px;
+					width: 60%;
+				}
+			}
+		}
+	}
+	div.payment-method {
+		padding-top: 20px;
+
+		ul.tabs {
+
+			li {
+				float: left;
+				width: 25%;
+				padding: 15px 0;
+				text-align: center;
+				border-bottom: 1px solid #C6CAD3;
+				font-size: 22px;
+				color: #A2A2A4;
+				cursor: pointer;
+
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+				}
+
+				&.on {
+					border-bottom: 1px solid $main-color;
+					box-shadow: inset 0px -2px 0px $main-color;
+					color: $main-color;
+					font-family:'Pretendard-SemiBold';
+
+					@media screen and (max-width: 767px) {
+						box-shadow: inset 0px -1px 0px $main-color;
+					}
+				}
+			}
+		}
+		div.payments {
+			padding-top: 10px;
+
+			ul.ps {
+				& > li {
+					padding-top: 20px;
+
+					p.l {
+						float: left;
+						padding-top: 20px;
+						width:50%;
+					}
+					p.r {
+						float: right;
+						width:50%;
+					}
+				}
+			}
+			ul.phone {
+				padding: 10px;
+				background: #F7F7F7;
+				border-radius: 8px;
+				font-size: 18px;
+				color: #A2A2A4;
+
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+				}
+
+				li {
+					background: url('../img/icons/icon_warnning.svg') 0 0 no-repeat;
+					padding-left: 35px;
+					
+					&:nth-child(2) {
+						background: url('../img/icons/icon_warnning.svg') 0 11px no-repeat;
+						padding: 10px 0 10px 35px;
+					}
+				}
+			}
+			div.phone-radio {
+				padding: 10px 0;
+			}
 		}
 	}
 }
@@ -690,5 +1169,24 @@ div.custom-reserve-detail-footer {
 		display: inline-block;
 		width: 220px;
 		margin: 0 5px;
+
+		@media screen and (max-width: 767px) {
+			width: calc(50% - 5px);
+			margin: 0 0;
+
+			&:nth-child(1) {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	&.single {
+
+		a {
+			@media screen and (max-width: 767px) {
+				width: 100%;
+			}
+		}
 	}
 }
+
