@@ -536,6 +536,20 @@ div.no-reserved-lists {
 		background-size: 60px auto;
 	}
 }
+div.no-custom-request {
+	background: url('../img/icons/icon_no_request.svg') 50% 15% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
+div.no-custom-interesting {
+	background: url('../img/icons/icon_no_interesting.svg') 50% 15% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
 
 /* 서비스 이용 약관 */
 div.legal-wrapper {

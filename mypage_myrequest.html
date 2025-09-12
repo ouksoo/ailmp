@@ -105,416 +105,113 @@
 </div>
 <!-- //header -->
  
-
 <div class="container-wrapper">
 	<div class="common-wrapper">
-		<div class="common-title-area">
-			<p class="s-title">홍길동 님의 <span>예약/결제 내역</span><span>예약 취소 내역</span></p>
-			<p class="s-txt">현재 결제대기 <span class="green">1건</span> 있어요.</p>
-		</div>
-
-		<div class="reservation-tabs clearfix">
-			<div class="tab-btn">
-				<a href="#" class="on" data-tab="1">예약/결제 내역</a><a href="#" data-tab="2">예약 취소</a>
+		<div class="mypage-request-wrapper">
+			<div class="common-title-area">
+				<p class="s-title">홍길동 님의 문의 내역</p>
+				<p class="s-txt">총 문의 내역이 <span class="green">1건</span> 있어요.</p>
 			</div>
-			<div class="status"><!-- 검색 결과 없을 경우 hidden -->
-				<span>상태</span>
-				<select class="selectpicker both" data-container="body">
-					<option>전체</option>
-					<option>예약 신청</option>
-					<option>결제 대기</option>
-					<option>예약 완료</option>
-					<option>이용 완료</option>
-					<option>예약 불가</option>
-				</select>
+
+			<div class="mypage-request-search clearfix">
+				<div class="tab-btn"></div>
+				<div class="status"><!-- 검색 결과 없을 경우 hidden -->
+					<span>답변 상태</span>
+					<select class="selectpicker both" data-container="body">
+						<option>전체</option>
+						<option>답변 완료</option>
+						<option>미답변</option>
+					</select>
+					<span>문의 종류</span>
+					<select class="selectpicker both" data-container="body">
+						<option>전체</option>
+						<option>호스트 문의</option>
+						<option>고객센터 문의</option>
+					</select>
+					<span>조회 기간</span>
+					<select class="selectpicker both" data-container="body">
+						<option>전체</option>
+						<option>최근 1개월</option>
+						<option>최근 3개월</option>
+						<option>최근 6개월</option>
+						<option>최근 1년</option>
+					</select>
+				</div>
 			</div>
-		</div>
 
-		<!-- 예약/결제 내역이 없어요. -->
-		<div class="no-reserved-lists error-container" style="display: none;">
-			<p class="txt-1">예약/결제 내역이 없어요.</p>
-		</div>
-		<!-- //예약/결제 내역이 없어요. -->
+			<!-- 문의 내역이 없어요. -->
+			<div class="no-custom-request error-container" style="display: none;">
+				<p class="txt-1">문의 내역이 없어요.</p>
+			</div>
+			<!-- //문의 내역이 없어요. -->
 
-		<!-- 예약 취소 내역이 없어요. -->
-		<div class="no-reserved-lists error-container" style="display: none;">
-			<p class="txt-1">예약 취소 내역이 없어요.</p>
-		</div>
-		<!-- //예약 취소 내역이 없어요. -->
+			<ul class="mypage-request-list">
+				<li>
+					<div class="area-1 clearfix">
+						<span class="status a-1">호스트 문의</span><!-- a-1 : 호스트 문의, a-2 : 고객센터 문의 -->
+						<div class="control"><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#myquestionRemoveContentModal">삭제</a></div>
+					</div>
+					<div class="area-2 clearfix">
+						<div class="thumbnail"><img src="img/sample/sample_person.png" alt="" /></div>
+						<div class="title-info clearfix">
+							<p class="t-1">잇스튜디오</p>
+							<p class="t-2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+						</div>
+					</div>
+					<div class="area-3 question">
+						<span class="now-status completed">답변 완료</span>
+						<p class="txt-1">질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다.</p>
+						<p class="txt-2">홍*동 <span>|</span> 2025. 07. 03</p>
+					</div>
+					<div class="area-4 answer">
+						<p class="txt-1">답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 .</p>
+						<p class="txt-2">잇스튜디오 <span>|</span> 2025. 07. 03</p>
+					</div>
+				</li>
 
-		<!-- 예약/결제 내역 -->
-		<div class="mypage-reservation-list clearfix reservatoin-tab-1">
-			<ul>
-				<!--loop-->
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_1.png" alt="" />
+				<li>
+					<div class="area-1 clearfix">
+						<span class="status a-2">고객센터 문의</span><!-- a-1 : 호스트 문의, a-2 : 고객센터 문의 -->
+						<div class="control"><a href="#" class="modify-item" data-bs-toggle="modal" data-bs-target="#customerQuestionModifyModal">수정</a><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#myquestionRemoveContentModal">삭제</a></div>
 					</div>
-					<div class="s">
-						<div class="up">
-							<a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#userHistoryDeleteModal">삭제</a>
-							<span class="status a-1">예약 신청</span><!-- 예약신청: a-1, 결제 대기: a-2, 예약 완료: a-3, 이용 완료: a-4, 예약 불가: a-5 -->
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+					<div class="area-2 clearfix">
+						<div class="thumbnail"><img src="img/sample/sample_person.png" alt="" /></div>
+						<div class="title-info clearfix">
+							<p class="t-1">잇스튜디오</p>
+							<p class="t-2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
 						</div>
 					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>이용 일자</th>
-									<td>2025. 07. 03</td>
-								</tr>
-								<tr>
-									<th>이용 시간</th>
-									<td>12:00 ~ 20:00 (총 7시간)</td>
-								</tr>
-								<tr>
-									<th>예약 인원</th>
-									<td>5명</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">예약 신청일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customReservationDetailView">예약 상세보기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">결제 예정금액</span>
-								<span class="b">350,000원</span>
-							</div>
-							<div class="sta">
-								조금만 기다려 주세요.<br />호스트가 예약 신청내역을 확인 중입니다.
-							</div>
-							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customReservationCancelModal">예약 취소</a><a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customHostQuestionModal">문의 하기</a>
-							</div>
-						</div>
+					<div class="area-3 question">
+						<span class="now-status not-completed">미답변</span>
+						<p class="txt-1">질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다.</p>
+						<p class="txt-2">홍*동 <span>|</span> 2025. 07. 03</p>
 					</div>
 				</li>
-				<!--//loop-->
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_2.png" alt="" />
+				<li>
+					<div class="area-1 clearfix">
+						<span class="status a-1">호스트 문의</span><!-- a-1 : 호스트 문의, a-2 : 고객센터 문의 -->
+						<div class="control"><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#myquestionRemoveContentModal">삭제</a></div>
 					</div>
-					<div class="s">
-						<div class="up">
-							<span class="status a-2">결제 대기</span>
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+					<div class="area-2 clearfix">
+						<div class="thumbnail"><img src="img/sample/sample_person.png" alt="" /></div>
+						<div class="title-info clearfix">
+							<p class="t-1">잇스튜디오</p>
+							<p class="t-2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
 						</div>
 					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>이용 일자</th>
-									<td>2025. 07. 03</td>
-								</tr>
-								<tr>
-									<th>이용 시간</th>
-									<td>12:00 ~ 20:00 (총 7시간)</td>
-								</tr>
-								<tr>
-									<th>예약 인원</th>
-									<td>5명</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">예약 신청일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customReservationDetailView">예약 상세보기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">결제 예정금액</span>
-								<span class="b">350,000원</span>
-							</div>
-							<div class="sta">
-								예약이 승인되었어요.<br />예약확정을 위해 <span>2025.08.25까지 결제</span>해주세요.
-							</div>
-							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customReservationCancelModal">예약 취소</a><a href="#" class="modal-button green">결제 하기</a>
-							</div>
-						</div>
+					<div class="area-3 question">
+						<span class="now-status completed">답변 완료</span>
+						<p class="txt-1">질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다.</p>
+						<p class="txt-2">홍*동 <span>|</span> 2025. 07. 03</p>
 					</div>
-				</li>
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_3.png" alt="" />
-					</div>
-					<div class="s">
-						<div class="up">
-							<span class="status a-3">예약 완료</span>
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-						</div>
-					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>이용 일자</th>
-									<td>2025. 07. 03</td>
-								</tr>
-								<tr>
-									<th>이용 시간</th>
-									<td>12:00 ~ 20:00 (총 7시간)</td>
-								</tr>
-								<tr>
-									<th>예약 인원</th>
-									<td>5명</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">예약 신청일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customReservationDetailView">예약 상세보기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">결제 예정금액</span>
-								<span class="b">350,000원</span>
-							</div>
-							<div class="sta">
-								예약이 확정되었어요.<br />이용일자와 시간, 안내사항 확인 후 이용해주세요.
-							</div>
-							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customReservationCancelModal">예약 취소</a><a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customHostQuestionModal">문의 하기</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_4.png" alt="" />
-					</div>
-					<div class="s">
-						<div class="up">
-							<a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#userHistoryDeleteModal">삭제</a>
-							<span class="status a-4">이용 완료</span>
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-						</div>
-					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>이용 일자</th>
-									<td>2025. 07. 03</td>
-								</tr>
-								<tr>
-									<th>이용 시간</th>
-									<td>12:00 ~ 20:00 (총 7시간)</td>
-								</tr>
-								<tr>
-									<th>예약 인원</th>
-									<td>5명</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">예약 신청일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customReservationDetailView">예약 상세보기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">결제 예정금액</span>
-								<span class="b">350,000원</span>
-							</div>
-							<div class="sta">
-								조금만 기다려 주세요.<br />호스트가 예약 신청내역을 확인 중입니다. 
-							</div>
-							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customReservationCancelModal">예약 취소</a><a href="#" class="modal-button green">리뷰 쓰기</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_1.png" alt="" />
-					</div>
-					<div class="s">
-						<div class="up">
-							<a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#userHistoryDeleteModal">삭제</a>
-							<span class="status a-5">예약 불가</span>
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-						</div>
-					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>이용 일자</th>
-									<td>2025. 07. 03</td>
-								</tr>
-								<tr>
-									<th>이용 시간</th>
-									<td>12:00 ~ 20:00 (총 7시간)</td>
-								</tr>
-								<tr>
-									<th>예약 인원</th>
-									<td>5명</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">예약 신청일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customReservationDetailView">예약 상세보기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">결제 예정금액</span>
-								<span class="b">0원</span>
-							</div>
-							<div class="sta">
-								호스트의 사정으로 인해 예약이 거절되었어요.<br />자세한 내용은 호스트에게 문의해 주세요.
-							</div>
-							<div class="single-button">
-								<a href="#" class="modal-button bluegray-btn">문의 하기</a>
-							</div>
-						</div>
+					<div class="area-4 answer">
+						<p class="txt-1">답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 .</p>
+						<p class="txt-2">잇스튜디오 <span>|</span> 2025. 07. 03</p>
 					</div>
 				</li>
 			</ul>
 			<a href="#" class="more">+ 더보기</a>
 		</div>
-		<!-- //예약/결제 내역 -->
-
-		 <!-- 예약 취소 목록 -->
-		<div class="mypage-reservation-list clearfix reservatoin-tab-2" style="display: none;">
-			<ul>
-				<!--loop-->
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_1.png" alt="" />
-					</div>
-					<div class="s">
-						<div class="up">
-							<a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#userHistoryDeleteModal">삭제</a>
-							<span class="status a-5">예약 취소</span><!-- 환불 완료: a-3, 예약 취소: a-5 -->
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-						</div>
-					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>이용 일자</th>
-									<td>2025. 07. 03</td>
-								</tr>
-								<tr>
-									<th>이용 시간</th>
-									<td>12:00 ~ 20:00 (총 7시간)</td>
-								</tr>
-								<tr>
-									<th>예약 인원</th>
-									<td>5명</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">예약 신청일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customCancelDetailView">예약 상세보기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">결제 예정금액</span>
-								<span class="b">350,000원</span>
-							</div>
-							<div class="sta">
-								예약 취소가 완료되었습니다.
-							</div>
-							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn">취소 상세내역</a><a href="#" class="modal-button green">다시 예약하기</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<!--//loop-->
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_2.png" alt="" />
-					</div>
-					<div class="s">
-						<div class="up">
-							<a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#userHistoryDeleteModal">삭제</a>
-							<span class="status a-3">환불 완료</span>
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-						</div>
-					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>이용 일자</th>
-									<td>2025. 07. 03</td>
-								</tr>
-								<tr>
-									<th>이용 시간</th>
-									<td>12:00 ~ 20:00 (총 7시간)</td>
-								</tr>
-								<tr>
-									<th>예약 인원</th>
-									<td>5명</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">예약 신청일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customCancelDetailView">예약 상세보기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">결제 예정금액</span>
-								<span class="b">350,000원</span>
-							</div>
-							<div class="sta">
-								정책에 따라 환불처리가 완료되었습니다.<br /><a href="#">환불정책 보기</a>
-							</div>
-							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn">취소 상세내역</a><a href="#" class="modal-button green">다시 예약하기</a>
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<!-- //예약 취소 목록 -->
 	</div>
 </div>
 
@@ -548,185 +245,32 @@
 </div>
 <!-- //footer -->
 
-
-<!-- Modal : 예약 상세보기 -->
-<div class="modal fade" id="customReservationDetailView" tabindex="-1" role="dialog" aria-labelledby="customReservationDetailView" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered w-800" role="document">
+<!-- Modal : 나의 문의 > 내용삭제 -->
+<div class="modal fade" id="myquestionRemoveContentModal" tabindex="-1" role="dialog" aria-labelledby="myquestionRemoveContentModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
 		<div class="modal-content">
-			<div class="modal-header bordered">
-				<h5 class="modal-title">예약 상세보기</h5>
+			<div class="modal-header">
 				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
 			</div>
-
 			<div class="modal-body">
-				<div class="custom-reserve-detail">
-					<div class="inner clearfix">
-						<div class="f">
-							<p class="tags">
-								<span>사전답사</span>
-							</p>
-							<img src="img/sample/main_visual_1.png" alt="" />
-						</div>
-						<div class="s">
-							<div class="up">
-								<span class="status a-5">예약 취소</span>
-								<p class="t1">잇스튜디오</p>
-								<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-							</div>
-						</div>
-						<div class="down clearfix">
-							<div class="f-l">
-								<table class="notable">
-									<tr>
-										<th>예약 신청일</th>
-										<td>2025. 07. 03</td>
-									</tr>
-									<tr>
-										<th>이용 일자</th>
-										<td>2025. 07. 03</td>
-									</tr>
-									<tr>
-										<th>이용 시간</th>
-										<td>12:00 ~ 20:00 <span class="total-time">(총 7시간)</span></td>
-									</tr>
-									<tr>
-										<th>예약 인원</th>
-										<td>5명</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-
-					<div class="info">
-						<table class="notable">
-							<colgroup><col width="*" /><col width="*" /></colgroup>
-							<tr>
-								<th>예약자</th>
-								<td>김아름</td>
-							</tr>
-							<tr>
-								<th>연락처</th>
-								<td>010 - 1233 - 1231</td>
-							</tr>
-							<tr>
-								<th>이메일</th>
-								<td>rladkfma@gmail.com</td>
-							</tr>
-							<!-- pc -->
-							<tr class="table-pc">
-								<th>추가 요청사항</th>
-								<td>요청사항 입니다 요청사항 입니다 요청사항 입니다. 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다.</td>
-							</tr>
-							<!-- //pc -->
-
-							<!-- mobile -->
-							<tr class="table-mo">
-								<th colspan="2">추가 요청사항</th>
-							</tr>
-							<tr class="table-mo">
-								<td colspan="2">요청사항 입니다 요청사항 입니다 요청사항 입니다. 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다.</td>
-							</tr>
-							<!-- mobile -->
-						</table>
-					</div>
-
-					<div class="pay-info">
-						<table class="notable">
-							<tr>
-								<th>결제 금액</th>
-								<td>350,000원(7시간)</td>
-							</tr>
-							<tr>
-								<th>추가 인원 요금</th>
-								<td>5,000원(+1명)</td>
-							</tr>
-							<tr>
-								<th class="total">합계</th>
-								<td class="total">350,000원</td>
-							</tr>
-						</table>
-					</div>
-
-					<a href="#" class="more">영수증 보기</a>
+				<p class="only-text-center">문의 내역을 삭제하시겠어요?</p>
+			</div>
+			<div class="modal-footer">
+				<div class="two-buttons clearfix">
+					<a href="#" class="floatl modal-button gray" data-bs-dismiss="modal">취소</a><a href="#" class="floatr modal-button green">삭제</a>
 				</div>
-			</div>
-
-			<!-- 예약 취소 / 문의 하기-->
-			<div class="modal-footer border-ed custom-reserve-detail-footer">
-				<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customReservationCancelModal">예약 취소</a><a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customHostQuestionModal">문의 하기</a>
-			</div>
-
-			<!-- 예약 취소 / 결제 하기-->
-			 <div class="modal-footer border-ed custom-reserve-detail-footer">
-				<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customReservationCancelModal">예약 취소</a><a href="#" class="modal-button green">결제 하기</a>
-			</div>
-
-			<!-- 다시 예약 / 리뷰 쓰기-->
-			 <div class="modal-footer border-ed custom-reserve-detail-footer">
-				<a href="#" class="modal-button bluegray-btn">다시 예약</a><a href="#" class="modal-button green">리뷰 쓰기</a>
-			</div>
-
-			<!-- 문의 하기-->
-			 <div class="modal-footer border-ed custom-reserve-detail-footer single">
-				<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customHostQuestionModal">문의 하기</a>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- //Modal : 예약 상세보기 -->
+<!-- //Modal : 나의 문의 > 내용삭제 -->
 
-<!-- Modal : 예약 취소하기 -->
-<div class="modal fade" id="customReservationCancelModal" tabindex="-1" role="dialog" aria-labelledby="customReservationCancelModal" aria-hidden="true">
+<!-- Modal : 호스트 문의 수정하기 -->
+<div class="modal fade" id="customHostQuestionModifyModal" tabindex="-1" role="dialog" aria-labelledby="customHostQuestionModifyModal" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered w-600" role="document">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<h5 class="modal-title">예약 취소하기</h5>
-				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
-			</div>
-
-			<div class="modal-body">
-				<div class="custom-reserve-cancel">
-
-					<div class="money">
-						<span class="a">결제 예정금액</span>
-						<span class="b">350,000원</span>
-					</div>
-					<div class="pay-info">
-						<table class="notable">
-							<tr>
-								<th>결제 금액</th>
-								<td>350,000원(7시간)</td>
-							</tr>
-							<tr>
-								<th>취소 수수료</th>
-								<td>- 200,000월</td>
-							</tr>
-							<tr>
-								<th>환불 예정 금액</th>
-								<td>300,000원</td>
-							</tr>
-						</table>
-					</div>
-					<div class="confirm-check">
-						<input type="checkbox" id="chk1" class="custom-checkbox"><label for="chk1" class="custom-label all">취소 수수료 및 환불 예정 금액을 확인하였습니다.</label>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer border-ed custom-reserve-detail-footer single">
-				<a href="#" class="modal-button light-gray">취소 신청</a><!-- 체크박스 활성화 시 "light-gray -> green" -->
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //Modal : 예약 취소하기 -->
-
-<!-- Modal : 호스트에게 문의하기 -->
-<div class="modal fade" id="customHostQuestionModal" tabindex="-1" role="dialog" aria-labelledby="customHostQuestionModal" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered w-600" role="document">
-		<div class="modal-content">
-			<div class="modal-header bordered">
-				<h5 class="modal-title">호스트에게 문의하기</h5>
+				<h5 class="modal-title">호스트 문의 수정하기</h5>
 				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
 			</div>
 
@@ -744,349 +288,68 @@
 		</div>
 	</div>
 </div>
-<!-- //Modal : 호스트에게 문의하기 -->
+<!-- //Modal : 호스트 문의 수정하기 -->
 
-<!-- Modal : 문의하기 완료 -->
-<div class="modal fade" id="customHostQuestionOkModal" tabindex="-1" role="dialog" aria-labelledby="customHostQuestionOkModal" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered w-480" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
-			</div>
-			<div class="modal-body">
-				<p class="only-text-center">문의하기가 완료되었습니다.<br />자세한 내용 확인은<br />마이페이지 > <span class="txt-green">나의 문의</span>에서 확인해 주세요.</p>
-			</div>
-			<div class="modal-footer">
-				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //Modal : 문의하기 완료 -->
-
-<!-- Modal : 포인트 사용 -->
-<div class="modal fade" id="pointPossibleModal" tabindex="-1" role="dialog" aria-labelledby="pointPossibleModal" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered w-480" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
-			</div>
-			<div class="modal-body">
-				<p class="only-text-center">포인트는 1000점 이상 사용 가능합니다.</p>
-			</div>
-			<div class="modal-footer">
-				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //Modal : 포인트 사용 -->
-
-<!-- Modal : 결제하기 계좌이체 -->
-<div class="modal fade" id="paymentAccountTransferModal" tabindex="-1" role="dialog" aria-labelledby="paymentAccountTransferModal" aria-hidden="true">
+<!-- Modal : 고객센터 문의 수정하기 -->
+<div class="modal fade" id="customerQuestionModifyModal" tabindex="-1" role="dialog" aria-labelledby="customerQuestionModifyModal" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered w-600" role="document">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<h5 class="modal-title">결제하기</h5>
+				<h5 class="modal-title">고객센터 문의 수정하기</h5>
 				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
 			</div>
 
 			<div class="modal-body">
-				<div class="payment-account-transfer">
-
-					<div class="info">
-						<span class="a">잇스튜디오</span>
-						<span class="b">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</span>
+				<div class="custom-host-question">
+					<div class="word-count">
+						<span>0/150 글자</span>
 					</div>
-					<div class="pay-info">
-						<table class="notable">
-							<tr>
-								<th>예약 신청일</th>
-								<td>2025. 07. 03</td>
-							</tr>
-							<tr>
-								<th>이용 일자</th>
-								<td>2025. 07. 03</td>
-							</tr>
-							<tr>
-								<th>이용 시간</th>
-								<td>13:00 ~ 20:00 <span>(총 7시간)</span></td>
-							</tr>
-							<tr>
-								<th>예약 인원</th>
-								<td>5명</td>
-							</tr>
-							<tr>
-								<th>예약자</th>
-								<td>김아름</td>
-							</tr>
-							<tr>
-								<th>연락처</th>
-								<td>010 - 1234 - 5678</td>
-							</tr>
-							<tr>
-								<th>이메일</th>
-								<td>abcde@fghij.com</td>
-							</tr>
-							<!-- pc -->
-							<tr class="table-pc">
-								<th>추가 요청사항</th>
-								<td>요청사항 입니다 요청사항 입니다 요청사항 입니다. 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다.</td>
-							</tr>
-							<!-- //pc -->
-
-							<!-- mobile -->
-							<tr class="table-mo">
-								<th colspan="2">추가 요청사항</th>
-							</tr>
-							<tr class="table-mo">
-								<td colspan="2">요청사항 입니다 요청사항 입니다 요청사항 입니다. 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다.</td>
-							</tr>
-							<!-- mobile -->
-						</table>
-					</div>
-					<div class="point-info">
-						<p class="s-tit">포인트 사용</p>
-						<div class="now-point clearfix">
-							<p class="now"><span class="a">현재 보유 포인트</span><span class="b">1,200점</span></p>
-							<a href="#">전액 사용</a>
-						</div>
-						<div>
-							<input type="text" class="input-txt w-100-per" placeholder="사용할 포인트를 입력해주세요." />
-						</div>
-						<p class="txt">* 포인트는 1,000점 이상 보유 시 1점 단위로 사용 가능합니다.</p>
-					</div>
-					<div class="money">
-						<span class="a">결제 예정금액</span>
-						<span class="b">350,000원</span>
-					</div>
-					<div class="final-info">
-						<table class="notable">
-							<tr>
-								<th>공간 이용료</th>
-								<td class="total">350,000원(7시간)</td>
-							</tr>
-							<tr>
-								<th>추가 인원 요금</th>
-								<td class="total">5,000원(+1명)</td>
-							</tr>
-							<tr>
-								<th>포인트 사용</th>
-								<td class="total">- 1,000원</td>
-							</tr>
-						</table>
-					</div>
-					<div class="payment-method">
-						<ul class="tabs clearfix">
-							<li class="on" data-tab="1">계좌이체</li>
-							<li data-tab="2">간편결제</li>
-							<li data-tab="3">신용카드</li>
-							<li data-tab="4">휴대폰</li>
-						</ul>
-						<!-- 계좌이체 -->
-						<div class="payments payment-1">
-							<ul class="ps">
-								<li><input type="radio" id="rd1" class="custom-radio" checked><label for="rd1" class="custom-radio-label all">가상계좌</label></li>
-								<li><input type="radio" id="rd2" class="custom-radio"><label for="rd2" class="custom-radio-label all">실시간 계좌이체</label></li>
-							</ul>
-						</div>
-						<div class="payments payment-2" style="display: none;">
-							<ul class="ps">
-								<li><input type="radio" id="rd1" class="custom-radio" checked><label for="rd1" class="custom-radio-label all">네이버페이</label></li>
-								<li><input type="radio" id="rd2" class="custom-radio"><label for="rd2" class="custom-radio-label all">삼성페이</label></li>
-								<li><input type="radio" id="rd2" class="custom-radio"><label for="rd2" class="custom-radio-label all">카카오페이</label></li>
-							</ul>
-						</div>
-						<div class="payments payment-3" style="display: none;">
-							<ul class="ps">
-								<li class="clearfix">
-									<p class="l">카드사 선택</p>
-									<p class="r">
-										<select class="selectpicker w-100-per">
-											<option>카드사를 선택해주세요.</option>
-										</select>
-									</p>
-								</li>
-								<li class="clearfix">
-									<p class="l">할부 선택</p>
-									<p class="r">
-										<select class="selectpicker w-100-per">
-											<option>할부를 선택해주세요.</option>
-										</select>
-									</p>
-								</li>
-							</ul>
-						</div>
-						<div class="payments payment-4" style="display: none;">
-							<div class="phone-radio">
-								<input type="radio" id="rd2" class="custom-radio" checked><label for="rd2" class="custom-radio-label all">휴대폰 결제</label>
-							</div>
-							<ul class="phone">
-								<li>각 이동통신사 별로 정해놓은 월 이용한도 금액까지 결제 가능 합니다. (이용한도는 사용중인 통신사를 통해 확인 해주세요.)</li>
-								<li>SMS 인증을 거쳐 결제가 진행되므로 휴대폰을 소지하고 계시지 않다면 결제가 불가능합니다.</li>
-								<li>결제대금은 휴대폰 이용요금에 합산 청구 됩니다.</li>
-							</ul>
-						</div>
-					</div>
+					<textarea placeholder="내용을 입력해 주세요."></textarea>
 				</div>
 			</div>
-			<div class="modal-footer border-ed custom-reserve-detail-footer single">
-				<a href="#" class="modal-button green">결제 하기</a>
+			<div class="modal-footer border-ed custom-reserve-detail-footer">
+				<a href="#" class="modal-button bluegray-btn" data-bs-dismiss="modal">취소</a><a href="#" class="modal-button light-gray" data-bs-toggle="modal" data-bs-target="#customHostQuestionOkModal">수정 완료</a><!-- 글 작성 시 "light-gray -> green" -->
 			</div>
 		</div>
 	</div>
 </div>
-<!-- //Modal : 결제하기 계좌이체 -->
+<!-- //Modal : 고객센터 문의 수정하기 -->
 
-<!-- Modal : 취소 상세내역 -->
-<div class="modal fade" id="customCancelDetailView" tabindex="-1" role="dialog" aria-labelledby="customCancelDetailView" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered w-800" role="document">
-		<div class="modal-content">
-			<div class="modal-header bordered">
-				<h5 class="modal-title">취소 상세내역</h5>
-				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
-			</div>
-
-			<div class="modal-body">
-				<div class="custom-reserve-detail">
-					<div class="inner clearfix">
-						<div class="f">
-							<p class="tags">
-								<span>사전답사</span>
-							</p>
-							<img src="img/sample/main_visual_1.png" alt="" />
-						</div>
-						<div class="s">
-							<div class="up">
-								<span class="status a-5">예약 취소</span>
-								<p class="t1">잇스튜디오</p>
-								<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-							</div>
-						</div>
-						<div class="down clearfix">
-							<div class="f-l">
-								<table class="notable">
-									<tr>
-										<th>예약 신청일</th>
-										<td>2025. 07. 03</td>
-									</tr>
-									<tr>
-										<th>이용 일자</th>
-										<td>2025. 07. 03</td>
-									</tr>
-									<tr>
-										<th>이용 시간</th>
-										<td>12:00 ~ 20:00 <span class="total-time">(총 7시간)</span></td>
-									</tr>
-									<tr>
-										<th>예약 인원</th>
-										<td>5명</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-
-					<div class="info">
-						<table class="notable">
-							<colgroup><col width="*" /><col width="*" /></colgroup>
-							<tr>
-								<th>예약자</th>
-								<td>김아름</td>
-							</tr>
-							<tr>
-								<th>연락처</th>
-								<td>010 - 1233 - 1231</td>
-							</tr>
-							<tr>
-								<th>이메일</th>
-								<td>rladkfma@gmail.com</td>
-							</tr>
-							<!-- pc -->
-							<tr class="table-pc">
-								<th>추가 요청사항</th>
-								<td>요청사항 입니다 요청사항 입니다 요청사항 입니다. 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다.</td>
-							</tr>
-							<!-- //pc -->
-
-							<!-- mobile -->
-							<tr class="table-mo">
-								<th colspan="2">추가 요청사항</th>
-							</tr>
-							<tr class="table-mo">
-								<td colspan="2">요청사항 입니다 요청사항 입니다 요청사항 입니다. 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다 요청사항 입니다.</td>
-							</tr>
-							<!-- mobile -->
-						</table>
-					</div>
-
-					<div class="pay-info">
-						<table class="notable">
-							<tr>
-								<th>공간 이용료</th>
-								<td>350,000원(7시간)</td>
-							</tr>
-							<tr>
-								<th>추가 인원 요금</th>
-								<td>5,000원(+1명)</td>
-							</tr>
-							<tr>
-								<th class="total">결제 금액</th>
-								<td class="total">350,000원</td>
-							</tr>
-						</table>
-					</div>
-
-					<a href="#" class="more">영수증 보기</a>
-
-					<div class="pay-info">
-						<table class="notable">
-							<tr>
-								<th>총 결제 금액</th>
-								<td>350,000원(7시간)</td>
-							</tr>
-							<tr>
-								<th>취소수수료</th>
-								<td>5,000원(+1명)</td>
-							</tr>
-							<tr>
-								<th class="total">환불 금액</th>
-								<td class="total">350,000원</td>
-							</tr>
-						</table>
-					</div>
-
-					<a href="#" class="more cancel">취소 영수증 보기</a>
-				</div>
-			</div>
-
-			 <div class="modal-footer border-ed custom-reserve-detail-footer single">
-				<a href="#" class="modal-button green">다시 예약하기</a>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //Modal : 취소 상세내역 -->
-
-<!-- Modal : 내역 삭제 -->
-<div class="modal fade" id="userHistoryDeleteModal" tabindex="-1" role="dialog" aria-labelledby="userHistoryDeleteModal" aria-hidden="true">
+<!-- Modal : 글자수 초과 -->
+<div class="modal fade" id="modifyContextOverflowModal" tabindex="-1" role="dialog" aria-labelledby="modifyContextOverflowModal" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered w-480" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
 			</div>
 			<div class="modal-body">
-				<p class="only-text-center">이용 내역을 삭제하시겠어요?<br />삭제한 내역은 복구할 수 없어요.</p>
+				<p class="only-text-center">글자 수가 초과 되었어요.<br />150자 이내로 작성해 주세요.</p>
 			</div>
 			<div class="modal-footer">
-				<div class="two-buttons clearfix">
-					<a href="#" class="floatl modal-button gray" data-bs-dismiss="modal">취소</a><a href="#" class="floatr modal-button green">삭제</a>
-				</div>
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- //Modal : 내역 삭제 -->
+<!-- //Modal : 글자수 초과 -->
+
+<!-- Modal : 내용을 입력해주세요 -->
+<div class="modal fade" id="pleaseInputCententModal" tabindex="-1" role="dialog" aria-labelledby="pleaseInputCententModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<p class="only-text-center">내용을 입력해주세요.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 내용을 입력해주세요 -->
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/lenis.min.js"></script>
