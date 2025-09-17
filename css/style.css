@@ -8011,8 +8011,12 @@ div.custom-tabs {
 }
 @media screen and (max-width: 767px) {
   div.custom-tabs {
-    padding-top: 15px;
+    position: relative;
+    padding-top: 95px;
     border-bottom: 0;
+  }
+  div.custom-tabs.faq-tabs {
+    padding-top: 170px;
   }
   div.custom-tabs .bootstrap-select > select {
     left: 0;
@@ -8074,8 +8078,11 @@ div.custom-tabs div.status {
 @media screen and (max-width: 767px) {
   div.custom-tabs div.status {
     float: none;
-    padding: 15px 0 15px 0;
-    border-bottom: 1px solid #C6CAD3;
+    position: absolute;
+    padding: 0px 0 0px 0;
+    border-bottom: 0;
+    top: 25px;
+    width: 100%;
   }
 }
 div.custom-tabs div.status a {
