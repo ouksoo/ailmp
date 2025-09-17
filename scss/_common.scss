@@ -550,6 +550,27 @@ div.no-custom-interesting {
 		background-size: 60px auto;
 	}
 }
+div.no-notice-lists {
+	background: url('../img/icons/icon_no_notice.svg') 50% 15% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
+div.no-event-lists {
+	background: url('../img/icons/icon_no_event.svg') 50% 15% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
+div.no-document-lists {
+	background: url('../img/icons/icon_no_document.svg') 50% 15% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
 
 /* 서비스 이용 약관 */
 div.legal-wrapper {
@@ -627,9 +648,13 @@ div.legal-wrapper {
 	p.s-txt {
 		font-size: 24px;
 		color: #6C757D;
+		line-height: 30px;
+		padding-top: 5px;
 
 		@media screen and (max-width: 768px) {
 			font-size: 16px;
+			line-height: 22px;
+			padding-top: 3px;
 		}
 	}
 	span.green {

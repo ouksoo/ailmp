@@ -455,7 +455,6 @@ var AILMP = {
 			$('div.mypage-reservation-list').css('display', 'none');
 			$(this).addClass('on');
 			$('div.reservatoin-tab-' + tabNum).css('display', 'block');
-
 		});
 
 		//결제하기 텝
@@ -465,7 +464,19 @@ var AILMP = {
 			$('div.payment-method div.payments').css('display', 'none');
 			$(this).addClass('on');
 			$('div.payment-method div.payment-' + tabNum).css('display', 'block');
+		});
 
+		//고객센터 텝
+		$('div.custom-tabs div.tab-btn a').on('click', function() {
+			let tabNum = $(this).data('tab');
+			$('div.custom-tabs div.tab-btn a').removeClass('on');
+			$(this).addClass('on');
+
+			$('div.custom-notice-list').css('display', 'none');
+			$('div.custom-event-list').css('display', 'none');
+
+			$('div.notice-tab-' + tabNum).css('display', 'block');
+			$('div.event-tab-' + tabNum).css('display', 'block');
 		});
 	},
 }

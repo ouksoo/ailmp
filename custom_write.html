@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<!-- 공통 -->
+<div class="film-common"></div>
+<a href="#" class="go-top-btn"></a>
+<!-- //공통 -->
+
+<!-- header -->
+<div class="header-wrapper">
+	<div class="header-footer-inner nomobile clearfix">
+		<div class="film-normal"></div>
+		<div class="header-left clearfix">
+			<h1>IT PLACE</h1>
+			<a href="#" class="find-search-show"><span>공간찾기</span></a>
+			<a href="#" class="reg-place-show"><span>등록하기</span></a>
+		</div>
+		<div class="header-right clearfix">
+			<a href="#" class="tops a">검색</a><div class="b"><p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p></div><a href="#" class="tops c">알림<span class="notice"></span></a><a href="#" class="tops d">메뉴</a>
+			<div class="search-box clearfix">
+				<input type="text" placeholder="어떤 공간을 찾고 있나요? 예) 포근한 가정집" />
+				<button class="search-btn">검색</button>
+			</div>
+
+		</div>
+
+		<!-- 공지 알람 -->
+		<div class="notification-wrap">
+			<div class="inner" data-simplebar>
+				<ul>
+					<li>
+						<p class="a">예약</p>
+						<p class="b">신청하신 예스스튜디오 예약이 호스트에 의해 승인 되었습니다.</p>
+						<p class="c">2025/06/10 13:55</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- aside -->
+		<aside class="lnb-wrapper">
+			<div class="menu-header">
+				<div class="login-button">
+					<p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p>
+					<p class="greeting-msg" style="display: none;"><span>홍길동</span>님, 반갑습니다.</p>
+				</div>
+				<a href="#" class="tops c">알림<span class="notice"></span></a>
+				<a href="#" class="menu-close">닫기</a>
+			</div>
+			<a href="#" class="logout-button">로그아웃</a>
+			<div class="menu-wrapper">
+				<ul class="menus">
+					<li>
+						<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+						<div class="submenus">
+							<a href="#" class="on">예약/결제 내역</a>
+							<a href="#">나의 문의</a>
+							<a href="#">관심 장소</a>
+							<a href="#">개인 정보 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+						<div class="submenus">
+							<a href="#">공간 등록</a>
+							<a href="#">공간 관리</a>
+							<a href="#">예약 관리</a>
+							<a href="#">Q&A 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">고객센터</a>
+						<div class="submenus">
+							<a href="#">공지사항</a>
+							<a href="#">이벤트</a>
+							<a href="#">자주 묻는 질문</a>
+							<a href="#">문의하기</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<!-- //aside -->
+	</div>
+</div>
+<!-- //header -->
+ 
+
+<div class="container-wrapper">
+	<div class="common-wrapper">
+		<div class="common-title-area">
+			<p class="s-title">공지사항을 작성해주세요.</p>
+			<p class="s-title">이벤트 내용을 작성해주세요.</p>
+			<p class="s-title">자주 묻는 질문을 작성해주세요.</p>
+		</div>
+
+		<div class="custom-write-input">
+			<div class="define clearfix">
+				<p class="tt o">카테고리 <span class="txt-green">*</span></p>
+				<div class="to">
+					<!-- 공지사항 -->
+					<select class="selectpicker both" data-container="body">
+						<option>선택해주세요.</option>
+						<option>일반 공지</option>
+						<option>호스트 공지</option>
+					</select>
+
+					<!-- 이벤트 -->
+					<select class="selectpicker both" data-container="body">
+						<option>선택해주세요.</option>
+						<option>이벤트</option>
+						<option>당첨자 발표</option>
+					</select>
+
+					<!-- 자주묻는 질문 -->
+					<select class="selectpicker both" data-container="body">
+						<option>선택해주세요.</option>
+						<option>로그인/회원가입</option>
+						<option>예약/결제</option>
+						<option>취소/환불</option>
+						<option>기타</option>
+					</select>
+				</div>
+			</div>
+			<div class="define clearfix">
+				<p class="tt o">제목 <span class="txt-green">*</span></p>
+				<div class="to"><input type="text" class="input-txt w-100-per" placeholder="제목을 입력해주세요." /></div>
+			</div>
+			<div class="define clearfix">
+				<p class="tt p">내용 <span class="txt-green">*</span></p>
+				<div class="to">
+					<p class="txt-normal">타문서에서 복사 및 붙여넣기를 했을 때, 모바일 화면이 정상적으로 출력 되지 않을 수 있어요. 가능한 직접 작성해 주세요.</p>
+					<div class="write-editor"></div>
+				</div>
+			</div>
+
+			<div class="define clearfix">
+				<p class="tt o">썸네일 이미지 <span class="txt-green">*</span></p>
+				<div class="to thumb">
+					<div class="clearfix">
+						<input type="text" class="input-txt" placeholder="파일을 선택해 주세요." /><a href="#" class="dp-ib modal-button bluegray-btn">파일선택</a>
+					</div>
+					<p class="guide-txt-1">썸네일을 교체하려면 새로운 파일을 업로드해주세요.</p>
+					<p class="guide-txt-2">5MB이하 jpg, jpeg, gif, png, pdf 파일만 등록 가능 합니다.</p>
+					<ul class="thumbnail">
+						<li><img src="img/sample/sample_event.png" alt="" /></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btn-area"><button class="modal-button green bd0 login-button">저장하기</button></div>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<div class="footer-wrapper">
+	<div class="header-footer-inner">
+		<div class="top clearfix">
+			<h2>IT PLACE</h2>
+			<div class="footer-menu">
+				<a href="#">이용약관</a><span>|</span><a href="#">개인정보처리방침</a><span>|</span><a href="#">자주묻는질문</a><span>|</span><a href="#">문의하기</a>
+			</div>
+		</div>
+		<div class="bottom pc clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호 <span>|</span> 전화 : +82-2-516-1703<br />
+			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 홍길동<br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+		<div class="bottom mo clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			사업자등록번호 :  000-00-0000<br />
+			통신판매업신고번호 :  2025-서울성동-0000호<br />
+			개인정보보호 책임자 : 홍길동<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호<br />
+			전화 : +82-2-516-1703<br /><br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+
+<!-- Modal : common alert -->
+<div class="modal fade" id="commonAlertModal" tabindex="-1" role="dialog" aria-labelledby="commonAlertModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<p class="only-text-center">모든 입력란을 빠짐없이 입력해 주세요.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : common alert -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/lenis.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+  
+</script>
+</body>
+</html>
+
+

@@ -1,193 +1,249 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <!-- Demo styles -->
+  <title>Swiper 페이징: 이웃끼리 자리교환 이동(타원↔원)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Swiper CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <style>
-    html,
-    body {
+    :root{
+      --pill-h: 30px;      /* 활성 타원 높이 */
+      --pill-w: 58px;      /* 활성 타원 너비 */
+      --dot: 12px;         /* 비활성 원 지름 */
+      --gap: 14px;         /* 슬롯 간격 */
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+    body{ margin:0; background:#f7f8fa; font-family: Pretendard, -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial; }
+    .wrap{ max-width: 960px; margin: 48px auto; padding: 0 16px; }
+
+    /* ===== Swiper ===== */
+    .swiper{
+      width: 100%; height: 360px; border-radius: 16px; overflow: hidden; background:#fff;
+      box-shadow: 0 6px 24px rgba(0,0,0,.08);
+    }
+    .swiper-slide{ display:flex; align-items:center; justify-content:center; font-size:40px; font-weight:700; color:#333; user-select:none; }
+    .swiper-slide:nth-child(1){ background:#e8f0ff; }
+    .swiper-slide:nth-child(2){ background:#e8ffef; }
+    .swiper-slide:nth-child(3){ background:#fff6e8; }
+    .swiper-slide:nth-child(4){ background:#fde8ff; }
+
+    /* ===== 커스텀 페이징 ===== */
+    .pagination-bar{ display:flex; justify-content:center; margin-top:20px; }
+    .pager{
       position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #000;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #444;
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
       align-items: center;
+      gap: var(--gap);
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.9);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
     }
 
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    /* 슬롯(고정 좌표를 주는 가이드) */
+    .pager__slot{
+      position: relative;
+      width: var(--pill-w);
+      height: var(--pill-h);
+    }
+    /* 슬롯의 안내 점(디자인 참고용, 실제 클릭은 인디케이터가 처리) */
+    .pager__slot::after{
+      content:"";
+      position:absolute; top:50%; left:50%;
+      width: var(--dot); height: var(--dot);
+      border-radius:50%;
+      background:#e5e9ef;
+      transform: translate(-50%,-50%);
+      pointer-events:none;
     }
 
-    .swiper {
-      width: 100%;
-      height: 300px;
-      margin-left: auto;
-      margin-right: auto;
+    /* 떠다니는 인디케이터(4개) */
+    .indicator{
+      position:absolute; top:0; left:0;
+      transform: translate(-50%,-50%); /* 좌표는 중앙 기준으로 맞춤 */
+      transition:
+        transform .42s var(--ease),
+        width .28s var(--ease),
+        height .28s var(--ease),
+        border-radius .28s var(--ease),
+        background-color .28s var(--ease),
+        box-shadow .28s var(--ease),
+        opacity .28s var(--ease);
+      z-index: 1;
+      background:#cfd4dc;
+      width: var(--dot);
+      height: var(--dot);
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,.06);
+      cursor: pointer;
     }
 
-    .swiper-slide {
-      background-size: cover;
-      background-position: center;
+    /* 활성 인디케이터는 타원(필)로 변경 */
+    .indicator.is-active{
+      width: var(--pill-w);
+      height: var(--pill-h);
+      border-radius: 999px;
+      background:#111;
+      color:#fff;
+      box-shadow: 0 6px 18px rgba(0,0,0,.12);
     }
-
-    .review-detail-swiper {
-      height: 80%;
-      width: 100%;
+    /* 활성 인디케이터 중앙 표시용 라벨(선택) */
+    .indicator__label{
+      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+      font-size:13px; font-weight:600; letter-spacing:.2px; color:#fff; user-select:none;
+      pointer-events:none;
+      opacity:0; transition: opacity .2s var(--ease);
     }
-
-    .review-thumb-wiper {
-      height: 20%;
-      box-sizing: border-box;
-      padding: 10px 0;
-    }
-
-    .review-thumb-wiper .swiper-slide {
-      width: 25%;
-      height: 100%;
-      opacity: 0.4;
-    }
-
-    .review-thumb-wiper .swiper-slide-thumb-active {
-      opacity: 1;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .indicator.is-active .indicator__label{ opacity:1; }
   </style>
 </head>
-
 <body>
-  <!-- Swiper -->
+  <div class="wrap">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+      </div>
+    </div>
 
-<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper review-detail-swiper">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-		</div>
-	</div>
-</div>
+    <div class="pagination-bar">
+      <div class="pager" id="pager" aria-label="슬라이드 페이지 이동">
+        <!-- 위치 기준이 되는 4개의 슬롯 -->
+        <div class="pager__slot" data-slot="0" aria-hidden="true"></div>
+        <div class="pager__slot" data-slot="1" aria-hidden="true"></div>
+        <div class="pager__slot" data-slot="2" aria-hidden="true"></div>
+        <div class="pager__slot" data-slot="3" aria-hidden="true"></div>
 
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
+        <!-- 실제로 움직이는 4개의 인디케이터(슬라이드 ID 0..3) -->
+        <div class="indicator" data-id="0"><span class="indicator__label">1</span></div>
+        <div class="indicator" data-id="1"><span class="indicator__label">2</span></div>
+        <div class="indicator" data-id="2"><span class="indicator__label">3</span></div>
+        <div class="indicator" data-id="3"><span class="indicator__label">4</span></div>
+      </div>
+    </div>
+  </div>
 
-<div thumbsSlider="" class="swiper review-thumb-wiper">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-		</div>
-		<div class="swiper-slide">
-			<img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-		</div>
-	</div>
-</div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // 디바운스
+    const debounce = (fn, d=120) => { let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), d); }; };
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    // Swiper
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 1,
+      speed: 500,
+      loop: false,
+    });
 
-<!-- Initialize Swiper -->
-<script>
-var reviewThumbSwiper = new Swiper(".review-thumb-wiper", {
-	loop: true,
-	spaceBetween: 10,
-	slidesPerView: 4,
-	freeMode: true,
-	watchSlidesProgress: true,
-});
-var reviewDetailSwiper = new Swiper(".review-detail-swiper", {
-	loop: true,
-	spaceBetween: 10,
-	navigation: {
-		nextEl: ".swiper-button-next",
-		prevEl: ".swiper-button-prev",
-	},
-		thumbs: {
-		swiper: reviewThumbSwiper,
-	},
-});
-</script>
+    // 커스텀 페이징 로직
+    const pager = document.getElementById('pager');
+    const slots = Array.from(pager.querySelectorAll('.pager__slot'));
+    const indicators = Array.from(pager.querySelectorAll('.indicator'));
+
+    // state: 각 인디케이터(슬라이드 id)의 현재 '슬롯 index'
+    // 처음에는 0->0, 1->1, 2->2, 3->3 (원위치)
+    const idToSlot = new Map([[0,0],[1,1],[2,2],[3,3]]);
+
+    // 좌표 계산 유틸: 각 슬롯의 중앙 좌표
+    function getSlotCenters(){
+      const pagerRect = pager.getBoundingClientRect();
+      return slots.map(s => {
+        const r = s.getBoundingClientRect();
+        return {
+          x: (r.left - pagerRect.left) + r.width/2,
+          y: (r.top - pagerRect.top) + r.height/2,
+        };
+      });
+    }
+
+    // 현재 상태(idToSlot)에 맞춰 모든 인디케이터를 해당 슬롯 중앙으로 이동
+    function layout({animate=true} = {}){
+      const centers = getSlotCenters();
+      indicators.forEach(ind => {
+        const id = Number(ind.dataset.id);
+        const slotIndex = idToSlot.get(id);
+        const c = centers[slotIndex];
+
+        if(!animate){
+          const prev = ind.style.transition;
+          ind.style.transition = 'none';
+          void ind.offsetWidth; // reflow
+          ind.style.transform = `translate(${c.x}px, ${c.y}px) translate(-50%,-50%)`;
+          void ind.offsetWidth;
+          ind.style.transition = prev || '';
+        }else{
+          ind.style.transform = `translate(${c.x}px, ${c.y}px) translate(-50%,-50%)`;
+        }
+      });
+    }
+
+    // 활성 표시 업데이트
+    function setActiveIndicator(activeId){
+      indicators.forEach(ind => {
+        const isActive = Number(ind.dataset.id) === activeId;
+        ind.classList.toggle('is-active', isActive);
+      });
+    }
+
+    // c(현재) ↔ t(목표) 의 슬롯을 '교환' (나머지는 그대로)
+    function swapSlots(currentId, targetId){
+      const s1 = idToSlot.get(currentId);
+      const s2 = idToSlot.get(targetId);
+      idToSlot.set(currentId, s2);
+      idToSlot.set(targetId, s1);
+    }
+
+    // 슬롯 클릭 → 그 슬롯에 있는 인디케이터를 찾아 해당 슬라이드로 이동
+    function slideToSlot(slotIndex){
+      // 그 슬롯에 위치한 indicator 찾기
+      const targetInd = indicators.find(ind => idToSlot.get(Number(ind.dataset.id)) === slotIndex);
+      if(!targetInd) return;
+      const targetId = Number(targetInd.dataset.id);
+      if(targetId === swiper.realIndex) return;
+      swiper.slideTo(targetId);
+      // Swiper의 slideChange 이벤트에서 실제 스왑/레이아웃 실행됨
+    }
+
+    // 초기 설정
+    swiper.on('init', () => {
+      setActiveIndicator(swiper.realIndex);
+      layout({animate:false});
+    });
+
+    // 슬라이드 변경 시작 시: 현재 ↔ 목표 인디케이터 슬롯 교환 + 활성 표시 + 레이아웃 애니메이션
+    swiper.on('slideChangeTransitionStart', () => {
+      const currentId = swiper.previousIndex; // 지금 떠나는 슬라이드 id
+      const targetId  = swiper.realIndex;     // 도착할 슬라이드 id
+
+      swapSlots(currentId, targetId);
+      setActiveIndicator(targetId);
+      layout({animate:true});
+    });
+
+    // 슬롯 클릭 이벤트 바인딩
+    slots.forEach((slot, i) => {
+      slot.addEventListener('click', () => slideToSlot(i));
+    });
+
+    // 인디케이터 자체 클릭해도 해당 슬라이드로 이동
+    indicators.forEach(ind => {
+      ind.addEventListener('click', () => {
+        const targetId = Number(ind.dataset.id);
+        if(targetId !== swiper.realIndex) swiper.slideTo(targetId);
+      });
+    });
+
+    // 리사이즈 시 좌표 재계산
+    window.addEventListener('resize', debounce(()=> layout({animate:false}), 120));
+
+    // 수동 init
+    swiper.init();
+  </script>
 </body>
-
 </html>

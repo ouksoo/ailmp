@@ -68,106 +68,70 @@
 				<a href="#" class="menu-close">닫기</a>
 			</div>
 			<a href="#" class="logout-button">로그아웃</a>
-			<ul class="menus">
-				<li>
-					<a href="javascript:void(0);" class="depth-1">마이페이지</a>
-					<div class="submenus">
-						<a href="#" class="on">예약/결제 내역</a>
-						<a href="#">나의 문의</a>
-						<a href="#">개인 정보 관리</a>
-					</div>
-				</li>
-				<li>
-					<a href="javascript:void(0);" class="depth-1">호스트센터</a>
-					<div class="submenus">
-						<a href="#">공간 등록</a>
-						<a href="#">공간 관리</a>
-						<a href="#">예약 관리</a>
-						<a href="#">Q&A 관리</a>
-					</div>
-				</li>
-				<li>
-					<a href="javascript:void(0);" class="depth-1">고객센터</a>
-					<div class="submenus">
-						<a href="#">공지사항</a>
-						<a href="#">이벤트</a>
-						<a href="#">자주 묻는 질문</a>
-						<a href="#">문의하기</a>
-					</div>
-				</li>
-			</ul>
+			<div class="menu-wrapper">
+				<ul class="menus">
+					<li>
+						<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+						<div class="submenus">
+							<a href="#" class="on">예약/결제 내역</a>
+							<a href="#">나의 문의</a>
+							<a href="#">관심 장소</a>
+							<a href="#">개인 정보 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+						<div class="submenus">
+							<a href="#">공간 등록</a>
+							<a href="#">공간 관리</a>
+							<a href="#">예약 관리</a>
+							<a href="#">Q&A 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">고객센터</a>
+						<div class="submenus">
+							<a href="#">공지사항</a>
+							<a href="#">이벤트</a>
+							<a href="#">자주 묻는 질문</a>
+							<a href="#">문의하기</a>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</aside>
 		<!-- //aside -->
 	</div>
 </div>
 <!-- //header -->
+ 
 
 <div class="container-wrapper">
-	<!-- 계정 사용이 중지 되었습니다. -->
-	 <div class="account-disabled-wrapper error-container">
-		<p class="txt-1">계정 사용이 중지 되었습니다.</p>
-		<p class="txt-2">관리자에 의해 2025년 7월 1일부터 계정 사용이 중지 되었습니다.<br />관련하여 문의사항은 고객센터 문의하기를 통해 접수해 주세요.</p>
-	 </div>
-	<!-- //계정 사용이 중지 되었습니다. -->
-
-	<!-- 계정 사용이 중지 되었습니다. -->
-	 <div class="no-data-wrapper error-container">
-		<p class="txt-1">검색 결과가 없습니다.</p>
-		<p class="txt-2">검색 조건을 변경하고 다시 검색해 주세요.</p>
-	 </div>
-	<!-- //계정 사용이 중지 되었습니다. -->
-
-	<!-- 예약 신청이 완료 되었습니다. -->
-	 <div class="place-reserve-completed error-container">
-		<p class="txt-1">예약 신청이 완료 되었어요.</p>
-		<p class="txt-2">호스트가 내용을 확인 후 예약을 승인하면<br /> 결제 요청을 드리겠습니다.</p>
-		<div class="button-both">
-			<a href="#" class="modal-button dark-gray bd0 search-place-off w220">홈으로 이동</a><a href="#" class="modal-button green bd0 w220">예약 내역 확인</a>
+	<div class="common-wrapper">
+		<div class="common-title-area">
+			<p class="s-title">문의하기</p>
+			<p class="s-txt">사이트 이용, 오류, 사업 제휴 등과 관련된 문의 사항이 있다면 남겨 주세요.<br />공간과 관련된 문의는 해당 공간 상세 페이지의 문의하기를 이용해 주시면 호스트에게 빠르게 답변 받으실 수 있습니다.</p>
 		</div>
-	 </div>
-	<!-- //예약 신청이 완료 되었습니다. -->
 
-	<!-- 예약/결제 내역이 없어요. -->
-	<div class="no-reserved-lists error-container">
-		<p class="txt-1">예약/결제 내역이 없어요.</p>
+		<div class="custom-question-input">
+			<div class="define clearfix">
+				<p class="tt o">이름 <span class="txt-green">*</span></p>
+				<div class="to"><input type="text" class="input-txt w-100-per" placeholder="이름을 입력해주세요." /></div>
+			</div>
+			<div class="define clearfix">
+				<p class="tt o">답변 받을 이메일 주소 <span class="txt-green">*</span></p>
+				<div class="to"><input type="text" class="input-txt w-100-per" placeholder="이메일 주소를 입력해주세요." /></div>
+			</div>
+			<div class="define clearfix">
+				<p class="tt p">문의 내용 <span class="txt-green">*</span></p>
+				<div class="to">
+					<p class="txt-count">0/500 글자</p>
+					<textarea class="input-txt w-100-per" placeholder="문의 내용을 입력해주세요." rows="6"></textarea>
+				</div>
+			</div>
+			<div class="btn-area"><button class="modal-button green bd0 login-button">문의 하기</button></div>
+		</div>
 	</div>
-	<!-- //예약/결제 내역이 없어요. -->
-
-	<!-- 예약 취소 내역이 없어요. -->
-	<div class="no-reserved-lists error-container">
-		<p class="txt-1">예약 취소 내역이 없어요.</p>
-	</div>
-	<!-- //예약 취소 내역이 없어요. -->
-
-	<!-- 문의 내역이 없어요. -->
-	<div class="no-custom-request error-container">
-		<p class="txt-1">문의 내역이 없어요.</p>
-	</div>
-	<!-- //문의 내역이 없어요. -->
-
-	<!-- 문의 내역이 없어요. -->
-	<div class="no-custom-interesting error-container">
-		<p class="txt-1">저장된 관심 장소가 없어요.</p>
-	</div>
-	<!-- //문의 내역이 없어요. -->
-
-	<!-- 표시할 공지사항이 없어요. -->
-	<div class="no-notice-lists error-container">
-		<p class="txt-1">표시할 공지사항이 없어요.</p>
-	</div>
-	<!-- //표시할 공지사항이 없어요. -->
-
-	<!-- 표시할 이벤트가 없어요. -->
-	<div class="no-event-lists error-container">
-		<p class="txt-1">표시할 이벤트가 없어요.</p>
-	</div>
-	<!-- //표시할 이벤트가 없어요. -->
-
-	<!-- 표시할 게시글이 없어요. -->
-	<div class="no-document-lists error-container">
-		<p class="txt-1">표시할 게시글이 없어요.</p>
-	</div>
-	<!-- //표시할 게시글이 없어요. -->
 </div>
 
 <!-- footer -->
@@ -179,16 +143,52 @@
 				<a href="#">이용약관</a><span>|</span><a href="#">개인정보처리방침</a><span>|</span><a href="#">자주묻는질문</a><span>|</span><a href="#">문의하기</a>
 			</div>
 		</div>
-		<div class="bottom clearfix">
+		<div class="bottom pc clearfix">
 			<p>(주)잇플레이스</p>
 			대표 : 최은주<br />
 			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호 <span>|</span> 전화 : +82-2-516-1703<br />
 			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 홍길동<br />
 			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
 		</div>
+		<div class="bottom mo clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			사업자등록번호 :  000-00-0000<br />
+			통신판매업신고번호 :  2025-서울성동-0000호<br />
+			개인정보보호 책임자 : 홍길동<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호<br />
+			전화 : +82-2-516-1703<br /><br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
 	</div>
 </div>
 <!-- //footer -->
+
+<!-- Modal : common alert -->
+<div class="modal fade" id="commonAlertModal" tabindex="-1" role="dialog" aria-labelledby="commonAlertModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<p class="only-text-center">이름을 입력해 주세요.</p>
+
+				<p class="only-text-center">이메일 주소를 입력해 주세요.</p>
+
+				<p class="only-text-center">문의 내용을 입력해 주세요.</p>
+
+				<p class="only-text-center">글자 수가 초과 되었습니다.<br />500자 이내로 작성해 주세요.</p>
+
+				<p class="only-text-center">문의가 접수 되었습니다.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : common alert -->
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/lenis.min.js"></script>
