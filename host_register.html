@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<!-- 공통 -->
+<div class="film-common"></div>
+<a href="#" class="go-top-btn"></a>
+<!-- //공통 -->
+
+<!-- header -->
+<div class="header-wrapper">
+	<div class="header-footer-inner nomobile clearfix">
+		<div class="film-normal"></div>
+		<div class="header-left clearfix">
+			<h1>IT PLACE</h1>
+			<a href="#" class="find-search-show"><span>공간찾기</span></a>
+			<a href="#" class="reg-place-show"><span>등록하기</span></a>
+		</div>
+		<div class="header-right clearfix">
+			<a href="#" class="tops a">검색</a><div class="b"><p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p></div><a href="#" class="tops c">알림<span class="notice"></span></a><a href="#" class="tops d">메뉴</a>
+			<div class="search-box clearfix">
+				<input type="text" placeholder="어떤 공간을 찾고 있나요? 예) 포근한 가정집" />
+				<button class="search-btn">검색</button>
+			</div>
+
+		</div>
+
+		<!-- 공지 알람 -->
+		<div class="notification-wrap">
+			<div class="inner" data-simplebar>
+				<ul>
+					<li>
+						<p class="a">예약</p>
+						<p class="b">신청하신 예스스튜디오 예약이 호스트에 의해 승인 되었습니다.</p>
+						<p class="c">2025/06/10 13:55</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- aside -->
+		<aside class="lnb-wrapper">
+			<div class="menu-header">
+				<div class="login-button">
+					<p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p>
+					<p class="greeting-msg" style="display: none;"><span>홍길동</span>님, 반갑습니다.</p>
+				</div>
+				<a href="#" class="tops c">알림<span class="notice"></span></a>
+				<a href="#" class="menu-close">닫기</a>
+			</div>
+			<a href="#" class="logout-button">로그아웃</a>
+			<div class="menu-wrapper">
+				<ul class="menus">
+					<li>
+						<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+						<div class="submenus">
+							<a href="#" class="on">예약/결제 내역</a>
+							<a href="#">나의 문의</a>
+							<a href="#">관심 장소</a>
+							<a href="#">개인 정보 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+						<div class="submenus">
+							<a href="#">공간 등록</a>
+							<a href="#">공간 관리</a>
+							<a href="#">예약 관리</a>
+							<a href="#">Q&A 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">고객센터</a>
+						<div class="submenus">
+							<a href="#">공지사항</a>
+							<a href="#">이벤트</a>
+							<a href="#">자주 묻는 질문</a>
+							<a href="#">문의하기</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<!-- //aside -->
+	</div>
+</div>
+<!-- //header -->
+
+<div class="container-wrapper">
+	<div class="common-wrapper">
+
+		<!-- 호스트 등록이 완료 되었어요!. -->
+		<div class="host-completed-screen error-container hosts-error">
+			<p class="txt-1">호스트 등록이 완료 되었어요!</p>
+			<p class="txt-2">이제 공간을 등록하면 바로 예약을 받을 수 있습니다.</p>
+			<div class="button-both">
+				<a href="#" class="modal-button green bd0 search-place-off w220">공간 등록하기</a><a href="#" class="modal-button dark-gray bd0 w220">호스트 정보 수정</a>
+			</div>
+		</div>
+		<!-- //호스트 등록이 완료 되었어요!. -->
+
+		<div class="host-info-wrapper">
+			<p class="tit">호스트 등록을 시작하기 전<br />아래 사항을 미리 준비해 주세요.</p>
+			<div class="ready-item">
+				<ul>
+					<li>정산 받을 계좌의 통장 사본</li>
+					<li>사업자인 경우 (개인/법인)사업자 등록증</li>
+				</ul>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">호스트명(업체명) <span>*</span></p>
+				<input type="text" class="modal-button w-100-per login-inputs" placeholder="호스트명을 입력해 주세요." />
+				<p class="s-guide">사업자의 경우 사업자등록증에 기재된 업체명을, 사업자가 아닌 경우 자유롭게 이름을 입력해 주세요.</p>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">대표 연락처 <span>*</span></p>
+				<input type="text" class="modal-button w-100-per login-inputs" placeholder="연락처를 입력해 주세요." />
+				<p class="s-guide">특수기호 “-”를 포함하여 입력해 주시고, 유선 전화의 경우 반드시 지역번호를 포함해 입력해 주세요.<br />안심 번호 서비스를 이용중이라면 안심 번호를 입력해 주세요.</p>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">담당자명 <span>*</span></p>
+				<input type="text" class="modal-button w-100-per login-inputs" placeholder="담당자명을 입력해 주세요." />
+				<p class="s-guide">담당자명은 게스트들에게 노출되지 않습니다.</p>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">정산 받을 계좌 <span>*</span></p>
+				<div class="clearfix">
+					<div class="bank">
+						<select class="selectpicker w-100-per">
+							<option>은행</option>
+						</select>
+					</div><input type="text" class="modal-button login-inputs number" placeholder="계좌번호" /><input type="text" class="modal-button login-inputs name" placeholder="예금주" />
+				</div>
+				<p class="s-guide">정산 받을 계좌 정보는 게스트들에게 노출되지 않습니다.</p>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">통장 사본 <span>*</span></p>
+				<div class="input-wrap clearfix">
+					<input type="text" class="modal-button login-inputs" placeholder="파일을 선택해 주세요." /><button class="modal-button bd0 dark-gray addbtn">파일선택</button>
+				</div>
+				<p class="s-guide">5MB이하 jpg, jpeg, gif, png, pdf 파일만 등록 가능 합니다.</p>
+				<div class="added-file">
+					통장사본_잇플레이스등록용_하나은행.jpg
+				</div>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">사업자등록증</p>
+				<div class="input-wrap clearfix">
+					<input type="text" class="modal-button login-inputs" placeholder="파일을 선택해 주세요." /><button class="modal-button bd0 dark-gray addbtn">파일선택</button>
+				</div>
+				<p class="s-guide">사업자인 경우에 사업자등록증을 업로드해 주세요.<br />5MB이하 jpg, jpeg, gif, png, pdf 파일만 등록 가능 합니다.</p>
+				<div class="added-file">
+					사업자등록증사본.pdf
+				</div>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">환불 규정</p>
+				<p class="s-tit-1">환불은 잇플레이시 규정에 따릅니다.</p>
+				<ul class="s-tit-2">
+					<li>이용일 당일~1일 전 취소 → 환불 불가</li>
+					<li>이용일 2~3일 전 취소 → 50% 환불</li>
+					<li>이용일 4일 전 취소 → 전액 환불</li>
+				</ul>
+			</div>
+			<a href="#" class="modal-button w-100-per green host-register-button bd0 login-button">호스트 등록 신청</a><!-- 등록의 경우 -->
+			<a href="#" class="modal-button w-100-per green host-register-button bd0 login-button">변경 사항 저장</a><!-- 수정의 경우 -->
+		</div>
+
+	</div>
+</div>
+
+<!-- Modal : 모달 공통 (case 별 modal-body 부분 변경) -->
+<div class="modal fade" id="alertCommonUseModal" tabindex="-1" role="dialog" aria-labelledby="alertCommonUseModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<!-- 호스트명(업체명)을 입력해 주세요. -->
+				<p class="only-text-center">호스트명(업체명)을 입력해 주세요.</p>
+
+				<!-- 대표 연락처를 입력해 주세요. -->
+				<p class="only-text-center">대표 연락처를 입력해 주세요.</p>
+
+				<!-- 당자명을 입력해 주세요. -->
+				<p class="only-text-center">담당자명을 입력해 주세요.</p>
+
+				<!-- 정산 받을 게좌를 입력해 주세요. -->
+				<p class="only-text-center">정산 받을 게좌를 입력해 주세요.</p>
+
+				<!-- 통장 사본을 업로드 해주세요. -->
+				<p class="only-text-center">통장 사본을 업로드 해주세요.</p>
+
+				<!-- 입력란명}은 5MB이하 jpg, jpeg, gif, png, pdf 파일만 등록 가능 합니다. -->
+				<p class="only-text-center">입력란명}은 5MB이하 jpg, jpeg, gif, png,<br />pdf 파일만 등록 가능 합니다.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 공통 모달 -->
+
+<!-- footer -->
+<div class="footer-wrapper">
+	<div class="header-footer-inner">
+		<div class="top clearfix">
+			<h2>IT PLACE</h2>
+			<div class="footer-menu">
+				<a href="#">이용약관</a><span>|</span><a href="#">개인정보처리방침</a><span>|</span><a href="#">자주묻는질문</a><span>|</span><a href="#">문의하기</a>
+			</div>
+		</div>
+		<div class="bottom clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호 <span>|</span> 전화 : +82-2-516-1703<br />
+			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 홍길동<br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/lenis.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+  
+</script>
+</body>
+</html>
+
+

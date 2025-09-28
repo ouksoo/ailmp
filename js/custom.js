@@ -208,6 +208,20 @@ var reviewDetailSwiper = new Swiper(".picture-totalview-swiper", {
 });
 /** //공간사진 전체 보기 */
 
+// 호스트 메인 하단
+const hostItSwiper = new Swiper('.host-it-swiper', {
+	loop: true,
+	speed: 1200,
+	effect: "fade",
+	autoplay: {
+		delay: 5000,
+	},
+	allowTouchMove: true,
+	watchSlidesProgress: true,
+	preloadImages: true,
+	updateOnWindowResize: true,
+});
+
 /* 공간찾기 slide 해상도 적용 */
 let placeSearchSwiper = null;
 
@@ -477,6 +491,22 @@ var AILMP = {
 
 			$('div.notice-tab-' + tabNum).css('display', 'block');
 			$('div.event-tab-' + tabNum).css('display', 'block');
+		});
+
+		//호스트 공간 관리 텝
+		$('div.place-menagement-tabs div.tab-btn a').on('click', function() {
+			let tabNum = $(this).data('tab');
+			$('div.place-menagement-tabs div.tab-btn a').removeClass('on');
+			$('div.place-management-list').css('display', 'none');
+			$(this).addClass('on');
+			$('div.place-management-tab-' + tabNum).css('display', 'block');
+
+			if(tabNum == 2) {
+				$('.stop-temporary').css('display', 'block');
+			}
+			else {
+				$('.stop-temporary').css('display', 'none');
+			}
 		});
 	},
 }

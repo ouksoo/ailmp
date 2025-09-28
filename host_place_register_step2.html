@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<!-- 공통 -->
+<div class="film-common"></div>
+<a href="#" class="go-top-btn"></a>
+<!-- //공통 -->
+
+<!-- header -->
+<div class="header-wrapper">
+	<div class="header-footer-inner nomobile clearfix">
+		<div class="film-normal"></div>
+		<div class="header-left clearfix">
+			<h1>IT PLACE</h1>
+			<a href="#" class="find-search-show"><span>공간찾기</span></a>
+			<a href="#" class="reg-place-show"><span>등록하기</span></a>
+		</div>
+		<div class="header-right clearfix">
+			<a href="#" class="tops a">검색</a><div class="b"><p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p></div><a href="#" class="tops c">알림<span class="notice"></span></a><a href="#" class="tops d">메뉴</a>
+			<div class="search-box clearfix">
+				<input type="text" placeholder="어떤 공간을 찾고 있나요? 예) 포근한 가정집" />
+				<button class="search-btn">검색</button>
+			</div>
+
+		</div>
+
+		<!-- 공지 알람 -->
+		<div class="notification-wrap">
+			<div class="inner" data-simplebar>
+				<ul>
+					<li>
+						<p class="a">예약</p>
+						<p class="b">신청하신 예스스튜디오 예약이 호스트에 의해 승인 되었습니다.</p>
+						<p class="c">2025/06/10 13:55</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- aside -->
+		<aside class="lnb-wrapper">
+			<div class="menu-header">
+				<div class="login-button">
+					<p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p>
+					<p class="greeting-msg" style="display: none;"><span>홍길동</span>님, 반갑습니다.</p>
+				</div>
+				<a href="#" class="tops c">알림<span class="notice"></span></a>
+				<a href="#" class="menu-close">닫기</a>
+			</div>
+			<a href="#" class="logout-button">로그아웃</a>
+			<div class="menu-wrapper">
+				<ul class="menus">
+					<li>
+						<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+						<div class="submenus">
+							<a href="#" class="on">예약/결제 내역</a>
+							<a href="#">나의 문의</a>
+							<a href="#">관심 장소</a>
+							<a href="#">개인 정보 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+						<div class="submenus">
+							<a href="#">공간 등록</a>
+							<a href="#">공간 관리</a>
+							<a href="#">예약 관리</a>
+							<a href="#">Q&A 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">고객센터</a>
+						<div class="submenus">
+							<a href="#">공지사항</a>
+							<a href="#">이벤트</a>
+							<a href="#">자주 묻는 질문</a>
+							<a href="#">문의하기</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<!-- //aside -->
+	</div>
+</div>
+<!-- //header -->
+
+<div class="container-wrapper">
+	<div class="common-wrapper">
+
+		<div class="host-info-wrapper">
+			<div class="register-progress clearfix">
+				<div class="r-wrapper completed">
+					<div class="round"></div>
+					<span>기본 정보</span>
+				</div>
+				<div class="line completed">&nbsp;</div>
+				<div class="r-wrapper on">
+					<div class="round">2</div>
+					<span>상세 정보</span>
+				</div>
+				<div class="line">&nbsp;</div>
+				<div class="r-wrapper">
+					<div class="round">3</div>
+					<span>운영 정보</span>
+				</div>
+			</div>
+
+			<div class="input-section">
+				<p class="s-tit">공간사진 (최대 12장) <span>*</span></p>
+				<p class="s-para">
+					jpg, png, webp 형식의 10mb 이하 파일을 업로드 해주세요.<br />
+					고화질의 퀄리티 있는 사진을 올려 주시면 <span class="black">메인에 노출될 확률이 높아집니다.</span><br />
+					<span class="txt-green">(1920*1080 이상의 해상도 이미지를 업로드하시면 공간이 더욱 돋보여요!)</span>
+				</p>
+				<div class="selected-pictures clearfix">
+					<!-- loop -->
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<!-- //loop -->
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture addbtn">
+						<a href="#">파일추가</a>
+					</div>
+				</div>
+			</div>
+			<div class="input-section">
+				<div class="both-tit clearfix">
+					<p class="s-tit">공간 설명 <span>*</span></p>
+					<span class="cnt">0/500 글자</span>
+				</div>
+				<p class="s-para">공간에 대해 상세한 설명을 자유롭게 작성해주세요.</p>
+				<textarea placeholder="내용을 입력해 주세요." rows="10"></textarea>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">짧은 소개</p>
+				<div class="both-tit clearfix">
+					<p class="s-para floatl">메인화면에 노출될 때 보여지는 짧은 소개글입니다.</p>
+					<span class="cnt lineheight">0/120 글자</span>
+				</div>
+				<textarea placeholder="내용을 입력해 주세요." rows="3"></textarea>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">주차 가능 여부</p>
+				<p class="s-para">주차 가능 대수를 모르실 경우 0으로 입력해 주세요.</p>
+				<div class="parking-wrap clearfix">
+					<div class="parking">
+						<input type="radio" id="rd1" class="custom-radio" checked><label for="" class="custom-radio-label all">가상계좌</label>
+					</div>
+					<div class="parking clearfix">
+						<div class="check-parking"><input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">무료</label></div>
+						<div class="count-parking">
+							<input type="text" class="modal-button w-100-per login-inputs" placeholder="0" />
+							<span>대</span>
+						</div>
+					</div>
+					<div class="parking clearfix">
+						<div class="check-parking"><input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">유료</label></div>
+						<div class="count-parking">
+							<input type="text" class="modal-button w-100-per login-inputs" placeholder="0" />
+							<span>대</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">현장매니저 이용 여부</p>
+				<p class="s-para">현장매니저는 게스트 응대와 체크인 안내를 맡아주는 관리자입니다.<br />직접 관리가 힘들 때, 현장 운영을 원활하게 하고 싶다면 현장매니저를 활용해 보세요.</p>
+				<div class="manager-wrap clearfix">
+					<div class="manager-l">
+						<input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">현장매니저는 필요 없어요.</label>
+					</div>
+					<div class="manager-r">
+						<input type="radio" id="" class="custom-radio" checked><label for="" class="custom-radio-label all">현장매니저를 이용할게요.</label>
+					</div>
+				</div>
+				<div class="use-info">
+					<p class="txt">현장매니저를 이용하실 경우 이용에 대한 비용이 발생합니다.<br />이용에 대한 안내는 잇플레이스에게 직접 문의해주세요.</p>
+					<div class="use-confirm">
+						<table class="notable">
+							<tr>
+								<th>전화번호</th>
+								<td>02-1234-5678</td>
+							</tr>
+							<tr>
+								<th>이메일</th>
+								<td>hello@itplace.co.kr</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				
+				<p class="manager-confirm">
+					<input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all">현장매니저에 대한 내용을 확인하였습니다.</label>
+				</p>
+			</div>
+			<div class="two-objects clearfix">
+				<a href="#" class="modal-button bluegray-btn login-button">임시 저장 후 나가기</a><a href="#" class="modal-button green login-button">저장하고 다음으로</a>
+			</div>
+			<a href="#" class="go-back-btn"><img src="img/icons/icon_arrow_left_only.svg" alt="" /><span>이전으로 가기</span></a>
+		</div>
+
+	</div>
+</div>
+
+<!-- Modal : 모달 공통 (case 별 modal-body 부분 변경) -->
+<div class="modal fade" id="alertCommonUseModal" tabindex="-1" role="dialog" aria-labelledby="alertCommonUseModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<!-- 공간사진은 jpg, png, webp 형식의 10mb 이하 파일만 업로드 할 수 있습니다. -->
+				<p class="only-text-center">공간사진은 jpg, png, webp 형식의<br />10mb 이하 파일만 업로드 할 수 있습니다.</p>
+
+				<!-- 공간설명은 500 글자 이내로 작성해 주세요. -->
+				<p class="only-text-center">공간설명은 500 글자 이내로<br />작성해 주세요.</p>
+
+				<!-- 짧은소개는 120 글자 이내로 작성해 주세요. -->
+				<p class="only-text-center">짧은소개는 120 글자 이내로 작성해 주세요.</p>
+
+				<!-- 현장 매니저에 대한 안내 내용 확인을 완료해주세요. -->
+				<p class="only-text-center">현장 매니저에 대한 안내 내용 확인을 완료해주세요.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 공통 모달 -->
+
+<!-- footer -->
+<div class="footer-wrapper">
+	<div class="header-footer-inner">
+		<div class="top clearfix">
+			<h2>IT PLACE</h2>
+			<div class="footer-menu">
+				<a href="#">이용약관</a><span>|</span><a href="#">개인정보처리방침</a><span>|</span><a href="#">자주묻는질문</a><span>|</span><a href="#">문의하기</a>
+			</div>
+		</div>
+		<div class="bottom clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호 <span>|</span> 전화 : +82-2-516-1703<br />
+			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 홍길동<br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/lenis.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+  
+</script>
+</body>
+</html>
+
+

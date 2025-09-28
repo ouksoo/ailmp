@@ -481,6 +481,10 @@ div.error-container {
 	text-align: center;
 	padding-top: 185px;
 
+	&.hosts-error {
+		margin: 100px auto 200px auto;
+		padding-top: 245px;
+	}
 	@media screen and (max-width: 768px) {
 		width: 100%;
 		margin: 100px auto 100px auto;
@@ -571,6 +575,13 @@ div.no-document-lists {
 		background-size: 60px auto;
 	}
 }
+div.host-completed-screen {
+	background: url('../img/icons/icon_host_completed.svg') 50% 15% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
 
 /* 서비스 이용 약관 */
 div.legal-wrapper {
@@ -655,6 +666,11 @@ div.legal-wrapper {
 			font-size: 16px;
 			line-height: 22px;
 			padding-top: 3px;
+		}
+
+		a {
+			text-decoration: underline;
+			color: $green;
 		}
 	}
 	span.green {

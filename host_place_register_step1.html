@@ -68,34 +68,37 @@
 				<a href="#" class="menu-close">닫기</a>
 			</div>
 			<a href="#" class="logout-button">로그아웃</a>
-			<ul class="menus">
-				<li>
-					<a href="javascript:void(0);" class="depth-1">마이페이지</a>
-					<div class="submenus">
-						<a href="#" class="on">예약/결제 내역</a>
-						<a href="#">나의 문의</a>
-						<a href="#">개인 정보 관리</a>
-					</div>
-				</li>
-				<li>
-					<a href="javascript:void(0);" class="depth-1">호스트센터</a>
-					<div class="submenus">
-						<a href="#">공간 등록</a>
-						<a href="#">공간 관리</a>
-						<a href="#">예약 관리</a>
-						<a href="#">Q&A 관리</a>
-					</div>
-				</li>
-				<li>
-					<a href="javascript:void(0);" class="depth-1">고객센터</a>
-					<div class="submenus">
-						<a href="#">공지사항</a>
-						<a href="#">이벤트</a>
-						<a href="#">자주 묻는 질문</a>
-						<a href="#">문의하기</a>
-					</div>
-				</li>
-			</ul>
+			<div class="menu-wrapper">
+				<ul class="menus">
+					<li>
+						<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+						<div class="submenus">
+							<a href="#" class="on">예약/결제 내역</a>
+							<a href="#">나의 문의</a>
+							<a href="#">관심 장소</a>
+							<a href="#">개인 정보 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+						<div class="submenus">
+							<a href="#">공간 등록</a>
+							<a href="#">공간 관리</a>
+							<a href="#">예약 관리</a>
+							<a href="#">Q&A 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">고객센터</a>
+						<div class="submenus">
+							<a href="#">공지사항</a>
+							<a href="#">이벤트</a>
+							<a href="#">자주 묻는 질문</a>
+							<a href="#">문의하기</a>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</aside>
 		<!-- //aside -->
 	</div>
@@ -103,82 +106,76 @@
 <!-- //header -->
 
 <div class="container-wrapper">
-	<!-- 계정 사용이 중지 되었습니다. -->
-	 <div class="account-disabled-wrapper error-container">
-		<p class="txt-1">계정 사용이 중지 되었습니다.</p>
-		<p class="txt-2">관리자에 의해 2025년 7월 1일부터 계정 사용이 중지 되었습니다.<br />관련하여 문의사항은 고객센터 문의하기를 통해 접수해 주세요.</p>
-	 </div>
-	<!-- //계정 사용이 중지 되었습니다. -->
+	<div class="common-wrapper">
 
-	<!-- 계정 사용이 중지 되었습니다. -->
-	 <div class="no-data-wrapper error-container">
-		<p class="txt-1">검색 결과가 없습니다.</p>
-		<p class="txt-2">검색 조건을 변경하고 다시 검색해 주세요.</p>
-	 </div>
-	<!-- //계정 사용이 중지 되었습니다. -->
+		<div class="host-info-wrapper">
+			<div class="register-progress clearfix">
+				<div class="r-wrapper on">
+					<div class="round">1</div>
+					<span>기본 정보</span>
+				</div>
+				<div class="line">&nbsp;</div>
+				<div class="r-wrapper">
+					<div class="round">2</div>
+					<span>상세 정보</span>
+				</div>
+				<div class="line">&nbsp;</div>
+				<div class="r-wrapper">
+					<div class="round">3</div>
+					<span>운영 정보</span>
+				</div>
+			</div>
 
-	<!-- 예약 신청이 완료 되었습니다. -->
-	 <div class="place-reserve-completed error-container">
-		<p class="txt-1">예약 신청이 완료 되었어요.</p>
-		<p class="txt-2">호스트가 내용을 확인 후 예약을 승인하면<br /> 결제 요청을 드리겠습니다.</p>
-		<div class="button-both">
-			<a href="#" class="modal-button dark-gray bd0 search-place-off w220">홈으로 이동</a><a href="#" class="modal-button green bd0 w220">예약 내역 확인</a>
+			<div class="input-section">
+				<div class="both-tit clearfix">
+					<p class="s-tit">공간명 <span>*</span></p>
+					<span class="cnt">0/50 글자</span>
+				</div>
+				<input type="text" class="modal-button w-100-per login-inputs" placeholder="공간명을 입력해 주세요." />
+			</div>
+			<div class="input-section">
+				<p class="s-tit">카테고리 <span>*</span></p>
+				<select class="selectpicker w-100-per">
+					<option>카테고리를 선택해 주세요.</option>
+				</select>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">주소 <span>*</span></p>
+				<div class="input-wrap clearfix">
+					<input type="text" class="modal-button login-inputs" placeholder="주소 검색을 눌러 주세요." /><button class="modal-button bd0 dark-gray addbtn">주소 검색</button>
+				</div>
+				<input type="text" class="modal-button w-100-per login-inputs address" placeholder="상세주소를 직접 입력해 주세요." />
+			</div>
+			<div class="input-section">
+				<p class="s-tit">공간 넓이 <span>*</span></p>
+				<div class="input-wrap clearfix">
+					<input type="text" class="modal-button login-inputs place-width" placeholder="숫자로 입력해주세요." /><span class="sup">m<sup>2</sup></span>
+				</div>
+			</div>
+			<a href="#" class="modal-button w-100-per green host-register-button bd0 login-button go-next">저장하고 다음으로</a>
 		</div>
-	 </div>
-	<!-- //예약 신청이 완료 되었습니다. -->
 
-	<!-- 예약/결제 내역이 없어요. -->
-	<div class="no-reserved-lists error-container">
-		<p class="txt-1">예약/결제 내역이 없어요.</p>
 	</div>
-	<!-- //예약/결제 내역이 없어요. -->
-
-	<!-- 예약 취소 내역이 없어요. -->
-	<div class="no-reserved-lists error-container">
-		<p class="txt-1">예약 취소 내역이 없어요.</p>
-	</div>
-	<!-- //예약 취소 내역이 없어요. -->
-
-	<!-- 문의 내역이 없어요. -->
-	<div class="no-custom-request error-container">
-		<p class="txt-1">문의 내역이 없어요.</p>
-	</div>
-	<!-- //문의 내역이 없어요. -->
-
-	<!-- 문의 내역이 없어요. -->
-	<div class="no-custom-interesting error-container">
-		<p class="txt-1">저장된 관심 장소가 없어요.</p>
-	</div>
-	<!-- //문의 내역이 없어요. -->
-
-	<!-- 표시할 공지사항이 없어요. -->
-	<div class="no-notice-lists error-container">
-		<p class="txt-1">표시할 공지사항이 없어요.</p>
-	</div>
-	<!-- //표시할 공지사항이 없어요. -->
-
-	<!-- 표시할 이벤트가 없어요. -->
-	<div class="no-event-lists error-container">
-		<p class="txt-1">표시할 이벤트가 없어요.</p>
-	</div>
-	<!-- //표시할 이벤트가 없어요. -->
-
-	<!-- 표시할 게시글이 없어요. -->
-	<div class="no-document-lists error-container">
-		<p class="txt-1">표시할 게시글이 없어요.</p>
-	</div>
-	<!-- //표시할 게시글이 없어요. -->
-
-	<!-- 호스트 등록이 완료 되었어요!. -->
-	 <div class="place-reserve-completed error-container">
-		<p class="txt-1">호스트 등록이 완료 되었어요!</p>
-		<p class="txt-2">이제 공간을 등록하면 바로 예약을 받을 수 있습니다.</p>
-		<div class="button-both">
-			<a href="#" class="modal-button green bd0 search-place-off w220">공간 등록하기</a><a href="#" class="modal-button dark-gray bd0 w220">호스트 정보 수정</a>
-		</div>
-	 </div>
-	<!-- //호스트 등록이 완료 되었어요!. -->
 </div>
+
+<!-- Modal : 모달 공통 (case 별 modal-body 부분 변경) -->
+<div class="modal fade" id="alertCommonUseModal" tabindex="-1" role="dialog" aria-labelledby="alertCommonUseModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<!-- 모든 입력란을 작성해 주세요. -->
+				<p class="only-text-center">모든 입력란을 작성해 주세요.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 공통 모달 -->
 
 <!-- footer -->
 <div class="footer-wrapper">
