@@ -120,145 +120,21 @@
 					<span>상세 정보</span>
 				</div>
 				<div class="line">&nbsp;</div>
-				<div class="r-wrapper on">
-					<div class="round">3</div>
+				<div class="r-wrapper completed">
+					<div class="round"></div>
 					<span>운영 정보</span>
 				</div>
 			</div>
 
-			<div class="input-section">
-				<p class="s-tit">운영 시간 <span>*</span></p>
-				<div class="both-objects clearfix">
-					<div class="object l">
-						<select class="selectpicker w-100-per">
-							<option>시작 시간</option>
-						</select>
-					</div>
-					<div class="object r">
-						<select class="selectpicker w-100-per">
-							<option>종료 시간</option>
-						</select>
-					</div>
-				</div>
-				<div class="do-time">
-					<input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all">24시간 운영</label>
-				</div>
+			<!-- 예약/결제 내역이 없어요. -->
+			<div class="place-completed-screen error-container place-ok-error">
+				<p class="txt-1">예약/결제 내역이 없어요.</p>
 			</div>
-			<div class="input-section">
-				<p class="s-tit">요금 설정 <span>*</span></p>
-				<div class="both-objects contain-bg clearfix">
-					<div class="object f">최소 예약 시간 <span class="txt-green">*</span></div>
-					<div class="object s clearfix">
-						<div class="user-make-cnt">
-							<a href="#" class="minus"></a><span class="cnt">1시간</span><a href="#" class="plus"></a>
-						</div>
-					</div>
-				</div>
-				<div class="both-objects contain-bg mg clearfix">
-					<div class="object f big">1시간당 요금 <span class="txt-green">*</span></div>
-					<div class="object s">
-						<div class="user-make-input clearfix">
-							<input type="text" class="modal-button login-inputs" placeholder="금액을 입력해주세요" /><span>원</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="input-section">
-				<p class="s-tit">방문 인원  설정</p>
-				<div class="both-objects contain-bg clearfix">
-					<div class="object f">최대 방문 인원 <span class="txt-green">*</span></div>
-					<div class="object s clearfix">
-						<div class="user-make-cnt">
-							<a href="#" class="minus"></a><span class="cnt">1시간</span><a href="#" class="plus"></a>
-						</div>
-					</div>
-				</div>
-				<div class="both-objects contain-bg mg clearfix">
-					<div class="object f big">초과 1인당 추가 요금 <span class="txt-green">*</span></div>
-					<div class="object s">
-						<div class="user-make-input clearfix">
-							<input type="text" class="modal-button login-inputs" placeholder="금액을 입력해주세요" /><span>원</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="input-section">
-				<p class="s-tit">사전 답사 가능 여부</p>
-				<div class="three-objects clearfix">
-					<div class="object">
-						<input type="radio" id="" class="custom-radio" checked><label for="" class="custom-radio-label all">불가</label>
-					</div>
-					<div class="object">
-						<input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">가능(무료)</label>
-					</div>
-					<div class="object">
-						<input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">가능(유료)</label>
-					</div>
-				</div>
-				<div class="both-objects contain-bg clearfix">
-					<div class="object f">사전 답사 최소 인원 <span class="txt-green">*</span></div>
-					<div class="object s clearfix">
-						<div class="user-make-cnt">
-							<a href="#" class="minus"></a><span class="cnt">1명</span><a href="#" class="plus"></a>
-						</div>
-					</div>
-				</div>
-				<div class="both-objects contain-bg mg clearfix">
-					<div class="object f">사전 답사 최대 인원 <span class="txt-green">*</span></div>
-					<div class="object s">
-						<div class="user-make-cnt">
-							<a href="#" class="minus"></a><span class="cnt">5명</span><a href="#" class="plus"></a>
-						</div>
-					</div>
-				</div>
-				<div class="both-objects contain-bg mg clearfix">
-					<div class="object f">최대 예약 시간 <span class="txt-green">*</span></div>
-					<div class="object s clearfix">
-						<div class="user-make-cnt">
-							<a href="#" class="minus"></a><span class="cnt">1시간</span><a href="#" class="plus"></a>
-						</div>
-					</div>
-				</div>
-				<div class="both-objects contain-bg mg clearfix">
-					<div class="object f big">1시간당 요금 <span class="txt-green">*</span></div>
-					<div class="object s">
-						<div class="user-make-input clearfix">
-							<input type="text" class="modal-button login-inputs" placeholder="금액을 입력해주세요" /><span>원</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="input-section">
-				<p class="s-tit">정기 휴무일 설정 <span>*</span></p>
-				<p class="s-para">입력된 휴무일은 예약 불가로 표시됩니다. </p>
-				<div class="manager-wrap clearfix">
-					<div class="manager-l">
-						<input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">매일 운영할게요.</label>
-					</div>
-					<div class="manager-r">
-						<input type="radio" id="" class="custom-radio" checked><label for="" class="custom-radio-label all">정기 휴무일을 따로 설정하고 싶어요.</label>
-					</div>
-				</div>
-				<div class="day-select">
-					<ul class="clearfix">
-						<li><a href="#">일</a></li>
-						<li><a href="#">월</a></li>
-						<li><a href="#">화</a></li>
-						<li><a href="#">수</a></li>
-						<li><a href="#">목</a></li>
-						<li><a href="#">금</a></li>
-						<li><a href="#">토</a></li>
-					</ul>
-				</div>
-				<p class="manager-confirm holiday">
-					<input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all">법적 공유일 휴무</label>
-				</p>
-			</div>
+			<!-- //예약/결제 내역이 없어요. -->
 
 			<div class="two-objects clearfix">
-				<a href="#" class="modal-button bluegray-btn login-button">임시 저장 후 나가기</a><a href="#" class="modal-button green login-button">공간 등록하기</a>
+				<a href="#" class="modal-button bluegray-btn login-button">공간 수정하기</a><a href="#" class="modal-button green login-button">등록한 공간 확인하기</a>
 			</div>
-			<a href="#" class="go-back-btn"><img src="img/icons/icon_arrow_left_only.svg" alt="" /><span>이전으로 가기</span></a>
 		</div>
 
 	</div>

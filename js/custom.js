@@ -480,6 +480,17 @@ var AILMP = {
 			$('div.payment-method div.payment-' + tabNum).css('display', 'block');
 		});
 
+		//호스트 예약관리 텝
+		$('div.host-reservation-tabs div.tab-btn a').on('click', function() {
+			let tabNum = $(this).data('tab');
+			$('div.host-reservation-tabs div.tab-btn a').removeClass('on');
+			$('div.host-reservation-tabs span.host-select').css('display', 'none'); //텝의 검색 select 초기화
+ 			$('div.host-reservation-list').css('display', 'none');
+			$(this).addClass('on');
+			$('div.host-reservatoin-tab-' + tabNum).css('display', 'block');
+			$('div.host-reservation-tabs span.host-select-' + tabNum).css('display', 'inline-block');
+		});
+
 		//고객센터 텝
 		$('div.custom-tabs div.tab-btn a').on('click', function() {
 			let tabNum = $(this).data('tab');

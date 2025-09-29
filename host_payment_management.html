@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<!-- 공통 -->
+<div class="film-common"></div>
+<a href="#" class="go-top-btn"></a>
+<!-- //공통 -->
+
+<!-- header -->
+<div class="header-wrapper">
+	<div class="header-footer-inner nomobile clearfix">
+		<div class="film-normal"></div>
+		<div class="header-left clearfix">
+			<h1>IT PLACE</h1>
+			<a href="#" class="find-search-show"><span>공간찾기</span></a>
+			<a href="#" class="reg-place-show"><span>등록하기</span></a>
+		</div>
+		<div class="header-right clearfix">
+			<a href="#" class="tops a">검색</a><div class="b"><p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p></div><a href="#" class="tops c">알림<span class="notice"></span></a><a href="#" class="tops d">메뉴</a>
+			<div class="search-box clearfix">
+				<input type="text" placeholder="어떤 공간을 찾고 있나요? 예) 포근한 가정집" />
+				<button class="search-btn">검색</button>
+			</div>
+
+		</div>
+
+		<!-- 공지 알람 -->
+		<div class="notification-wrap">
+			<div class="inner" data-simplebar>
+				<ul>
+					<li>
+						<p class="a">예약</p>
+						<p class="b">신청하신 예스스튜디오 예약이 호스트에 의해 승인 되었습니다.</p>
+						<p class="c">2025/06/10 13:55</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- aside -->
+		<aside class="lnb-wrapper">
+			<div class="menu-header">
+				<div class="login-button">
+					<p class="bloom-login"><a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a></p>
+					<p class="greeting-msg" style="display: none;"><span>홍길동</span>님, 반갑습니다.</p>
+				</div>
+				<a href="#" class="tops c">알림<span class="notice"></span></a>
+				<a href="#" class="menu-close">닫기</a>
+			</div>
+			<a href="#" class="logout-button">로그아웃</a>
+			<div class="menu-wrapper">
+				<ul class="menus">
+					<li>
+						<a href="javascript:void(0);" class="depth-1">마이페이지</a>
+						<div class="submenus">
+							<a href="#" class="on">예약/결제 내역</a>
+							<a href="#">나의 문의</a>
+							<a href="#">관심 장소</a>
+							<a href="#">개인 정보 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">호스트센터</a>
+						<div class="submenus">
+							<a href="#">공간 등록</a>
+							<a href="#">공간 관리</a>
+							<a href="#">예약 관리</a>
+							<a href="#">Q&A 관리</a>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="depth-1">고객센터</a>
+						<div class="submenus">
+							<a href="#">공지사항</a>
+							<a href="#">이벤트</a>
+							<a href="#">자주 묻는 질문</a>
+							<a href="#">문의하기</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<!-- //aside -->
+	</div>
+</div>
+<!-- //header -->
+ 
+<div class="container-wrapper">
+	<div class="common-wrapper">
+		<div class="host-payment-wrapper">
+			<div class="common-title-area">
+				<p class="s-title">정산 관리</p>
+				<p class="s-txt">집계는 예약 신청일이 아닌, 공간 이용일을 기준으로 진행됩니다.</p>
+			</div>
+
+			<div class="host-select-date">
+				<div class="dates clearfix">
+					<a href="#" class="prev">이전</a>
+					<div class="selects">
+						<span class="s-1">
+							<select class="selectpicker w-100-per">
+								<option>2025년</option>
+							</select>
+						</span><span class="s-2">
+							<select class="selectpicker w-100-per">
+								<option>08월</option>
+							</select>
+						</span>
+					</div>
+					<a href="#" class="next">다음</a>
+				</div>
+			</div>
+
+			<!-- 해당 기간에 예약/정산 내역이 없어요. -->
+			<div class="no-document-lists error-container">
+				<p class="txt-1">해당 기간에 예약/정산 내역이 없어요.</p>
+			</div>
+			<!-- //해당 기간에 예약/정산 내역이 없어요. -->
+
+			<div class="host-reserve-tit">예약 현황</div>
+			<div class="reservation-status clearfix">
+				<ul class="re-s">
+					<li>
+						<p class="t-1">총 예약 건</p>
+						<p class="t-2">27<span>건</span></p>
+					</li>
+					<li>
+						<p class="t-1">이용 완료</p>
+						<p class="t-2">20<span>건</span></p>
+					</li>
+					<li>
+						<p class="t-1">예약 거절</p>
+						<p class="t-2">5<span>건</span></p>
+					</li>
+					<li>
+						<p class="t-1">예약 취소</p>
+						<p class="t-2">3<span>건</span></p>
+					</li>
+				</ul>
+			</div>
+
+			<div class="host-reserve-tit">정산 현황</div>
+			<div class="reservation-status clearfix">
+				<ul class="re-a">
+					<li>
+						<p class="t-1">총 매출액</p>
+						<p class="t-2">5,000,000<span>원</span></p>
+					</li>
+					<li>
+						<p class="t-1">수수료</p>
+						<p class="t-2">1,200,000<span>원</span></p>
+					</li>
+					<li>
+						<p class="t-1">정산 완료</p>
+						<p class="t-2">3,800,000<span>원</span></p>
+					</li>
+				</ul>
+			</div>
+
+			<div class="host-reserve-tit">상세 내역</div>
+			<div class="status-detail">
+				<table class="host-status-table">
+				<thead>
+					<tr>
+						<th>공간명</th>
+						<th>예약 신청일</th>
+						<th>공간 이용일</th>
+						<th>예약 상태</th>
+						<th>결재 금액</th>
+						<th>정산 금액</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">120,000원</td>
+						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+					</tr>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">-</td>
+						<td data-label="정산 금액"><span class="warning">정산 불가</span></td>
+					</tr>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">120,000원</td>
+						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+					</tr>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">120,000원</td>
+						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+					</tr>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">120,000원</td>
+						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+					</tr>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">120,000원</td>
+						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+					</tr>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">-</td>
+						<td data-label="정산 금액"><span class="warning">정산 불가</span></td>
+					</tr>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">120,000원</td>
+						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+					</tr>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">120,000원</td>
+						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+					</tr>
+					<tr>
+						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+						<td data-label="예약 신청일">2025. 05. 28</td>
+						<td data-label="공간 이용일">2025. 05. 28</td>
+						<td data-label="예약 상태">이용 완료</td>
+						<td data-label="결재 금액">120,000원</td>
+						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+					</tr>
+				</tbody>
+				</table>
+
+				<div class="pagenation">
+					<a href="#" class="first">처음으로</a>
+					<a href="#" class="prev">이전</a>
+
+					<a href="#" class="on">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">6</a>
+					<a href="#">7</a>
+					<a href="#">8</a>
+					<a href="#">9</a>
+					<a href="#">10</a>
+
+					<a href="#" class="next">다음</a>
+					<a href="#" class="last">마지막</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<div class="footer-wrapper">
+	<div class="header-footer-inner">
+		<div class="top clearfix">
+			<h2>IT PLACE</h2>
+			<div class="footer-menu">
+				<a href="#">이용약관</a><span>|</span><a href="#">개인정보처리방침</a><span>|</span><a href="#">자주묻는질문</a><span>|</span><a href="#">문의하기</a>
+			</div>
+		</div>
+		<div class="bottom pc clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호 <span>|</span> 전화 : +82-2-516-1703<br />
+			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 홍길동<br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+		<div class="bottom mo clearfix">
+			<p>(주)잇플레이스</p>
+			대표 : 최은주<br />
+			사업자등록번호 :  000-00-0000<br />
+			통신판매업신고번호 :  2025-서울성동-0000호<br />
+			개인정보보호 책임자 : 홍길동<br />
+			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호<br />
+			전화 : +82-2-516-1703<br /><br />
+			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
+		</div>
+	</div>
+</div>
+<!-- //footer -->
+
+<!-- Modal : 고객센터 문의 수정하기 -->
+<div class="modal fade" id="customerQuestionModifyModal" tabindex="-1" role="dialog" aria-labelledby="customerQuestionModifyModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-600" role="document">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<h5 class="modal-title">고객센터 문의 수정하기</h5>
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+
+			<div class="modal-body">
+				<div class="custom-host-question">
+					<div class="word-count"><!-- 글자수 초과 시 class="warning" 추가 -->
+						<span>0/150 글자</span>
+					</div>
+					<textarea placeholder="내용을 입력해 주세요."></textarea>
+				</div>
+			</div>
+			<div class="modal-footer border-ed custom-reserve-detail-footer">
+				<a href="#" class="modal-button bluegray-btn" data-bs-dismiss="modal">취소</a><a href="#" class="modal-button light-gray" data-bs-toggle="modal" data-bs-target="#customHostQuestionOkModal">수정 완료</a><!-- 글 작성 시 "light-gray -> green" -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 고객센터 문의 수정하기 -->
+
+<!-- Modal : 글자수 초과 -->
+<div class="modal fade" id="modifyContextOverflowModal" tabindex="-1" role="dialog" aria-labelledby="modifyContextOverflowModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<p class="only-text-center">글자 수가 초과 되었어요.<br />150자 이내로 작성해 주세요.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 글자수 초과 -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/lenis.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+  
+</script>
+</body>
+</html>
+
+

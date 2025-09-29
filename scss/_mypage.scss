@@ -827,6 +827,10 @@ div.custom-host-question {
 		text-align: right;
 		color: #A2A2A4;
 		padding-bottom: 6px;
+
+		&.warning {
+			color: #E75B3C;
+		}
 	}
 	textarea {
 		background: #F7F7F7;

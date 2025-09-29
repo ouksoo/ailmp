@@ -109,23 +109,161 @@
 	<div class="common-wrapper">
 
 		<div class="host-info-wrapper">
-			<div class="register-progress clearfix">
-				<div class="r-wrapper completed">
-					<div class="round"></div>
-					<span>기본 정보</span>
+			<!-- step 1 -->
+			<div class="input-section">
+				<div class="both-tit clearfix">
+					<p class="s-tit">공간명 <span>*</span></p>
+					<span class="cnt">0/50 글자</span>
 				</div>
-				<div class="line completed">&nbsp;</div>
-				<div class="r-wrapper completed">
-					<div class="round"></div>
-					<span>상세 정보</span>
+				<input type="text" class="modal-button w-100-per login-inputs" placeholder="공간명을 입력해 주세요." />
+			</div>
+			<div class="input-section">
+				<p class="s-tit">카테고리 <span>*</span></p>
+				<select class="selectpicker w-100-per">
+					<option>카테고리를 선택해 주세요.</option>
+				</select>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">주소 <span>*</span></p>
+				<div class="input-wrap clearfix">
+					<input type="text" class="modal-button login-inputs" placeholder="주소 검색을 눌러 주세요." /><button class="modal-button bd0 dark-gray addbtn">주소 검색</button>
 				</div>
-				<div class="line">&nbsp;</div>
-				<div class="r-wrapper on">
-					<div class="round">3</div>
-					<span>운영 정보</span>
+				<input type="text" class="modal-button w-100-per login-inputs address" placeholder="상세주소를 직접 입력해 주세요." />
+			</div>
+			<div class="input-section">
+				<p class="s-tit">공간 넓이 <span>*</span></p>
+				<div class="input-wrap clearfix">
+					<input type="text" class="modal-button login-inputs place-width" placeholder="숫자로 입력해주세요." /><span class="sup">m<sup>2</sup></span>
 				</div>
 			</div>
 
+			<!-- step 2 -->
+			<div class="input-section">
+				<p class="s-tit">공간사진 (최대 12장) <span>*</span></p>
+				<p class="s-para">
+					jpg, png, webp 형식의 10mb 이하 파일을 업로드 해주세요.<br />
+					고화질의 퀄리티 있는 사진을 올려 주시면 <span class="black">메인에 노출될 확률이 높아집니다.</span><br />
+					<span class="txt-green">(1920*1080 이상의 해상도 이미지를 업로드하시면 공간이 더욱 돋보여요!)</span>
+				</p>
+				<div class="selected-pictures clearfix">
+					<!-- loop -->
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<!-- //loop -->
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture">
+						<a href="#" class="remove-pic">삭제</a>
+						<img src="img/sample/host_img_3.png" />
+					</div>
+					<div class="picture addbtn">
+						<a href="#">파일추가</a>
+					</div>
+				</div>
+			</div>
+			<div class="input-section">
+				<div class="both-tit clearfix">
+					<p class="s-tit">공간 설명 <span>*</span></p>
+					<span class="cnt">0/500 글자</span>
+				</div>
+				<p class="s-para">공간에 대해 상세한 설명을 자유롭게 작성해주세요.</p>
+				<textarea rows="10">[시간 엄수]
+				계약된 시간을 꼭 준수하여 주시기 바랍니다.
+				이용요금은 [시작시간] 및 [종료 시간]으로 계약됩니다.
+				촬영 준비 및 세팅, 장비 철수 및 장소 원상복구 시간은 계약 시간에 포함 되어있습니다.
+				계약된 찰영 시간을 초과할 경우 호스트가 추가결제를 요청할 수 있습니다.
+
+				[파손 주의]
+				삼각대, 조명, 철제박스, 감독 의자, 기타 장비로 인한 나무 바닥과 벽지 파손에 주의해주세요.</textarea>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">짧은 소개</p>
+				<div class="both-tit clearfix">
+					<p class="s-para floatl">메인화면에 노출될 때 보여지는 짧은 소개글입니다.</p>
+					<span class="cnt lineheight">0/120 글자</span>
+				</div>
+				<textarea rows="3">밴드 연습실, 댄스연습실, 지하 아지트 컨셉의 스튜디오입니다.
+				칠(Chill)&시크(Chic)한 무드와 힙하고 펑키한 무드를 동시에 촬영할 수 있습니다. 무료 대여가능한 포그머신과 조명을 활용하여 멋진 장면을 담아가세요.</textarea>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">주차 가능 여부</p>
+				<p class="s-para">주차 가능 대수를 모르실 경우 0으로 입력해 주세요.</p>
+				<div class="parking-wrap clearfix">
+					<div class="parking">
+						<input type="radio" id="rd1" class="custom-radio" checked><label for="" class="custom-radio-label all">가상계좌</label>
+					</div>
+					<div class="parking clearfix">
+						<div class="check-parking"><input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">무료</label></div>
+						<div class="count-parking">
+							<input type="text" class="modal-button w-100-per login-inputs" placeholder="0" />
+							<span>대</span>
+						</div>
+					</div>
+					<div class="parking clearfix">
+						<div class="check-parking"><input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">유료</label></div>
+						<div class="count-parking">
+							<input type="text" class="modal-button w-100-per login-inputs" placeholder="0" />
+							<span>대</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="input-section">
+				<p class="s-tit">현장매니저 이용 여부</p>
+				<p class="s-para">현장매니저는 게스트 응대와 체크인 안내를 맡아주는 관리자입니다.<br />직접 관리가 힘들 때, 현장 운영을 원활하게 하고 싶다면 현장매니저를 활용해 보세요.</p>
+				<div class="manager-wrap clearfix">
+					<div class="manager-l">
+						<input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">현장매니저는 필요 없어요.</label>
+					</div>
+					<div class="manager-r">
+						<input type="radio" id="" class="custom-radio" checked><label for="" class="custom-radio-label all">현장매니저를 이용할게요.</label>
+					</div>
+				</div>
+				<div class="use-info">
+					<p class="txt">현장매니저를 이용하실 경우 이용에 대한 비용이 발생합니다.<br />이용에 대한 안내는 잇플레이스에게 직접 문의해주세요.</p>
+					<div class="use-confirm">
+						<table class="notable">
+							<tr>
+								<th>전화번호</th>
+								<td>02-1234-5678</td>
+							</tr>
+							<tr>
+								<th>이메일</th>
+								<td>hello@itplace.co.kr</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<p class="manager-confirm">
+					<input type="checkbox" id="" class="custom-checkbox" checked><label for="" class="custom-label all">현장매니저에 대한 내용을 확인하였습니다.</label>
+				</p>
+			</div>
+
+			<!-- step 3 -->
 			<div class="input-section">
 				<p class="s-tit">운영 시간 <span>*</span></p>
 				<div class="both-objects clearfix">
@@ -139,9 +277,6 @@
 							<option>종료 시간</option>
 						</select>
 					</div>
-				</div>
-				<div class="do-time">
-					<input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all">24시간 운영</label>
 				</div>
 			</div>
 			<div class="input-section">
@@ -241,48 +376,24 @@
 				</div>
 				<div class="day-select">
 					<ul class="clearfix">
-						<li><a href="#">일</a></li>
+						<li><a href="#" class="on">일</a></li>
 						<li><a href="#">월</a></li>
 						<li><a href="#">화</a></li>
 						<li><a href="#">수</a></li>
 						<li><a href="#">목</a></li>
 						<li><a href="#">금</a></li>
-						<li><a href="#">토</a></li>
+						<li><a href="#" class="on">토</a></li>
 					</ul>
 				</div>
 				<p class="manager-confirm holiday">
-					<input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all">법적 공유일 휴무</label>
+					<input type="checkbox" id="" class="custom-checkbox" checked><label for="" class="custom-label all">법적 공유일 휴무</label>
 				</p>
 			</div>
-
-			<div class="two-objects clearfix">
-				<a href="#" class="modal-button bluegray-btn login-button">임시 저장 후 나가기</a><a href="#" class="modal-button green login-button">공간 등록하기</a>
-			</div>
-			<a href="#" class="go-back-btn"><img src="img/icons/icon_arrow_left_only.svg" alt="" /><span>이전으로 가기</span></a>
+			<a href="#" class="modal-button w-100-per green host-register-button bd0 login-button go-next">수정 내용 저장</a>
 		</div>
 
 	</div>
 </div>
-
-<!-- Modal : 공간등록 최종확인 -->
-<div class="modal fade" id="placeRegisterConfirmModal" tabindex="-1" role="dialog" aria-labelledby="placeRegisterConfirmModal" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered w-480" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
-			</div>
-			<div class="modal-body">
-				<p class="only-text-center">공간 등록 완료 즉시 공간 노출이 시작됩니다.<br />작성 내용을 한번 더 검토하려면<br />임시 저장 후 나가기를 선택해 주세요.</p>
-			</div>
-			<div class="modal-footer">
-				<div class="two-buttons clearfix">
-					<a href="#" class="floatl modal-button gray" data-bs-dismiss="modal">취소</a><a href="#" class="floatr modal-button green">등록 하기</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //Modal : 공간등록 최종확인 -->
 
 <!-- Modal : 모달 공통 (case 별 modal-body 부분 변경) -->
 <div class="modal fade" id="alertCommonUseModal" tabindex="-1" role="dialog" aria-labelledby="alertCommonUseModal" aria-hidden="true">
@@ -292,20 +403,8 @@
 				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
 			</div>
 			<div class="modal-body">
-				<!-- 운영 시간 > 시작 시간을 입력해주세요. -->
-				<p class="only-text-center">운영 시간 > 시작 시간을 입력해주세요.</p>
-
-				<!-- 운영 시간 > 종료 시간을 입력해주세요. -->
-				<p class="only-text-center">운영 시간 > 종료 시간을 입력해주세요.</p>
-
-				<!-- 요금 설정 > 1시간당 요금을 작성해 주세요. -->
-				<p class="only-text-center">요금 설정 > 1시간당 요금을 작성해 주세요.</p>
-
-				<!-- 방문 인원 선택 > 초과 1인당 추가 요금을 작성해 주세요. -->
-				<p class="only-text-center">방문 인원 선택 > 초과 1인당 추가 요금을 작성해 주세요.</p>
-
-				<!-- 사전 답사 가능 여부 > 1시간당 요금을 작성해 주세요. -->
-				<p class="only-text-center">사전 답사 가능 여부 > 1시간당 요금을 작성해 주세요.</p>
+				<!-- 모든 입력란을 작성해 주세요. -->
+				<p class="only-text-center">모든 입력란을 작성해 주세요.</p>
 			</div>
 			<div class="modal-footer">
 				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>

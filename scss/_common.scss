@@ -485,6 +485,10 @@ div.error-container {
 		margin: 100px auto 200px auto;
 		padding-top: 245px;
 	}
+	&.place-ok-error {
+		margin: 80px auto 20px auto;
+		padding-top: 200px;
+	}
 	@media screen and (max-width: 768px) {
 		width: 100%;
 		margin: 100px auto 100px auto;
@@ -577,6 +581,13 @@ div.no-document-lists {
 }
 div.host-completed-screen {
 	background: url('../img/icons/icon_host_completed.svg') 50% 15% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
+div.place-completed-screen {
+	background: url('../img/icons/icon_place_ok.svg') 50% 15% no-repeat;
 
 	@media screen and (max-width: 768px) {
 		background-size: 60px auto;

@@ -109,24 +109,22 @@
 	<div class="common-wrapper">
 		<div class="mypage-request-wrapper">
 			<div class="common-title-area">
-				<p class="s-title">홍길동 님의 문의 내역</p>
-				<p class="s-txt">총 문의 내역이 <span class="green">1건</span> 있어요.</p>
+				<p class="s-title">잇스튜디오님께 문의한 내역</p>
+				<p class="s-txt">총 문의 내역이 <span class="green">20건</span> 있어요.</p>
 			</div>
 
 			<div class="mypage-request-search clearfix">
 				<div class="tab-btn"></div>
-				<div class="status"><!-- 검색 결과 없을 경우 hidden -->
-					<span>답변 상태</span>
+				<div class="status">
+					<span>카테고리</span>
+					<select class="selectpicker both" data-container="body">
+						<option>전체</option>
+					</select>
+					<span></span>
 					<select class="selectpicker both" data-container="body">
 						<option>전체</option>
 						<option>답변 완료</option>
 						<option>미답변</option>
-					</select>
-					<span>문의 종류</span>
-					<select class="selectpicker both" data-container="body">
-						<option>전체</option>
-						<option>호스트 문의</option>
-						<option>고객센터 문의</option>
 					</select>
 					<span>조회 기간</span>
 					<select class="selectpicker both" data-container="body">
@@ -139,17 +137,11 @@
 				</div>
 			</div>
 
-			<!-- 문의 내역이 없어요. -->
-			<div class="no-custom-request error-container" style="display: none;">
-				<p class="txt-1">문의 내역이 없어요.</p>
-			</div>
-			<!-- //문의 내역이 없어요. -->
-
 			<ul class="mypage-request-list">
 				<li>
 					<div class="area-1 clearfix">
-						<span class="status a-1">호스트 문의</span><!-- a-1 : 호스트 문의, a-2 : 고객센터 문의 -->
-						<div class="control"><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#myquestionRemoveContentModal">삭제</a></div>
+						<span class="status a-1">카테고리</span><!-- a-1 : 카테고리 -->
+						<div class="control"><a href="#" class="modify-item" data-bs-toggle="modal" data-bs-target="#customerQuestionModifyModal">수정</a></div>
 					</div>
 					<div class="area-2 clearfix">
 						<div class="thumbnail"><img src="img/sample/sample_person.png" alt="" /></div>
@@ -171,8 +163,8 @@
 
 				<li>
 					<div class="area-1 clearfix">
-						<span class="status a-2">고객센터 문의</span><!-- a-1 : 호스트 문의, a-2 : 고객센터 문의 -->
-						<div class="control"><a href="#" class="modify-item" data-bs-toggle="modal" data-bs-target="#customerQuestionModifyModal">수정</a><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#myquestionRemoveContentModal">삭제</a></div>
+						<span class="status a-1">카테고리</span><!-- a-1 : 카테고리 -->
+						<div class="control"><a href="#" class="modify-item" data-bs-toggle="modal" data-bs-target="#customerQuestionModifyModal">수정</a></div>
 					</div>
 					<div class="area-2 clearfix">
 						<div class="thumbnail"><img src="img/sample/sample_person.png" alt="" /></div>
@@ -187,28 +179,7 @@
 						<p class="txt-2">홍*동 <span>|</span> 2025. 07. 03</p>
 					</div>
 				</li>
-				<li>
-					<div class="area-1 clearfix">
-						<span class="status a-1">호스트 문의</span><!-- a-1 : 호스트 문의, a-2 : 고객센터 문의 -->
-						<div class="control"><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#myquestionRemoveContentModal">삭제</a></div>
-					</div>
-					<div class="area-2 clearfix">
-						<div class="thumbnail"><img src="img/sample/sample_person.png" alt="" /></div>
-						<div class="title-info clearfix">
-							<p class="t-1">잇스튜디오</p>
-							<p class="t-2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-						</div>
-					</div>
-					<div class="area-3 question">
-						<span class="now-status completed">답변 완료</span>
-						<p class="txt-1">질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다. 질문 내용 입니다.</p>
-						<p class="txt-2">홍*동 <span>|</span> 2025. 07. 03</p>
-					</div>
-					<div class="area-4 answer">
-						<p class="txt-1">답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 답변 내용 입니다 .</p>
-						<p class="txt-2">잇스튜디오 <span>|</span> 2025. 07. 03</p>
-					</div>
-				</li>
+				
 			</ul>
 			<a href="#" class="more">+ 더보기</a>
 		</div>
@@ -244,51 +215,6 @@
 	</div>
 </div>
 <!-- //footer -->
-
-<!-- Modal : 나의 문의 > 내용삭제 -->
-<div class="modal fade" id="myquestionRemoveContentModal" tabindex="-1" role="dialog" aria-labelledby="myquestionRemoveContentModal" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered w-480" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
-			</div>
-			<div class="modal-body">
-				<p class="only-text-center">문의 내역을 삭제하시겠어요?</p>
-			</div>
-			<div class="modal-footer">
-				<div class="two-buttons clearfix">
-					<a href="#" class="floatl modal-button gray" data-bs-dismiss="modal">취소</a><a href="#" class="floatr modal-button green">삭제</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //Modal : 나의 문의 > 내용삭제 -->
-
-<!-- Modal : 호스트 문의 수정하기 -->
-<div class="modal fade" id="customHostQuestionModifyModal" tabindex="-1" role="dialog" aria-labelledby="customHostQuestionModifyModal" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered w-600" role="document">
-		<div class="modal-content">
-			<div class="modal-header bordered">
-				<h5 class="modal-title">호스트 문의 수정하기</h5>
-				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
-			</div>
-
-			<div class="modal-body">
-				<div class="custom-host-question">
-					<div class="word-count"><!-- 글자수 초과 시 class="warning" 추가 -->
-						<span>0/150 글자</span>
-					</div>
-					<textarea placeholder="내용을 입력해 주세요. (줄바꿈이 불가능합니다. 글을 이어서 써주세요)"></textarea>
-				</div>
-			</div>
-			<div class="modal-footer border-ed custom-reserve-detail-footer">
-				<a href="#" class="modal-button bluegray-btn" data-bs-dismiss="modal">취소</a><a href="#" class="modal-button light-gray" data-bs-toggle="modal" data-bs-target="#customHostQuestionOkModal">수정 완료</a><!-- 글 작성 시 "light-gray -> green" -->
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //Modal : 호스트 문의 수정하기 -->
 
 <!-- Modal : 고객센터 문의 수정하기 -->
 <div class="modal fade" id="customerQuestionModifyModal" tabindex="-1" role="dialog" aria-labelledby="customerQuestionModifyModal" aria-hidden="true">
@@ -332,24 +258,6 @@
 	</div>
 </div>
 <!-- //Modal : 글자수 초과 -->
-
-<!-- Modal : 내용을 입력해주세요 -->
-<div class="modal fade" id="pleaseInputCententModal" tabindex="-1" role="dialog" aria-labelledby="pleaseInputCententModal" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered w-480" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
-			</div>
-			<div class="modal-body">
-				<p class="only-text-center">내용을 입력해주세요.</p>
-			</div>
-			<div class="modal-footer">
-				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //Modal : 내용을 입력해주세요 -->
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/lenis.min.js"></script>
