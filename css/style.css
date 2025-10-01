@@ -10367,11 +10367,6 @@ div.host-info-wrapper div.three-objects {
 div.host-info-wrapper div.three-objects div.object {
   width: 33.3%;
 }
-@media screen and (max-width: 767px) {
-  div.host-info-wrapper div.three-objects div.object {
-    display: none;
-  }
-}
 div.host-info-wrapper div.three-objects div.object:nth-child(1) {
   float: left;
 }

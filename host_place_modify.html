@@ -321,44 +321,46 @@
 				<p class="s-tit">사전 답사 가능 여부</p>
 				<div class="three-objects clearfix">
 					<div class="object">
-						<input type="radio" id="" class="custom-radio" checked><label for="" class="custom-radio-label all">불가</label>
+						<input type="radio" id="checkInAdvanceNo" name="checkInAdvance" value="no" class="custom-radio" checked><label for="checkInAdvanceNo" class="custom-radio-label all">불가</label>
 					</div>
 					<div class="object">
-						<input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">가능(무료)</label>
+						<input type="radio" id="checkInAdvanceFree" name="checkInAdvance" value="free" class="custom-radio"><label for="checkInAdvanceFree" class="custom-radio-label all">가능(무료)</label>
 					</div>
 					<div class="object">
-						<input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">가능(유료)</label>
+						<input type="radio" id="checkInAdvancePay" name="checkInAdvance" value="pay" class="custom-radio"><label for="checkInAdvancePay" class="custom-radio-label all">가능(유료)</label>
 					</div>
 				</div>
-				<div class="both-objects contain-bg clearfix">
-					<div class="object f">사전 답사 최소 인원 <span class="txt-green">*</span></div>
-					<div class="object s clearfix">
-						<div class="user-make-cnt">
-							<a href="#" class="minus"></a><span class="cnt">1명</span><a href="#" class="plus"></a>
+				<div class="check-in-advance">
+					<div class="both-objects contain-bg clearfix">
+						<div class="object f">사전 답사 최소 인원 <span class="txt-green">*</span></div>
+						<div class="object s clearfix">
+							<div class="user-make-cnt">
+								<a href="#" class="minus"></a><span class="cnt">1명</span><a href="#" class="plus"></a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="both-objects contain-bg mg clearfix">
-					<div class="object f">사전 답사 최대 인원 <span class="txt-green">*</span></div>
-					<div class="object s">
-						<div class="user-make-cnt">
-							<a href="#" class="minus"></a><span class="cnt">1명</span><a href="#" class="plus"></a>
+					<div class="both-objects contain-bg mg clearfix">
+						<div class="object f">사전 답사 최대 인원 <span class="txt-green">*</span></div>
+						<div class="object s">
+							<div class="user-make-cnt">
+								<a href="#" class="minus"></a><span class="cnt">1명</span><a href="#" class="plus"></a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="both-objects contain-bg mg clearfix">
-					<div class="object f">최대 예약 시간 <span class="txt-green">*</span></div>
-					<div class="object s clearfix">
-						<div class="user-make-cnt">
-							<a href="#" class="minus"></a><span class="cnt">1시간</span><a href="#" class="plus"></a>
+					<div class="both-objects contain-bg mg clearfix">
+						<div class="object f">최대 예약 시간 <span class="txt-green">*</span></div>
+						<div class="object s clearfix">
+							<div class="user-make-cnt">
+								<a href="#" class="minus"></a><span class="cnt">1시간</span><a href="#" class="plus"></a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="both-objects contain-bg mg clearfix">
-					<div class="object f big">1시간당 요금 <span class="txt-green">*</span></div>
-					<div class="object s">
-						<div class="user-make-input clearfix">
-							<input type="text" class="modal-button login-inputs" placeholder="금액을 입력해주세요" /><span>원</span>
+					<div class="both-objects contain-bg mg clearfix pay-to-time">
+						<div class="object f big">1시간당 요금 <span class="txt-green">*</span></div>
+						<div class="object s">
+							<div class="user-make-input clearfix">
+								<input type="text" class="modal-button login-inputs" placeholder="금액을 입력해주세요" /><span>원</span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -368,26 +370,28 @@
 				<p class="s-para">입력된 휴무일은 예약 불가로 표시됩니다. </p>
 				<div class="manager-wrap clearfix">
 					<div class="manager-l">
-						<input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">매일 운영할게요.</label>
+						<input type="radio" id="holidaySelectOptionNo" name="holidaySelectOption" value="hide" class="custom-radio" checked><label for="holidaySelectOptionNo" class="custom-radio-label all">매일 운영할게요.</label>
 					</div>
 					<div class="manager-r">
-						<input type="radio" id="" class="custom-radio" checked><label for="" class="custom-radio-label all">정기 휴무일을 따로 설정하고 싶어요.</label>
+						<input type="radio" id="holidaySelectOptionYes" name="holidaySelectOption" value="show" class="custom-radio"><label for="holidaySelectOptionYes" class="custom-radio-label all">정기 휴무일을 따로 설정하고 싶어요.</label>
 					</div>
 				</div>
-				<div class="day-select">
-					<ul class="clearfix">
-						<li><a href="#" class="on">일</a></li>
-						<li><a href="#">월</a></li>
-						<li><a href="#">화</a></li>
-						<li><a href="#">수</a></li>
-						<li><a href="#">목</a></li>
-						<li><a href="#">금</a></li>
-						<li><a href="#" class="on">토</a></li>
-					</ul>
+				<div class="holiday-select-option">
+					<div class="day-select">
+						<ul class="clearfix">
+							<li><a href="#" class="on">일</a></li>
+							<li><a href="#">월</a></li>
+							<li><a href="#">화</a></li>
+							<li><a href="#">수</a></li>
+							<li><a href="#">목</a></li>
+							<li><a href="#">금</a></li>
+							<li><a href="#" class="on">토</a></li>
+						</ul>
+					</div>
+					<p class="manager-confirm holiday">
+						<input type="checkbox" id="" class="custom-checkbox" checked><label for="" class="custom-label all">법적 공유일 휴무</label>
+					</p>
 				</div>
-				<p class="manager-confirm holiday">
-					<input type="checkbox" id="" class="custom-checkbox" checked><label for="" class="custom-label all">법적 공유일 휴무</label>
-				</p>
 			</div>
 			<a href="#" class="modal-button w-100-per green host-register-button bd0 login-button go-next">수정 내용 저장</a>
 		</div>
