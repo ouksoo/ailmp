@@ -779,6 +779,9 @@ div.container-wrapper.main-container .place-list-wrapper {
   div.container-wrapper {
     padding-top: 120px;
   }
+  div.container-wrapper.host-wrapper {
+    padding-top: 100px;
+  }
 }
 div.container-wrapper div.common-wrapper {
   padding: 100px 0 200px 0;
@@ -789,6 +792,9 @@ div.container-wrapper div.common-wrapper.main-container {
 @media screen and (max-width: 768px) {
   div.container-wrapper div.common-wrapper {
     padding: 50px 0 50px 0;
+  }
+  div.container-wrapper div.common-wrapper.host-container {
+    padding: 0px 0 0px 0;
   }
 }
 
@@ -2555,9 +2561,28 @@ div.error-container.hosts-error {
   margin: 100px auto 200px auto;
   padding-top: 245px;
 }
+@media screen and (max-width: 768px) {
+  div.error-container.hosts-error {
+    width: 100%;
+    margin: 0px auto 50px auto;
+    padding-top: 120px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  div.error-container.hosts-error p.txt-2 span {
+    display: block;
+    line-height: 18px;
+  }
+}
 div.error-container.place-ok-error {
   margin: 80px auto 20px auto;
   padding-top: 200px;
+}
+@media screen and (max-width: 767px) {
+  div.error-container.place-ok-error {
+    margin: 50px auto 20px auto;
+    padding-top: 120px;
+  }
 }
 @media screen and (max-width: 768px) {
   div.error-container {
@@ -2566,6 +2591,9 @@ div.error-container.place-ok-error {
     padding-top: 100px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+  div.error-container.host-payment-lists {
+    margin: 50px auto 50px auto;
   }
 }
 div.error-container p.txt-1 {
@@ -2577,6 +2605,7 @@ div.error-container p.txt-1 {
 @media screen and (max-width: 768px) {
   div.error-container p.txt-1 {
     font-size: 16px;
+    word-break: keep-all;
   }
 }
 div.error-container p.txt-2 {
@@ -2586,6 +2615,7 @@ div.error-container p.txt-2 {
 @media screen and (max-width: 768px) {
   div.error-container p.txt-2 {
     font-size: 16px;
+    word-break: keep-all;
   }
 }
 
@@ -2666,6 +2696,15 @@ div.no-document-lists {
 }
 @media screen and (max-width: 768px) {
   div.no-document-lists {
+    background-size: 60px auto;
+  }
+}
+
+div.host-payment-lists {
+  background: url("../img/icons/icon_no_document.svg") 50% 15% no-repeat;
+}
+@media screen and (max-width: 768px) {
+  div.host-payment-lists {
     background-size: 60px auto;
   }
 }
@@ -2772,6 +2811,9 @@ div.legal-wrapper div.text-area {
     font-size: 16px;
     line-height: 22px;
     padding-top: 3px;
+  }
+  .common-title-area p.s-txt span.m {
+    display: block;
   }
 }
 .common-title-area p.s-txt a {
@@ -9045,16 +9087,19 @@ div.host-visual {
 }
 div.host-visual div.text-area {
   position: absolute;
-  left: 50%;
-  top: 50%;
   color: #0D0D0D;
-  width: 1440px;
-  transform: translate(-50%, -50%);
 }
 div.host-visual div.text-area p.t-1 {
   font-size: 60px;
   padding-bottom: 7px;
   line-height: 60px;
+}
+@media screen and (max-width: 767px) {
+  div.host-visual div.text-area p.t-1 {
+    font-size: 30px;
+    padding-bottom: 0px;
+    line-height: 34px;
+  }
 }
 div.host-visual div.text-area p.t-2 {
   font-family: "Pretendard-SemiBold";
@@ -9062,10 +9107,30 @@ div.host-visual div.text-area p.t-2 {
   line-height: 60px;
   padding: 15px 0;
 }
+@media screen and (max-width: 767px) {
+  div.host-visual div.text-area p.t-2 {
+    font-size: 30px;
+    padding: 7px 0;
+    line-height: 34px;
+  }
+  div.host-visual div.text-area p.t-2 span {
+    display: block;
+  }
+}
 div.host-visual div.text-area p.t-3 {
   font-size: 30px;
   color: #A2A2A4;
   padding-bottom: 40px;
+}
+@media screen and (max-width: 767px) {
+  div.host-visual div.text-area p.t-3 {
+    font-size: 16px;
+    padding-bottom: 15px;
+    line-height: 20px;
+  }
+  div.host-visual div.text-area p.t-3 span {
+    display: block;
+  }
 }
 div.host-visual div.text-area a {
   display: inline-block;
@@ -9075,19 +9140,80 @@ div.host-visual div.text-area a {
   background: url("../img/icons/icon_next.svg") 100% 50% no-repeat;
   padding-right: 20px;
 }
+@media screen and (max-width: 767px) {
+  div.host-visual div.text-area a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  div.host-visual div.text-area {
+    left: 50%;
+    top: 50%;
+    transform: translate(-90%, -50%);
+  }
+}
+@media screen and (min-width: 1600px) and (max-width: 1919px) {
+  div.host-visual div.text-area {
+    left: 112px;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+  div.host-visual div.text-area {
+    left: 100px;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  div.host-visual div.text-area {
+    left: 42px;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  div.host-visual div.text-area {
+    left: 32px;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  div.host-visual div.text-area {
+    left: 20px;
+    top: 40%;
+    transform: translate(0%, -50%);
+  }
+}
 
 div.host-main-wrapper {
   /*잇플레이스로 누구나 호스트가 될 수 있어요.*/
   /*이런 질문 많아요!*/
 }
 div.host-main-wrapper div.host-anyone {
-  padding: 100px 0 100px 0;
+  /*padding: 100px 0 100px 0;*/
+}
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-anyone {
+    padding: 0px 0 100px 0;
+  }
 }
 div.host-main-wrapper div.host-anyone p.h-tit {
   font-size: 60px;
   font-family: "Pretendard-SemiBold";
   text-align: center;
   padding-bottom: 60px;
+}
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-anyone p.h-tit {
+    font-size: 30px;
+    width: 220px;
+    word-break: keep-all;
+    line-height: 34px;
+    margin: 0 auto;
+  }
 }
 div.host-main-wrapper div.host-anyone ul.anyone-card li {
   float: left;
@@ -9107,6 +9233,7 @@ div.host-main-wrapper div.host-anyone ul.anyone-card li:nth-child(4n) {
     width: 100%;
     margin-right: 0px;
     padding-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 div.host-main-wrapper div.host-anyone ul.anyone-card li:nth-child(1) {
@@ -9132,6 +9259,11 @@ div.host-main-wrapper div.host-anyone ul.anyone-card li p.t-1 {
   padding-bottom: 7px;
   margin: 30px 30px 0 30px;
 }
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-anyone ul.anyone-card li p.t-1 {
+    font-size: 20px;
+  }
+}
 div.host-main-wrapper div.host-anyone ul.anyone-card li p.t-2 {
   font-size: 16px;
   color: #fff;
@@ -9139,16 +9271,38 @@ div.host-main-wrapper div.host-anyone ul.anyone-card li p.t-2 {
   line-height: 20px;
   word-break: keep-all;
 }
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-anyone ul.anyone-card li p.t-2 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-qna {
+    position: relative;
+    padding-bottom: 160px;
+  }
+}
 div.host-main-wrapper div.host-qna p.s-tit {
   color: #0D0D0D;
   padding-bottom: 40px;
   margin-bottom: 60px;
   border-bottom: 1px solid #C6CAD3;
 }
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-qna p.s-tit {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+}
 div.host-main-wrapper div.host-qna p.s-tit span {
   float: left;
   font-family: "Pretendard-SemiBold";
   font-size: 60px;
+}
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-qna p.s-tit span {
+    font-size: 30px;
+  }
 }
 div.host-main-wrapper div.host-qna p.s-tit a {
   float: right;
@@ -9158,8 +9312,24 @@ div.host-main-wrapper div.host-qna p.s-tit a {
   padding-right: 20px;
   margin-top: 50px;
 }
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-qna p.s-tit a {
+    position: absolute;
+    float: none;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    font-size: 16px;
+  }
+}
 div.host-main-wrapper div.host-qna ul.qna-list li {
   padding-bottom: 60px;
+}
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-qna ul.qna-list li {
+    padding-bottom: 30px;
+  }
 }
 div.host-main-wrapper div.host-qna ul.qna-list li:last-child {
   padding-bottom: 0;
@@ -9172,15 +9342,35 @@ div.host-main-wrapper div.host-qna ul.qna-list li p.question {
   background: url("../img/icons/icon_q.svg") 0% 8px no-repeat;
   padding-left: 25px;
 }
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-qna ul.qna-list li p.question {
+    font-size: 20px;
+    line-height: 22px;
+    padding-bottom: 12px;
+    background: url("../img/icons/icon_q.svg") 0% 2px no-repeat;
+  }
+}
 div.host-main-wrapper div.host-qna ul.qna-list li p.answer {
   font-size: 18px;
   color: #62717E;
   background: url("../img/icons/icon_a.svg") 0% 5px no-repeat;
   padding-left: 25px;
 }
+@media screen and (max-width: 767px) {
+  div.host-main-wrapper div.host-qna ul.qna-list li p.answer {
+    font-size: 16px;
+    line-height: 20px;
+    background: url("../img/icons/icon_a.svg") 0% 3px no-repeat;
+  }
+}
 
 div.host-it-area div.swiper {
   height: 725px;
+}
+@media screen and (max-width: 767px) {
+  div.host-it-area div.swiper {
+    height: 100vh;
+  }
 }
 div.host-it-area div.swiper div.swiper-slide {
   position: relative;
@@ -9197,27 +9387,103 @@ div.host-it-area div.swiper div.swiper-slide img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+div.host-it-area div.swiper div.swiper-slide div.caption {
+  height: 100%;
+}
 div.host-it-area div.swiper div.swiper-slide div.text-area {
   position: absolute;
   z-index: 10;
-  width: 1440px;
   left: 50%;
   top: 50%;
   color: #fff;
-  width: 1440px;
   transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 767px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area {
+    font-size: 30px;
+    width: calc(100% - 40px);
+  }
+}
+@media screen and (min-width: 1920px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area {
+    left: 50%;
+    top: 50%;
+    transform: translate(-86%, -50%);
+  }
+}
+@media screen and (min-width: 1600px) and (max-width: 1919px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area {
+    left: 112px;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area {
+    left: 100px;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area {
+    left: 42px;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area {
+    left: 32px;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area {
+    left: 20px;
+    top: 25%;
+    transform: translate(0%, -50%);
+  }
 }
 div.host-it-area div.swiper div.swiper-slide div.text-area p.t-1 {
   font-size: 60px;
   font-family: "Pretendard-SemiBold";
 }
+@media screen and (max-width: 767px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area p.t-1 {
+    font-size: 30px;
+    line-height: 34px;
+  }
+  div.host-it-area div.swiper div.swiper-slide div.text-area p.t-1 span {
+    display: block;
+  }
+}
 div.host-it-area div.swiper div.swiper-slide div.text-area p.t-2 {
   font-size: 24px;
+}
+@media screen and (max-width: 767px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area p.t-2 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 10px;
+  }
+  div.host-it-area div.swiper div.swiper-slide div.text-area p.t-2 span {
+    display: block;
+  }
 }
 div.host-it-area div.swiper div.swiper-slide div.text-area a {
   display: inline-block;
   width: 220px;
   margin-top: 70px;
+}
+@media screen and (max-width: 767px) {
+  div.host-it-area div.swiper div.swiper-slide div.text-area a {
+    width: 100%;
+    position: absolute;
+    margin-top: 0px;
+    top: 60vh;
+  }
 }
 
 div.place-menagement-tabs {
@@ -9226,8 +9492,12 @@ div.place-menagement-tabs {
 }
 @media screen and (max-width: 767px) {
   div.place-menagement-tabs {
-    padding-top: 30px;
+    position: relative;
+    padding-top: 95px;
     border-bottom: 0;
+  }
+  div.place-menagement-tabs.temporary {
+    padding-top: 195px;
   }
   div.place-menagement-tabs .bootstrap-select > select {
     left: 0;
@@ -9270,8 +9540,11 @@ div.place-menagement-tabs div.status {
 @media screen and (max-width: 767px) {
   div.place-menagement-tabs div.status {
     float: none;
-    padding: 30px 0 15px 0;
-    border-bottom: 1px solid #C6CAD3;
+    position: absolute;
+    padding: 0px 0 0px 0;
+    border-bottom: 0;
+    width: 100%;
+    top: 25px;
   }
 }
 div.place-menagement-tabs div.status a.place-reg {
@@ -9281,11 +9554,21 @@ div.place-menagement-tabs div.status a.place-reg {
   padding: 16px 0 16px 20px;
   margin-left: 24px;
 }
+@media screen and (max-width: 767px) {
+  div.place-menagement-tabs div.status a.place-reg {
+    float: none;
+    width: 100%;
+    background: #2EC4B6 url("../img/icons/icon_plus_white_long.svg") calc(50% - 50px) 50% no-repeat;
+    margin-left: 0px;
+  }
+}
 div.place-menagement-tabs div.status div.stop-temporary {
   float: left;
 }
 @media screen and (max-width: 768px) {
   div.place-menagement-tabs div.status div.stop-temporary {
+    float: none;
+    position: absolute;
     width: 100%;
     padding-bottom: 15px;
   }
@@ -9296,9 +9579,24 @@ div.place-menagement-tabs div.status div.stop-temporary span.txt {
   color: #62717E;
   margin: 14px 24px 0 0;
 }
+@media screen and (max-width: 768px) {
+  div.place-menagement-tabs div.status div.stop-temporary span.txt {
+    float: none;
+    display: block;
+    font-size: 16px;
+    margin: 70px 0px 5px 0;
+  }
+}
 div.place-menagement-tabs div.status div.stop-temporary div.selects {
   float: right;
   width: 155px;
+}
+@media screen and (max-width: 768px) {
+  div.place-menagement-tabs div.status div.stop-temporary div.selects {
+    float: none;
+    display: block;
+    width: 100%;
+  }
 }
 
 /* 호스트 등록 신청 */
@@ -9308,7 +9606,7 @@ div.host-info-wrapper {
   /* 공간등록 progress */
   /* semi component only */
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   div.host-info-wrapper {
     width: 100%;
     margin: 0px auto 0px auto;
@@ -9321,12 +9619,25 @@ div.host-info-wrapper p.tit {
   line-height: 48px;
   padding-bottom: 25px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper p.tit {
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 15px;
+  }
+}
 div.host-info-wrapper div.ready-item {
   background: #F7F7F7;
   border-radius: 8px;
   font-size: 18px;
   color: #0D0D0D;
   padding: 20px 25px;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.ready-item {
+    font-size: 16px;
+    padding: 20px 20px;
+  }
 }
 div.host-info-wrapper div.ready-item ul li {
   padding-left: 15px;
@@ -9336,6 +9647,11 @@ div.host-info-wrapper div.input-section {
   padding-top: 55px;
   /* step 3 */
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section {
+    padding-top: 20px;
+  }
+}
 div.host-info-wrapper div.input-section div.both-tit p.s-tit {
   float: left;
 }
@@ -9344,6 +9660,12 @@ div.host-info-wrapper div.input-section div.both-tit span.cnt {
   color: #A2A2A4;
   font-size: 18px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.both-tit span.cnt {
+    font-size: 16px;
+    display: none;
+  }
+}
 div.host-info-wrapper div.input-section div.both-tit span.cnt.lineheight {
   margin-top: -7px;
 }
@@ -9351,6 +9673,12 @@ div.host-info-wrapper div.input-section p.s-tit {
   font-size: 18px;
   font-family: "Pretendard-SemiBold";
   padding-bottom: 10px;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section p.s-tit {
+    font-size: 16px;
+    padding-bottom: 7px;
+  }
 }
 div.host-info-wrapper div.input-section p.s-tit span {
   color: #2EC4B6;
@@ -9368,6 +9696,11 @@ div.host-info-wrapper div.input-section p.s-tit-1 {
 }
 div.host-info-wrapper div.input-section ul.s-tit-2 {
   margin: 15px 0 60px 10px;
+}
+@media screen and (max-width: 768px) {
+  div.host-info-wrapper div.input-section ul.s-tit-2 {
+    margin: 15px 0 30px 10px;
+  }
 }
 div.host-info-wrapper div.input-section ul.s-tit-2 li {
   font-size: 14px;
@@ -9387,7 +9720,8 @@ div.host-info-wrapper div.input-section input.login-inputs {
 }
 @media screen and (max-width: 768px) {
   div.host-info-wrapper div.input-section input.login-inputs {
-    font-size: 18px;
+    font-size: 16px;
+    padding-left: 15px;
   }
 }
 div.host-info-wrapper div.input-section input.login-inputs::-moz-placeholder {
@@ -9401,6 +9735,12 @@ div.host-info-wrapper div.input-section p.s-guide {
   color: #A2A2A4;
   padding-top: 10px;
 }
+@media screen and (max-width: 768px) {
+  div.host-info-wrapper div.input-section p.s-guide {
+    line-height: 18px;
+    padding-top: 7px;
+  }
+}
 div.host-info-wrapper div.input-section div.input-wrap input[type=text] {
   float: left;
   width: 70%;
@@ -9408,9 +9748,19 @@ div.host-info-wrapper div.input-section div.input-wrap input[type=text] {
 div.host-info-wrapper div.input-section div.input-wrap input[type=text].place-width {
   width: 94%;
 }
+@media screen and (max-width: 768px) {
+  div.host-info-wrapper div.input-section div.input-wrap input[type=text].place-width {
+    width: calc(100% - 40px);
+  }
+}
 div.host-info-wrapper div.input-section div.input-wrap button {
   float: right;
   width: calc(30% - 20px);
+}
+@media screen and (max-width: 768px) {
+  div.host-info-wrapper div.input-section div.input-wrap button {
+    width: calc(30% - 8px);
+  }
 }
 div.host-info-wrapper div.input-section div.input-wrap span.sup {
   float: left;
@@ -9424,6 +9774,12 @@ div.host-info-wrapper div.input-section div.bank {
   width: calc(35% - 20px);
   vertical-align: top;
 }
+@media screen and (max-width: 768px) {
+  div.host-info-wrapper div.input-section div.bank {
+    display: block;
+    width: 100%;
+  }
+}
 div.host-info-wrapper div.input-section div.bank .bootstrap-select > .dropdown-toggle {
   height: 61px;
 }
@@ -9431,8 +9787,21 @@ div.host-info-wrapper div.input-section input.number {
   width: 40%;
   margin: 0 20px;
 }
+@media screen and (max-width: 768px) {
+  div.host-info-wrapper div.input-section input.number {
+    display: block;
+    width: 100%;
+    margin: 8px 0px;
+  }
+}
 div.host-info-wrapper div.input-section input.name {
   width: calc(25% - 20px);
+}
+@media screen and (max-width: 768px) {
+  div.host-info-wrapper div.input-section input.name {
+    display: block;
+    width: 100%;
+  }
 }
 div.host-info-wrapper div.input-section input.address {
   margin-top: 10px;
@@ -9444,6 +9813,13 @@ div.host-info-wrapper div.input-section div.added-file {
   color: #0D0D0D;
   padding: 20px 25px;
   margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  div.host-info-wrapper div.input-section div.added-file {
+    font-size: 15px;
+    color: #0D0D0D;
+    padding: 20px 20px;
+  }
 }
 div.host-info-wrapper div.input-section .bootstrap-select > .dropdown-toggle {
   border: 1px solid #C6CAD3;
@@ -9459,6 +9835,13 @@ div.host-info-wrapper div.input-section div.selected-pictures div.picture {
   border-radius: 8px;
   overflow: hidden;
   margin: 20px 20px 0 0;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.selected-pictures div.picture {
+    margin: 10px 10px 0 0;
+    width: 72px;
+    height: 72px;
+  }
 }
 div.host-info-wrapper div.input-section div.selected-pictures div.picture img {
   width: 100%;
@@ -9478,6 +9861,11 @@ div.host-info-wrapper div.input-section div.selected-pictures div.picture a.remo
 div.host-info-wrapper div.input-section div.selected-pictures div.picture:nth-child(6n) {
   margin: 20px 0px 0 0;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.selected-pictures div.picture:nth-child(6n) {
+    margin: 10px 10px 0 0;
+  }
+}
 div.host-info-wrapper div.input-section div.selected-pictures div.picture.addbtn a {
   display: inline-block;
   width: 100%;
@@ -9495,11 +9883,21 @@ div.host-info-wrapper div.input-section textarea {
   padding: 15px 20px;
   margin-top: 10px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section textarea {
+    padding: 10px 10px;
+  }
+}
 div.host-info-wrapper div.input-section textarea::-moz-placeholder {
   color: #A2A2A4;
 }
 div.host-info-wrapper div.input-section textarea::placeholder {
   color: #A2A2A4;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section textarea.intro-textarea {
+    height: 200px;
+  }
 }
 div.host-info-wrapper div.input-section div.parking-wrap {
   padding-top: 12px;
@@ -9507,19 +9905,45 @@ div.host-info-wrapper div.input-section div.parking-wrap {
 div.host-info-wrapper div.input-section div.parking-wrap div.parking {
   float: left;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.parking-wrap div.parking {
+    float: none;
+  }
+}
 div.host-info-wrapper div.input-section div.parking-wrap div.parking:nth-child(1) {
   width: 25%;
   padding-top: 20px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.parking-wrap div.parking:nth-child(1) {
+    width: 100%;
+  }
+}
 div.host-info-wrapper div.input-section div.parking-wrap div.parking:nth-child(2) {
   width: 41%;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.parking-wrap div.parking:nth-child(2) {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
 }
 div.host-info-wrapper div.input-section div.parking-wrap div.parking:nth-child(3) {
   width: 34%;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.parking-wrap div.parking:nth-child(3) {
+    width: 100%;
+  }
+}
 div.host-info-wrapper div.input-section div.parking-wrap div.parking label {
   font-size: 18px;
   color: #62717E;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.parking-wrap div.parking label {
+    font-size: 16px;
+  }
 }
 div.host-info-wrapper div.input-section div.parking-wrap div.parking div.check-parking {
   float: left;
@@ -9531,6 +9955,12 @@ div.host-info-wrapper div.input-section div.parking-wrap div.parking div.count-p
   position: relative;
   width: 120px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.parking-wrap div.parking div.count-parking {
+    float: right;
+    width: 50%;
+  }
+}
 div.host-info-wrapper div.input-section div.parking-wrap div.parking div.count-parking span {
   position: absolute;
   top: 16px;
@@ -9538,18 +9968,44 @@ div.host-info-wrapper div.input-section div.parking-wrap div.parking div.count-p
   font-size: 18px;
   color: #0D0D0D;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.parking-wrap div.parking div.count-parking span {
+    font-size: 16px;
+  }
+}
 div.host-info-wrapper div.input-section div.manager-wrap {
   padding: 25px 0 13px 0;
 }
 div.host-info-wrapper div.input-section div.manager-wrap div.manager-l {
   float: left;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.manager-wrap div.manager-l {
+    float: none;
+    display: block;
+  }
+}
 div.host-info-wrapper div.input-section div.manager-wrap div.manager-r {
   float: right;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.manager-wrap div.manager-r {
+    float: none;
+    display: block;
+    padding-top: 15px;
+  }
 }
 div.host-info-wrapper div.input-section div.manager-wrap label {
   font-size: 18px;
   color: #62717E;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.manager-wrap label {
+    font-size: 16px;
+  }
+}
+div.host-info-wrapper div.input-section div.manager-wrapper {
+  display: none;
 }
 div.host-info-wrapper div.input-section div.use-info {
   border-top: 1px solid #EAEAEA;
@@ -9559,23 +10015,55 @@ div.host-info-wrapper div.input-section div.use-info {
   padding-left: 35px;
   background: url("../img/icons/icon_warnning.svg") 0px 20px no-repeat;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.use-info {
+    font-size: 16px;
+  }
+}
 div.host-info-wrapper div.input-section div.day-select {
   border-top: 1px solid #EAEAEA;
   border-bottom: 1px solid #EAEAEA;
   padding: 20px 0 20px 0;
   font-size: 18px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.day-select ul {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+}
 div.host-info-wrapper div.input-section div.day-select ul li {
   float: left;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.day-select ul li {
+    float: none;
+  }
 }
 div.host-info-wrapper div.input-section div.day-select ul li:not(:first-child):not(:last-child) {
   margin: 0 12px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.day-select ul li:not(:first-child):not(:last-child) {
+    margin: 0 0px;
+  }
+}
 div.host-info-wrapper div.input-section div.day-select ul li:first-child {
   margin-right: 12px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.day-select ul li:first-child {
+    margin-right: 0px;
+  }
+}
 div.host-info-wrapper div.input-section div.day-select ul li:last-child {
   margin-left: 12px;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.day-select ul li:last-child {
+    margin-left: 0px;
+  }
 }
 div.host-info-wrapper div.input-section div.day-select ul li a {
   color: #62717E;
@@ -9588,6 +10076,14 @@ div.host-info-wrapper div.input-section div.day-select ul li a {
   text-align: center;
   line-height: 60px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.day-select ul li a {
+    font-size: 16px;
+    width: 38px;
+    height: 38px;
+    line-height: 36px;
+  }
+}
 div.host-info-wrapper div.input-section div.day-select ul li a.on {
   color: #2EC4B6;
   border: 1px solid #2EC4B6;
@@ -9596,11 +10092,21 @@ div.host-info-wrapper div.input-section div.use-confirm table {
   width: 90%;
   margin: 10px 0 0px 0px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.use-confirm table {
+    width: 100%;
+  }
+}
 div.host-info-wrapper div.input-section div.use-confirm table th {
   width: 30%;
   font-size: 18px;
   color: #62717E;
   padding: 10px 0;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.use-confirm table th {
+    font-size: 16px;
+  }
 }
 div.host-info-wrapper div.input-section div.use-confirm table td {
   width: 70%;
@@ -9608,15 +10114,36 @@ div.host-info-wrapper div.input-section div.use-confirm table td {
   font-size: 18px;
   color: #0D0D0D;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.use-confirm table td {
+    font-size: 16px;
+    text-align: right;
+  }
+}
 div.host-info-wrapper div.input-section p.manager-confirm {
   padding: 25px 0;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section p.manager-confirm {
+    padding: 12px 0 25px 0;
+  }
 }
 div.host-info-wrapper div.input-section p.manager-confirm label {
   font-size: 18px;
   color: #0D0D0D;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section p.manager-confirm label {
+    font-size: 16px;
+  }
+}
 div.host-info-wrapper div.input-section p.manager-confirm.holiday {
   text-align: right;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section p.manager-confirm.holiday {
+    text-align: left;
+  }
 }
 div.host-info-wrapper div.input-section div.do-time {
   text-align: right;
@@ -9624,15 +10151,45 @@ div.host-info-wrapper div.input-section div.do-time {
   font-size: 18px;
   color: #0D0D0D;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.input-section div.do-time {
+    text-align: left;
+    padding-top: 10px;
+    font-size: 16px;
+  }
+}
 div.host-info-wrapper a.host-register-button {
   display: inline-block;
 }
 div.host-info-wrapper a.host-register-button.go-next {
   margin-top: 60px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper a.host-register-button.go-next {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.register-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
 div.host-info-wrapper div.register-progress div.r-wrapper {
   float: left;
   width: 100px;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.register-progress div.r-wrapper {
+    float: none;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 div.host-info-wrapper div.register-progress div.r-wrapper div.round {
   height: 100px;
@@ -9644,6 +10201,14 @@ div.host-info-wrapper div.register-progress div.r-wrapper div.round {
   text-align: center;
   line-height: 90px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.register-progress div.r-wrapper div.round {
+    width: 70px;
+    height: 70px;
+    line-height: 60px;
+    font-size: 20px;
+  }
+}
 div.host-info-wrapper div.register-progress div.r-wrapper span {
   display: block;
   font-size: 18px;
@@ -9651,6 +10216,11 @@ div.host-info-wrapper div.register-progress div.r-wrapper span {
   text-align: center;
   color: #62717E;
   padding-top: 10px;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.register-progress div.r-wrapper span {
+    font-size: 16px;
+  }
 }
 div.host-info-wrapper div.register-progress div.r-wrapper.on div.round {
   color: #2EC4B6;
@@ -9669,13 +10239,25 @@ div.host-info-wrapper div.register-progress div.r-wrapper.completed span {
 }
 div.host-info-wrapper div.register-progress div.line {
   float: left;
-  margin: 0 10px;
+  margin: 50px 10px 0 10px;
   width: calc(100% - 470px);
   border-top: 2px solid #DEF6F4;
-  margin-top: 50px;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.register-progress div.line {
+    float: none;
+    flex: 1;
+    border-top: 1px solid #DEF6F4;
+    margin: -10px 5px 0 5px;
+  }
 }
 div.host-info-wrapper div.register-progress div.line.completed {
   border-top: 2px solid #2EC4B6;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.register-progress div.line.completed {
+    border-top: 1px solid #2EC4B6;
+  }
 }
 div.host-info-wrapper a.go-back-btn {
   display: block;
@@ -9683,6 +10265,12 @@ div.host-info-wrapper a.go-back-btn {
   font-size: 24px;
   color: #0D0D0D;
   margin-top: 60px;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper a.go-back-btn {
+    font-size: 16px;
+    margin-top: 30px;
+  }
 }
 div.host-info-wrapper a.go-back-btn img {
   vertical-align: middle;
@@ -9694,6 +10282,11 @@ div.host-info-wrapper a.go-back-btn span {
 div.host-info-wrapper div.two-objects {
   padding-top: 30px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.two-objects {
+    padding-top: 0px;
+  }
+}
 div.host-info-wrapper div.two-objects a {
   width: calc(50% - 10px);
 }
@@ -9703,21 +10296,44 @@ div.host-info-wrapper div.two-objects a:nth-child(1) {
 div.host-info-wrapper div.two-objects a:nth-child(2) {
   float: right;
 }
-div.host-info-wrapper div.both-objects {
-  padding-top: 10px;
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.both-objects {
+    padding-top: 0px;
+  }
 }
 div.host-info-wrapper div.both-objects div.object {
   width: calc(50% - 10px);
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.both-objects div.object {
+    width: 100%;
+  }
+}
 div.host-info-wrapper div.both-objects div.object:nth-child(1) {
   float: left;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.both-objects div.object:nth-child(1) {
+    float: none;
+  }
 }
 div.host-info-wrapper div.both-objects div.object:nth-child(2) {
   float: right;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.both-objects div.object:nth-child(2) {
+    float: none;
+    margin-top: 10px;
+  }
+}
 div.host-info-wrapper div.both-objects div.object.f {
   font-size: 18px;
   color: #62717E;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.both-objects div.object.f {
+    font-size: 16px;
+  }
 }
 div.host-info-wrapper div.both-objects.contain-bg {
   padding: 30px;
@@ -9727,14 +10343,34 @@ div.host-info-wrapper div.both-objects.contain-bg {
 div.host-info-wrapper div.both-objects.contain-bg.mg {
   margin-top: 20px;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.both-objects.contain-bg.mg {
+    margin-top: 10px;
+  }
+}
 div.host-info-wrapper div.both-objects.contain-bg div.big {
   margin-top: 15px;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.both-objects.contain-bg div.big {
+    margin-top: 0;
+  }
 }
 div.host-info-wrapper div.three-objects {
   padding: 5px 0 15px 0;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.three-objects {
+    padding: 5px 0 0px 0;
+  }
+}
 div.host-info-wrapper div.three-objects div.object {
   width: 33.3%;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.three-objects div.object {
+    display: none;
+  }
 }
 div.host-info-wrapper div.three-objects div.object:nth-child(1) {
   float: left;
@@ -9747,10 +10383,25 @@ div.host-info-wrapper div.three-objects div.object:nth-child(3) {
   float: right;
   text-align: right;
 }
+div.host-info-wrapper div.check-in-advance {
+  display: none;
+}
+div.host-info-wrapper div.check-in-advance div.pay-to-time {
+  display: none;
+}
+div.host-info-wrapper div.holiday-select-option {
+  display: none;
+}
 div.host-info-wrapper div.user-make-cnt {
   float: right;
   width: 80%;
   height: 28px;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.user-make-cnt {
+    float: none;
+    width: 100%;
+  }
 }
 div.host-info-wrapper div.user-make-cnt a {
   display: inline-block;
@@ -9771,13 +10422,29 @@ div.host-info-wrapper div.user-make-cnt span.cnt {
   text-align: center;
   vertical-align: top;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.user-make-cnt span.cnt {
+    font-size: 16px;
+  }
+}
 div.host-info-wrapper div.user-make-input {
   float: right;
   width: 100%;
   text-align: right;
 }
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.user-make-input {
+    float: none;
+    text-align: left;
+  }
+}
 div.host-info-wrapper div.user-make-input input {
   width: 85%;
+}
+@media screen and (max-width: 767px) {
+  div.host-info-wrapper div.user-make-input input {
+    width: calc(100% - 30px);
+  }
 }
 div.host-info-wrapper div.user-make-input span {
   font-size: 20px;
@@ -10169,6 +10836,10 @@ div.host-reservation-tabs div.status {
     padding: 30px 0 15px 0;
     border-bottom: 1px solid #C6CAD3;
   }
+  div.host-reservation-tabs div.status.reserve-status {
+    position: relative;
+    padding: 95px 0 15px 0;
+  }
 }
 div.host-reservation-tabs div.status span.s-txt {
   margin-right: 24px;
@@ -10180,11 +10851,20 @@ div.host-reservation-tabs div.status span.s-txt {
     display: block;
     font-size: 16px;
   }
+  div.host-reservation-tabs div.status span.s-txt span.m {
+    display: block;
+  }
 }
 div.host-reservation-tabs div.status span.host-select {
   display: inline-block;
   margin-right: 20px;
   width: 155px;
+}
+@media screen and (max-width: 767px) {
+  div.host-reservation-tabs div.status span.host-select {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 @media screen and (max-width: 767px) {
   div.host-reservation-tabs div.status .both {
@@ -10197,8 +10877,11 @@ div.host-reservation-tabs div.status div.search-wp {
   display: inline-block;
   vertical-align: bottom;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   div.host-reservation-tabs div.status div.search-wp {
+    position: absolute;
+    top: 25px;
+    left: 0;
     width: 100%;
     padding-bottom: 15px;
   }
@@ -10908,11 +11591,24 @@ div.host-cancel-modal p {
   font-family: "Pretendard-SemiBold";
   padding-bottom: 12px;
 }
+@media screen and (max-width: 767px) {
+  div.host-cancel-modal p {
+    font-size: 16px;
+    line-height: 18px;
+    word-break: keep-all;
+  }
+}
 div.host-cancel-modal table th, div.host-cancel-modal table td {
   font-size: 20px;
   padding: 7px 0;
   word-break: keep-all;
   line-height: 24px;
+}
+@media screen and (max-width: 767px) {
+  div.host-cancel-modal table th, div.host-cancel-modal table td {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 div.host-cancel-modal table th label.custom-label, div.host-cancel-modal table td label.custom-label {
   vertical-align: middle;
@@ -10928,14 +11624,33 @@ div.host-payment-wrapper div.host-reserve-tit {
   color: #0D0D0D;
   padding: 50px 0 30px 0;
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.host-reserve-tit {
+    font-size: 18px;
+  }
+  div.host-payment-wrapper div.host-reserve-tit.other {
+    padding: 50px 0 0px 0;
+  }
+}
 div.host-payment-wrapper div.host-select-date {
   margin: 60px 0 0px 0;
   border-top: 1px solid #C6CAD3;
   padding-top: 100px;
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.host-select-date {
+    margin: 30px 0 0px 0;
+    padding-top: 50px;
+  }
+}
 div.host-payment-wrapper div.host-select-date div.dates {
   width: 442px;
   margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.host-select-date div.dates {
+    width: 100%;
+  }
 }
 div.host-payment-wrapper div.host-select-date div.dates a.prev {
   float: left;
@@ -10946,6 +11661,11 @@ div.host-payment-wrapper div.host-select-date div.dates a.prev {
   margin-right: 12px;
   margin-top: 15px;
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.host-select-date div.dates a.prev {
+    margin-top: 45px;
+  }
+}
 div.host-payment-wrapper div.host-select-date div.dates a.next {
   float: right;
   width: 30px;
@@ -10955,19 +11675,41 @@ div.host-payment-wrapper div.host-select-date div.dates a.next {
   margin-left: 12px;
   margin-top: 15px;
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.host-select-date div.dates a.next {
+    margin-top: 45px;
+  }
+}
 div.host-payment-wrapper div.host-select-date div.dates div.selects {
   float: left;
   width: 358px;
+}
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.host-select-date div.dates div.selects {
+    width: calc(100% - 85px);
+  }
 }
 div.host-payment-wrapper div.host-select-date div.dates div.selects span.s-1, div.host-payment-wrapper div.host-select-date div.dates div.selects span.s-2 {
   display: inline-block;
   width: 155px;
   margin: 0 12px;
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.host-select-date div.dates div.selects span.s-1, div.host-payment-wrapper div.host-select-date div.dates div.selects span.s-2 {
+    display: block;
+    width: 100%;
+    margin: 0 0 10px 0px;
+  }
+}
 div.host-payment-wrapper div.reservation-status {
   padding: 30px;
   border-radius: 14px;
   background: #F7F7F7;
+}
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.reservation-status {
+    padding: 20px;
+  }
 }
 div.host-payment-wrapper div.reservation-status ul.re-s li {
   float: left;
@@ -10981,21 +11723,46 @@ div.host-payment-wrapper div.reservation-status ul.re-s li {
 div.host-payment-wrapper div.reservation-status ul.re-s li:last-child {
   margin-right: 0;
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.reservation-status ul.re-s li {
+    width: calc(50% - 8px);
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+  div.host-payment-wrapper div.reservation-status ul.re-s li:nth-child(2n) {
+    margin-right: 0;
+  }
+}
 div.host-payment-wrapper div.reservation-status ul.re-s li p.t-1 {
   color: #62717E;
   font-size: 18px;
   font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.reservation-status ul.re-s li p.t-1 {
+    font-size: 16px;
+  }
 }
 div.host-payment-wrapper div.reservation-status ul.re-s li p.t-2 {
   color: #2EC4B6;
   font-size: 40px;
   font-family: "Pretendard-SemiBold";
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.reservation-status ul.re-s li p.t-2 {
+    font-size: 20px;
+  }
+}
 div.host-payment-wrapper div.reservation-status ul.re-s li p.t-2 span {
   font-size: 24px;
   color: #0D0D0D;
   margin-left: 5px;
   vertical-align: middle;
+}
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.reservation-status ul.re-s li p.t-2 span {
+    font-size: 16px;
+  }
 }
 div.host-payment-wrapper div.reservation-status ul.re-a li {
   float: left;
@@ -11009,21 +11776,43 @@ div.host-payment-wrapper div.reservation-status ul.re-a li {
 div.host-payment-wrapper div.reservation-status ul.re-a li:last-child {
   margin-right: 0;
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.reservation-status ul.re-a li {
+    float: none;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
 div.host-payment-wrapper div.reservation-status ul.re-a li p.t-1 {
   color: #62717E;
   font-size: 18px;
   font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.reservation-status ul.re-a li p.t-1 {
+    font-size: 16px;
+  }
 }
 div.host-payment-wrapper div.reservation-status ul.re-a li p.t-2 {
   color: #2EC4B6;
   font-size: 40px;
   font-family: "Pretendard-SemiBold";
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.reservation-status ul.re-a li p.t-2 {
+    font-size: 20px;
+  }
+}
 div.host-payment-wrapper div.reservation-status ul.re-a li p.t-2 span {
   font-size: 24px;
   color: #0D0D0D;
   margin-left: 5px;
   vertical-align: middle;
+}
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.reservation-status ul.re-a li p.t-2 span {
+    font-size: 16px;
+  }
 }
 div.host-payment-wrapper div.status-detail table.host-status-table {
   width: 100%;
@@ -11041,10 +11830,16 @@ div.host-payment-wrapper div.status-detail table.host-status-table td {
   font-size: 16px;
   color: #0D0D0D;
 }
+@media screen and (max-width: 767px) {
+  div.host-payment-wrapper div.status-detail table.host-status-table td {
+    padding: 10px 0;
+    border-bottom: 0;
+  }
+}
 div.host-payment-wrapper div.status-detail table.host-status-table td span.warning {
   color: #E75B3C;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   div.host-payment-wrapper div.status-detail .host-status-table thead {
     display: none; /* 헤더 숨김 */
   }
@@ -11056,23 +11851,287 @@ div.host-payment-wrapper div.status-detail table.host-status-table td span.warni
     width: 100%;
   }
   div.host-payment-wrapper div.status-detail .host-status-table tr {
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 10px;
-    background: #fafafa;
+    padding: 20px 0;
+    border-bottom: 1px solid #C6CAD3;
+    background: #fff;
   }
   div.host-payment-wrapper div.status-detail .host-status-table td {
     text-align: left;
     padding: 6px 10px;
     border: none;
     position: relative;
+    border-bottom: 0;
   }
   div.host-payment-wrapper div.status-detail .host-status-table td::before {
     content: attr(data-label); /* th 대신 data-label 값 표시 */
     font-weight: bold;
-    display: inline-block;
+    display: block;
     width: 90px;
-    color: #555;
+    color: #62717E;
+  }
+}
+
+/* 예약불가 */
+div.reservation-not-search {
+  border-bottom: 1px solid #C6CAD3;
+  padding-top: 35px;
+  height: 115px;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-not-search {
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+div.reservation-not-search div.status span.ss {
+  float: left;
+  margin: 14px 24px 0 0px;
+  color: #62717E;
+  font-size: 18px;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-not-search div.status span.ss {
+    float: none;
+    display: block;
+    margin: 15px 0 5px 0;
+    font-size: 16px;
+  }
+}
+div.reservation-not-search div.status div.se-wrap {
+  float: right;
+  width: calc(100% - 142px);
+}
+div.reservation-not-search div.status div.se-wrap .bootstrap-select > .dropdown-toggle {
+  color: #0D0D0D;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-not-search div.status div.se-wrap {
+    float: none;
+    display: block;
+    width: 100%;
+  }
+}
+
+div.calendar-wrapper {
+  padding: 100px 0 0 0;
+}
+@media screen and (max-width: 767px) {
+  div.calendar-wrapper {
+    padding: 50px 0 0 0;
+  }
+}
+div.calendar-wrapper .flatpickr-calendar .fp-header .fp-label {
+  font-size: 30px;
+  padding: 0 20px;
+}
+@media screen and (max-width: 767px) {
+  div.calendar-wrapper .flatpickr-calendar .fp-header .fp-label {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
+div.calendar-wrapper div.flatpickr-weekdays {
+  height: 80px;
+  background: #2EC4B6;
+  border-radius: 20px 20px 0 0;
+  margin-top: 50px;
+  border-bottom: 1px solid #fff;
+}
+@media screen and (max-width: 767px) {
+  div.calendar-wrapper div.flatpickr-weekdays {
+    height: 44px;
+    border-radius: 8px 8px 0 0;
+    margin-top: 5px;
+  }
+}
+div.calendar-wrapper div.flatpickr-weekdays span.flatpickr-weekday {
+  font-family: "Pretendard-Regular";
+  font-size: 24px;
+  color: #fff;
+  font-weight: 300;
+  border-right: 1px solid #fff;
+  line-height: 80px;
+}
+@media screen and (max-width: 767px) {
+  div.calendar-wrapper div.flatpickr-weekdays span.flatpickr-weekday {
+    font-size: 14px;
+    line-height: 20px;
+    border-right: 0;
+  }
+}
+div.calendar-wrapper div.flatpickr-days div.dayContainer span.flatpickr-day {
+  position: relative;
+  height: 200px;
+  border-radius: 0;
+  text-align: left;
+  font-size: 24px;
+  padding: 20px;
+  color: #0D0D0D;
+  border-right: 1px solid #EAEAEA;
+  border-bottom: 1px solid #EAEAEA;
+  border-left: 0;
+  border-top: 0;
+}
+@media screen and (max-width: 767px) {
+  div.calendar-wrapper div.flatpickr-days div.dayContainer span.flatpickr-day {
+    text-align: center;
+    font-size: 14px;
+    padding: 0px;
+    border-right: 0;
+    border-bottom: 0;
+    height: 45px;
+  }
+}
+div.calendar-wrapper div.flatpickr-days div.dayContainer span.flatpickr-day:nth-child(7n) {
+  border-right: 0;
+}
+div.calendar-wrapper div.flatpickr-days div.dayContainer span.flatpickr-day:hover {
+  background: #DEF6F4;
+  border: 0;
+}
+div.calendar-wrapper div.flatpickr-days div.dayContainer span.flatpickr-day a.event-link-reservation {
+  position: absolute;
+  color: #2EC4B6;
+  top: 65px;
+  left: 20px;
+  padding-left: 15px;
+  background: url("../img/icons/bullet_green.svg") 0 50% no-repeat;
+  background-size: 6px 6px;
+  text-decoration: underline;
+}
+@media screen and (max-width: 767px) {
+  div.calendar-wrapper div.flatpickr-days div.dayContainer span.flatpickr-day a.event-link-reservation {
+    text-indent: -9999px;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 5px;
+    background-size: 5px 5px;
+  }
+}
+div.calendar-wrapper .flatpickr-calendar.open, div.calendar-wrapper .flatpickr-calendar.inline {
+  max-height: 100%;
+}
+div.calendar-wrapper span.prevMonthDay, div.calendar-wrapper span.nextMonthDay {
+  color: #ccc !important;
+}
+
+div.reservation-modal-control p.date {
+  text-align: center;
+  font-size: 22px;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 25px;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-modal-control p.date {
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+}
+div.reservation-modal-control div.time-control div.start-time {
+  float: left;
+  width: 35%;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-modal-control div.time-control div.start-time {
+    float: none;
+    width: 100%;
+  }
+}
+div.reservation-modal-control div.time-control span.from-to {
+  float: left;
+  font-size: 18px;
+  margin: 15px 10px 0 10px;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-modal-control div.time-control span.from-to {
+    display: none;
+  }
+}
+div.reservation-modal-control div.time-control div.end-time {
+  float: left;
+  width: 35%;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-modal-control div.time-control div.end-time {
+    float: none;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+div.reservation-modal-control div.time-control a.btn-add {
+  float: right;
+  width: 21%;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-modal-control div.time-control a.btn-add {
+    float: none;
+    width: 100%;
+  }
+}
+div.reservation-modal-control p.whole-day {
+  padding: 20px 0;
+}
+div.reservation-modal-control ul.now-list {
+  border-top: 1px solid #EAEAEA;
+  padding-top: 15px;
+}
+div.reservation-modal-control ul.now-list li {
+  padding-top: 15px;
+}
+div.reservation-modal-control ul.now-list li span.r-1 {
+  float: left;
+  font-size: 18px;
+  color: #62717E;
+  width: 30%;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-modal-control ul.now-list li span.r-1 {
+    float: none;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+  }
+}
+div.reservation-modal-control ul.now-list li span.r-2 {
+  float: left;
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+  width: 70%;
+}
+@media screen and (max-width: 767px) {
+  div.reservation-modal-control ul.now-list li span.r-2 {
+    font-size: 16px;
+    width: 100%;
+  }
+}
+div.reservation-modal-control ul.now-list li span.r-2 span.time {
+  float: none;
+  display: block;
+  width: 100%;
+}
+div.reservation-modal-control ul.now-list li span.r-2 a {
+  float: right;
+  font-size: 18px;
+  color: #2EC4B6;
+  font-family: "Pretendard-Regular";
+}
+@media screen and (max-width: 767px) {
+  div.reservation-modal-control ul.now-list li span.r-2 a {
+    font-size: 16px;
+  }
+}
+
+div.modal-footer-confirm {
+  text-align: center;
+}
+div.modal-footer-confirm a {
+  display: inline-block;
+  width: 220px;
+}
+@media screen and (max-width: 767px) {
+  div.modal-footer-confirm a {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -179,7 +179,7 @@
 					<span class="cnt">0/500 글자</span>
 				</div>
 				<p class="s-para">공간에 대해 상세한 설명을 자유롭게 작성해주세요.</p>
-				<textarea placeholder="내용을 입력해 주세요." rows="10"></textarea>
+				<textarea class="intro-textarea" placeholder="내용을 입력해 주세요." rows="10"></textarea>
 			</div>
 			<div class="input-section">
 				<p class="s-tit">짧은 소개</p>
@@ -187,14 +187,14 @@
 					<p class="s-para floatl">메인화면에 노출될 때 보여지는 짧은 소개글입니다.</p>
 					<span class="cnt lineheight">0/120 글자</span>
 				</div>
-				<textarea placeholder="내용을 입력해 주세요." rows="3"></textarea>
+				<textarea class="intro-textarea" placeholder="내용을 입력해 주세요." rows="3"></textarea>
 			</div>
 			<div class="input-section">
 				<p class="s-tit">주차 가능 여부</p>
 				<p class="s-para">주차 가능 대수를 모르실 경우 0으로 입력해 주세요.</p>
 				<div class="parking-wrap clearfix">
 					<div class="parking">
-						<input type="radio" id="rd1" class="custom-radio" checked><label for="" class="custom-radio-label all">가상계좌</label>
+						<input type="radio" id="rd1" class="custom-radio" checked><label for="" class="custom-radio-label all">주차 불가</label>
 					</div>
 					<div class="parking clearfix">
 						<div class="check-parking"><input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">무료</label></div>
@@ -217,31 +217,35 @@
 				<p class="s-para">현장매니저는 게스트 응대와 체크인 안내를 맡아주는 관리자입니다.<br />직접 관리가 힘들 때, 현장 운영을 원활하게 하고 싶다면 현장매니저를 활용해 보세요.</p>
 				<div class="manager-wrap clearfix">
 					<div class="manager-l">
-						<input type="radio" id="" class="custom-radio"><label for="" class="custom-radio-label all">현장매니저는 필요 없어요.</label>
+						<input type="radio" id="managerUseNo" name="managerUseOkNo" class="custom-radio" value="hide" checked><label for="managerUseNo" class="custom-radio-label all">현장매니저는 필요 없어요.</label>
 					</div>
 					<div class="manager-r">
-						<input type="radio" id="" class="custom-radio" checked><label for="" class="custom-radio-label all">현장매니저를 이용할게요.</label>
+						<input type="radio" id="managerUseOk" name="managerUseOkNo" class="custom-radio" value="show"><label for="managerUseOk" class="custom-radio-label all">현장매니저를 이용할게요.</label>
 					</div>
 				</div>
-				<div class="use-info">
-					<p class="txt">현장매니저를 이용하실 경우 이용에 대한 비용이 발생합니다.<br />이용에 대한 안내는 잇플레이스에게 직접 문의해주세요.</p>
-					<div class="use-confirm">
-						<table class="notable">
-							<tr>
-								<th>전화번호</th>
-								<td>02-1234-5678</td>
-							</tr>
-							<tr>
-								<th>이메일</th>
-								<td>hello@itplace.co.kr</td>
-							</tr>
-						</table>
+				<!-- 현장매니저 이용 시 활성 -->
+				<div class="manager-wrapper">
+					<div class="use-info">
+						<p class="txt">현장매니저를 이용하실 경우 이용에 대한 비용이 발생합니다.<br />이용에 대한 안내는 잇플레이스에게 직접 문의해주세요.</p>
+						<div class="use-confirm">
+							<table class="notable">
+								<tr>
+									<th>전화번호</th>
+									<td>02-1234-5678</td>
+								</tr>
+								<tr>
+									<th>이메일</th>
+									<td>hello@itplace.co.kr</td>
+								</tr>
+							</table>
+						</div>
 					</div>
+					<p class="manager-confirm">
+						<input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all">현장매니저에 대한 내용을 확인하였습니다.</label>
+					</p>
 				</div>
-				
-				<p class="manager-confirm">
-					<input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all">현장매니저에 대한 내용을 확인하였습니다.</label>
-				</p>
+				<!-- //현장매니저 이용 시 활성 -->
+
 			</div>
 			<div class="two-objects clearfix">
 				<a href="#" class="modal-button bluegray-btn login-button">임시 저장 후 나가기</a><a href="#" class="modal-button green login-button">저장하고 다음으로</a>

@@ -484,10 +484,31 @@ div.error-container {
 	&.hosts-error {
 		margin: 100px auto 200px auto;
 		padding-top: 245px;
+
+		@media screen and (max-width: 768px) {
+			width: 100%;
+			margin: 0px auto 50px auto;
+			padding-top: 120px;
+			padding-left: 30px;
+			padding-right: 30px;
+
+			p.txt-2 {
+
+				span {
+					display: block;
+					line-height: 18px;
+				}
+			}
+		}
 	}
 	&.place-ok-error {
 		margin: 80px auto 20px auto;
 		padding-top: 200px;
+
+		@media screen and (max-width: 767px) {
+			margin: 50px auto 20px auto;
+			padding-top: 120px;
+		}
 	}
 	@media screen and (max-width: 768px) {
 		width: 100%;
@@ -495,6 +516,10 @@ div.error-container {
 		padding-top: 100px;
 		padding-left: 30px;
 		padding-right: 30px;
+
+		&.host-payment-lists {
+			margin: 50px auto 50px auto;
+		}
 	}
 
 	p.txt-1 {
@@ -505,6 +530,7 @@ div.error-container {
 
 		@media screen and (max-width: 768px) {
 			font-size: 16px;
+			word-break: keep-all;
 		}
 	}
 	p.txt-2 {
@@ -513,6 +539,7 @@ div.error-container {
 
 		@media screen and (max-width: 768px) {
 			font-size: 16px;
+			word-break: keep-all;
 		}
 	}
 }
@@ -573,6 +600,13 @@ div.no-event-lists {
 	}
 }
 div.no-document-lists {
+	background: url('../img/icons/icon_no_document.svg') 50% 15% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 60px auto;
+	}
+}
+div.host-payment-lists {
 	background: url('../img/icons/icon_no_document.svg') 50% 15% no-repeat;
 
 	@media screen and (max-width: 768px) {
@@ -677,6 +711,10 @@ div.legal-wrapper {
 			font-size: 16px;
 			line-height: 22px;
 			padding-top: 3px;
+
+			span.m {
+				display: block;
+			}
 		}
 
 		a {

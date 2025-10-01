@@ -132,167 +132,170 @@
 			</div>
 
 			<!-- 해당 기간에 예약/정산 내역이 없어요. -->
-			<div class="no-document-lists error-container">
+			<div class="host-payment-lists error-container"  style="display: none;">
 				<p class="txt-1">해당 기간에 예약/정산 내역이 없어요.</p>
 			</div>
 			<!-- //해당 기간에 예약/정산 내역이 없어요. -->
 
-			<div class="host-reserve-tit">예약 현황</div>
-			<div class="reservation-status clearfix">
-				<ul class="re-s">
-					<li>
-						<p class="t-1">총 예약 건</p>
-						<p class="t-2">27<span>건</span></p>
-					</li>
-					<li>
-						<p class="t-1">이용 완료</p>
-						<p class="t-2">20<span>건</span></p>
-					</li>
-					<li>
-						<p class="t-1">예약 거절</p>
-						<p class="t-2">5<span>건</span></p>
-					</li>
-					<li>
-						<p class="t-1">예약 취소</p>
-						<p class="t-2">3<span>건</span></p>
-					</li>
-				</ul>
-			</div>
+			<div class="payment-wrapper">
+				<div class="host-reserve-tit">예약 현황</div>
+				<div class="reservation-status clearfix">
+					<ul class="re-s">
+						<li>
+							<p class="t-1">총 예약 건</p>
+							<p class="t-2">27<span>건</span></p>
+						</li>
+						<li>
+							<p class="t-1">이용 완료</p>
+							<p class="t-2">20<span>건</span></p>
+						</li>
+						<li>
+							<p class="t-1">예약 거절</p>
+							<p class="t-2">5<span>건</span></p>
+						</li>
+						<li>
+							<p class="t-1">예약 취소</p>
+							<p class="t-2">3<span>건</span></p>
+						</li>
+					</ul>
+				</div>
 
-			<div class="host-reserve-tit">정산 현황</div>
-			<div class="reservation-status clearfix">
-				<ul class="re-a">
-					<li>
-						<p class="t-1">총 매출액</p>
-						<p class="t-2">5,000,000<span>원</span></p>
-					</li>
-					<li>
-						<p class="t-1">수수료</p>
-						<p class="t-2">1,200,000<span>원</span></p>
-					</li>
-					<li>
-						<p class="t-1">정산 완료</p>
-						<p class="t-2">3,800,000<span>원</span></p>
-					</li>
-				</ul>
-			</div>
+				<div class="host-reserve-tit">정산 현황</div>
+				<div class="reservation-status clearfix">
+					<ul class="re-a">
+						<li>
+							<p class="t-1">총 매출액</p>
+							<p class="t-2">5,000,000<span>원</span></p>
+						</li>
+						<li>
+							<p class="t-1">수수료</p>
+							<p class="t-2">1,200,000<span>원</span></p>
+						</li>
+						<li>
+							<p class="t-1">정산 완료</p>
+							<p class="t-2">3,800,000<span>원</span></p>
+						</li>
+					</ul>
+				</div>
 
-			<div class="host-reserve-tit">상세 내역</div>
-			<div class="status-detail">
-				<table class="host-status-table">
-				<thead>
-					<tr>
-						<th>공간명</th>
-						<th>예약 신청일</th>
-						<th>공간 이용일</th>
-						<th>예약 상태</th>
-						<th>결재 금액</th>
-						<th>정산 금액</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">120,000원</td>
-						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
-					</tr>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">-</td>
-						<td data-label="정산 금액"><span class="warning">정산 불가</span></td>
-					</tr>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">120,000원</td>
-						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
-					</tr>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">120,000원</td>
-						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
-					</tr>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">120,000원</td>
-						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
-					</tr>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">120,000원</td>
-						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
-					</tr>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">-</td>
-						<td data-label="정산 금액"><span class="warning">정산 불가</span></td>
-					</tr>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">120,000원</td>
-						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
-					</tr>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">120,000원</td>
-						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
-					</tr>
-					<tr>
-						<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
-						<td data-label="예약 신청일">2025. 05. 28</td>
-						<td data-label="공간 이용일">2025. 05. 28</td>
-						<td data-label="예약 상태">이용 완료</td>
-						<td data-label="결재 금액">120,000원</td>
-						<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
-					</tr>
-				</tbody>
-				</table>
+				<div class="host-reserve-tit other">상세 내역</div>
+				<div class="status-detail">
+					<table class="host-status-table">
+					<thead>
+						<tr>
+							<th>공간명</th>
+							<th>예약 신청일</th>
+							<th>공간 이용일</th>
+							<th>예약 상태</th>
+							<th>결재 금액</th>
+							<th>정산 금액</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">120,000원</td>
+							<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+						</tr>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">-</td>
+							<td data-label="정산 금액"><span class="warning">정산 불가</span></td>
+						</tr>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">120,000원</td>
+							<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+						</tr>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">120,000원</td>
+							<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+						</tr>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">120,000원</td>
+							<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+						</tr>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">120,000원</td>
+							<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+						</tr>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">-</td>
+							<td data-label="정산 금액"><span class="warning">정산 불가</span></td>
+						</tr>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">120,000원</td>
+							<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+						</tr>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">120,000원</td>
+							<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+						</tr>
+						<tr>
+							<td data-label="공간명">A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+							<td data-label="예약 신청일">2025. 05. 28</td>
+							<td data-label="공간 이용일">2025. 05. 28</td>
+							<td data-label="예약 상태">이용 완료</td>
+							<td data-label="결재 금액">120,000원</td>
+							<td data-label="정산 금액"><span class="txt-green">108,000원</span> 정산 완료</td>
+						</tr>
+					</tbody>
+					</table>
 
-				<div class="pagenation">
-					<a href="#" class="first">처음으로</a>
-					<a href="#" class="prev">이전</a>
+					<div class="pagenation">
+						<a href="#" class="first">처음으로</a>
+						<a href="#" class="prev">이전</a>
 
-					<a href="#" class="on">1</a>
-					<a href="#">2</a>
-					<a href="#">3</a>
-					<a href="#">4</a>
-					<a href="#">5</a>
-					<a href="#">6</a>
-					<a href="#">7</a>
-					<a href="#">8</a>
-					<a href="#">9</a>
-					<a href="#">10</a>
+						<a href="#" class="on">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">6</a>
+						<a href="#">7</a>
+						<a href="#">8</a>
+						<a href="#">9</a>
+						<a href="#">10</a>
 
-					<a href="#" class="next">다음</a>
-					<a href="#" class="last">마지막</a>
+						<a href="#" class="next">다음</a>
+						<a href="#" class="last">마지막</a>
+					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </div>

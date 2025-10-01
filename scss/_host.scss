@@ -7,27 +7,49 @@ div.host-visual {
 
 	div.text-area {
 		position: absolute;
-		left: 50%;
-		top: 50%;
 		color: $title-black;
-		width: 1440px;
-		transform: translate(-50%, -50%);
 
 		p.t-1 {
 			font-size: 60px;
 			padding-bottom: 7px;
 			line-height: 60px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 30px;
+				padding-bottom: 0px;
+				line-height: 34px;
+			}
 		}
 		p.t-2 {
 			font-family:'Pretendard-SemiBold';
 			font-size: 60px;
 			line-height: 60px;
 			padding: 15px 0;
+
+			@media screen and (max-width: 767px) {
+				font-size: 30px;
+				padding: 7px 0;
+				line-height: 34px;
+
+				span {
+					display: block;
+				}
+			}
 		}
 		p.t-3 {
 			font-size: 30px;
 			color: #A2A2A4;
 			padding-bottom: 40px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				padding-bottom: 15px;
+				line-height: 20px;
+
+				span {
+					display: block;
+				}
+			}
 		}
 		a {
 			display: inline-block;
@@ -36,6 +58,35 @@ div.host-visual {
 			font-size: 24px;
 			background: url('../img/icons/icon_next.svg') 100% 50% no-repeat;
 			padding-right: 20px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+			}
+		}
+
+		@media screen and (min-width: 1920px) { 
+			left: 50%; top: 50%;
+			transform: translate(-90%, -50%);
+		}
+		@media screen and (min-width: 1600px) and (max-width: 1919px) { 
+			left: 112px; top: 50%;
+			transform: translate(0%, -50%);
+		}
+		@media screen and (min-width: 1280px) and (max-width: 1599px) { 
+			left: 100px; top: 50%;
+			transform: translate(0%, -50%);
+		}
+		@media screen and (min-width: 1024px) and (max-width: 1279px) { 
+			left: 42px; top: 50%;
+			transform: translate(0%, -50%);
+		}
+		@media screen and (min-width: 768px) and (max-width: 1023px) { 
+			left: 32px; top: 50%;
+			transform: translate(0%, -50%);
+		}
+		@media screen and (min-width: 320px) and (max-width: 767px) {
+			left: 20px; top: 40%;
+			transform: translate(0%, -50%);
 		}
 	}
 }
@@ -44,13 +95,25 @@ div.host-main-wrapper {
 
 	/*잇플레이스로 누구나 호스트가 될 수 있어요.*/
 	div.host-anyone {
-		padding: 100px 0 100px 0;
+		/*padding: 100px 0 100px 0;*/
+
+		@media screen and (max-width: 767px) {
+			padding: 0px 0 100px 0;
+		}
 
 		p.h-tit {
 			font-size: 60px;
 			font-family:'Pretendard-SemiBold';
 			text-align: center;
 			padding-bottom: 60px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 30px;
+				width: 220px;
+				word-break: keep-all;
+				line-height: 34px;
+				margin: 0 auto;
+			}
 		}
 		ul.anyone-card {
 
@@ -72,6 +135,7 @@ div.host-main-wrapper {
 					width: 100%;
 					margin-right: 0px;
 					padding-bottom: 30px;
+					margin-bottom: 20px;
 				}
 
 				&:nth-child(1) {
@@ -97,6 +161,10 @@ div.host-main-wrapper {
 					color: #fff;
 					padding-bottom: 7px;
 					margin: 30px 30px 0 30px;
+
+					@media screen and (max-width: 767px) {
+						font-size: 20px;
+					}
 				}
 				p.t-2 {
 					font-size: 16px;
@@ -104,13 +172,22 @@ div.host-main-wrapper {
 					margin: 0px 30px 0 30px;
 					line-height: 20px;
 					word-break: keep-all;
+
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+					}
 				}
 			}
-		}
+		}	
 	}
 
 	/*이런 질문 많아요!*/
 	div.host-qna {
+
+		@media screen and (max-width: 767px) {
+			position: relative;
+			padding-bottom: 160px;
+		}
 
 		p.s-tit {
 			color: $title-black;
@@ -118,10 +195,19 @@ div.host-main-wrapper {
 			margin-bottom: 60px;
 			border-bottom: 1px solid #C6CAD3;
 
+			@media screen and (max-width: 767px) {
+				padding-bottom: 30px;
+				margin-bottom: 30px;
+			}
+
 			span {
 				float: left;
 				font-family:'Pretendard-SemiBold';
 				font-size: 60px;
+
+				@media screen and (max-width: 767px) {
+					font-size: 30px;
+				}
 			}
 			a {
 				float: right;
@@ -130,6 +216,16 @@ div.host-main-wrapper {
 				background: url('../img/icons/icon_next.svg') 100% 50% no-repeat;
 				padding-right: 20px;
 				margin-top: 50px;
+
+				@media screen and (max-width: 767px) {
+					position: absolute;
+					float: none;
+					bottom: 100px;
+					left: 50%;
+					transform: translateX(-50%);
+					margin-top: 0;
+					font-size: 16px;
+				}
 			}
 		}
 		ul.qna-list {
@@ -137,6 +233,9 @@ div.host-main-wrapper {
 			li {
 				padding-bottom: 60px;
 
+				@media screen and (max-width: 767px) {
+					padding-bottom: 30px;
+				}
 				&:last-child {
 					padding-bottom: 0;
 				}
@@ -148,12 +247,25 @@ div.host-main-wrapper {
 					padding-bottom: 15px;
 					background: url('../img/icons/icon_q.svg') 0% 8px no-repeat;
 					padding-left: 25px;
+
+					@media screen and (max-width: 767px) {
+						font-size: 20px;
+						line-height: 22px;
+						padding-bottom: 12px;
+						background: url('../img/icons/icon_q.svg') 0% 2px no-repeat;
+					}
 				}
 				p.answer {
 					font-size: 18px;
 					color: #62717E;
 					background: url('../img/icons/icon_a.svg') 0% 5px no-repeat;
 					padding-left: 25px;
+
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+						line-height: 20px;
+						background: url('../img/icons/icon_a.svg') 0% 3px no-repeat;
+					}
 				}
 			}
 		}
@@ -164,6 +276,10 @@ div.host-it-area {
 
 	div.swiper {
 		height: 725px;
+
+		@media screen and (max-width: 767px) {
+			height: 100vh;
+		}
 
 		div.swiper-slide {
 			position: relative;
@@ -180,27 +296,84 @@ div.host-it-area {
 				height: 100%;
 				object-fit: cover;
 			}
+			div.caption {
+				height: 100%;
+			}
 			div.text-area {
 				position: absolute;
 				z-index: 10;
-				width: 1440px;
 				left: 50%;
 				top: 50%;
 				color: #fff;
-				width: 1440px;
 				transform: translate(-50%, -50%);
+
+				@media screen and (max-width: 767px) {
+					font-size: 30px;
+					width: calc(100% - 40px);
+				}
+
+				@media screen and (min-width: 1920px) { 
+					left: 50%; top: 50%;
+					transform: translate(-86%, -50%);
+				}
+				@media screen and (min-width: 1600px) and (max-width: 1919px) { 
+					left: 112px; top: 50%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1280px) and (max-width: 1599px) { 
+					left: 100px; top: 50%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 1024px) and (max-width: 1279px) { 
+					left: 42px; top: 50%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 768px) and (max-width: 1023px) { 
+					left: 32px; top: 50%;
+					transform: translate(0%, -50%);
+				}
+				@media screen and (min-width: 320px) and (max-width: 767px) {
+					left: 20px; top: 25%;
+					transform: translate(0%, -50%);
+				}
 
 				p.t-1 {
 					font-size: 60px;
 					font-family:'Pretendard-SemiBold';
+
+					@media screen and (max-width: 767px) {
+						font-size: 30px;
+						line-height: 34px;
+
+						span {
+							display: block;
+						}
+					}
 				}
 				p.t-2 {
 					font-size: 24px;
+
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+						line-height: 20px;
+						margin-top: 10px;
+
+						span {
+							display: block;
+						}
+					}
 				}
 				a {
 					display: inline-block;
 					width: 220px;
 					margin-top: 70px;
+
+					@media screen and (max-width: 767px) {
+						width: 100%;
+						position: absolute;
+						margin-top: 0px;
+						top: 60vh;
+					}
 				}
 			}
 		}
@@ -212,9 +385,13 @@ div.place-menagement-tabs {
 	border-bottom: 1px solid #C6CAD3;
 
 	@media screen and (max-width: 767px) {
-		padding-top: 30px;
+		position: relative;
+		padding-top: 95px;
 		border-bottom: 0;
 
+		&.temporary {
+			padding-top: 195px;
+		}
 		.bootstrap-select>select {
 			left: 0;
 		}
@@ -256,8 +433,11 @@ div.place-menagement-tabs {
 
 		@media screen and (max-width: 767px) {
 			float: none;
-			padding: 30px 0 15px 0;
-			border-bottom: 1px solid #C6CAD3;
+			position: absolute;
+			padding: 0px 0 0px 0;
+			border-bottom: 0;
+			width: 100%;
+			top: 25px;
 		}
 
 		a.place-reg {
@@ -266,11 +446,20 @@ div.place-menagement-tabs {
 			background: $main-color url('../img/icons/icon_plus_white_long.svg') 48px 50% no-repeat;
 			padding: 16px 0 16px 20px;
 			margin-left: 24px;
+
+			@media screen and (max-width: 767px) {
+				float: none;
+				width: 100%;
+				background: $main-color url('../img/icons/icon_plus_white_long.svg') calc(50% - 50px) 50% no-repeat;
+				margin-left: 0px;
+			}
 		}
 		div.stop-temporary {
 			float: left;
 
 			@media screen and (max-width: 768px) {
+				float: none;
+				position: absolute;
 				width: 100%;
 				padding-bottom: 15px;
 			}
@@ -280,10 +469,23 @@ div.place-menagement-tabs {
 				font-size: 18px;
 				color: #62717E;
 				margin: 14px 24px 0 0;
+
+				@media screen and (max-width: 768px) {
+					float: none;
+					display: block;
+					font-size: 16px;
+					margin: 70px 0px 5px 0;
+				}
 			}
 			div.selects {
 				float: right;
 				width: 155px;
+
+				@media screen and (max-width: 768px) {
+					float: none;
+					display: block;
+					width: 100%;
+				}
 			}
 		}
 	}
@@ -294,7 +496,7 @@ div.host-info-wrapper {
 	width: 600px;
 	margin: 0px auto 0px auto;
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767px) {
 		width: 100%;
 		margin: 0px auto 0px auto;
 	}
@@ -305,6 +507,12 @@ div.host-info-wrapper {
 		color: $title-black;
 		line-height: 48px;
 		padding-bottom: 25px;
+
+		@media screen and (max-width: 767px) {
+			font-size: 20px;
+			line-height: 24px;
+			padding-bottom: 15px;
+		}
 	}
 	div.ready-item {
 		background: #F7F7F7;
@@ -312,6 +520,11 @@ div.host-info-wrapper {
 		font-size: 18px;
 		color: $title-black;
 		padding: 20px 25px;
+
+		@media screen and (max-width: 767px) {
+			font-size: 16px;
+			padding: 20px 20px;
+		}
 
 		ul {
 
@@ -324,6 +537,10 @@ div.host-info-wrapper {
 	div.input-section {
 		padding-top: 55px;
 
+		@media screen and (max-width: 767px) {
+			padding-top: 20px;
+		}
+
 		div.both-tit {
 
 			p.s-tit {
@@ -334,6 +551,11 @@ div.host-info-wrapper {
 				color: #A2A2A4;
 				font-size: 18px;
 
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					display: none;
+				}
+
 				&.lineheight {
 					margin-top: -7px;
 				}
@@ -343,6 +565,11 @@ div.host-info-wrapper {
 			font-size: 18px;
 			font-family:'Pretendard-SemiBold';
 			padding-bottom: 10px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				padding-bottom: 7px;
+			}
 
 			span {
 				color: $main-color;
@@ -363,6 +590,10 @@ div.host-info-wrapper {
 		ul.s-tit-2 {
 			margin: 15px 0 60px 10px;
 
+			@media screen and (max-width: 768px) {
+				margin: 15px 0 30px 10px;
+			}
+
 			li {
 				font-size: 14px;
 				padding-left: 15px;
@@ -381,7 +612,8 @@ div.host-info-wrapper {
 			font-weight: 500;
 
 			@media screen and (max-width: 768px) {
-				font-size: 18px;
+				font-size: 16px;
+				padding-left: 15px;
 			}
 
 			&::placeholder {
@@ -392,6 +624,11 @@ div.host-info-wrapper {
 			font-size: 14px;
 			color: #A2A2A4;
 			padding-top: 10px;
+
+			@media screen and (max-width: 768px) {
+				line-height: 18px;
+				padding-top: 7px;
+			}
 		}
 		div.input-wrap {
 
@@ -401,11 +638,19 @@ div.host-info-wrapper {
 
 				&.place-width {
 					width: 94%;
+
+					@media screen and (max-width: 768px) {
+						width: calc(100% - 40px);
+					}
 				}
 			}
 			button {
 				float: right;
 				width: calc(30% - 20px);
+
+				@media screen and (max-width: 768px) {
+					width: calc(30% - 8px);
+				}
 			}
 			span.sup {
 				float: left;
@@ -420,6 +665,11 @@ div.host-info-wrapper {
 			width: calc(35% - 20px);
 			vertical-align: top;
 
+			@media screen and (max-width: 768px) {
+				display: block;
+				width: 100%;
+			}
+
 			.bootstrap-select > .dropdown-toggle {
 				height: 61px;
 			}
@@ -427,9 +677,20 @@ div.host-info-wrapper {
 		input.number {
 			width: 40%;
 			margin: 0 20px;
+
+			@media screen and (max-width: 768px) {
+				display: block;
+				width: 100%;
+				margin: 8px 0px;
+			}
 		}
 		input.name {
 			width: calc(25% - 20px);
+
+			@media screen and (max-width: 768px) {
+				display: block;
+				width: 100%;
+			}
 		}
 		input.address {
 			margin-top: 10px;
@@ -441,6 +702,12 @@ div.host-info-wrapper {
 			color: $title-black;
 			padding: 20px 25px;
 			margin-top: 20px;
+
+			@media screen and (max-width: 768px) {
+				font-size: 15px;
+				color: $title-black;
+				padding: 20px 20px;
+			}
 		}
 		.bootstrap-select > .dropdown-toggle {
 			border: 1px solid #C6CAD3;
@@ -457,6 +724,12 @@ div.host-info-wrapper {
 				border-radius: 8px;
 				overflow: hidden;
 				margin: 20px 20px 0 0;
+
+				@media screen and (max-width: 767px) {
+					margin: 10px 10px 0 0;
+					width: 72px;
+					height: 72px;
+				}
 
 				img {
 					width: 100%;
@@ -475,6 +748,10 @@ div.host-info-wrapper {
 
 				&:nth-child(6n) {
 					margin: 20px 0px 0 0;
+
+					@media screen and (max-width: 767px) {
+						margin: 10px 10px 0 0;
+					}
 				}
 				&.addbtn {
 
@@ -498,8 +775,19 @@ div.host-info-wrapper {
 			padding: 15px 20px;
 			margin-top: 10px;
 
+			@media screen and (max-width: 767px) {
+				padding: 10px 10px;
+			}
+
 			&::placeholder {
 				color: #A2A2A4;
+			}
+
+			&.intro-textarea {
+
+				@media screen and (max-width: 767px) {
+					height: 200px;
+				}
 			}
 		}
 
@@ -508,21 +796,42 @@ div.host-info-wrapper {
 
 			div.parking {
 				float: left;
+
+				@media screen and (max-width: 767px) {
+					float: none;
+				}
 				
 				&:nth-child(1) {
 					width: 25%;
 					padding-top: 20px;
+
+					@media screen and (max-width: 767px) {
+						width: 100%;
+					}
 				}
 				&:nth-child(2) {
 					width: 41%;
+
+					@media screen and (max-width: 767px) {
+						width: 100%;
+						margin: 0 0 10px 0;
+					}
 				}
 				&:nth-child(3) {
 					width: 34%;
+
+					@media screen and (max-width: 767px) {
+						width: 100%;
+					}
 				}
 
 				label {
 					font-size: 18px;
 					color: #62717E;
+
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+					}
 				}
 				div.check-parking {
 					float: left;
@@ -534,12 +843,21 @@ div.host-info-wrapper {
 					position: relative;
 					width: 120px;
 
+					@media screen and (max-width: 767px) {
+						float: right;
+						width: 50%;
+					}
+
 					span {
 						position: absolute;
 						top: 16px;
 						right: 20px;
 						font-size:18px;
 						color: $title-black;
+
+						@media screen and (max-width: 767px) {
+							font-size: 16px;
+						}
 					}
 				}
 			}
@@ -549,14 +867,32 @@ div.host-info-wrapper {
 
 			div.manager-l {
 				float: left;
+
+				@media screen and (max-width: 767px) {
+					float: none;
+					display: block;
+				}
 			}
 			div.manager-r {
 				float: right;
+
+				@media screen and (max-width: 767px) {
+					float: none;
+					display: block;
+					padding-top: 15px;
+				}
 			}
 			label {
 				font-size: 18px;
 				color: #62717E;
+
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+				}
 			}
+		}
+		div.manager-wrapper {
+			display: none;
 		}
 		div.use-info {
 			border-top: 1px solid #EAEAEA;
@@ -565,6 +901,10 @@ div.host-info-wrapper {
 			font-size: 18px;
 			padding-left: 35px;
 			background: url('../img/icons/icon_warnning.svg') 0px 20px no-repeat;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+			}
 		}
 		div.day-select {
 			border-top: 1px solid #EAEAEA;
@@ -574,17 +914,39 @@ div.host-info-wrapper {
 
 			ul {
 
+				@media screen and (max-width: 767px) {
+					display: flex;
+					justify-content: center;
+					gap: 8px;
+				}
+
 				li {
 					float: left;
 
+					@media screen and (max-width: 767px) {
+						float: none;
+					}
+
 					&:not(:first-child):not(:last-child) {
 						margin: 0 12px;
+
+						@media screen and (max-width: 767px) {
+							margin: 0 0px;
+						}
 					}
 					&:first-child {
 						margin-right: 12px;
+
+						@media screen and (max-width: 767px) {
+							margin-right: 0px;
+						}
 					}
 					&:last-child {
 						margin-left: 12px;
+
+						@media screen and (max-width: 767px) {
+							margin-left: 0px;
+						}
 					}
 
 					a {
@@ -597,6 +959,14 @@ div.host-info-wrapper {
 						border-radius: 8px;
 						text-align: center;
 						line-height: 60px;
+
+						@media screen and (max-width: 767px) {
+
+							font-size: 16px;
+							width: 38px;
+							height: 38px;
+							line-height: 36px;
+						}
 
 						&.on {
 							color: $main-color;
@@ -612,30 +982,55 @@ div.host-info-wrapper {
 				width: 90%;
 				margin: 10px 0 0px 0px;
 
+				@media screen and (max-width: 767px) {
+					width: 100%;
+				}
+
 				th {
 					width: 30%;
 					font-size: 18px;
 					color: #62717E;
 					padding: 10px 0;
+
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+					}
 				}
 				td {
 					width: 70%;
 					font-family:'Pretendard-SemiBold';
 					font-size: 18px;
 					color: $title-black;
+
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+						text-align: right;
+					}
 				}
 			}
 		}
 		p.manager-confirm {
 			padding: 25px 0;
 
+			@media screen and (max-width: 767px) {
+				padding: 12px 0 25px 0;
+			}
+
 			label {
 				font-size: 18px;
 				color: $title-black;
+
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+				}
 			}
 
 			&.holiday {
 				text-align: right;
+
+				@media screen and (max-width: 767px) {
+					text-align: left;
+				}
 			}
 		}
 
@@ -645,6 +1040,12 @@ div.host-info-wrapper {
 			padding-top: 20px;
 			font-size: 18px;
 			color: $title-black;
+
+			@media screen and (max-width: 767px) {
+				text-align: left;
+				padding-top: 10px;
+				font-size: 16px;
+			}
 		}
 	}
 	a.host-register-button {
@@ -652,15 +1053,35 @@ div.host-info-wrapper {
 
 		&.go-next {
 			margin-top: 60px;
+
+			@media screen and (max-width: 767px) {
+				margin-top: 30px;
+			}
 		}
 	}
 
 	/* 공간등록 progress */
 	div.register-progress {
 
+		@media screen and (max-width: 767px) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+		}
+
 		div.r-wrapper {
 			float: left;
 			width: 100px;
+
+			@media screen and (max-width: 767px) {
+				float: none;
+				width: 70px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
 
 			div.round {
 				height: 100px;
@@ -671,6 +1092,13 @@ div.host-info-wrapper {
 				border-radius: 50%;
 				text-align: center;
 				line-height: 90px;
+
+				@media screen and (max-width: 767px) {
+					width: 70px;
+					height: 70px;
+					line-height: 60px;
+					font-size: 20px;
+				}
 			}
 			span {
 				display: block;
@@ -679,6 +1107,10 @@ div.host-info-wrapper {
 				text-align: center;
 				color: #62717E;
 				padding-top: 10px;
+
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+				}
 			}
 			&.on {
 				div.round {
@@ -702,13 +1134,23 @@ div.host-info-wrapper {
 		}
 		div.line {
 			float: left;
-			margin: 0 10px;
+			margin: 50px 10px 0 10px;
 			width: calc(100% - 470px);
 			border-top: 2px solid #DEF6F4;
-			margin-top: 50px;
+
+			@media screen and (max-width: 767px) {
+				float: none;
+				flex: 1;
+				border-top: 1px solid #DEF6F4;
+				margin: -10px 5px 0 5px;
+			}
 
 			&.completed {
 				border-top: 2px solid $main-color;
+
+				@media screen and (max-width: 767px) {
+					border-top: 1px solid $main-color;
+				}
 			}
 		}
 	}
@@ -718,6 +1160,11 @@ div.host-info-wrapper {
 		font-size: 24px;
 		color: $title-black;
 		margin-top: 60px;
+
+		@media screen and (max-width: 767px) {
+			font-size: 16px;
+			margin-top: 30px;
+		}
 
 		img {
 			vertical-align: middle;
@@ -732,6 +1179,10 @@ div.host-info-wrapper {
 	div.two-objects {
 		padding-top: 30px;
 
+		@media screen and (max-width: 767px) {
+			padding-top: 0px;
+		}
+
 		a {
 			width: calc(50% - 10px); 
 
@@ -744,21 +1195,41 @@ div.host-info-wrapper {
 		}
 	}
 	div.both-objects {
-		padding-top: 10px;
+		
+		@media screen and (max-width: 767px) {
+			padding-top: 0px;
+		}
 
 		div.object {
 			width: calc(50% - 10px); 
 
+			@media screen and (max-width: 767px) {
+				width: 100%; 
+			}
+
 			&:nth-child(1) {
 				float: left;
+
+				@media screen and (max-width: 767px) {
+					float: none;
+				}
 			}
 			&:nth-child(2) {
 				float: right;
+
+				@media screen and (max-width: 767px) {
+					float: none;
+					margin-top: 10px;
+				}
 			}
 
 			&.f {
 				font-size: 18px;
 				color: #62717E;
+
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+				}
 			}
 		}
 
@@ -769,17 +1240,33 @@ div.host-info-wrapper {
 
 			&.mg {
 				margin-top: 20px;
+
+				@media screen and (max-width: 767px) {
+					margin-top: 10px;
+				}
 			}
 			div.big {
 				margin-top: 15px;
+
+				@media screen and (max-width: 767px) {
+					margin-top: 0;
+				}
 			}
 		}
 	}
 	div.three-objects {
 		padding: 5px 0 15px 0;
 
+		@media screen and (max-width: 767px) {
+			padding: 5px 0 0px 0;
+		}
+
 		div.object {
 			width: 33.3%; 
+
+			@media screen and (max-width: 767px) {
+				display: none;
+			}
 
 			&:nth-child(1) {
 				float: left;
@@ -794,10 +1281,28 @@ div.host-info-wrapper {
 			}
 		}
 	}
+
+	div.check-in-advance {
+		display: none;
+
+		div.pay-to-time {
+			display: none;
+		}
+	}
+
+	div.holiday-select-option {
+		display: none;
+	}
+
 	div.user-make-cnt {
 		float: right;
 		width: 80%;
 		height: 28px;
+
+		@media screen and (max-width: 767px) {
+			float: none;
+			width: 100%;
+		}
 
 		a {
 			display: inline-block;
@@ -818,15 +1323,28 @@ div.host-info-wrapper {
 			font-family:'Pretendard-SemiBold';
 			text-align: center;
 			vertical-align: top;
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+			}
 		}
 	}
 	div.user-make-input {
 		float: right;
 		width: 100%;
 		text-align: right;
+
+		@media screen and (max-width: 767px) {
+			float: none;
+			text-align: left;
+		}
 		
 		input {
 			width: 85%;
+
+			@media screen and (max-width: 767px) {
+				width: calc(100% - 30px);
+			}
 		}
 		span {
 			font-size: 20px;
@@ -1218,6 +1736,11 @@ div.host-reservation-tabs {
 			float: none;
 			padding: 30px 0 15px 0;
 			border-bottom: 1px solid #C6CAD3;
+
+			&.reserve-status {
+				position: relative;
+				padding: 95px 0 15px 0;
+			}
 		}
 
 		span.s-txt {
@@ -1228,12 +1751,21 @@ div.host-reservation-tabs {
 			@media screen and (max-width: 767px) {
 				display: block;
 				font-size: 16px;
+
+				span.m {
+					display: block;
+				}
 			}
 		}
 		span.host-select {
 			display: inline-block;
 			margin-right: 20px;
 			width: 155px;
+
+			@media screen and (max-width: 767px) {
+				width: 100%;
+				margin-right: 0;
+			}
 		}
 		.both {
 			@media screen and (max-width: 767px) {
@@ -1247,7 +1779,10 @@ div.host-reservation-tabs {
 			display: inline-block;
 			vertical-align: bottom;
 
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 767px) {
+				position: absolute;
+				top: 25px;
+				left: 0;
 				width: 100%;
 				padding-bottom: 15px;
 			}
@@ -1956,6 +2491,12 @@ div.host-cancel-modal {
 		color: $title-black;
 		font-family: 'Pretendard-SemiBold';
 		padding-bottom: 12px;
+
+		@media screen and (max-width: 767px) {
+			font-size: 16px;
+			line-height: 18px;
+			word-break: keep-all;
+		}
 	}
 	table {
 
@@ -1964,6 +2505,11 @@ div.host-cancel-modal {
 			padding: 7px 0;
 			word-break: keep-all;
 			line-height: 24px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 14px;
+				line-height: 18px;
+			}
 
 			label.custom-label {
 				vertical-align: middle;
@@ -1983,6 +2529,14 @@ div.host-payment-wrapper {
 		font-family:'Pretendard-SemiBold';
 		color: $title-black;
 		padding: 50px 0 30px 0;
+
+		@media screen and (max-width: 767px) {
+			font-size: 18px;
+
+			&.other {
+				padding: 50px 0 0px 0;
+			}
+		}
 	}
 
 	div.host-select-date {
@@ -1990,9 +2544,18 @@ div.host-payment-wrapper {
 		border-top: 1px solid #C6CAD3;
 		padding-top: 100px;
 
+		@media screen and (max-width: 767px) {
+			margin: 30px 0 0px 0;
+			padding-top: 50px;
+		}
+
 		div.dates {
 			width: 442px;
 			margin: 0 auto;
+
+			@media screen and (max-width: 767px) {
+				width: 100%;
+			}
 
 			a.prev {
 				float: left;
@@ -2002,6 +2565,10 @@ div.host-payment-wrapper {
 				text-indent: -9999px;
 				margin-right: 12px;
 				margin-top: 15px;
+
+				@media screen and (max-width: 767px) {
+					margin-top: 45px;
+				}
 			}
 			a.next {
 				float: right;
@@ -2011,15 +2578,29 @@ div.host-payment-wrapper {
 				text-indent: -9999px;
 				margin-left: 12px;
 				margin-top: 15px;
+
+				@media screen and (max-width: 767px) {
+					margin-top: 45px;
+				}
 			}
 			div.selects {
 				float: left;
 				width: 358px;
 
+				@media screen and (max-width: 767px) {
+					width: calc(100% - 85px);
+				}
+
 				span.s-1, span.s-2 {
 					display: inline-block;
 					width: 155px;
 					margin: 0 12px;
+
+					@media screen and (max-width: 767px) {
+						display: block;
+						width: 100%;
+						margin: 0 0 10px 0px;
+					}
 				}
 			}
 		}
@@ -2029,6 +2610,10 @@ div.host-payment-wrapper {
 		padding: 30px;
 		border-radius: 14px;
 		background: #F7F7F7;
+
+		@media screen and (max-width: 767px) {
+			padding: 20px;
+		}
 
 		ul.re-s {
 
@@ -2045,21 +2630,43 @@ div.host-payment-wrapper {
 					margin-right: 0;
 				}
 
+				@media screen and (max-width: 767px) {
+					width: calc(50% - 8px);
+					margin-right: 16px;
+					margin-bottom: 16px;
+
+					&:nth-child(2n) {
+						margin-right: 0;
+					}
+				}
+
 				p.t-1 {
 					color: #62717E;
 					font-size: 18px;
 					font-family:'Pretendard-SemiBold';
+
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+					}
 				}
 				p.t-2 {
 					color: $main-color;
 					font-size: 40px;
 					font-family:'Pretendard-SemiBold'; 
 
+					@media screen and (max-width: 767px) {
+						font-size: 20px;
+					}
+
 					span {
 						font-size: 24px;
 						color: $title-black;
 						margin-left: 5px;
 						vertical-align: middle;
+
+						@media screen and (max-width: 767px) {
+							font-size: 16px;
+						}
 					}
 				}
 			}
@@ -2078,22 +2685,40 @@ div.host-payment-wrapper {
 				&:last-child {
 					margin-right: 0;
 				}
+				
+				@media screen and (max-width: 767px) {
+					float: none;
+					width: 100%;
+					margin-bottom: 16px;
+				}
 
 				p.t-1 {
 					color: #62717E;
 					font-size: 18px;
 					font-family:'Pretendard-SemiBold';
+
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+					}
 				}
 				p.t-2 {
 					color: $main-color;
 					font-size: 40px;
 					font-family:'Pretendard-SemiBold'; 
 
+					@media screen and (max-width: 767px) {
+						font-size: 20px;
+					}
+
 					span {
 						font-size: 24px;
 						color: $title-black;
 						margin-left: 5px;
 						vertical-align: middle;
+
+						@media screen and (max-width: 767px) {
+							font-size: 16px;
+						}
 					}
 				}
 			}
@@ -2118,13 +2743,18 @@ div.host-payment-wrapper {
 				font-size: 16px;
 				color: $title-black;
 
+				@media screen and (max-width: 767px) {
+					padding: 10px 0;
+					border-bottom: 0;
+				}
+
 				span.warning {
 					color: #E75B3C;
 				}
 			}
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			.host-status-table thead {
 				display: none; /* 헤더 숨김 */
 			}
@@ -2138,11 +2768,9 @@ div.host-payment-wrapper {
 			}
 
 			.host-status-table tr {
-				margin-bottom: 15px;
-				border: 1px solid #ddd;
-				border-radius: 6px;
-				padding: 10px;
-				background: #fafafa;
+				padding: 20px 0;
+				border-bottom: 1px solid #C6CAD3;
+				background: #fff;
 			}
 
 			.host-status-table td {
@@ -2150,15 +2778,292 @@ div.host-payment-wrapper {
 				padding: 6px 10px;
 				border: none;
 				position: relative;
+				border-bottom: 0;
 			}
 
 			.host-status-table td::before {
 				content: attr(data-label); /* th 대신 data-label 값 표시 */
 				font-weight: bold;
-				display: inline-block;
+				display: block;
 				width: 90px;
-				color: #555;
+				color: #62717E;
 			}
+		}
+	}
+}
+
+/* 예약불가 */
+div.reservation-not-search {
+	border-bottom: 1px solid #C6CAD3;
+	padding-top: 35px;
+	height: 115px;
+
+	@media screen and (max-width: 767px) {
+		height: auto;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	div.status {
+
+		@media screen and (max-width: 767px) {
+			
+		}
+
+		span.ss {
+			float: left;
+			margin: 14px 24px 0 0px;
+			color: #62717E;
+			font-size: 18px;
+
+			@media screen and (max-width: 767px) {
+				float: none;
+				display: block;
+				margin: 15px 0 5px 0;
+				font-size: 16px;
+			}
+		}
+		div.se-wrap {
+			float: right;
+			width: calc(100% - 142px);
+
+			.bootstrap-select > .dropdown-toggle {
+				color: $title-black;
+			}
+
+			@media screen and (max-width: 767px) {
+				float: none;
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+div.calendar-wrapper {
+	padding: 100px 0 0 0;
+
+	@media screen and (max-width: 767px) {
+		padding: 50px 0 0 0;
+	}
+
+	.flatpickr-calendar .fp-header .fp-label {
+		font-size: 30px;
+		padding: 0 20px;
+
+		@media screen and (max-width: 767px) {
+			font-size: 16px;
+			padding: 0 10px;
+		}
+	}
+	div.flatpickr-weekdays {
+		height: 80px;
+		background: $main-color;
+		border-radius: 20px 20px 0 0;
+		margin-top: 50px;
+		border-bottom: 1px solid #fff;
+
+		@media screen and (max-width: 767px) {
+			height: 44px;
+			border-radius: 8px 8px 0 0;
+			margin-top: 5px;
+		}
+	
+		span.flatpickr-weekday {
+			font-family: 'Pretendard-Regular';
+			font-size: 24px;
+			color: #fff;
+			font-weight: 300;
+			border-right: 1px solid #fff;
+			line-height: 80px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 14px;
+				line-height: 20px;
+				border-right: 0;
+			}
+		}
+	}
+	div.flatpickr-days {
+
+		div.dayContainer {
+
+			span.flatpickr-day {
+				position: relative;
+				height: 200px;
+				border-radius: 0;
+				text-align: left;
+				font-size: 24px;
+				padding: 20px;
+				color: $title-black;
+				border-right: 1px solid #EAEAEA;
+				border-bottom: 1px solid #EAEAEA;
+				border-left: 0;
+				border-top: 0;
+
+				@media screen and (max-width: 767px) {
+					text-align: center;
+					font-size: 14px;
+					padding: 0px;
+					border-right: 0;
+					border-bottom: 0;
+					height: 45px;
+				}
+				
+				&:nth-child(7n) {
+					border-right: 0;
+				}
+				&:hover {
+					background: #DEF6F4;
+					border: 0;
+				}
+
+				a.event-link-reservation {
+					position: absolute;
+					color: $main-color;
+					top: 65px;
+					left: 20px;
+					padding-left: 15px;
+					background: url('../img/icons/bullet_green.svg') 0 50% no-repeat;
+					background-size: 6px 6px;
+					text-decoration: underline;
+
+					@media screen and (max-width: 767px) {
+						text-indent: -9999px;
+						top: -14px;
+						left: 50%;
+						transform: translateX(-50%);
+						padding-left: 5px;
+						background-size: 5px 5px;
+					}
+				}
+			}
+		}
+	}
+	.flatpickr-calendar.open, .flatpickr-calendar.inline {
+		max-height: 100%;
+	}
+	span.prevMonthDay, span.nextMonthDay {
+		color: #ccc !important;
+	}
+}
+
+div.reservation-modal-control {
+
+	p.date {
+		text-align: center;
+		font-size: 22px;
+		font-family:'Pretendard-SemiBold';
+		padding-bottom: 25px;
+
+		@media screen and (max-width: 767px) {
+			font-size: 16px;
+			padding-bottom: 10px;
+		}
+	}
+	div.time-control {
+
+		div.start-time {
+			float: left;
+			width: 35%;
+
+			@media screen and (max-width: 767px) {
+				float: none;
+				width: 100%;
+			}
+		}
+		span.from-to {
+			float: left;
+			font-size: 18px;
+			margin: 15px 10px 0 10px;
+
+			@media screen and (max-width: 767px) {
+				display: none;
+			}
+		}
+		div.end-time {
+			float: left;
+			width: 35%;
+
+			@media screen and (max-width: 767px) {
+				float: none;
+				width: 100%;
+				margin: 10px 0;
+			}
+		}
+		a.btn-add {
+			float: right;
+			width: 21%;
+
+			@media screen and (max-width: 767px) {
+				float: none;
+				width: 100%;
+			}
+		}
+	}
+	p.whole-day {
+		padding: 20px 0;
+	}
+	ul.now-list {
+		border-top: 1px solid #EAEAEA;
+		padding-top: 15px;
+
+		li {
+			padding-top: 15px;
+
+			span.r-1 {
+				float: left;
+				font-size: 18px;
+				color: #62717E;
+				width: 30%;
+
+				@media screen and (max-width: 767px) {
+					float: none;
+					display: block;
+					width: 100%;
+					font-size: 16px;
+				}
+			}
+			span.r-2 {
+				float: left;
+				font-size: 18px;
+				font-family:'Pretendard-SemiBold';
+				width: 70%;
+
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+					width: 100%;
+				}
+
+				span.time {
+					float: none;
+					display: block;
+					width: 100%;
+				}
+				a {
+					float: right;
+					font-size: 18px;
+					color: $main-color;
+					font-family:'Pretendard-Regular';
+
+					@media screen and (max-width: 767px) {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+
+div.modal-footer-confirm {
+	text-align: center;
+
+	a {
+		display: inline-block;
+		width: 220px;
+
+		@media screen and (max-width: 767px) {
+			width: 100%;
 		}
 	}
 }

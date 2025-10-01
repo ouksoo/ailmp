@@ -398,6 +398,40 @@ var AILMP = {
 			});
 		});
 
+		//현장매니저 이용 유/무
+		$('input[name="managerUseOkNo"]').on('change', function() {
+			if ($(this).val() === 'hide') {
+				$('div.manager-wrapper').stop(true, true).slideUp(200).attr('aria-hidden', 'true');
+			} else {
+				$('div.manager-wrapper').stop(true, true).slideDown(200).attr('aria-hidden', 'false');
+			}
+		});
+
+		//사전답사 가능 주차 유/무
+		$('input[name="checkInAdvance"]').on('change', function() {
+			if ($(this).val() === 'no') {
+				$('div.check-in-advance').stop(true, true).slideUp(200).attr('aria-hidden', 'true');
+				$('div.pay-to-time').css('display', 'none');
+			}
+			else if ($(this).val() === 'free') {
+				$('div.check-in-advance').stop(true, true).slideDown(200).attr('aria-hidden', 'false');
+				$('div.pay-to-time').css('display', 'none');
+			}
+			 else {
+				$('div.check-in-advance').stop(true, true).slideDown(200).attr('aria-hidden', 'false');
+				$('div.pay-to-time').css('display', 'block');
+			}
+		});
+
+		//현장매니저 이용 유/무
+		$('input[name="holidaySelectOption"]').on('change', function() {
+			if ($(this).val() === 'hide') {
+				$('div.holiday-select-option').stop(true, true).slideUp(200).attr('aria-hidden', 'true');
+			} else {
+				$('div.holiday-select-option').stop(true, true).slideDown(200).attr('aria-hidden', 'false');
+			}
+		});
+
 		//prevent document click 
 		$(AILMP.stopDocumentClick).on('click', function(e) {
 			e.stopPropagation();
@@ -514,9 +548,11 @@ var AILMP = {
 
 			if(tabNum == 2) {
 				$('.stop-temporary').css('display', 'block');
+				$('.place-menagement-tabs').addClass('temporary');
 			}
 			else {
 				$('.stop-temporary').css('display', 'none');
+				$('.place-menagement-tabs').removeClass('temporary');
 			}
 		});
 	},
@@ -637,6 +673,65 @@ $(document).ready(function() {
 		},
 		onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
 		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
+    });
+
+	/** 예약불가 설정 */
+	flatpickr('#reservationNotAvailable', {
+		inline: true,
+		mode: 'single',
+		dateFormat: 'Y-m-d',
+		defaultDate: [
+			new Date(Date.now())
+		],
+		locale: flatpickr.l10ns.ko,
+		monthSelectorType: 'static',
+		onReady(selectedDates, dateStr, instance) {
+			const monthsEl = instance.calendarContainer.querySelector('.flatpickr-months');
+			if (!instance._fpHeader) {
+				const header = document.createElement('div');
+				header.className = 'fp-header';
+				const prev = document.createElement('button');
+				prev.type = 'button'; prev.className = 'fp-btn preview';
+				const label = document.createElement('div');
+				label.className = 'fp-label';
+				const next = document.createElement('button');
+				next.type = 'button'; next.className = 'fp-btn next';
+				header.append(prev, label, next);
+				monthsEl.appendChild(header);
+				instance._fpHeader = header;
+				instance._fpLabel = label;
+				prev.addEventListener('click', () => { instance.changeMonth(-1); updateHeaderLabel(instance); });
+				next.addEventListener('click', () => { instance.changeMonth(1);  updateHeaderLabel(instance); });
+			}
+			updateHeaderLabel(instance);
+		},
+		onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
+		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst),
+		// onDayCreate: 각 날짜 셀 렌더링 시 호출
+		onDayCreate: function(dObj, dStr, fp, dayElem) {
+			const d = dayElem.dateObj;
+			if (d.getDate() === 10) {
+				dayElem.classList.add("has-extra");
+				const link = document.createElement("a");
+				link.href = 'url';
+				link.target = "_self";
+				link.rel = "noopener noreferrer";
+				link.className = "event-link-reservation";
+				link.textContent = 5 + "건";
+
+				// 링크 클릭 시 달력의 선택 이벤트와 충돌 방지
+				link.addEventListener("click", function(e) {
+					e.stopPropagation();
+				});
+
+				dayElem.appendChild(link);
+			}
+		},
+		// 날짜 선택 시 모달 오픈
+		onChange: function(selectedDates, dateStr, instance) {
+			const modal = new bootstrap.Modal(document.getElementById("reservationNotAvailableModal"));
+       		modal.show();
+		}
     });
 
 });
