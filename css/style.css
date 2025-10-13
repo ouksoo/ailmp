@@ -720,6 +720,14 @@ div.header-wrapper.main-only {
   background: transparent;
   border-bottom: 0px;
 }
+@media screen and (max-width: 767px) {
+  div.header-wrapper.main-only .header-left {
+    padding-top: 0px;
+    height: 0px;
+    border-bottom: 0;
+    overflow: hidden;
+  }
+}
 div.header-wrapper.main-only .header-left h1 {
   background: url("../img/logo_top_white.svg") 0 0 no-repeat;
 }

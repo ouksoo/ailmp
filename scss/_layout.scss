@@ -516,6 +516,13 @@ div.header-wrapper {
 		border-bottom: 0px;
 
 		.header-left {
+			
+			@media screen and (max-width: 767px) {
+				padding-top: 0px;
+				height: 0px;
+				border-bottom: 0;
+				overflow: hidden;
+			}
 
 			h1 {
 				background: url('../img/logo_top_white.svg') 0 0 no-repeat;
