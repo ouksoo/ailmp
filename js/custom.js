@@ -272,6 +272,11 @@ var AILMP = {
 	stopDocumentClick : 'div.header-right, .search-box',
 	placeUsertimer : null,
 	gnbMenuActive : function(){ 
+		//좌상단 로고(메인페이지 이동)
+		$('div.header-left h1, div.footer-wrapper h2').on('click', function() {
+			location.href = 'index.html';
+		});
+
 		//메뉴 활성화 시 서브메뉴 아코디언
 		$(".depth-1").on("click", function (e) {
 			e.preventDefault();

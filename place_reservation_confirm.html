@@ -41,7 +41,6 @@
 				<input type="text" placeholder="어떤 공간을 찾고 있나요? 예) 포근한 가정집" />
 				<button class="search-btn">검색</button>
 			</div>
-
 		</div>
 
 		<!-- 공지 알람 -->
@@ -73,7 +72,7 @@
 					<li>
 						<a href="javascript:void(0);" class="depth-1">마이페이지</a>
 						<div class="submenus">
-							<a href="#" class="on">예약/결제 내역</a>
+							<a href="mypage_reservation_management.html" class="on">예약/결제 내역</a>
 							<a href="#">나의 문의</a>
 							<a href="#">관심 장소</a>
 							<a href="#">개인 정보 관리</a>
@@ -107,7 +106,18 @@
  
 
 <div class="container-wrapper">
-	<div class="common-wrapper">
+
+	<!-- 예약 신청이 완료 되었습니다. -->
+	<div class="place-reserve-completed error-container" style="display: none;">
+		<p class="txt-1">예약 신청이 완료 되었어요.</p>
+		<p class="txt-2">호스트가 내용을 확인 후 예약을 승인하면<br /> 결제 요청을 드리겠습니다.</p>
+		<div class="button-both">
+			<a href="index.html" class="modal-button dark-gray bd0 search-place-off w220">홈으로 이동</a><a href="mypage_reservation_management.html" class="modal-button green bd0 w220">예약 내역 확인</a>
+		</div>
+	</div>
+	<!-- //예약 신청이 완료 되었습니다. -->
+
+	<div class="common-wrapper reservation-result-confirm-wrapper">
 		<div class="common-title-area">
 			<p class="s-title">예약 신청 내용을 확인해 주세요.</p>
 			<p class="s-txt">결제는 호스트 예약 승인 후 진행됩니다.</p>
@@ -148,7 +158,7 @@
 				</p>
 				<a href="#" data-bs-toggle="modal" data-bs-target="#providingPersonalInformation">자세히 보기</a>
 			</div>
-			<div class="btn-area"><button class="modal-button green bd0 login-button">예약 신청하기</button></div>
+			<div class="btn-area"><button class="modal-button green bd0 login-button" onclick="$('.place-reserve-completed').css('display','block'); $('.reservation-result-confirm-wrapper').css('display','none');">예약 신청하기</button></div><!-- onclick 임시 -->
 		</div>
 	</div>
 </div>

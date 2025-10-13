@@ -103,6 +103,10 @@ div.main-visual-area {
 				font-family: 'Pretendard-SemiBold';
 				font-size: 24px;
 
+				a {
+					color: #fff;
+				}
+
 				@media screen and (max-width: 767px) {
 					margin-top: 20px;
 					font-size: 16px;

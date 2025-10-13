@@ -2996,6 +2996,9 @@ div.main-visual-area .main-visual-swiper .caption p.txt-2 {
   font-family: "Pretendard-SemiBold";
   font-size: 24px;
 }
+div.main-visual-area .main-visual-swiper .caption p.txt-2 a {
+  color: #fff;
+}
 @media screen and (max-width: 767px) {
   div.main-visual-area .main-visual-swiper .caption p.txt-2 {
     margin-top: 20px;
