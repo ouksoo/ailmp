@@ -670,15 +670,96 @@ div.legal-wrapper {
 	}
 	div.text-area {
 		margin-top: 60px;
-		height: 800px;
+		/*height: 800px;
 		overflow-x: hidden;
 		overflow-y: auto;
+		*/
 		font-size: 18px;
-		color: #6C757D;
+		color: #62717E;
+		line-height: 26px;
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			margin-top: 30px;
 			font-size: 16px;
+			line-height: 20px;
+		}
+
+		div.legal-title {
+			padding: 20px 0 0 0;
+		}
+		div.detail-wrap {
+
+			@media screen and (max-width: 767px) {
+				width: 100%;
+				overflow-x: auto;
+			}
+
+			&.need {
+				margin-top: 20px;
+
+				@media screen and (max-width: 767px) {
+					margin-top: 10px;
+				}
+			}
+		}
+		strong {
+			font-size: 22px;
+			font-family: 'Pretendard-SemiBold';
+			color: $title-black;
+
+			@media screen and (max-width: 767px) {
+				font-size: 18px;
+			}
+		}
+		p.sub-t {
+			padding: 20px 0;
+
+			@media screen and (max-width: 767px) {
+				padding: 10px 0;
+			}
+			span {
+				font-size: 12px;
+				display: inline-block;
+				vertical-align: top;
+			}
+		}
+		table.notable {
+			width: 100%;
+
+			@media screen and (max-width: 767px) {
+				width: 1000px;
+			}
+			th {
+				border: 1px solid #A2A2A4;
+				padding: 10px 20px;
+				width: 25%;
+				text-align: center;
+
+				@media screen and (max-width: 767px) {
+					padding: 10px 10px;
+				}
+
+				&.three {
+					width: 33.3%;
+				}
+				&.l {
+					@media screen and (max-width: 767px) {
+						width: 18%;
+					}
+				}
+			}
+			td {
+				border: 1px solid #A2A2A4;
+				padding: 10px 20px;
+
+				@media screen and (max-width: 767px) {
+					padding: 10px 10px;
+				}
+
+				&.c {
+					text-align: center;
+				}
+			}
 		}
 	}
 }

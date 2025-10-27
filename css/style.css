@@ -2776,17 +2776,99 @@ div.legal-wrapper div.title-area div.legal-date span.t {
 }
 div.legal-wrapper div.text-area {
   margin-top: 60px;
-  height: 800px;
+  /*height: 800px;
   overflow-x: hidden;
   overflow-y: auto;
+  */
   font-size: 18px;
-  color: #6C757D;
+  color: #62717E;
+  line-height: 26px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   div.legal-wrapper div.text-area {
     margin-top: 30px;
     font-size: 16px;
+    line-height: 20px;
   }
+}
+div.legal-wrapper div.text-area div.legal-title {
+  padding: 20px 0 0 0;
+}
+@media screen and (max-width: 767px) {
+  div.legal-wrapper div.text-area div.detail-wrap {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+div.legal-wrapper div.text-area div.detail-wrap.need {
+  margin-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  div.legal-wrapper div.text-area div.detail-wrap.need {
+    margin-top: 10px;
+  }
+}
+div.legal-wrapper div.text-area strong {
+  font-size: 22px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+}
+@media screen and (max-width: 767px) {
+  div.legal-wrapper div.text-area strong {
+    font-size: 18px;
+  }
+}
+div.legal-wrapper div.text-area p.sub-t {
+  padding: 20px 0;
+}
+@media screen and (max-width: 767px) {
+  div.legal-wrapper div.text-area p.sub-t {
+    padding: 10px 0;
+  }
+}
+div.legal-wrapper div.text-area p.sub-t span {
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: top;
+}
+div.legal-wrapper div.text-area table.notable {
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  div.legal-wrapper div.text-area table.notable {
+    width: 1000px;
+  }
+}
+div.legal-wrapper div.text-area table.notable th {
+  border: 1px solid #A2A2A4;
+  padding: 10px 20px;
+  width: 25%;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  div.legal-wrapper div.text-area table.notable th {
+    padding: 10px 10px;
+  }
+}
+div.legal-wrapper div.text-area table.notable th.three {
+  width: 33.3%;
+}
+@media screen and (max-width: 767px) {
+  div.legal-wrapper div.text-area table.notable th.l {
+    width: 18%;
+  }
+}
+div.legal-wrapper div.text-area table.notable td {
+  border: 1px solid #A2A2A4;
+  padding: 10px 20px;
+}
+@media screen and (max-width: 767px) {
+  div.legal-wrapper div.text-area table.notable td {
+    padding: 10px 10px;
+  }
+}
+div.legal-wrapper div.text-area table.notable td.c {
+  text-align: center;
 }
 
 /* common title */

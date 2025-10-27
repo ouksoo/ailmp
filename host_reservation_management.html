@@ -204,7 +204,7 @@
 								예약이 접수 되었어요.<br /><span>2025년 6월 20일 22시까지 처리</span>를 완료해 주세요.
 							</div>
 							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customReservationCancelModal">예약 거절</a><a href="#" class="modal-button green" data-bs-toggle="modal" data-bs-target="#customHostQuestionModal">예약 승인</a>
+								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#hostReservationCancelModal">예약 거절</a><a href="#" class="modal-button green" data-bs-toggle="modal" data-bs-target="#customHostQuestionModal">예약 승인</a>
 							</div>
 						</div>
 					</div>
@@ -604,7 +604,7 @@
 			<p>(주)잇플레이스</p>
 			대표 : 최은주<br />
 			주소 : 서울시 성동구 뚝섬로 1길 31 M타워 803호 <span>|</span> 전화 : +82-2-516-1703<br />
-			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 홍길동<br />
+			사업자등록번호 :  000-00-0000 <span>|</span> 통신판매업신고번호 :  2025-서울성동-0000호 <span>|</span> 개인정보보호 책임자 : 최은주<br />
 			잇플레이스는 통신판매 중개자로 서비스명(또는 로고) 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 따라서 공간에 대한 정보 및 거래에 관한 의무와 책임은 호스트 회원에게 있습니다.
 		</div>
 		<div class="bottom mo clearfix">
@@ -753,7 +753,7 @@
 
 			<!-- 예약 거절 / 예약 승인-->
 			<div class="modal-footer border-ed custom-reserve-detail-footer">
-				<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">예약 거절</a><a href="#" class="modal-button green" data-bs-toggle="modal" data-bs-target="#">예약 승인</a>
+				<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#hostReservationCancelModal">예약 거절</a><a href="#" class="modal-button green" data-bs-toggle="modal" data-bs-target="#">예약 승인</a>
 			</div>
 
 			<!-- 예약 취소 -->
@@ -766,12 +766,12 @@
 </div>
 <!-- //Modal : 예약 상세보기 -->
 
-<!-- Modal : 예약 취소 -->
+<!-- Modal : 예약 거절 (20251026 수정) -->
 <div class="modal fade" id="hostReservationCancelModal" tabindex="-1" role="dialog" aria-labelledby="hostReservationCancelModal" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered w-600" role="document">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<h5 class="modal-title" id="exampleModalLongTitle">예약 취소</h5>
+				<h5 class="modal-title" id="exampleModalLongTitle">예약 거절</h5>
 				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
 			</div>
 			<div class="modal-body">
@@ -780,22 +780,22 @@
 					<table class="notable">
 						<tr>
 							<th><input type="checkbox" id="" class="custom-checkbox" checked><label for="" class="custom-label all"></label></th>
-							<td><span>게스트에게 예약 취소 사유를 설명하였습니다.</span></td>
+							<td><span>게스트에게 예약 거절 사유를 설명하였습니다.</span></td>
 						</tr>
 						<tr>
 							<th><input type="checkbox" id="" class="custom-checkbox" checked><label for="" class="custom-label all"></label></th>
-							<td><span>승인한 예약을 취소하는 경우 게스트에게 <span class="txt-green">전액 환불 처리</span>되며 호스트는 패널티가 부과 될 수 있습니다.</span></td>
+							<td><span>승인한 예약을 거절하는 경우 게스트에게 <span class="txt-green">전액 환불 처리</span>되며 호스트는 패널티가 부과 될 수 있습니다.</span></td>
 						</tr>
 					</table>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">예약 취소하기</a>
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">예약 거절하기</a>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- //Modal : 예약 취소 -->
+<!-- //Modal : 예약 거절 -->
 
 <!-- Modal : 이 예약은 한 번 거절하면 다시 상태를 바꿀 수 없어요. 정말 거절하시겠어요? -->
 <div class="modal fade" id="hostRejectConfirmModal" tabindex="-1" role="dialog" aria-labelledby="hostRejectConfirmModal" aria-hidden="true">
