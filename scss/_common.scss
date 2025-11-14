@@ -41,6 +41,11 @@ a.go-top-btn {
 /* login */
 div.login-wrapper, div.sign-up-wrapper {
 
+	&.admin {
+		border-top: 1px solid #E8E8E8;
+		padding-top: 30px;
+		margin-top: 30px;
+	}
 	button.kakao {
 		border: 0;
 		background: #FEE500 url('../img/icons/icon_kakao.svg') 20px 50% no-repeat;
@@ -320,10 +325,10 @@ div.sign-up-wrapper {
 				}
 
 				div.select-area {
-					padding-top: 30px;
+					padding-top: 0px;
 
 						@media screen and (max-width: 768px) {
-							padding-top: 20px;
+							padding-top: 0px;
 						}
 
 					.both {
@@ -354,22 +359,24 @@ div.sign-up-wrapper {
 						ul {
 							
 							li {
-								padding-bottom: 8px;
+								float: left;
+								padding: 5px 10px;
+								background: #E8E8E8;
+								border-radius: 100px;
+								font-size: 14px;
+								margin: 0 10px 10px 0;
 
 								span {
 									display: inline-block;
-									width: 150px;
-
-									@media screen and (max-width: 768px) {
-										float: left;
-									}
 								}
 								a {
+									display: inline-block;
 									color: $main-color;
-
-									@media screen and (max-width: 768px) {
-										float: right;
-									}
+									margin: -4px 0 0 10px;
+									vertical-align: middle;
+									text-indent: -9999px;
+									width: 12px; height: 12px;
+									background: url('../img/icons/icon_x_location.svg') 50% 50% no-repeat;
 								}
 							}
 						}
@@ -545,6 +552,13 @@ div.error-container {
 }
 div.account-disabled-wrapper {
 	background: url('../img/icons/icon_under.svg') 50% 0% no-repeat;
+
+	@media screen and (max-width: 768px) {
+		background-size: 80px auto;
+	}
+}
+div.account-register-wrapper {
+	background: url('../img/icons/icon_reg_check.svg') 50% 0% no-repeat;
 
 	@media screen and (max-width: 768px) {
 		background-size: 80px auto;
@@ -842,4 +856,7 @@ div.single-button {
 }
 span.txt-green {
 	color: $main-color;
+}
+span.txt-black {
+	color: $title-black;
 }

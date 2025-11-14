@@ -1,0 +1,155 @@
+/* admin login, regiter */
+div.admin-container {
+
+	&.container-wrapper {
+		padding-top: 20px;
+	}
+	div.common-wrapper {
+		padding: 0px 0 100px 0;
+	}
+
+	div.auth-button {
+		padding-top: 30px;
+		text-align: center;
+
+		a {
+			display: inline-block;
+			margin-top: 20px;
+			font-size: 18px;
+			text-decoration: underline;
+			color: $main-color;
+		}
+	}
+
+	div.error-container {
+		margin: 50px auto 100px auto;
+
+		p.txt-1 {
+			line-height: 30px;
+		}
+	}
+}
+
+/* admin header */
+div.admin-header-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 51;
+	width: 100%;
+	background: #fff;
+	height: 70px;
+	padding-top: 17px;
+	border-bottom: 1px solid #EAEAEA;
+
+	.header-left {
+		float: left;
+		padding-top: 4px;
+
+		h1 {
+			float: left;
+			width: 98px;
+			height: 22px;
+			background: url('../img/logo_top.svg') 0 0 no-repeat;
+			text-indent: -9999px;
+			cursor: pointer;
+		}
+	}
+	.header-right {
+		position: relative;
+		float: right;
+
+		span {
+			display: inline-block;
+			vertical-align: middle;
+			color: $title-black;
+			font-size: 14px;
+
+			&.b {
+				width: 32px;
+				height: 32px;
+				background: url('../img/icons/icon_login_black.svg') 50% 50% no-repeat;
+				text-indent: -9999px;
+				margin: 0 20px 0 10px;
+			}
+		}
+		a.c {
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			background: url('../img/icons/icon_admin_logout.svg') 50% 50% no-repeat;
+			text-indent: -9999px;
+			vertical-align: middle;
+		}
+	}
+}
+
+/* admin */
+div.admin-container-wrapper {
+	position: relative;
+	padding-top: 70px;
+	padding-left: 240px;
+	height: calc(100svh);
+
+	/* 왼쪽 메뉴 */
+	aside.lnb-menu {
+		position: absolute;
+		left: 0;
+		top: 70px;
+		background: #F7F7F7;
+		width: 240px;
+		height: calc(100svh - 70px);
+		border-right: 1px solid #E8E8E8;
+
+		ul.menus {
+			padding: 10px 30px;
+
+			li {
+				padding-bottom: 0px;
+
+				a.depth-0 {
+					display: block;
+					font-size: 18px;
+					color: $title-black;
+					font-family: 'Pretendard-SemiBold';
+					padding: 13px 0;
+				}
+				a.depth-1 {
+					display: block;
+					font-size: 18px;
+					color: $title-black;
+					font-family: 'Pretendard-SemiBold';
+					background: url('../img/icons/icon_arrow_down.png') 100% 50% no-repeat;
+					padding: 13px 0;
+
+					&.active {
+						background: url('../img/icons/icon_arrow_up.png') 100% 50% no-repeat;
+					}
+				}
+				div.submenus {
+
+					a {
+						display: block;
+						background: url('../img/icons/bullet_black.svg') 0% 50% no-repeat;
+						padding: 8px 0 8px 12px;
+						font-size: 16px;
+						color: $title-black;
+
+						&.on {
+							background: url('../img/icons/bullet_green.svg') 0% 50% no-repeat;
+							color: $main-color;
+						}
+						&:last-child {
+							margin-bottom: 10px;
+						}
+					}
+				}
+			} 
+		}
+	}
+
+	/* 내용 */
+	div.admin-wrapper {
+
+	}
+}

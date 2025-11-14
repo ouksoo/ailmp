@@ -119,50 +119,207 @@
 			</div>
 			<!-- //저장된 관심 장소가 없어요. -->
 
-			<ul class="mypage-interesting-list">
-				<li class="clearfix">
-					<div class="interesting-thumb"><p class="tags"><span>사전답사</span></p><img src="img/sample/main_visual_2.png" alt="" /></div>
-					<div class="interesting-info">
-						<p class="t1">잇스튜디오</p>
-						<a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#removeInterestingPlaceModal">삭제</a>
-						<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸펜타스테이지 빈티지 컨셉룸 </p>
-						<p class="t3">50,000 <span>원/시간</span></p>
-						<p class="t4"><span class="f">관심 등록일</span><span class="s">2025. 07. 03</span></p>
-					</div>
-				</li>
-
-				<li class="clearfix">
-					<div class="interesting-thumb"><p class="tags"><span>사전답사</span></p><img src="img/sample/main_visual_3.png" alt="" /></div>
-					<div class="interesting-info">
-						<p class="t1">잇스튜디오</p>
-						<a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#removeInterestingPlaceModal">삭제</a>
-						<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸펜타스테이지 빈티지 컨셉룸 </p>
-						<p class="t3">50,000 <span>원/시간</span></p>
-						<p class="t4"><span class="f">관심 등록일</span><span class="s">2025. 07. 03</span></p>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div class="interesting-thumb"><p class="tags"><span>사전답사</span></p><img src="img/sample/main_visual_4.png" alt="" /></div>
-					<div class="interesting-info">
-						<p class="t1">잇스튜디오</p>
-						<a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#removeInterestingPlaceModal">삭제</a>
-						<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸펜타스테이지 빈티지 컨셉룸 </p>
-						<p class="t3">50,000 <span>원/시간</span></p>
-						<p class="t4"><span class="f">관심 등록일</span><span class="s">2025. 07. 03</span></p>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div class="interesting-thumb"><p class="tags"><span>사전답사</span></p><img src="img/sample/main_visual_1.png" alt="" /></div>
-					<div class="interesting-info">
-						<p class="t1">잇스튜디오</p>
-						<a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#removeInterestingPlaceModal">삭제</a>
-						<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸펜타스테이지 빈티지 컨셉룸 </p>
-						<p class="t3">50,000 <span>원/시간</span></p>
-						<p class="t4"><span class="f">관심 등록일</span><span class="s">2025. 07. 03</span></p>
-					</div>
-				</li>
-			</ul>
-			<a href="#" class="more">+ 더보기</a>
+			<!-- 예약/결제 내역 -->
+			<div class="mypage-reservation-list interesting clearfix reservatoin-tab-1">
+				<ul>
+					<!--loop-->
+					<li class="clearfix interesting">
+						<div class="control"><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#removeInterestingPlaceModal">삭제</a></div>
+						<div class="f">
+							<img src="img/sample/main_visual_1.png" alt="" />
+						</div>
+						<div class="s">
+							<div class="up">
+								<p class="t1">잇스튜디오</p>
+								<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+							</div>
+						</div>
+						<div class="down clearfix">
+							<div class="f-l">
+								<table class="notable">
+									<tr>
+										<th>공간 위치</th>
+										<td>서울특별시 역삼동</td>
+									</tr>
+									<tr>
+										<th>최대 인원</th>
+										<td>5명</td>
+									</tr>
+									<tr>
+										<th>평수</th>
+										<td>15평</td>
+									</tr>
+									<tr>
+										<th>주차 유무</th>
+										<td>가능(3대)</td>
+									</tr>
+								</table>
+								<div class="app-date interesting">
+									<span class="a">관심 등록일</span>
+									<span class="b">2025. 07. 03</span>
+									<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customReservationDetailView">자세히 보기</a>
+								</div>
+							</div>
+							<div class="f-r">
+								<div class="money interesting clearfix">
+									<span class="a">이용 금액</span>
+									<span class="b">350,000원</span>
+								</div>
+								<div class="single-button">
+									<a href="#" class="modal-button green">예약 하기</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!--//loop-->
+					<li class="clearfix interesting">
+						<div class="control"><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#removeInterestingPlaceModal">삭제</a></div>
+						<div class="f">
+							<img src="img/sample/main_visual_1.png" alt="" />
+						</div>
+						<div class="s">
+							<div class="up">
+								<p class="t1">잇스튜디오</p>
+								<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+							</div>
+						</div>
+						<div class="down clearfix">
+							<div class="f-l">
+								<table class="notable">
+									<tr>
+										<th>공간 위치</th>
+										<td>서울특별시 역삼동</td>
+									</tr>
+									<tr>
+										<th>최대 인원</th>
+										<td>5명</td>
+									</tr>
+									<tr>
+										<th>평수</th>
+										<td>15평</td>
+									</tr>
+									<tr>
+										<th>주차 유무</th>
+										<td>가능(3대)</td>
+									</tr>
+								</table>
+								<div class="app-date interesting">
+									<span class="a">관심 등록일</span>
+									<span class="b">2025. 07. 03</span>
+									<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customReservationDetailView">자세히 보기</a>
+								</div>
+							</div>
+							<div class="f-r">
+								<div class="money interesting clearfix">
+									<span class="a">이용 금액</span>
+									<span class="b">350,000원</span>
+								</div>
+								<div class="single-button">
+									<a href="#" class="modal-button green">예약 하기</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="clearfix interesting">
+						<div class="control"><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#removeInterestingPlaceModal">삭제</a></div>
+						<div class="f">
+							<img src="img/sample/main_visual_1.png" alt="" />
+						</div>
+						<div class="s">
+							<div class="up">
+								<p class="t1">잇스튜디오</p>
+								<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+							</div>
+						</div>
+						<div class="down clearfix">
+							<div class="f-l">
+								<table class="notable">
+									<tr>
+										<th>공간 위치</th>
+										<td>서울특별시 역삼동</td>
+									</tr>
+									<tr>
+										<th>최대 인원</th>
+										<td>5명</td>
+									</tr>
+									<tr>
+										<th>평수</th>
+										<td>15평</td>
+									</tr>
+									<tr>
+										<th>주차 유무</th>
+										<td>가능(3대)</td>
+									</tr>
+								</table>
+								<div class="app-date interesting">
+									<span class="a">관심 등록일</span>
+									<span class="b">2025. 07. 03</span>
+									<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customReservationDetailView">자세히 보기</a>
+								</div>
+							</div>
+							<div class="f-r">
+								<div class="money interesting clearfix">
+									<span class="a">이용 금액</span>
+									<span class="b">350,000원</span>
+								</div>
+								<div class="single-button">
+									<a href="#" class="modal-button green">예약 하기</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="clearfix interesting">
+						<div class="control"><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#removeInterestingPlaceModal">삭제</a></div>
+						<div class="f">
+							<img src="img/sample/main_visual_1.png" alt="" />
+						</div>
+						<div class="s">
+							<div class="up">
+								<p class="t1">잇스튜디오</p>
+								<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+							</div>
+						</div>
+						<div class="down clearfix">
+							<div class="f-l">
+								<table class="notable">
+									<tr>
+										<th>공간 위치</th>
+										<td>서울특별시 역삼동</td>
+									</tr>
+									<tr>
+										<th>최대 인원</th>
+										<td>5명</td>
+									</tr>
+									<tr>
+										<th>평수</th>
+										<td>15평</td>
+									</tr>
+									<tr>
+										<th>주차 유무</th>
+										<td>가능(3대)</td>
+									</tr>
+								</table>
+								<div class="app-date interesting">
+									<span class="a">관심 등록일</span>
+									<span class="b">2025. 07. 03</span>
+									<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#customReservationDetailView">자세히 보기</a>
+								</div>
+							</div>
+							<div class="f-r">
+								<div class="money interesting clearfix">
+									<span class="a">이용 금액</span>
+									<span class="b">350,000원</span>
+								</div>
+								<div class="single-button">
+									<a href="#" class="modal-button green">예약 하기</a>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<a href="#" class="more">+ 더보기</a>
+			</div>
+			<!-- //예약/결제 내역 -->
 		</div>
 	</div>
 </div>

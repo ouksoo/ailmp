@@ -112,9 +112,15 @@
 			<p class="s-txt">운영 시간, 휴무일, 환불 규정은 <span class="m"><a href="#"><span class="green">호스트 정보 관리</span></a> 에서 설정할 수 있어요.</span></p>
 		</div>
 
+		<!-- 202511new -->
 		<div class="place-menagement-tabs clearfix">
 			<div class="tab-btn">
-				<a href="#" class="on" data-tab="1">운영중</a><a href="#" data-tab="2">중단/임시저장</a>
+				<span class="sta-t">상태</span>
+				<select class="selectpicker both" data-container="body">
+					<option>전체</option>
+					<option>운영중단</option>
+					<option>임시저장</option>
+				</select>
 			</div>
 			<div class="status">
 				<div class="stop-temporary clearfix" style="display: none;">
@@ -126,15 +132,20 @@
 							<option>임시저장</option>
 						</select>
 					</div>
-				</div><a href="#" class="dp-ib modal-button green cu place-reg">공간등록하기</a>
+				</div>
+				<div class="host-place-applybtn">
+					<a href="#" class="dp-ib modal-button green cu place-reg">공간등록하기</a>
+				</div>
 			</div>
 		</div>
+		<!-- //202511new -->
 
 		<!-- 운영중 -->
 		<div class="place-management-list clearfix place-management-tab-1">
 			<ul>
 				<!--loop-->
 				<li class="clearfix">
+					<span class="status a-3">운영중</span><!-- 운영중: a-3, 임시저장: a-2, 운영중단: a-5 --><!-- 202511new -->
 					<div class="f">
 						<p class="tags">
 							<span>사전답사</span>
@@ -143,7 +154,6 @@
 					</div>
 					<div class="s">
 						<div class="up">
-							<span class="status a-1">운영중</span><!-- 운영중: a-1, 임시저장: a-2, 운영중단: a-5 -->
 							<p class="t1">잇스튜디오</p>
 							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
 						</div>
@@ -171,13 +181,14 @@
 								현재 <span>공간이 운영</span>되고 있어요.
 							</div>
 							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">예약 불가 설정</a><a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">운영 중단하기</a>
+								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">예약 불가 설정</a><a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#stopServiceModal">운영 중단하기</a>
 							</div>
 						</div>
 					</div>
 				</li>
 				<!--//loop-->
 				<li class="clearfix">
+					<span class="status a-5">운영중단</span><!-- 운영중: a-3, 임시저장: a-2, 운영중단: a-5 --><!-- 202511new -->
 					<div class="f">
 						<p class="tags">
 							<span>사전답사</span>
@@ -186,7 +197,6 @@
 					</div>
 					<div class="s">
 						<div class="up">
-							<span class="status a-5">운영중단</span><!-- 운영중: a-1, 임시저장: a-2, 운영중단: a-5 -->
 							<p class="t1">잇스튜디오</p>
 							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
 						</div>
@@ -213,13 +223,15 @@
 							<div class="sta">
 								공간 운영이 중단되었어요.<br />해제하시려면 <span>‘다시 운영하기'</span>를 클릭해주세요.
 							</div>
-							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">예약 불가 설정</a><a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">다시 운영하기</a>
+							<div class="single-button">
+								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#reOperatingAgainModal">다시 운영하기</a>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li class="clearfix">
+					<div class="control"><a href="#" class="remove-item" data-bs-toggle="modal" data-bs-target="#removeNowPostingPlaceModal">삭제</a></div><!-- 202511new -->
+					<span class="status a-2">임시저장</span><!-- 운영중: a-3, 임시저장: a-2, 운영중단: a-5 --><!-- 202511new -->
 					<div class="f">
 						<p class="tags">
 							<span>사전답사</span>
@@ -228,7 +240,6 @@
 					</div>
 					<div class="s">
 						<div class="up">
-							<span class="status a-2">임시저장</span><!-- 운영중: a-1, 임시저장: a-2, 운영중단: a-5 -->
 							<p class="t1">잇스튜디오</p>
 							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
 						</div>
@@ -241,11 +252,6 @@
 									<td>2025. 07. 03</td>
 								</tr>
 							</table>
-							<div class="app-date">
-								<span class="a">최종 수정일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#">이어서 작성하기</a>
-							</div>
 						</div>
 						<div class="f-r">
 							<div class="money clearfix">
@@ -253,10 +259,10 @@
 								<span class="b">50,000원</span>
 							</div>
 							<div class="sta">
-								공간 등록 중 임시저장 하셨어요.<br />등록을 완료하시려면 <span>’이어서 작성하기'</span>를 <br />클릭해주세요.
+								공간 등록 중 임시저장 하셨어요.<br />등록을 완료하시려면 <span>’이어서 작성하기'</span>를 클릭해주세요.
 							</div>
-							<div class="both-buttons">
-								
+							<div class="single-button">
+								<a href="#" class="modal-button bluegray-btn">이어서 작성하기</a>
 							</div>
 						</div>
 					</div>
@@ -264,141 +270,6 @@
 			</ul>
 		</div>
 		<!-- //운영중 -->
-
-		 <!-- 중단/임시저장 -->
-		<div class="place-management-list clearfix place-management-tab-2" style="display: none;">
-			<ul>
-				<!--loop-->
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_1.png" alt="" />
-					</div>
-					<div class="s">
-						<div class="up">
-							<span class="status a-1">운영중</span><!-- 운영중: a-1, 임시저장: a-2, 운영중단: a-5 -->
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-						</div>
-					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>공간 등록일</th>
-									<td>2025. 07. 03</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">최종 수정일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#">수정하기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">1시간당 이용 금액</span>
-								<span class="b">50,000원</span>
-							</div>
-							<div class="sta">
-								현재 <span>공간이 운영</span>되고 있어요.
-							</div>
-							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">예약 불가 설정</a><a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">운영 중단하기</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<!--//loop-->
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_1.png" alt="" />
-					</div>
-					<div class="s">
-						<div class="up">
-							<span class="status a-5">운영중단</span><!-- 운영중: a-1, 임시저장: a-2, 운영중단: a-5 -->
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-						</div>
-					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>공간 등록일</th>
-									<td>2025. 07. 03</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">최종 수정일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#">수정하기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">1시간당 이용 금액</span>
-								<span class="b">50,000원</span>
-							</div>
-							<div class="sta">
-								공간 운영이 중단되었어요.<br />해제하시려면 <span>‘다시 운영하기'</span>를 클릭해주세요.
-							</div>
-							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">예약 불가 설정</a><a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#">다시 운영하기</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div class="f">
-						<p class="tags">
-							<span>사전답사</span>
-						</p>
-						<img src="img/sample/main_visual_1.png" alt="" />
-					</div>
-					<div class="s">
-						<div class="up">
-							<span class="status a-2">임시저장</span><!-- 운영중: a-1, 임시저장: a-2, 운영중단: a-5 -->
-							<p class="t1">잇스튜디오</p>
-							<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
-						</div>
-					</div>
-					<div class="down clearfix">
-						<div class="f-l">
-							<table class="notable">
-								<tr>
-									<th>공간 등록일</th>
-									<td>2025. 07. 03</td>
-								</tr>
-							</table>
-							<div class="app-date">
-								<span class="a">최종 수정일</span>
-								<span class="b">2025. 07. 03</span>
-								<a href="#" class="modal-button white-btn" data-bs-toggle="modal" data-bs-target="#">이어서 작성하기</a>
-							</div>
-						</div>
-						<div class="f-r">
-							<div class="money clearfix">
-								<span class="a">1시간당 이용 금액</span>
-								<span class="b">50,000원</span>
-							</div>
-							<div class="sta">
-								공간 등록 중 임시저장 하셨어요.<br />등록을 완료하시려면 <span>’이어서 작성하기'</span>를 <br />클릭해주세요.
-							</div>
-							<div class="both-buttons">
-								
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<!-- //중단/임시저장 -->
 	</div>
 </div>
 
@@ -433,7 +304,7 @@
 <!-- //footer -->
 
 <!-- Modal : 현재 진행중인 예약이 없는 공간만 중단 -->
-<div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+<div class="modal fade" id="stopServiceModal" tabindex="-1" role="dialog" aria-labelledby="stopServiceModal" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered w-480" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -471,7 +342,7 @@
 <!-- //Modal : 현재 예약이 진행중인 공간이 있어 중단이 불가합니다. -->
 
 <!-- Modal : 즉시 공간 노출 및 예약이 활성화 됩니다. -->
-<div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+<div class="modal fade" id="reOperatingAgainModal" tabindex="-1" role="dialog" aria-labelledby="reOperatingAgainModal" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered w-480" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -491,7 +362,7 @@
 <!-- //Modal : 즉시 공간 노출 및 예약이 활성화 됩니다. -->
 
 <!-- Modal : 지금까지 작성한 내용을 모두 삭제합니다. -->
-<div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+<div class="modal fade" id="removeNowPostingPlaceModal" tabindex="-1" role="dialog" aria-labelledby="removeNowPostingPlaceModal" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered w-480" role="document">
 		<div class="modal-content">
 			<div class="modal-header">

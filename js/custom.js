@@ -160,7 +160,7 @@ var mainConceptSwiper = new Swiper(".concept-slide", {
 
 /** 리뷰 전체보기 리스트 pc */
 var reviewThumbSwiper = new Swiper(".review-thumb-wiper", {
-	loop: true,
+	loop: false,
 	spaceBetween: 10,
 	slidesPerView: 10,
 	freeMode: true,
@@ -177,7 +177,7 @@ var reviewDetailSwiper = new Swiper(".review-detail-swiper", {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",
 	},
-		thumbs: {
+	thumbs: {
 		swiper: reviewThumbSwiper,
 	},
 });
@@ -185,7 +185,7 @@ var reviewDetailSwiper = new Swiper(".review-detail-swiper", {
 
 /** 공간사진 전체 보기 */
 var reviewThumbSwiper = new Swiper(".picture-total-thumb-wiper", {
-	loop: true,
+	loop: false,
 	spaceBetween: 24,
 	slidesPerView: 10,
 	freeMode: true,
@@ -378,6 +378,10 @@ var AILMP = {
 			$('.mobile-review .modal-go-back').on('click', function() {
 				$('#reviewDetailViewModal').removeClass('mobile-review');
 			});
+
+			$('#reviewDetailViewModal').on('hidden.bs.modal', function () {
+				$('#reviewDetailViewModal').removeClass('mobile-review');
+			});
 		});
 
 		//공간 상세보기 공간 사진 전체 보기
@@ -441,6 +445,11 @@ var AILMP = {
 		$(AILMP.stopDocumentClick).on('click', function(e) {
 			e.stopPropagation();
 		});
+
+		//버튼, 선택 토글 공통 202511new
+		$('div.category-scroll li, div.location-wrap li').on('click', function() {
+			$(this).toggleClass('on');
+		});
 	},
 	//공간 리스트 형태 구현
 	placeListSortingAnimation : function() {
@@ -480,6 +489,183 @@ var AILMP = {
 				});
 			});
 		}
+	},
+	//공간 상세보기 우측 예약 process
+	placeDetailReservationOperator: function() {
+		var $timeSelects   = $('.time-select .period-wrapper');
+		var $startSelect   = $timeSelects.eq(0); // 시작 시간
+		var $endSelect     = $timeSelects.eq(1); // 종료 시간
+
+		var $manNumber     = $('.man-number');
+
+		// 메인 인원
+		var $mainRow       = $manNumber.find('.clearfix').eq(0);
+		// 추가 인원, display:none
+		var $extraRow      = $manNumber.find('.clearfix').eq(1);
+
+		var $mainNumWrap   = $mainRow.find('.m-number');  // number-1 카운터
+		var $extraNumWrap  = $extraRow.find('.m-number'); // number-2 카운터
+
+		var $selectPerson  = $('.select-person');
+		var $reserveBtn    = $('.modal-button.light-gray.bd0');
+
+		// 기본 셀렉트 문구 "인원 선택(최대 5명)"
+		var originalSelectPersonText = $selectPerson.text();
+
+		// 공통 계산
+		function getCount($wrap) {
+			return parseInt($wrap.find('span').text(), 10) || 0;
+		}
+
+		function setCount($wrap, val) {
+			var $span  = $wrap.find('span');
+			var $minus = $wrap.find('.minus');
+			var $plus  = $wrap.find('.plus');
+
+			$span.text(val);
+
+			// 0 초과시 "active" 처리
+			if (val > 0) {
+				$span.addClass('active');
+			} else {
+				$span.removeClass('active');
+			}
+
+			// dimmed 기본 초기화
+			$span.removeClass('dimmed');
+			$minus.removeClass('dimmed');
+			$plus.removeClass('dimmed');
+
+			// 0일 때 span + minus dimmed
+			if (val === 0) {
+				$span.addClass('dimmed');
+				$minus.addClass('dimmed');
+			}
+		}
+
+		// 메인 인원 : 메인 + 추가 인원 합계
+		function updateSelectPersonLabel() {
+			var mainCount  = getCount($mainNumWrap);
+			var extraCount = getCount($extraNumWrap);
+			var total      = mainCount + extraCount;
+
+			if (total > 0) {
+				$selectPerson.text(total + '명');
+			} else {
+				$selectPerson.text(originalSelectPersonText);
+			}
+		}
+
+		// 메인 인원 세팅
+		function setMainCount(val) {
+			if (val < 0) val = 0;
+			if (val > 5) val = 5;
+
+			setCount($mainNumWrap, val);
+
+			var $plus = $mainNumWrap.find('.plus');
+			if (val === 5) {
+				$plus.addClass('dimmed');
+				$('div.m1 a.add-person').addClass('active');
+			} else {
+				$plus.removeClass('dimmed');
+				$('div.m1 a.add-person').removeClass('active');
+			}
+
+			updateSelectPersonLabel();
+			updateReserveButton();
+		}
+
+		// 추가 인원 세팅 (max 제한 없음)
+		function setExtraCount(val) {
+			if (val < 0) val = 0;
+			setCount($extraNumWrap, val);
+			updateSelectPersonLabel();
+			updateReserveButton();
+		}
+
+		// 초기 변경 : 클릭하면 내용 "1명"으로 변경 + 메인 인원도 1로 세팅
+		$selectPerson.on('click', function (e) {
+			e.preventDefault();
+			setMainCount(1);
+		});
+
+		function updateMainByDelta(delta) {
+			var val = getCount($mainNumWrap);
+			val += delta;
+			setMainCount(val);
+		}
+
+		$mainNumWrap.on('click', '.plus', function (e) {
+			e.preventDefault();
+			updateMainByDelta(1);
+		});
+
+		$mainNumWrap.on('click', '.minus', function (e) {
+			e.preventDefault();
+			updateMainByDelta(-1);
+		});
+
+		//추가 인원 기능
+		// ".man-number div.m1 a.add-person" 만 숨기고, number-2 블럭 표시
+		$('.man-number .m1 .add-person, .man-member .m1 .add-person').on('click', function (e) {
+			e.preventDefault();
+			$(this).hide();      // a.add-person 만 display:none
+			$extraRow.show();
+		});
+		// 0 이상, plus 무제한 / select-person 인원도 합계 기준으로 가감
+		function updateExtraByDelta(delta) {
+			var val = getCount($extraNumWrap);
+			val += delta;
+			setExtraCount(val);
+		}
+
+		$extraNumWrap.on('click', '.plus', function (e) {
+			e.preventDefault();
+			updateExtraByDelta(1);
+		});
+
+		$extraNumWrap.on('click', '.minus', function (e) {
+			e.preventDefault();
+			updateExtraByDelta(-1);
+		});
+
+		// 예약 버튼 색 변경(활성/비활성)
+		function isTimeSelected($select) {
+			// 선택된 option이 .period-selected 이면 "시작 시간/종료 시간" 상태
+			return !$select.find('option:selected').hasClass('period-selected');
+		}
+
+		function updateReserveButton() {
+			var hasStart = isTimeSelected($startSelect);
+			var hasEnd   = isTimeSelected($endSelect);
+
+			var total = getCount($mainNumWrap) + getCount($extraNumWrap); // 기본 + 추가 인원 합계
+
+			if (hasStart && hasEnd && total > 0) {
+				$reserveBtn.removeClass('light-gray').addClass('green');
+			} else {
+				$reserveBtn.removeClass('green').addClass('light-gray');
+			}
+		}
+
+		$startSelect.on('change', updateReserveButton);
+		$endSelect.on('change', updateReserveButton);
+
+		// 초기화
+		setCount($mainNumWrap, getCount($mainNumWrap));   // 0 기준으로 dimmed만 정리
+		setCount($extraNumWrap, getCount($extraNumWrap)); // 0 기준
+		updateSelectPersonLabel();
+		updateReserveButton();
+
+		/** 사전답사 문의하기 협의 체크 */
+		$('#customInquireAgree').on('change', function () {
+			if ($(this).is(':checked')) {
+				$('#customInquireAgreeBtn').removeClass('light-gray').addClass('green');
+			} else {
+				$('#customInquireAgreeBtn').removeClass('green').addClass('light-gray');
+			}
+		});
 	},
 	placeDetailVisualLastScene : function(e) {
 		if (e.deltaY > 0) {
@@ -569,6 +755,29 @@ $(document).ready(function() {
 	AILMP.pageTabsInitialize();
 	AOS.init();
 
+$('.selectpicker').on('shown.bs.select', function () {
+
+    var $menu = $(this).nextAll('.dropdown-menu.show').first();
+    
+    // 현재 transform 읽어오기
+    var matrix = $menu.css('transform');
+
+	console.info(matrix);
+
+    // matrix 값을 직접 파싱해서 y값만 변경
+    if (matrix !== 'none') {
+        var values = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+        var x = values[4];  // translateX
+        var y = values[5];  // translateY
+        
+        // 원하는 Y값으로 변경
+        y = 100; // 원하는 값
+        
+        $menu.css('transform', `translate(${x}px, ${y}px)`);
+    }
+});
+
+
 	if ('scrollRestoration' in history) {
 		history.scrollRestoration = 'manual';
 	}
@@ -614,10 +823,9 @@ $(document).ready(function() {
 
     flatpickr('#calendar', {
 		inline: true,
-		mode: 'range',
+		mode: 'single',
 		dateFormat: 'Y-m-d',
 		defaultDate: [
-			new Date(Date.now() - 7*24*60*60*1000),
 			new Date()
 		],
 		locale: flatpickr.l10ns.ko,
@@ -648,10 +856,9 @@ $(document).ready(function() {
 
 	flatpickr('#reservePlaceDateSelectBox', {
 		inline: true,
-		mode: 'range',
+		mode: 'single',
 		dateFormat: 'Y-m-d',
 		defaultDate: [
-			new Date(Date.now() - 7*24*60*60*1000),
 			new Date()
 		],
 		locale: flatpickr.l10ns.ko,
@@ -717,12 +924,21 @@ $(document).ready(function() {
 			const d = dayElem.dateObj;
 			if (d.getDate() === 10) {
 				dayElem.classList.add("has-extra");
+				//예약
 				const link = document.createElement("a");
 				link.href = 'url';
 				link.target = "_self";
 				link.rel = "noopener noreferrer";
 				link.className = "event-link-reservation";
-				link.textContent = 5 + "건";
+				link.textContent = "예약 " + 5 + "개";
+
+				//예약불가
+				const notlink = document.createElement("a");
+				notlink.href = 'url';
+				notlink.target = "_self";
+				notlink.rel = "noopener noreferrer";
+				notlink.className = "event-link-noreservation";
+				notlink.textContent = "불가 " + 5 + "개";
 
 				// 링크 클릭 시 달력의 선택 이벤트와 충돌 방지
 				link.addEventListener("click", function(e) {
@@ -730,6 +946,7 @@ $(document).ready(function() {
 				});
 
 				dayElem.appendChild(link);
+				dayElem.appendChild(notlink);
 			}
 		},
 		// 날짜 선택 시 모달 오픈
@@ -739,6 +956,39 @@ $(document).ready(function() {
 		}
     });
 
+	//사전답사 문의하기
+	flatpickr('#inquireInAdvance', {
+		inline: true,
+		mode: 'single',
+		dateFormat: 'Y-m-d',
+		defaultDate: [
+			new Date()
+		],
+		locale: flatpickr.l10ns.ko,
+		monthSelectorType: 'static',
+		onReady(selectedDates, dateStr, instance) {
+			const monthsEl = instance.calendarContainer.querySelector('.flatpickr-months');
+			if (!instance._fpHeader) {
+				const header = document.createElement('div');
+				header.className = 'fp-header';
+				const prev = document.createElement('button');
+				prev.type = 'button'; prev.className = 'fp-btn preview';
+				const label = document.createElement('div');
+				label.className = 'fp-label';
+				const next = document.createElement('button');
+				next.type = 'button'; next.className = 'fp-btn next';
+				header.append(prev, label, next);
+				monthsEl.appendChild(header);
+				instance._fpHeader = header;
+				instance._fpLabel = label;
+				prev.addEventListener('click', () => { instance.changeMonth(-1); updateHeaderLabel(instance); });
+				next.addEventListener('click', () => { instance.changeMonth(1);  updateHeaderLabel(instance); });
+			}
+			updateHeaderLabel(instance);
+		},
+		onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
+		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
+    });
 });
 
 /** 브라우져 스크롤 이벤트 통합 */

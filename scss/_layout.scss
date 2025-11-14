@@ -194,10 +194,10 @@ div.header-wrapper {
 			p.bloom-login {
 				display: none;
 				position: absolute;
-				left: -150px; top: -4px;
+				left: -61px; top: 26px;
 				width: 150px;
 				height: 55px;
-				padding: 9px 0 0 25px;
+				padding: 17px 0 0 25px;
 				background: url('../img/icons/login_right.svg') 0 2px no-repeat;
 
 				a {
@@ -946,6 +946,9 @@ div.search-place {
 											margin: 0 10px 10px 0;
 										}
 									}
+									&:hover {
+										background: #DEF6F4;
+									}
 									&.on {
 										background: $main-color;
 
@@ -1047,6 +1050,9 @@ div.search-place {
 								}
 							}
 
+							&:hover {
+								background: #DEF6F4;
+							}
 							&:nth-child(3n) {
 								margin: 0 0px 10px 0;
 
@@ -1089,12 +1095,13 @@ div.search-place {
 			div.date-wrap {
 				padding: 0 25px;
 				overflow-x: hidden;
-				overflow-y: auto;
+				overflow-y: hidden;
 				height: 600px;
 
 				@media screen and (max-width: 1023px) {
 					padding: 0 0px;
 					height: calc(100svh - 330px);
+					overflow-y: auto;
 				}
 				@media screen and (min-width: 1024px) and (max-width: 1400px) {
 					padding: 0 14px;

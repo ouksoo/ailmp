@@ -1,66 +1,315 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>flatpickr - 10일에 링크 넣기</title>
-
-  <!-- flatpickr CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 24px; }
-    .calendar-wrap { max-width: 360px; }
-    /* 10일 칸 스타일(선택사항) */
-    .flatpickr-day.has-link {
-      background: #fff7d6 !important;
-      border-color: #ffd666 !important;
-      color: #333 !important;
-      position: relative;
-    }
-    .flatpickr-day.has-link a.day-link {
-      display: block;
-      width: 100%; height: 100%;
-      text-decoration: underline;
-      text-align: center;
-      line-height: 39px; /* 기본 day 높이에 맞춤 (테마에 따라 36~40px 주변) */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>공간 예약 테스트</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
-  <h1>flatpickr – 10일에 “aaa” 링크 표시</h1>
 
-  <div class="calendar-wrap">
-    <input type="text" id="picker" />
+
+
+<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_1.png" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_2.png" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_3.png" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_4.png" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="slide-center">
+										<img src="img/sample/sample_5.png" />
+									</div>
+								</div>
+							</div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  <div thumbsSlider="" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="img/sample/sample_1.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="img/sample/sample_2.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="img/sample/sample_3.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="img/sample/sample_4.png" />
+								</div>
+								<div class="swiper-slide">
+									<img src="img/sample/sample_5.png" />
+								</div>
+							</div>
   </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+
+	<!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
   <script>
-    // 원하는 링크 URL
-    const SPECIAL_URL = "https://example.com/aaa";
-
-    flatpickr("#picker", {
-      inline: true,              // 달력을 항상 표시
-      locale: "ko",              // 한국어
-      dateFormat: "Y-m-d",
-      // onDayCreate: 각 날짜 셀 렌더링 시 호출 → 10일 칸 커스터마이징
-      onDayCreate: function(dObj, dStr, fp, dayElem) {
-        const d = dayElem.dateObj; // JS Date 객체
-        if (d.getDate() === 10) {
-          // 10일인 셀에 링크 삽입
-          dayElem.classList.add("has-link");
-          // dayElem.textContent 대신 a 태그로 교체
-          dayElem.innerHTML = "<a class='day-link' href='" + SPECIAL_URL + "' target='_blank' rel='noopener noreferrer'>aaa</a>";
-
-          // 링크 클릭 시 달력의 날짜 선택 이벤트와 충돌 방지
-          const a = dayElem.querySelector("a.day-link");
-          a.addEventListener("click", function(e) {
-            e.stopPropagation();  // flatpickr의 day 클릭 처리 방지
-            // 링크 이동은 기본 동작으로 진행 (새 탭)
-          });
-        }
-      }
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
     });
   </script>
+
+	<!--
+<div class="time-select">
+                                <select class="selectpicker both period-wrapper" data-container="body">
+                                    <option class="period-selected">시작 시간</option>
+                                    <option>01:00</option>
+                                    <option>02:00</option>
+                                    <option>03:00</option>
+                                    <option>04:00</option>
+                                </select>
+                                ~
+                                <select class="selectpicker both period-wrapper" data-container="body">
+                                    <option class="period-selected">종료 시간</option>
+                                    <option>00:00</option>
+                                    <option>01:00</option>
+                                    <option>02:00</option>
+                                    <option>03:00</option>
+                                    <option>04:00</option>
+                                </select>
+                            </div>
+                            <div class="select-man">
+                                <a href="#" class="select-person">인원 선택(최대 5명)</a>
+                                <div class="man-number">
+                                    <div class="clearfix">
+                                        <div class="m2">
+                                            인원 선택
+                                            <span>최대 5명</span>
+                                        </div>
+                                        <div class="m-number">
+                                            <a href="#" class="minus">-</a><span>0</span><a href="#" class="plus">+</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="m1">
+                                        <a href="#" class="add-person">인원 추가 (추가 인원 당 +5,000원/시간)</a>
+                                    </div>
+
+                                    <div class="clearfix" style="display: none;">
+                                        <div class="m2">
+                                            인원 추가
+                                            <span>(1인당 +5,000원/시간)</span>
+                                        </div>
+                                        <div class="m-number">
+                                            <a href="#" class="minus">-</a><span>0</span><a href="#" class="plus">+</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+<a href="place_reservation_confirm.html" class="modal-button light-gray bd0">공간 예약하기</a>
+
+<script>
+$(function () {
+
+    // --- 기본 DOM 캐싱 ---
+    var $timeSelects   = $('.time-select .period-wrapper');
+    var $startSelect   = $timeSelects.eq(0); // 시작 시간
+    var $endSelect     = $timeSelects.eq(1); // 종료 시간
+
+    var $manNumber     = $('.man-number');
+
+    // .man-number 안의 첫 번째 .clearfix = number-1 (기본 인원)
+    var $mainRow       = $manNumber.find('.clearfix').eq(0);
+    // .man-number 안의 두 번째 .clearfix = number-2 (추가 인원, display:none)
+    var $extraRow      = $manNumber.find('.clearfix').eq(1);
+
+    var $mainNumWrap   = $mainRow.find('.m-number');  // number-1 카운터
+    var $extraNumWrap  = $extraRow.find('.m-number'); // number-2 카운터
+
+    var $selectPerson  = $('.select-person');
+    var $reserveBtn    = $('.modal-button.light-gray.bd0');
+
+    // 처음 셀렉트 문구 저장 (예: "인원 선택(최대 5명)")
+    var originalSelectPersonText = $selectPerson.text();
+
+    // ---------------- 공통 유틸 ----------------
+    function getCount($wrap) {
+        return parseInt($wrap.find('span').text(), 10) || 0;
+    }
+
+    function setCount($wrap, val) {
+        var $span  = $wrap.find('span');
+        var $minus = $wrap.find('.minus');
+        var $plus  = $wrap.find('.plus');
+
+        $span.text(val);
+
+        // "active" 처리 (0 초과일 때)
+        if (val > 0) {
+            $span.addClass('active');
+        } else {
+            $span.removeClass('active');
+        }
+
+        // dimmed 기본 초기화
+        $span.removeClass('dimmed');
+        $minus.removeClass('dimmed');
+        $plus.removeClass('dimmed');
+
+        // 0일 때 span + minus dimmed
+        if (val === 0) {
+            $span.addClass('dimmed');
+            $minus.addClass('dimmed');
+        }
+    }
+
+    // ⭐ select-person 라벨 갱신: 기본 + 추가 인원 합계 기준
+    function updateSelectPersonLabel() {
+        var mainCount  = getCount($mainNumWrap);
+        var extraCount = getCount($extraNumWrap);
+        var total      = mainCount + extraCount;
+
+        if (total > 0) {
+            $selectPerson.text(total + '명');
+        } else {
+            $selectPerson.text(originalSelectPersonText);
+        }
+    }
+
+    // 메인 인원 세팅 + 부가 처리 (0 ~ 5)
+    function setMainCount(val) {
+        if (val < 0) val = 0;
+        if (val > 5) val = 5;
+
+        setCount($mainNumWrap, val);
+
+        var $plus = $mainNumWrap.find('.plus');
+        if (val === 5) {
+            $plus.addClass('dimmed');
+        } else {
+            $plus.removeClass('dimmed');
+        }
+
+        updateSelectPersonLabel();
+        updateReserveButton();
+    }
+
+    // 추가 인원 세팅 (0 ~ 무한)
+    function setExtraCount(val) {
+        if (val < 0) val = 0;
+        setCount($extraNumWrap, val); // max 제한 없음
+        updateSelectPersonLabel();
+        updateReserveButton();
+    }
+
+    // ---------------- 1. select-person 클릭 시 1명 ----------------
+    // 클릭하면 내용 "1명"으로 변경 + 메인 인원도 1로 세팅
+    $selectPerson.on('click', function (e) {
+        e.preventDefault();
+        setMainCount(1);
+    });
+
+    // ---------------- 2. number-1 plus/minus ----------------
+    // select-person 과 span 같이 증감, 0~5 / dimmed 처리
+    function updateMainByDelta(delta) {
+        var val = getCount($mainNumWrap);
+        val += delta;
+        setMainCount(val);
+    }
+
+    $mainNumWrap.on('click', '.plus', function (e) {
+        e.preventDefault();
+        updateMainByDelta(1);
+    });
+
+    $mainNumWrap.on('click', '.minus', function (e) {
+        e.preventDefault();
+        updateMainByDelta(-1);
+    });
+
+    // ---------------- 3. add-person 클릭 시 ----------------
+    // ".man-number div.m1 a.add-person" 만 숨기고, number-2 블럭 표시
+    $('.man-number .m1 .add-person, .man-member .m1 .add-person').on('click', function (e) {
+        e.preventDefault();
+        $(this).hide();      // a.add-person 만 display:none
+        $extraRow.show();    // 두 번째 .clearfix (number-2) 표시
+    });
+
+    // ---------------- 4. number-2 plus/minus ----------------
+    // 0 이상, plus 무제한 / select-person 인원도 합계 기준으로 가감
+    function updateExtraByDelta(delta) {
+        var val = getCount($extraNumWrap);
+        val += delta;
+        setExtraCount(val);
+    }
+
+    $extraNumWrap.on('click', '.plus', function (e) {
+        e.preventDefault();
+        updateExtraByDelta(1);
+    });
+
+    $extraNumWrap.on('click', '.minus', function (e) {
+        e.preventDefault();
+        updateExtraByDelta(-1);
+    });
+
+    // ---------------- 5. 예약 버튼 색 변경 ----------------
+    function isTimeSelected($select) {
+        // 선택된 option이 .period-selected 이면 "시작 시간/종료 시간" 상태
+        return !$select.find('option:selected').hasClass('period-selected');
+    }
+
+    function updateReserveButton() {
+        var hasStart = isTimeSelected($startSelect);
+        var hasEnd   = isTimeSelected($endSelect);
+
+        var total = getCount($mainNumWrap) + getCount($extraNumWrap); // 기본 + 추가 인원 합계
+
+        if (hasStart && hasEnd && total > 0) {
+            $reserveBtn.removeClass('light-gray').addClass('green');
+        } else {
+            $reserveBtn.removeClass('green').addClass('light-gray');
+        }
+    }
+
+    $startSelect.on('change', updateReserveButton);
+    $endSelect.on('change', updateReserveButton);
+
+    // ---------------- 초기 상태 ----------------
+    setCount($mainNumWrap, getCount($mainNumWrap));   // 0 기준으로 dimmed만 정리
+    setCount($extraNumWrap, getCount($extraNumWrap)); // 0 기준
+    updateSelectPersonLabel(); // total=0 → 처음 문구 유지
+    updateReserveButton();
+
+});
+</script>
+-->
 </body>
 </html>

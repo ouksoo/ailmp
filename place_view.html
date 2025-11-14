@@ -167,28 +167,7 @@
 				<div class="reserve-etc">
 					<div class="apply-to-host clearfix">
 						<p class="f">호스트에게 사전답사를<br />신청해 보세요.</p>
-						<a href="#" class="s">사전답사 신청</a>
-					</div>
-				</div>
-				<div class="reserve-info-apply">
-					<div class="up">
-						<div class="clearfix">
-							<div class="f clearfix">
-								<div class="a"></div>
-								<div class="b">
-									<p class="t-1">그라디언트 스튜디오</p>
-									<p class="t-2">1시간 이내 응답 ∙ 호스팅 100회</p>
-								</div>
-							</div>
-							<a href="#" class="s">문의하기</a>
-						</div>
-					</div>
-					<div class="down clearfix">
-						<div class="a"><img src="img/icons/icon_trophy.svg" alt="" /></div>
-						<div class="b">
-							<p class="t-1">좋아요 4.9</p>
-							<p class="t-2">잇플레이스의 <span>신뢰받는 공간</span></p>
-						</div>
+						<a href="#" class="s" data-bs-toggle="modal" data-bs-target="#customInquireInAdvanceModal">사전답사 신청</a>
 					</div>
 				</div>
 			</div>
@@ -265,6 +244,7 @@
 							</div>
 							<span class="count-guide">최소예약 3시간</span>
 						</div>
+						<!-- 202511new -->
 						<div class="selects-wrap">
 							<div class="select-date">
 								<a href="#">날짜 선택</a>
@@ -276,10 +256,9 @@
 									<a href="#">닫기</a>
 								</div>
 							</div>
-
 							<div class="time-select">
 								<select class="selectpicker both period-wrapper" data-container="body">
-									<option class="period-selected">2025. 07. 16</option><!--기간 선택시 시작일 표기-->
+									<option class="period-selected">시작 시간</option>
 									<option>01:00</option>
 									<option>02:00</option>
 									<option>03:00</option>
@@ -287,7 +266,7 @@
 								</select>
 								~
 								<select class="selectpicker both period-wrapper" data-container="body">
-									<option class="period-selected">2025. 07. 19</option><!--기간 선택시 종료일 표기-->
+									<option class="period-selected">종료 시간</option>
 									<option>00:00</option>
 									<option>01:00</option>
 									<option>02:00</option>
@@ -296,50 +275,48 @@
 								</select>
 							</div>
 							<div class="select-man">
-								<a href="#" class="select-person">인원 선택(기본 5명)</a>
+								<a href="#" class="select-person">인원 선택(최대 5명)</a>
 								<div class="man-number">
-									<div class="m1">1~5명 <span>(+0원/시간)</span></div><!-- 추가인원 입력 시 "active" class 추가 -->
-									<div class="m2">
-										추가 인원
-										<span>(추가 인원 당 +5,000원/시간)</span>
+									<div class="number-1 clearfix">
+										<div class="m2">
+											인원 선택
+											<span>최대 5명</span>
+										</div>
+										<div class="m-number">
+											<a href="#" class="minus"></a><span>0</span><!-- 추가인원 입력 시 "active" class 추가 --><a href="#" class="plus"></a>
+										</div>
 									</div>
-									<div class="m-number">
-										<a href="#" class="minus"></a><span>0</span><!-- 추가인원 입력 시 "active" class 추가 --><a href="#" class="plus"></a>
+
+									<div class="m1">
+										<a href="#" class="add-person">인원 추가 (추가 인원 당 +5,000원/시간)</a>
+									</div>
+
+									<div class="number-2 clearfix" style="display: none;">
+										<div class="m2">
+											인원 추가
+											<span>(1인당 +5,000원/시간)</span>
+										</div>
+										<div class="m-number">
+											<a href="#" class="minus"></a><span>0</span><!-- 추가인원 입력 시 "active" class 추가 --><a href="#" class="plus"></a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="reserve-btn-wrap">
-							<a href="place_reservation_confirm.html" class="modal-button green bd0">공간 예약하기</a>
-							<a href="place_reservation_confirm.html" class="modal-button green bd0 reservation-button">공간 예약하기</a><!-- 모바일용 -->
-							<p class="guide">예약 신청 후 24시간 이내  예약이 확정되며,<br />예약 확정 후 결제가 진행됩니다.</p>
+							<a href="place_reservation_confirm.html" class="modal-button light-gray bd0">공간 예약하기</a>
+							<a href="place_reservation_confirm.html" class="modal-button light-gray bd0 reservation-button">공간 예약하기</a><!-- 모바일용 -->
+							<ul class="guide">
+								<li>예약 신청 후 24시간 이내  예약이 확정되며, 예약 확정 후 결제가 진행됩니다.</li>
+								<li>하루 이용 요금은 호스트가 설정한 1일 운영시간을 기준으로 책정됩니다.</li>
+							</ul>
 						</div>
+						<!-- //202511new -->
 					</div>
 					<div class="reserve-etc">
 						<div class="apply-to-host clearfix">
 							<p class="f">호스트에게 사전답사를<br />신청해 보세요.</p>
-							<a href="#" class="s">사전답사 신청</a>
-						</div>
-					</div>
-					<div class="reserve-info-apply">
-						<div class="up">
-							<div class="clearfix">
-								<div class="f clearfix">
-									<div class="a"></div>
-									<div class="b">
-										<p class="t-1">그라디언트 스튜디오</p>
-										<p class="t-2">1시간 이내 응답 ∙ 호스팅 100회</p>
-									</div>
-								</div>
-								<a href="#" class="s">문의하기</a>
-							</div>
-						</div>
-						<div class="down clearfix">
-							<div class="a"><img src="img/icons/icon_trophy.svg" alt="" /></div>
-							<div class="b">
-								<p class="t-1">좋아요 4.9</p>
-								<p class="t-2">잇플레이스의 <span>신뢰받는 공간</span></p>
-							</div>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#customInquireInAdvanceModal" class="s">사전답사 신청</a>
 						</div>
 					</div>
 				</div>
@@ -376,7 +353,7 @@
 						</div>
 						<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
 					</li>
-					<li data-bs-toggle="modal" data-bs-target="#reviewDetailViewModal">
+					<li data-bs-toggle="modal" data-bs-target="#reviewDetailViewTextModal">
 						<div class="up clearfix">
 							
 							<div class="review-info">
@@ -548,7 +525,7 @@
 								</div>
 							</div>
 							<p class="down">깔끔하고 예쁜 공간이였습니다. 위치도 너무 멀지않고 가까워 최고입니다. 깔끔하고 예쁜 공간이였습니다.</p>
-							<a href="#" class="view-detail" data-bs-toggle="modal" data-bs-target="#reviewDetailViewModal">자세히 보기</a>
+							<a href="#" class="view-detail" data-bs-toggle="modal" data-bs-target="#reviewDetailViewTextModal">자세히 보기</a>
 						</li>
 					</ul>
 				</div>
@@ -558,7 +535,7 @@
 </div>
 <!-- //Modal : 리뷰 전체보기 리스트 -->
 
-<!-- Modal : 자세히 보기 -->
+<!-- Modal : 자세히 보기(이미지가 있을 경우) -->
 <div class="modal fade" id="reviewDetailViewModal" tabindex="-1" role="dialog" aria-labelledby="reviewDetailViewModal" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered w-800" role="document">
 		<div class="modal-content">
@@ -647,9 +624,40 @@
 		</div>
 	</div>
 </div>
-<!-- //Modal : 자세히 보기 -->
+<!-- //Modal : 자세히 보기(이미지가 있을 경우) -->
 
-
+<!-- Modal : 자세히 보기(이미지가 없을 경우) -->
+<div class="modal fade" id="reviewDetailViewTextModal" tabindex="-1" role="dialog" aria-labelledby="reviewDetailViewTextModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-800" role="document">
+		<div class="modal-content">
+			<div class="modal-body extra-modal-op review-place-detailview">
+				<a href="#" class="modal-go-back">뒤로</a>
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+				<div class="reviewinformation clearfix">
+					<span class="thumbnail">
+						<a href="#"><img src="img/icons/icon_cross.png" alt="" /><br />전체보기</a>
+						<img src="img/sample/sample_1.png">
+					</span>
+					<p class="reserve-name-info">
+						<span class="name">김에어리 <span class="stars"><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_half.svg" /><img src="img/icons/icon_star_empty.svg" /></span></span>
+						<span class="date">2025. 03. 25</span>
+					</p>
+				</div>
+				<div class="scroll-modal-content">
+					<div class="review-content">
+						물결이 흐르는 듯한 지중해 풍 베이지톤 내츄럴 컨셉의 리빙룸. 룸사이즈는 대략 30평이며, 테라스가 있습니다.<br />
+						천정이 마감되어 있어 주택 분위기로 촬영 가능합니다.<br /><br />
+						채광은 남서향이며 전면 창문부터 오전에 해가 들어와서 테라스가 있는 통창으로 오후에 해가 넘어가 하루종일 채광이 좋습니다. 아뜰리에8 스튜디오 소개 7층 빌딩 단독, 강남에서 10분거리, 뚝섬역 도보 5분거리, 서울숲과 인접한  <br />
+						물결이 흐르는 듯한 지중해 풍 베이지톤 내츄럴 컨셉의 리빙룸. 룸사이즈는 대략 30평이며, 테라스가 있습니다.<br /><br />
+						천정이 마감되어 있어 주택 분위기로 촬영 가능합니다.<br />
+						물결이 흐르는 듯한 지중해 풍 베이지톤 내츄럴 컨셉의 리빙룸. 룸사이즈는 대략 30평이며, 테라스가 있습니다.<br /><br />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 자세히 보기(이미지가 없을 경우) -->
 
 <!-- Modal : 공간사진 전체 보기 -->
 <div class="picture-backface" style="display: none;">
@@ -697,15 +705,107 @@
 					</div>
 				</div>
 			</div>
-			<!--
+			<!-- 202511new -->
 			<div class="prevnext-wrapper">
 				<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>
 			</div>
-			-->
+			<!-- //202511new -->
 		</div>
 	</div>
 </div>
 <!-- //Modal : 공간사진 전체 보기 -->
+
+<!-- Modal : 최대 인원을 초과했어요. 인원을 추가하시려면 인원 추가 버튼을 클릭해주세요. -->
+<div class="modal fade" id="exceedLimitedCount" tabindex="-1" role="dialog" aria-labelledby="exceedLimitedCount" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<p class="only-text-center">최대 인원을 초과했어요.<br /><span class="br-modal">인원을 추가하시려면 인원 추가 버튼을</span> 클릭해주세요.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 최대 인원을 초과했어요. 인원을 추가하시려면 인원 추가 버튼을 클릭해주세요. -->
+
+<!-- Modal : 사전답사 문의하기 -->
+<div class="modal fade" id="customInquireInAdvanceModal" tabindex="-1" role="dialog" aria-labelledby="customInquireInAdvanceModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-800" role="document">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<h5 class="modal-title">사전답사 문의하기</h5>
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			
+			<div class="inquire-in-advance">
+				<p class="m1">사전 답사 안내</p>
+				<p class="m2">이 공간은 사전답사가 가능합니다.<br />호스트와 일정 및 비용을 직접 협의하여 진행해 주세요.</p>
+				<ul class="inquire-guide">
+					<li>최대 이용시간 및 답사 비용 : 호스트와 협의</li>
+					<li>사전 예약 및 일정 조율 필수</li>
+				</ul>
+
+				<div class="select-date-time clearfix">
+					<div class="date">
+						<p class="a">희망 날짜</p>
+						<div class="calendar-wrap">
+							<div id="inquireInAdvance"></div>
+						</div>
+					</div>
+					<div class="time">
+						<p class="a">희망 시간</p>
+						<div class="area">
+							<select class="selectpicker both">
+								<option>시작 시간</option>
+							</select>
+							~
+							<select class="selectpicker both">
+								<option>종료 시간</option>
+							</select>
+						</div>
+						<p class="b">연락처</p>
+						<input type="text" class="input-txt w-100-per" />
+						<p class="b">기타 요청사항</p>
+						<textarea class="input-txt w-100-per" placeholder="호스트에게 필요한 내용을 입력해주세요." rows="4"></textarea>
+					</div>
+				</div>
+
+				<div class="agree-area clearfix">
+					<p><input type="checkbox" id="customInquireAgree" class="custom-checkbox"><label for="customInquireAgree" class="custom-label all">사전답사 진행은 호스트와 직접 협의 후 확정됨을 이해했습니다.</label></p>
+				</div>
+			</div>
+
+			<div class="modal-footer inquire-button">
+				<a href="#" class="modal-button light-gray" id="customInquireAgreeBtn">호스트에게 문의 보내기</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 사전답사 문의하기 -->
+
+<!-- Modal : 문의가 전송되었어요. 호스트가 확인 후 일정 및 비용을 안내할 예정이에요. 문의 내역은 마이페이지 > 나의 문의에서 확인할 수 있어요. -->
+<div class="modal fade" id="customInquireCompletedModal" tabindex="-1" role="dialog" aria-labelledby="customInquireCompletedModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<p class="only-text-center">문의가 전송되었어요.<br /> <span class="br-modal">호스트가 확인 후 일정 및 비용을</span> 안내할 예정이에요.<br />문의 내역은 <span class="txt-green">마이페이지 > 나의 문의</span>에서<br />확인할 수 있어요.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 문의가 전송되었어요. 호스트가 확인 후 일정 및 비용을 안내할 예정이에요. 문의 내역은 마이페이지 > 나의 문의에서 확인할 수 있어요. -->
+
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/lenis.min.js"></script>
@@ -714,6 +814,7 @@
 <!-- 공간상세 보기 only -->
 <script>
 AILMP.placeDetailInitialVisual();
+AILMP.placeDetailReservationOperator(); //202511new
 </script>
 </body>
 </html>
