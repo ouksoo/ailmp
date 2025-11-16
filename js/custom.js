@@ -724,9 +724,11 @@ var AILMP = {
 
 			$('div.custom-notice-list').css('display', 'none');
 			$('div.custom-event-list').css('display', 'none');
+			$('div.custom-agree-list').css('display', 'none');
 
 			$('div.notice-tab-' + tabNum).css('display', 'block');
 			$('div.event-tab-' + tabNum).css('display', 'block');
+			$('div.agree-tab-' + tabNum).css('display', 'block');
 		});
 
 		//호스트 공간 관리 텝
@@ -989,6 +991,109 @@ $('.selectpicker').on('shown.bs.select', function () {
 		onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
 		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
     });
+
+	//서비스 이용약관
+	flatpickr("#agreementStartDate", {
+		inline: false,
+		mode: 'single',
+		defaultDate: [
+			new Date()
+		],
+		appendTo: document.querySelector('.start-agree-date'),
+		dateFormat: "Y/m/d",
+		locale: flatpickr.l10ns.ko,
+		monthSelectorType: 'static',
+		onReady(selectedDates, dateStr, instance) {
+			const monthsEl = instance.calendarContainer.querySelector('.flatpickr-months');
+			if (!instance._fpHeader) {
+				const header = document.createElement('div');
+				header.className = 'fp-header';
+				const prev = document.createElement('button');
+				prev.type = 'button'; prev.className = 'fp-btn preview';
+				const label = document.createElement('div');
+				label.className = 'fp-label';
+				const next = document.createElement('button');
+				next.type = 'button'; next.className = 'fp-btn next';
+				header.append(prev, label, next);
+				monthsEl.appendChild(header);
+				instance._fpHeader = header;
+				instance._fpLabel = label;
+				prev.addEventListener('click', () => { instance.changeMonth(-1); updateHeaderLabel(instance); });
+				next.addEventListener('click', () => { instance.changeMonth(1);  updateHeaderLabel(instance); });
+			}
+			updateHeaderLabel(instance);
+		},
+		onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
+		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
+	});
+	//개인정보처리방침
+	flatpickr("#agreementPrivacyDate", {
+		inline: false,
+		mode: 'single',
+		defaultDate: [
+			new Date()
+		],
+		appendTo: document.querySelector('.start-privacy-date'),
+		dateFormat: "Y/m/d",
+		locale: flatpickr.l10ns.ko,
+		monthSelectorType: 'static',
+		onReady(selectedDates, dateStr, instance) {
+			const monthsEl = instance.calendarContainer.querySelector('.flatpickr-months');
+			if (!instance._fpHeader) {
+				const header = document.createElement('div');
+				header.className = 'fp-header';
+				const prev = document.createElement('button');
+				prev.type = 'button'; prev.className = 'fp-btn preview';
+				const label = document.createElement('div');
+				label.className = 'fp-label';
+				const next = document.createElement('button');
+				next.type = 'button'; next.className = 'fp-btn next';
+				header.append(prev, label, next);
+				monthsEl.appendChild(header);
+				instance._fpHeader = header;
+				instance._fpLabel = label;
+				prev.addEventListener('click', () => { instance.changeMonth(-1); updateHeaderLabel(instance); });
+				next.addEventListener('click', () => { instance.changeMonth(1);  updateHeaderLabel(instance); });
+			}
+			updateHeaderLabel(instance);
+		},
+		onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
+		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
+	});
+	//광고성정보 수신
+	flatpickr("#agreementAdvertiseDate", {
+		inline: false,
+		mode: 'single',
+		defaultDate: [
+			new Date()
+		],
+		appendTo: document.querySelector('.start-adver-date'),
+		dateFormat: "Y/m/d",
+		locale: flatpickr.l10ns.ko,
+		monthSelectorType: 'static',
+		onReady(selectedDates, dateStr, instance) {
+			const monthsEl = instance.calendarContainer.querySelector('.flatpickr-months');
+			if (!instance._fpHeader) {
+				const header = document.createElement('div');
+				header.className = 'fp-header';
+				const prev = document.createElement('button');
+				prev.type = 'button'; prev.className = 'fp-btn preview';
+				const label = document.createElement('div');
+				label.className = 'fp-label';
+				const next = document.createElement('button');
+				next.type = 'button'; next.className = 'fp-btn next';
+				header.append(prev, label, next);
+				monthsEl.appendChild(header);
+				instance._fpHeader = header;
+				instance._fpLabel = label;
+				prev.addEventListener('click', () => { instance.changeMonth(-1); updateHeaderLabel(instance); });
+				next.addEventListener('click', () => { instance.changeMonth(1);  updateHeaderLabel(instance); });
+			}
+			updateHeaderLabel(instance);
+		},
+		onMonthChange: (sd, ds, inst) => updateHeaderLabel(inst),
+		onYearChange: (sd, ds, inst) => updateHeaderLabel(inst)
+	});
 });
 
 /** 브라우져 스크롤 이벤트 통합 */

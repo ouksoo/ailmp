@@ -1436,7 +1436,6 @@ div.common-wrapper {
 
 /* flatpickr calendar */
 .flatpickr-calendar {
-  width: 100% !important;
   box-shadow: none !important;
   border: none !important;
   /* ▽ 셀(일자) 크기를 %로 계산해서 꽉 채우기 (7열 기준) */
@@ -2995,6 +2994,10 @@ span.txt-green {
 
 span.txt-black {
   color: #0D0D0D;
+}
+
+span.txt-red {
+  color: #E75B3C;
 }
 
 /* main visual */
@@ -5200,6 +5203,9 @@ div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select d
 div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.reserve-place-select {
   margin-bottom: 10px;
 }
+div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.reserve-place-select div.flatpickr-calendar {
+  width: 100%;
+}
 @media screen and (max-width: 767px) {
   div.place-view-wrapper div.common-area div.reserve-wrap div.reservation-select div.selects-wrap div.reserve-place-select {
     display: none;
@@ -6411,7 +6417,7 @@ div.inquire-in-advance div.select-date-time div.date p.a {
 div.inquire-in-advance div.select-date-time div.date div.calendar-wrap {
   background: #F7F7F7;
   border-radius: 14px;
-  padding: 12px 0;
+  padding: 12px 20px;
 }
 @media screen and (max-width: 767px) {
   div.inquire-in-advance div.select-date-time div.date div.calendar-wrap {
@@ -7311,7 +7317,7 @@ div.custom-reserve-detail a.more {
   font-size: 20px;
   text-align: center;
   background: url("../img/icons/icon_arrow_green.svg") 58% 50% no-repeat;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 div.custom-reserve-detail a.more.cancel {
   background: url("../img/icons/icon_arrow_green.svg") 61% 50% no-repeat;
@@ -12730,6 +12736,7 @@ div.calendar-wrapper div.flatpickr-days div.dayContainer span.flatpickr-day a.ev
   }
 }
 div.calendar-wrapper .flatpickr-calendar.open, div.calendar-wrapper .flatpickr-calendar.inline {
+  width: 100%;
   max-height: 100%;
 }
 div.calendar-wrapper span.prevMonthDay, div.calendar-wrapper span.nextMonthDay {
@@ -12893,8 +12900,12 @@ div.admin-header-wrapper {
   width: 100%;
   background: #fff;
   height: 70px;
-  padding-top: 17px;
+  padding: 17px 0 0 240px;
   border-bottom: 1px solid #EAEAEA;
+}
+div.admin-header-wrapper div.admin-header {
+  width: 1440px;
+  margin: 0 auto;
 }
 div.admin-header-wrapper .header-left {
   float: left;
@@ -12965,6 +12976,9 @@ div.admin-container-wrapper aside.lnb-menu ul.menus li a.depth-0 {
   font-family: "Pretendard-SemiBold";
   padding: 13px 0;
 }
+div.admin-container-wrapper aside.lnb-menu ul.menus li a.depth-0.on {
+  color: #2EC4B6;
+}
 div.admin-container-wrapper aside.lnb-menu ul.menus li a.depth-1 {
   display: block;
   font-size: 18px;
@@ -12989,4 +13003,1091 @@ div.admin-container-wrapper aside.lnb-menu ul.menus li div.submenus a.on {
 }
 div.admin-container-wrapper aside.lnb-menu ul.menus li div.submenus a:last-child {
   margin-bottom: 10px;
+}
+div.admin-container-wrapper div.admin-wrapper {
+  padding: 40px;
+}
+div.admin-container-wrapper div.admin-wrapper div.common-title-area p.s-title {
+  font-size: 30px;
+}
+div.admin-container-wrapper div.admin-wrapper div.common-title-area p.s-txt {
+  font-size: 24px;
+  color: #6C757D;
+  line-height: 30px;
+  padding-top: 5px;
+}
+
+/* dashboard */
+div.admin-inner {
+  width: 1440px;
+  margin: 0 auto;
+}
+div.admin-inner p.no-search-result {
+  font-size: 24px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+  text-align: center;
+  padding: 60px 0;
+  margin-top: 60px;
+  border-top: 1px solid #C6CAD3;
+}
+
+div.admin-dashboard-wrapper div.host-reserve-tit {
+  font-size: 24px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+  padding: 0px 0 30px 0;
+}
+div.admin-dashboard-wrapper div.reservation-tabs {
+  padding: 40px 0 20px 0;
+  border-bottom: 1px solid #C6CAD3;
+}
+div.admin-dashboard-wrapper div.reservation-tabs div.status {
+  float: left;
+  padding-top: 2px;
+}
+div.admin-dashboard-wrapper div.reservation-tabs div.status span {
+  margin-right: 10px;
+  color: #62717E;
+  font-size: 18px;
+}
+div.admin-dashboard-wrapper div.reservation-tabs div.status span.se {
+  margin-left: 30px;
+}
+div.admin-dashboard-wrapper div.reservation-tabs div.status .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 150px;
+}
+div.admin-dashboard-wrapper div.reservation-tabs div.search-wp {
+  float: right;
+  position: relative;
+}
+div.admin-dashboard-wrapper div.reservation-tabs div.search-wp input[type=text] {
+  background: #fff;
+  border: 1px solid #C6CAD3;
+  outline: none;
+  font-size: 18px;
+  color: #0D0D0D;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 50px;
+  font-weight: 500;
+  width: 300px;
+}
+div.admin-dashboard-wrapper div.reservation-tabs div.search-wp input[type=text]::-moz-placeholder {
+  color: #C6CAD3;
+}
+div.admin-dashboard-wrapper div.reservation-tabs div.search-wp input[type=text]::placeholder {
+  color: #C6CAD3;
+}
+div.admin-dashboard-wrapper div.reservation-tabs div.search-wp a.search-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url("../img/icons/icon_zoom_black.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
+  right: 10px;
+  top: 10px;
+}
+div.admin-dashboard-wrapper div.host-select-date {
+  margin: 60px 0 0px 0;
+  border-top: 1px solid #C6CAD3;
+  padding-top: 50px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.host-select-date {
+    margin: 30px 0 0px 0;
+    padding-top: 50px;
+  }
+}
+div.admin-dashboard-wrapper div.host-select-date div.dates {
+  width: 442px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.host-select-date div.dates {
+    width: 100%;
+  }
+}
+div.admin-dashboard-wrapper div.host-select-date div.dates a.prev {
+  float: left;
+  width: 30px;
+  height: 30px;
+  background: url("../img/icons/icon_preview.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
+  margin-right: 12px;
+  margin-top: 15px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.host-select-date div.dates a.prev {
+    margin-top: 45px;
+  }
+}
+div.admin-dashboard-wrapper div.host-select-date div.dates a.next {
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url("../img/icons/icon_next.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
+  margin-left: 12px;
+  margin-top: 15px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.host-select-date div.dates a.next {
+    margin-top: 45px;
+  }
+}
+div.admin-dashboard-wrapper div.host-select-date div.dates div.selects {
+  float: left;
+  width: 358px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.host-select-date div.dates div.selects {
+    width: calc(100% - 85px);
+  }
+}
+div.admin-dashboard-wrapper div.host-select-date div.dates div.selects span.s-1, div.admin-dashboard-wrapper div.host-select-date div.dates div.selects span.s-2 {
+  display: inline-block;
+  width: 155px;
+  margin: 0 12px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.host-select-date div.dates div.selects span.s-1, div.admin-dashboard-wrapper div.host-select-date div.dates div.selects span.s-2 {
+    display: block;
+    width: 100%;
+    margin: 0 0 10px 0px;
+  }
+}
+div.admin-dashboard-wrapper div.reservation-status {
+  margin-top: 20px;
+  padding: 30px;
+  border-radius: 14px;
+  background: #F7F7F7;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-s li {
+  float: left;
+  width: calc(25% - 15px);
+  padding: 20px;
+  border: 1px solid #C6CAD3;
+  background: #fff;
+  border-radius: 14px;
+  margin-right: 20px;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-s li:last-child {
+  margin-right: 0;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-s li p.t-1 {
+  color: #62717E;
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-s li p.t-2 {
+  color: #2EC4B6;
+  font-size: 40px;
+  font-family: "Pretendard-SemiBold";
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-s li p.t-2 span {
+  font-size: 24px;
+  color: #0D0D0D;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-a li {
+  float: left;
+  width: calc(33.4% - 15px);
+  padding: 20px;
+  border: 1px solid #C6CAD3;
+  background: #fff;
+  border-radius: 14px;
+  margin-right: 20px;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-a li:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.reservation-status ul.re-a li {
+    float: none;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-a li p.t-1 {
+  color: #62717E;
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.reservation-status ul.re-a li p.t-1 {
+    font-size: 16px;
+  }
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-a li p.t-2 {
+  color: #2EC4B6;
+  font-size: 40px;
+  font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.reservation-status ul.re-a li p.t-2 {
+    font-size: 20px;
+  }
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-a li p.t-2 span {
+  font-size: 24px;
+  color: #0D0D0D;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.reservation-status ul.re-a li p.t-2 span {
+    font-size: 16px;
+  }
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d {
+  padding-top: 30px;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li {
+  float: left;
+  width: calc(25% - 15px);
+  padding: 20px;
+  border: 1px solid #C6CAD3;
+  background: #fff;
+  border-radius: 14px;
+  margin-right: 20px;
+  height: 500px;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li:last-child {
+  margin-right: 0;
+  width: calc(75% - 5px);
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li p.t-1 {
+  color: #62717E;
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li.se {
+  position: relative;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li.se div.legend {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 16px;
+  color: #0D0D0D;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li.se div.legend span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 100px;
+  vertical-align: middle;
+  margin: 0 5px 0 20px;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li.se div.legend span.a {
+  background: #2EC4B6;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li.se div.legend span.b {
+  background: #62717E;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li.se div.legend span.c {
+  background: #C6CAD3;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li div.chart-1 {
+  margin-top: 20px;
+  height: 410px;
+  background: #f7f7f7;
+  text-align: center;
+}
+div.admin-dashboard-wrapper div.reservation-status ul.re-d li div.chart-2 {
+  margin-top: 20px;
+  height: 410px;
+  background: #f7f7f7;
+  text-align: center;
+}
+div.admin-dashboard-wrapper div.select-details {
+  padding: 30px 0 0 0;
+}
+div.admin-dashboard-wrapper div.select-details label.custom-label {
+  vertical-align: middle;
+}
+div.admin-dashboard-wrapper div.select-details a.modal-button {
+  display: inline-block;
+  padding: 15px 50px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+div.admin-dashboard-wrapper div.status-detail {
+  padding-top: 60px;
+}
+div.admin-dashboard-wrapper div.status-detail.payment {
+  padding-top: 20px;
+}
+div.admin-dashboard-wrapper div.status-detail table.host-status-table {
+  width: 100%;
+}
+div.admin-dashboard-wrapper div.status-detail table.host-status-table th {
+  border-bottom: 1px solid #0D0D0D;
+  padding: 0 0 30px 0;
+  color: #62717E;
+  font-size: 16px;
+  font-family: "Pretendard-SemiBold";
+}
+div.admin-dashboard-wrapper div.status-detail table.host-status-table td {
+  padding: 30px 0;
+  border-bottom: 1px solid #C6CAD3;
+  font-size: 16px;
+  color: #0D0D0D;
+}
+div.admin-dashboard-wrapper div.status-detail table.host-status-table td span.warning {
+  color: #E75B3C;
+}
+div.admin-dashboard-wrapper div.status-detail table.host-status-table td a {
+  color: #0D0D0D;
+}
+div.admin-dashboard-wrapper div.status-detail table.host-status-table td a.modal-button {
+  display: inline-block;
+  color: #fff;
+  height: 40px;
+  width: 140px;
+  text-align: center;
+  padding: 0;
+  line-height: 40px;
+}
+div.admin-dashboard-wrapper ul.mypage-request-list {
+  padding: 60px 0 0 0;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list {
+    padding: 50px 0 0 0;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li {
+  margin-bottom: 50px;
+  padding: 20px;
+  border: 1px solid #C6CAD3;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li {
+    margin-bottom: 50px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 {
+  padding-bottom: 20px;
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 span.status {
+  float: left;
+  font-size: 18px;
+  padding: 7px 20px;
+  border-radius: 20px;
+  font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 span.status {
+    position: static;
+    font-size: 16px;
+    padding: 4px 20px;
+    margin-top: 5px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 span.status.a-1 {
+  color: #fff;
+  background: #62717E;
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 span.status.a-2 {
+  color: #fff;
+  background: #2EC4B6;
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 div.control {
+  float: right;
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 a.modify-item {
+  display: inline-block;
+  font-size: 18px;
+  color: #62717E;
+  background: url("../img/icons/icon_modify.svg") 18px 8px no-repeat;
+  padding: 5px 25px 5px 50px;
+  border: 1px solid #62717E;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 a.modify-item {
+    font-size: 16px;
+    background-image: none;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #62717E;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 a.remove-item {
+  display: inline-block;
+  font-size: 18px;
+  color: #62717E;
+  background: url("../img/icons/icon_close.svg") 18px 8px no-repeat;
+  padding: 5px 25px 5px 50px;
+  border: 1px solid #62717E;
+  border-radius: 5px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 a.remove-item {
+    font-size: 16px;
+    background-image: none;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #62717E;
+    border-radius: 5px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 a.answer-item {
+  display: inline-block;
+  font-size: 18px;
+  color: #2EC4B6;
+  background: url("../img/icons/icon_answer.svg") 18px 8px no-repeat;
+  padding: 5px 25px 5px 50px;
+  border: 1px solid #2EC4B6;
+  border-radius: 5px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-1 a.answer-item {
+    font-size: 16px;
+    background-image: none;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #2EC4B6;
+    border-radius: 5px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-2 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #C6CAD3;
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-2 div.thumbnail {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-2 div.title-info {
+  float: left;
+  width: calc(100% - 80px);
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-2 div.title-info p.t-1 {
+  font-size: 18px;
+  color: #62717E;
+  font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-2 div.title-info p.t-1 {
+    font-size: 16px;
+    padding-bottom: 2px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-2 div.title-info p.t-2 {
+  font-size: 24px;
+  color: #0D0D0D;
+  font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-2 div.title-info p.t-2 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li p.txt-1 {
+  padding-bottom: 10px;
+  padding-left: 25px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li p.txt-1 {
+    padding-left: 22px;
+    padding-right: 15px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li p.txt-2 {
+  font-size: 18px;
+  color: #A2A2A4;
+  font-family: "Pretendard-SemiBold";
+  padding-left: 25px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li p.txt-2 {
+    font-size: 16px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li p.txt-2 span {
+  margin: 0 10px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li p.txt-2 span {
+    margin: 0 5px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 {
+  position: relative;
+  padding: 20px 0 20px 80px;
+  font-size: 18px;
+  color: #0D0D0D;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 {
+    padding: 10px 0 10px 10px;
+    font-size: 16px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 p.txt-1 {
+  background: url("../img/icons/icon_q.svg") 0 5px no-repeat;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 p.txt-1 {
+    width: 100%;
+    background-size: 14px auto;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 p.txt-1 span.in {
+  display: block;
+  padding: 10px 0;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 p.txt-1 span.in {
+    padding: 5px 0;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 span.now-status {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  font-size: 14px;
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 8px 0px;
+  text-align: center;
+  width: 100px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 span.now-status {
+    position: static;
+    display: inline-block;
+    padding: 3px 0px;
+    margin: 0 0 10px 0;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 span.now-status.completed {
+  background: #62717E;
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-3 span.now-status.not-completed {
+  background: #2EC4B6;
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-4 {
+  padding: 30px 30px 30px 80px;
+  background: #F7F7F7;
+  font-size: 18px;
+  color: #62717E;
+  border-radius: 8px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-4 {
+    padding: 15px 0 15px 10px;
+    font-size: 16px;
+  }
+}
+div.admin-dashboard-wrapper ul.mypage-request-list li div.area-4 p.txt-1 {
+  background: url("../img/icons/icon_a.svg") 0 5px no-repeat;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper ul.mypage-request-list li div.area-4 p.txt-1 {
+    width: 100%;
+    background-size: 14px auto;
+  }
+}
+div.admin-dashboard-wrapper a.more {
+  display: block;
+  color: #0D0D0D;
+  font-size: 24px;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper a.more {
+    font-size: 16px;
+  }
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list {
+  padding: 60px 0;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list.interesting {
+  margin-top: 50px;
+  border-top: 1px solid #C6CAD3;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 72px 20px 20px 20px;
+  border: 1px solid #C6CAD3;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li.interesting {
+  padding: 20px 20px 20px 20px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li.interesting a.remove-item {
+  position: absolute;
+  font-size: 18px;
+  color: #62717E;
+  background: url("../img/icons/icon_close.svg") 18px 8px no-repeat;
+  padding: 5px 25px 5px 50px;
+  border: 1px solid #62717E;
+  border-radius: 5px;
+  right: 20px;
+  z-index: 1;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.f {
+  position: relative;
+  float: left;
+  width: 342px;
+  height: 342px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.f p.tags {
+  position: absolute;
+  left: 20px;
+  top: 25px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.f p.tags span {
+  font-size: 14px;
+  color: #0D0D0D;
+  border: 1px solid #F5F5F5;
+  padding: 10px 12px;
+  margin-right: 5px;
+  background: #fff;
+  border-radius: 20px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.f img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.s {
+  position: relative;
+  float: left;
+  width: calc(100% - 366px);
+  margin-left: 24px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.s div.up {
+  position: relative;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.s div.up a.remove-item {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons/icon_close.svg") 0 0 no-repeat;
+  right: 0;
+  text-indent: -9999px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.s div.up p.t1 {
+  color: #62717E;
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.s div.up p.t2 {
+  color: #0D0D0D;
+  font-size: 24px;
+  font-family: "Pretendard-SemiBold";
+  padding: 5px 0 30px 0;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.down {
+  float: left;
+  width: calc(100% - 366px);
+  margin-left: 24px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.down div.f-l {
+  float: left;
+  position: relative;
+  width: 100%;
+  padding-right: 24px;
+  border-right: 0;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.down div.f-l table {
+  width: 100%;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.down div.f-l table th {
+  color: #62717E;
+  font-size: 18px;
+  width: 30%;
+  padding-bottom: 8px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.down div.f-l table td {
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+  color: #0D0D0D;
+  width: 70%;
+  padding-bottom: 8px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.down div.f-l div.app-date {
+  margin-top: 110px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li div.down div.f-l div.app-date a {
+  display: inline-block;
+  width: 230px;
+  font-family: "Pretendard-SemiBold";
+  margin-right: 20px;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li span.status {
+  position: absolute;
+  display: inline-block;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  left: 20px;
+  top: 20px;
+  font-family: "Pretendard-SemiBold";
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li span.status.a-1 {
+  color: #009F95;
+  background: #CCF1ED;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li span.status.a-2 {
+  color: #ffffff;
+  background: #F6B00D;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li span.status.a-3 {
+  color: #ffffff;
+  background: #2EC4B6;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li span.status.a-4 {
+  color: #fff;
+  background: #62717E;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li span.status.a-5 {
+  color: #fff;
+  background: #E75B3C;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list ul li span.status.a-6 {
+  color: #E75B3C;
+  background: #FBD5CD;
+}
+div.admin-dashboard-wrapper div.mypage-reservation-list a.more {
+  display: block;
+  color: #0D0D0D;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 60px;
+}
+@media screen and (max-width: 767px) {
+  div.admin-dashboard-wrapper div.mypage-reservation-list a.more {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+}
+
+div.place-category-wrap {
+  padding-top: 60px;
+}
+div.place-category-wrap div.f {
+  float: left;
+  width: 50%;
+}
+div.place-category-wrap div.s {
+  float: left;
+  width: 50%;
+}
+div.place-category-wrap p.tit {
+  font-family: "Pretendard-SemiBold";
+  font-size: 18px;
+  color: #0D0D0D;
+  padding-bottom: 20px;
+}
+div.place-category-wrap div.select-category div.innerbox {
+  float: left;
+  width: 80%;
+  border: 1px solid #A2A2A4;
+  border-radius: 8px;
+  height: 550px;
+  overflow: hidden;
+  padding: 10px 0;
+  overflow-y: auto;
+}
+div.place-category-wrap div.select-category div.innerbox ul.category li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #0D0D0D;
+}
+div.place-category-wrap div.select-category div.innerbox ul.category li a.on {
+  background: #DEF6F4;
+  color: #2EC4B6;
+}
+div.place-category-wrap div.select-category div.select-functions {
+  float: left;
+  width: 20px;
+  padding-left: 20px;
+}
+div.place-category-wrap div.select-category div.select-functions ul li a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+div.place-category-wrap div.select-category div.select-functions ul li a.f-1 {
+  background: url("../img/icons/icon_admin_category_1.svg") 0 0 no-repeat;
+}
+div.place-category-wrap div.select-category div.select-functions ul li a.f-2 {
+  background: url("../img/icons/icon_admin_category_2.svg") 0 0 no-repeat;
+}
+div.place-category-wrap div.select-category div.select-functions ul li a.f-3 {
+  background: url("../img/icons/icon_admin_category_3.svg") 0 0 no-repeat;
+}
+div.place-category-wrap div.select-category div.select-functions ul li a.f-4 {
+  background: url("../img/icons/icon_admin_category_4.svg") 0 0 no-repeat;
+}
+div.place-category-wrap div.select-category div.select-functions ul li a.f-5 {
+  background: url("../img/icons/icon_admin_category_5.svg") 0 0 no-repeat;
+}
+
+div.admin-button-area {
+  padding-top: 30px;
+}
+div.admin-button-area a {
+  display: inline-block;
+  width: 220px;
+}
+
+div.category-modal-wrap div.search-wp {
+  position: relative;
+}
+div.category-modal-wrap div.search-wp input[type=text] {
+  background: #fff;
+  border: 1px solid #C6CAD3;
+  outline: none;
+  font-size: 18px;
+  color: #0D0D0D;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 50px;
+  font-weight: 500;
+  width: 100%;
+}
+div.category-modal-wrap div.search-wp input[type=text]::-moz-placeholder {
+  color: #C6CAD3;
+}
+div.category-modal-wrap div.search-wp input[type=text]::placeholder {
+  color: #C6CAD3;
+}
+div.category-modal-wrap div.search-wp a.search-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url("../img/icons/icon_zoom_black.svg") 50% 50% no-repeat;
+  text-indent: -9999px;
+  right: 10px;
+  top: 10px;
+}
+div.category-modal-wrap p.t1 {
+  font-family: "Pretendard-SemiBold";
+  font-size: 24px;
+  padding: 0 0 30px 0;
+  border-bottom: 1px solid #E8E8E8;
+}
+div.category-modal-wrap p.t1 span {
+  display: block;
+  color: #62717E;
+  font-family: "Pretendard-SemiBold";
+  font-size: 18px;
+}
+div.category-modal-wrap p.t2 {
+  font-family: "Pretendard-SemiBold";
+  font-size: 18px;
+  padding: 30px 0 5px 0;
+}
+div.category-modal-wrap input.login-inputs {
+  border: 1px solid #C6CAD3;
+  text-align: left;
+  color: #0D0D0D;
+  padding: 16px 20px;
+}
+div.category-modal-wrap div.search-result {
+  padding: 30px 0 0 0;
+}
+div.category-modal-wrap div.search-result p.no-search {
+  font-size: 18px;
+  color: #0D0D0D;
+}
+div.category-modal-wrap div.search-result div.place-search-wrap {
+  overflow-y: auto;
+  max-height: 600px;
+}
+div.category-modal-wrap div.search-result div.place-search-wrap ul li {
+  padding-bottom: 20px;
+}
+div.category-modal-wrap div.search-result div.place-search-wrap ul li div.f {
+  float: left;
+  width: 106px;
+}
+div.category-modal-wrap div.search-result div.place-search-wrap ul li div.s {
+  float: left;
+  width: 300px;
+  margin: 0 20px;
+}
+div.category-modal-wrap div.search-result div.place-search-wrap ul li div.s p.a {
+  font-size: 16px;
+  padding: 3px 0 7px 0;
+}
+div.category-modal-wrap div.search-result div.place-search-wrap ul li div.s p.b {
+  font-size: 18px;
+}
+div.category-modal-wrap div.search-result div.place-search-wrap ul li div.t {
+  float: left;
+  width: 90px;
+}
+div.category-modal-wrap div.search-result div.place-search-wrap ul li a.modal-button.admin-bn {
+  font-size: 16px;
+  width: 90px !important;
+  padding: 9px 0;
+  margin-top: 5px;
+}
+div.category-modal-wrap div.view-more {
+  text-align: center;
+}
+div.category-modal-wrap div.view-more a.more {
+  display: inline-block;
+  font-size: 18px;
+  margin: 10px auto 0px auto;
+  color: #0D0D0D;
+}
+
+ul.site-info-wrap {
+  margin-top: 60px;
+}
+ul.site-info-wrap li {
+  float: left;
+  width: 49%;
+  margin-bottom: 30px;
+  margin-right: 2%;
+}
+ul.site-info-wrap li:nth-child(2n) {
+  margin-right: 0;
+}
+ul.site-info-wrap li span.tt {
+  display: block;
+  font-size: 20px;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 6px;
+}
+
+div.site-info-div {
+  margin-top: 0px;
+}
+div.site-info-div span.tt {
+  display: block;
+  font-size: 20px;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 6px;
+}
+
+input.admin-input-txt {
+  border: 1px solid #C6CAD3;
+  height: 42px;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #0D0D0D;
+  padding: 0 20px;
+  text-align: right;
+}
+input.admin-input-txt.payment {
+  width: 150px;
+  text-align: left;
+  font-size: 16px;
+}
+input.admin-input-txt::-moz-placeholder {
+  color: #C6CAD3;
+}
+input.admin-input-txt::placeholder {
+  color: #C6CAD3;
+}
+
+a.modal-button.admin-bn {
+  font-size: 16px;
+  width: 90px !important;
+}
+
+input.admin-normal-input {
+  border: 1px solid #C6CAD3;
+  text-align: left;
+  color: #62717E;
+  padding: 16px 20px;
+}
+
+p.admin-tm {
+  font-size: 16px;
+  color: #62717E;
+  margin-top: 20px;
+}
+
+p.admin-agree-ptag {
+  font-size: 18px;
+  padding-top: 10px;
+  color: #0D0D0D;
+}
+
+p.agreement-title {
+  color: #1D1E1F;
+  font-size: 20px;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 8px;
+}
+
+div.agreement-content-box {
+  border: 1px solid #C6CAD3;
+  padding: 20px;
+  overflow: auto;
+  min-height: 400px;
+  max-height: 600px;
+  border-radius: 8px;
+}
+
+div.custom-agree-list {
+  padding: 60px 0 0 0;
+}
+div.custom-agree-list div.agreement-date-select {
+  padding-bottom: 30px;
+}
+div.custom-agree-list div.agreement-date-select span.t1 {
+  color: #1D1E1F;
+  font-size: 20px;
+  font-family: "Pretendard-SemiBold";
+  padding-bottom: 8px;
+  margin-right: 10px;
+}
+div.custom-agree-list div.agreement-date-select div.start-agree-date {
+  display: inline-block;
+}
+div.custom-agree-list div.agreement-date-select div.start-agree-date div.flatpickr-calendar {
+  width: 300px;
+  border: 1px solid #C6CAD3 !important;
+  border-radius: 14px;
+  overflow: hidden;
+}
+div.custom-agree-list div.agreement-date-select div.start-privacy-date {
+  display: inline-block;
+}
+div.custom-agree-list div.agreement-date-select div.start-privacy-date div.flatpickr-calendar {
+  width: 300px;
+  border: 1px solid #C6CAD3 !important;
+  border-radius: 14px;
+  overflow: hidden;
+}
+div.custom-agree-list div.agreement-date-select div.start-adver-date {
+  display: inline-block;
+}
+div.custom-agree-list div.agreement-date-select div.start-adver-date div.flatpickr-calendar {
+  width: 300px;
+  border: 1px solid #C6CAD3 !important;
+  border-radius: 14px;
+  overflow: hidden;
+}
+div.custom-agree-list div.agreement-date-select input.admin-normal-input {
+  width: 300px;
+  color: #0D0D0D;
+  background: url("../img/icons/icon_calendar.svg") 95% 50% no-repeat;
 }/*# sourceMappingURL=style.css.map */

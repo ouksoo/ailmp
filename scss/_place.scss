@@ -866,6 +866,9 @@ div.place-view-wrapper {
 					div.reserve-place-select {
 						margin-bottom: 10px;
 
+						div.flatpickr-calendar {
+							width: 100%;
+						}
 						@media screen and (max-width: 767px) {
 							display: none;
 						}
@@ -2147,7 +2150,7 @@ div.inquire-in-advance {
 			div.calendar-wrap {
 				background: #F7F7F7;
 				border-radius: 14px;
-				padding: 12px 0;
+				padding: 12px 20px;
 
 				@media screen and (max-width: 767px) {
 					padding: 6px 0;

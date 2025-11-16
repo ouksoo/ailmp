@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<!-- 공통 -->
+<div class="film-common"></div>
+<a href="#" class="go-top-btn"></a>
+<!-- //공통 -->
+
+<!-- header -->
+<div class="admin-header-wrapper">
+	<div class="admin-header clearfix">
+		<div class="film-normal"></div>
+		<div class="header-left clearfix">
+			<h1>IT PLACE</h1>
+		</div>
+		<div class="header-right clearfix">
+			<span class="a">홍길동</span><span class="b">사람</span><a href="#" class="c">로그아웃</a>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+
+<div class="admin-container-wrapper">
+	<aside class="lnb-menu">
+
+		<div class="menu-wrapper">
+			<ul class="menus">
+				<li>
+					<a href="admin_dashboard.html" class="depth-0">대시보드</a>
+				</li>
+				<li>
+					<a href="admin_reservation_list.html" class="depth-0">예약 내역</a>
+				</li>
+				<li>
+					<a href="admin_payment_management.html" class="depth-0 on">정산 관리</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="depth-1 active">계정 관리</a>
+					<div class="submenus">
+						<a href="admin_account_list.html">관리자 계정</a>
+						<a href="admin_account_list2.html">호스트 회원</a>
+						<a href="admin_account_list3.html">게스트 회원</a>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="depth-1 active">공간 관리</a>
+					<div class="submenus">
+						<a href="admin_place_category.html">카테고리 관리</a>
+						<a href="admin_place_list.html">공간 목록</a>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="depth-1 active">고객센터</a>
+					<div class="submenus">
+						<a href="admin_custom_center.html">Q&A 관리</a>
+						<a href="#">공지사항 관리</a>
+						<a href="#">이벤트 관리</a>
+						<a href="#">자주 묻는 질문 관리</a>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="depth-1 active">사이트 관리</a>
+					<div class="submenus">
+						<a href="admin_main_management.html">메인 페이지 관리</a>
+						<a href="admin_site_management.html">사이트 정보 관리</a>
+						<a href="admin_agree_management.html">약관 관리</a>
+					</div>
+				</li>
+			</ul>
+		</div>			
+
+	</aside>
+	<div class="admin-wrapper">
+
+		<div class="admin-inner admin-dashboard-wrapper">
+			<div class="common-title-area">
+				<p class="s-title">정산 관리</p>
+				<p class="s-txt">예약 신청일이 아닌 공간 이용일을 기준으로 집계합니다.</p>
+			</div>
+			
+			<!-- 예약/정산 내역이 없을 경우 -->
+			<p class="no-search-result" style="display: none;">해당 기간에 예약/정산 내역이 존재하지 않습니다.</p>
+
+			<!-- 예약/정산 내역이 있을 경우 -->
+			<div class="admin-payment-wrapper">
+				<div class="host-select-date">
+					<div class="dates clearfix">
+						<a href="#" class="prev">이전</a>
+						<div class="selects">
+							<span class="s-1">
+								<select class="selectpicker w-100-per">
+									<option>2025년</option>
+								</select>
+							</span><span class="s-2">
+								<select class="selectpicker w-100-per">
+									<option>08월</option>
+								</select>
+							</span>
+						</div>
+						<a href="#" class="next">다음</a>
+					</div>
+				</div>
+
+				<!-- 해당 기간에 예약/정산 내역이 없어요. -->
+				<div class="host-payment-lists error-container"  style="display: none;">
+					<p class="txt-1">해당 기간에 예약/정산 내역이 없어요.</p>
+				</div>
+				<!-- //해당 기간에 예약/정산 내역이 없어요. -->
+
+				<div class="payment-wrapper">
+					<div class="host-reserve-tit">예약 현황</div>
+					<div class="reservation-status clearfix">
+						<ul class="re-s">
+							<li>
+								<p class="t-1">총 예약 건</p>
+								<p class="t-2">27<span>건</span></p>
+							</li>
+							<li>
+								<p class="t-1">이용 완료</p>
+								<p class="t-2">20<span>건</span></p>
+							</li>
+							<li>
+								<p class="t-1">예약 거절</p>
+								<p class="t-2">5<span>건</span></p>
+							</li>
+							<li>
+								<p class="t-1">예약 취소</p>
+								<p class="t-2">3<span>건</span></p>
+							</li>
+						</ul>
+					</div>
+
+					<div class="host-reserve-tit">정산 현황</div>
+					<div class="reservation-status clearfix">
+						<ul class="re-a">
+							<li>
+								<p class="t-1">총 매출액</p>
+								<p class="t-2">5,000,000<span>원</span></p>
+							</li>
+							<li>
+								<p class="t-1">수수료</p>
+								<p class="t-2">1,200,000<span>원</span></p>
+							</li>
+							<li>
+								<p class="t-1">정산 완료</p>
+								<p class="t-2">3,800,000<span>원</span></p>
+							</li>
+						</ul>
+					</div>
+
+					<div class="host-reserve-tit other">상세 내역</div>
+					<div class="select-details">
+						<input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all">전체 선택</label> <a href="#" class="modal-button green">정산 완료 처리</a>
+					</div>
+					<div class="status-detail payment">
+						<table class="host-status-table">
+						<thead>
+							<tr>
+								<th>선택</th>
+								<th>예약 신청일</th>
+								<th>호스트</th>
+								<th>공간</th>
+								<th>예약자</th>
+								<th>이용 기간</th>
+								<th>예약 상태</th>
+								<th>결제 금액</th>
+								<th>정산금액</th>
+								<th>정산 상태</th>
+								<th>현장 매니저</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all"></label></td>
+								<td>2025. 05. 28</td>
+								<td>서울하늘 루프탑</td>
+								<td>A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+								<td>홍길동</td>
+								<td>2025/07/12<br />10:00~16:00 </td>
+								<td>예약 신청</td>
+								<td>100,000원(예정)</td>
+								<td>-</td>
+								<td>-</td>
+								<td>사용</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all"></label></td>
+								<td>2025. 05. 28</td>
+								<td>서울하늘 루프탑</td>
+								<td>A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+								<td>홍길동</td>
+								<td>2025/07/12<br />10:00~16:00 </td>
+								<td>결제 대기</td>
+								<td>100,000원(예정)</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all"></label></td>
+								<td>2025. 05. 28</td>
+								<td>서울하늘 루프탑</td>
+								<td>A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+								<td>홍길동</td>
+								<td>2025/07/12<br />10:00~16:00 </td>
+								<td>예약 완료</td>
+								<td>100,000원</td>
+								<td>100,000원(예정)</td>
+								<td>-</td>
+								<td>사용</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all"></label></td>
+								<td>2025. 05. 28</td>
+								<td>서울하늘 루프탑</td>
+								<td>A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+								<td>홍길동</td>
+								<td>2025/07/12<br />10:00~16:00 </td>
+								<td><span class="txt-red">예약 불가</span></td>
+								<td>100,000원</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all"></label></td>
+								<td>2025. 05. 28</td>
+								<td>서울하늘 루프탑</td>
+								<td>A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+								<td>홍길동</td>
+								<td>2025/07/12<br />10:00~16:00 </td>
+								<td><span class="txt-red">예약 취소</span></td>
+								<td>100,000원</td>
+								<td><input type="text" class="modal-button admin-input-txt payment" value="35,000 원"></td>
+								<td>정산 대기</td>
+								<td>사용</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all"></label></td>
+								<td>2025. 05. 28</td>
+								<td>서울하늘 루프탑</td>
+								<td>A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+								<td>홍길동</td>
+								<td>2025/07/12<br />10:00~16:00 </td>
+								<td><span class="txt-green">이용 완료</span></td>
+								<td>100,000원</td>
+								<td><input type="text" class="modal-button admin-input-txt payment" value="35,000 원"></td>
+								<td>정산 대기</td>
+								<td>사용</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="" class="custom-checkbox"><label for="" class="custom-label all"></label></td>
+								<td>2025. 05. 28</td>
+								<td>서울하늘 루프탑</td>
+								<td>A룸 빈티지 컨셉 스튜디오 A룸 빈티지 컨셉 스튜디오</td>
+								<td>홍길동</td>
+								<td>2025/07/12<br />10:00~16:00 </td>
+								<td><span class="txt-green">이용 완료</span></td>
+								<td>100,000원</td>
+								<td>34,000원</td>
+								<td><span class="txt-green">정산 완료</span></td>
+								<td>사용</td>
+							</tr>
+						</tbody>
+						</table>
+
+						<div class="pagenation">
+							<a href="#" class="first">처음으로</a>
+							<a href="#" class="prev">이전</a>
+
+							<a href="#" class="on">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">7</a>
+							<a href="#">8</a>
+							<a href="#">9</a>
+							<a href="#">10</a>
+
+							<a href="#" class="next">다음</a>
+							<a href="#" class="last">마지막</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+<!-- Modal : 선택된 항목을 정산 완료 처리 하시겠습니까? -->
+<div class="modal fade" id="completedPaymentModal" tabindex="-1" role="dialog" aria-labelledby="completedPaymentModal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<p class="only-text-center">선택된 항목을 정산 완료 처리 하시겠습니까?</p>
+			</div>
+			<div class="modal-footer">
+				<div class="two-buttons clearfix">
+					<a href="#" class="floatl modal-button gray" data-bs-dismiss="modal">취소</a><a href="#" class="floatr modal-button green">정산 완료</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 선택된 항목을 정산 완료 처리 하시겠습니까? -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/lenis.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+  
+</script>
+</body>
+</html>
+
+

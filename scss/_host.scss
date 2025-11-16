@@ -3076,6 +3076,7 @@ div.calendar-wrapper {
 		}
 	}
 	.flatpickr-calendar.open, .flatpickr-calendar.inline {
+		width: 100%;
 		max-height: 100%;
 	}
 	span.prevMonthDay, span.nextMonthDay {
