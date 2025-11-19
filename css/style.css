@@ -3857,12 +3857,15 @@ div.main-concept-area div.concept-wrapper div.right div.concept-list-mobile div.
   color: #2EC4B6;
 }
 div.main-concept-area div.concept-wrapper div.right div.concept-slide-wrapper {
-  height: 50%;
+  /*height: 50%;*/
 }
 @media screen and (max-width: 768px) {
   div.main-concept-area div.concept-wrapper div.right div.concept-slide-wrapper {
-    height: 300px;
+    /*height: 300px;*/
   }
+}
+div.main-concept-area div.concept-wrapper div.right div.concept-slide-wrapper div.concept-slide div.swiper-wrapper {
+  height: auto;
 }
 div.main-concept-area div.concept-wrapper div.right div.concept-info p {
   font-size: 20px;
@@ -3954,9 +3957,10 @@ div.main-concept-area .swiper-slide.swiper-slide-next {
   width: 20% !important;
 }
 div.main-concept-area .swiper-slide {
-  width: 20%;
+  height: auto;
   overflow: hidden;
   border-radius: 14px;
+  aspect-ratio: 16/9; /* 가로:세로 비 */
 }
 
 /* 핫 플! 잇 플! */
