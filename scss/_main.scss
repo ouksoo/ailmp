@@ -247,7 +247,10 @@ div.main-place-area {
 					font-size: 16px;
 					padding-bottom: 5px;
 				}
-
+				
+				a {
+					color: $title-black;
+				}
 				span.arrow-right {
 					vertical-align: middle;
 					display: inline-block;
@@ -1061,12 +1064,12 @@ div.main-hot-area {
 					}
 				}
 				&.t-4 {
-					padding-top: 30px;
+					padding-top: 10px;
 					color: $main-color;
 					font-size: 30px;
 
 					@media screen and (max-width: 767px) {
-						padding-top: 15px;
+						padding-top: 10px;
 						font-size: 16px;
 					}
 

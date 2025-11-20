@@ -254,7 +254,7 @@ div.header-wrapper {
 }
 div.header-wrapper .header-left {
   float: left;
-  padding-top: 4px;
+  padding-top: 2px;
 }
 @media screen and (max-width: 768px) {
   div.header-wrapper .header-left {
@@ -267,8 +267,8 @@ div.header-wrapper .header-left {
 }
 div.header-wrapper .header-left h1 {
   float: left;
-  width: 98px;
-  height: 22px;
+  width: 112px;
+  height: 28px;
   background: url("../img/logo_top.svg") 0 0 no-repeat;
   text-indent: -9999px;
   cursor: pointer;
@@ -276,7 +276,7 @@ div.header-wrapper .header-left h1 {
 @media screen and (max-width: 768px) {
   div.header-wrapper .header-left h1 {
     position: absolute;
-    top: 18px;
+    top: 15px;
     left: 50%;
     transform: translate(-50%, 0%);
   }
@@ -285,7 +285,7 @@ div.header-wrapper .header-left a {
   float: left;
   font-size: 14px;
   color: #0D0D0D;
-  line-height: 22px;
+  line-height: 25px;
   padding-left: 27px;
   margin-left: 30px;
 }
@@ -301,7 +301,7 @@ div.header-wrapper .header-left a {
   }
 }
 div.header-wrapper .header-left a:nth-child(2) {
-  background: url("../img/icons/icon_place.svg") 0 2px no-repeat;
+  background: url("../img/icons/icon_place.svg") 0 4px no-repeat;
 }
 @media screen and (max-width: 768px) {
   div.header-wrapper .header-left a:nth-child(2) {
@@ -311,11 +311,11 @@ div.header-wrapper .header-left a:nth-child(2) {
 @media screen and (max-width: 768px) {
   div.header-wrapper .header-left a:nth-child(2) span {
     padding-left: 25px;
-    background: url("../img/icons/icon_place.svg") 0 2px no-repeat;
+    background: url("../img/icons/icon_place.svg") 0 4px no-repeat;
   }
 }
 div.header-wrapper .header-left a:nth-child(3) {
-  background: url("../img/icons/icon_plus.svg") 0 2px no-repeat;
+  background: url("../img/icons/icon_plus.svg") 0 4px no-repeat;
 }
 @media screen and (max-width: 768px) {
   div.header-wrapper .header-left a:nth-child(3) {
@@ -325,7 +325,7 @@ div.header-wrapper .header-left a:nth-child(3) {
 @media screen and (max-width: 768px) {
   div.header-wrapper .header-left a:nth-child(3) span {
     padding-left: 25px;
-    background: url("../img/icons/icon_plus.svg") 0 2px no-repeat;
+    background: url("../img/icons/icon_plus.svg") 0 4px no-repeat;
   }
 }
 div.header-wrapper .header-left a span {
@@ -333,15 +333,15 @@ div.header-wrapper .header-left a span {
   padding-bottom: 5px;
 }
 @media screen and (max-width: 768px) {
-  div.header-wrapper .header-left a.on {
+  div.header-wrapper .header-left a:hover, div.header-wrapper .header-left a.on {
     border-bottom: 2px solid #2EC4B6;
   }
 }
-div.header-wrapper .header-left a.on span {
+div.header-wrapper .header-left a:hover span, div.header-wrapper .header-left a.on span {
   border-bottom: 2px solid #2EC4B6;
 }
 @media screen and (max-width: 768px) {
-  div.header-wrapper .header-left a.on span {
+  div.header-wrapper .header-left a:hover span, div.header-wrapper .header-left a.on span {
     border-bottom: 0;
   }
 }
@@ -830,7 +830,7 @@ div.footer-wrapper div.top {
 div.footer-wrapper div.top h2 {
   float: left;
   width: 98px;
-  height: 22px;
+  height: 25px;
   background: url("../img/logo_top_white.svg") 0 0 no-repeat;
   text-indent: -9999px;
 }
@@ -3288,6 +3288,9 @@ div.main-place-area ul li p.t1 {
     padding-bottom: 5px;
   }
 }
+div.main-place-area ul li p.t1 a {
+  color: #0D0D0D;
+}
 div.main-place-area ul li p.t1 span.arrow-right {
   vertical-align: middle;
   display: inline-block;
@@ -4166,13 +4169,13 @@ div.main-hot-area div.main-container div.f p.t-2, div.main-hot-area div.main-con
   }
 }
 div.main-hot-area div.main-container div.f p.t-4, div.main-hot-area div.main-container div.s p.t-4 {
-  padding-top: 30px;
+  padding-top: 10px;
   color: #2EC4B6;
   font-size: 30px;
 }
 @media screen and (max-width: 767px) {
   div.main-hot-area div.main-container div.f p.t-4, div.main-hot-area div.main-container div.s p.t-4 {
-    padding-top: 15px;
+    padding-top: 10px;
     font-size: 16px;
   }
 }
@@ -4357,7 +4360,7 @@ div.main-myplace-area .caption div.btns a {
 div.place-list-wrapper p.txt-1 {
   font-family: "Pretendard-SemiBold";
   font-size: 24px;
-  padding-top: 15px;
+  /*padding-top: 15px;*/
 }
 @media screen and (max-width: 768px) {
   div.place-list-wrapper p.txt-1 {
@@ -4369,12 +4372,12 @@ div.place-list-wrapper p.txt-1 span {
   color: #2EC4B6;
 }
 div.place-list-wrapper div.place-tag-area {
-  padding: 60px 0 20px 0;
+  padding: 30px 0 20px 0;
   border-bottom: 1px solid #C6CAD3;
 }
 @media screen and (max-width: 768px) {
   div.place-list-wrapper div.place-tag-area {
-    padding: 45px 0 5px 0;
+    padding: 15px 0 5px 0;
   }
 }
 div.place-list-wrapper div.place-tag-area ul li {
@@ -5085,6 +5088,8 @@ div.place-view-wrapper div.common-area div.infos div.detail-view div.inner {
   font-size: 16px;
   line-height: 24px;
   color: #62717E;
+  height: 240px;
+  overflow: hidden;
 }
 div.place-view-wrapper div.common-area div.infos div.map-wrapper {
   height: 522px;
@@ -7455,6 +7460,19 @@ div.custom-host-question div.word-count {
 div.custom-host-question div.word-count.warning {
   color: #E75B3C;
 }
+div.custom-host-question div.word-count span.a {
+  float: left;
+  color: #62717E;
+  font-size: 18px;
+}
+div.custom-host-question div.word-count span.b {
+  float: right;
+}
+@media screen and (max-width: 767px) {
+  div.custom-host-question div.word-count span.b {
+    display: none;
+  }
+}
 div.custom-host-question textarea {
   background: #F7F7F7;
   border: 1px solid #F7F7F7;
@@ -7468,6 +7486,112 @@ div.custom-host-question textarea::-moz-placeholder {
 }
 div.custom-host-question textarea::placeholder {
   color: #A2A2A4;
+}
+div.custom-host-question textarea.reivew-other {
+  background: #fff;
+  border: 1px solid #A2A2A4;
+  height: 230px;
+}
+@media screen and (max-width: 767px) {
+  div.custom-host-question textarea.reivew-other {
+    padding: 10px;
+  }
+}
+div.custom-host-question div.review-write-title {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #E8E8E8;
+}
+@media screen and (max-width: 767px) {
+  div.custom-host-question div.review-write-title {
+    padding-bottom: 15px;
+    border-bottom: 0;
+  }
+}
+div.custom-host-question div.review-write-title p.t1 {
+  color: #62717E;
+  font-size: 18px;
+  font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 767px) {
+  div.custom-host-question div.review-write-title p.t1 {
+    font-size: 16px;
+  }
+}
+div.custom-host-question div.review-write-title p.t2 {
+  color: #0D0D0D;
+  font-size: 24px;
+  font-family: "Pretendard-SemiBold";
+}
+@media screen and (max-width: 767px) {
+  div.custom-host-question div.review-write-title p.t2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+div.custom-host-question div.review-write-title div.star {
+  padding: 15px 0 0px 0;
+}
+div.custom-host-question div.review-write-title div.star img {
+  width: 30px;
+  margin-right: 3px;
+}
+div.custom-host-question div.review-picture {
+  padding-bottom: 30px;
+}
+@media screen and (max-width: 767px) {
+  div.custom-host-question div.review-picture {
+    padding-bottom: 15px;
+  }
+}
+div.custom-host-question div.review-picture p.tt {
+  font-size: 18px;
+  color: #62717E;
+  padding: 30px 0 20px 0;
+}
+@media screen and (max-width: 767px) {
+  div.custom-host-question div.review-picture p.tt {
+    font-size: 16px;
+    padding: 15px 0 10px 0;
+  }
+}
+div.custom-host-question div.review-picture ul.pic li {
+  position: relative;
+  float: left;
+  width: 83px;
+  height: 83px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  div.custom-host-question div.review-picture ul.pic li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+div.custom-host-question div.review-picture ul.pic li img {
+  width: 100%;
+  height: 100%;
+}
+div.custom-host-question div.review-picture ul.pic li a.remove-pic {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons/icon_picture_remove.svg") 0 0 no-repeat;
+  text-indent: -9999px;
+  right: 5px;
+  top: 5px;
+}
+div.custom-host-question div.review-picture ul.pic li.addbtn a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #EAEAEA url("../img/icons/icon_cross_big.svg") 50% 30% no-repeat;
+  color: #0D0D0D;
+  font-size: 14px;
+  padding-top: 50px;
+  text-align: center;
 }
 
 /* 결제하기 계좌이체 */
@@ -7793,6 +7917,9 @@ div.custom-reserve-detail-footer a {
   }
   div.custom-reserve-detail-footer a:nth-child(1) {
     margin-right: 10px;
+  }
+  div.custom-reserve-detail-footer a.other {
+    width: 100%;
   }
 }
 @media screen and (max-width: 767px) {

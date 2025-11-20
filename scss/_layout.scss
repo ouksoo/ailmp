@@ -37,7 +37,7 @@ div.header-wrapper {
 
 	.header-left {
 		float: left;
-		padding-top: 4px;
+		padding-top: 2px;
 
 		@media screen and (max-width: 768px) {
 			width: 100%;
@@ -49,15 +49,15 @@ div.header-wrapper {
 
 		h1 {
 			float: left;
-			width: 98px;
-			height: 22px;
+			width: 112px;
+			height: 28px;
 			background: url('../img/logo_top.svg') 0 0 no-repeat;
 			text-indent: -9999px;
 			cursor: pointer;
 
 			@media screen and (max-width: 768px) {
 				position: absolute; 
-				top: 18px;
+				top: 15px;
 				left: 50%;
 				transform: translate(-50%, 0%);
 			}
@@ -66,7 +66,7 @@ div.header-wrapper {
 			float: left;
 			font-size: 14px;
 			color: $title-black;
-			line-height: 22px;
+			line-height: 25px;
 			padding-left: 27px;
 			margin-left: 30px;
 
@@ -81,7 +81,7 @@ div.header-wrapper {
 			}
 
 			&:nth-child(2) {
-				background: url('../img/icons/icon_place.svg') 0 2px no-repeat;
+				background: url('../img/icons/icon_place.svg') 0 4px no-repeat;
 
 				@media screen and (max-width: 768px) {
 					background-image: none;
@@ -90,12 +90,12 @@ div.header-wrapper {
 				span {
 					@media screen and (max-width: 768px) {
 						padding-left: 25px;
-						background: url('../img/icons/icon_place.svg') 0 2px no-repeat;
+						background: url('../img/icons/icon_place.svg') 0 4px no-repeat;
 					}
 				}
 			}
 			&:nth-child(3) {
-				background: url('../img/icons/icon_plus.svg') 0 2px no-repeat;
+				background: url('../img/icons/icon_plus.svg') 0 4px no-repeat;
 
 				@media screen and (max-width: 768px) {
 					background-image: none;
@@ -104,7 +104,7 @@ div.header-wrapper {
 				span {
 					@media screen and (max-width: 768px) {
 						padding-left: 25px;
-						background: url('../img/icons/icon_plus.svg') 0 2px no-repeat;
+						background: url('../img/icons/icon_plus.svg') 0 4px no-repeat;
 					}
 				}
 			}
@@ -112,7 +112,7 @@ div.header-wrapper {
 				display: inline-block;
 				padding-bottom: 5px;	
 			}
-			&.on {
+			&:hover, &.on {
 				@media screen and (max-width: 768px) {
 					border-bottom: 2px solid $main-color;
 				}
@@ -641,7 +641,7 @@ div.footer-wrapper {
 		h2 {
 			float: left;
 			width: 98px;
-			height: 22px;
+			height: 25px;
 			background: url('../img/logo_top_white.svg') 0 0 no-repeat;
 			text-indent: -9999px;
 		}

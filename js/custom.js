@@ -296,12 +296,24 @@ var AILMP = {
 			}
 		});
 
+		//메인 촬영 컵셉 공간 카테고리 링크 선택 기능
+		$('div.concept-lists a').on('click', function(e) {
+			e.preventDefault();
+			$('div.concept-lists a').each(function() {
+				$(this).removeClass('on');
+			});
+			$(this).addClass('on');
+		});
+
 		//공간상세보기 "날짜 선택"
 		$('div.reservation-select .select-date a').on('click', function(e) {
 			e.preventDefault();
 			$('div.reserve-place-select').css('display', 'block');
+
+			$('div.reservation-select .select-date').css('display', 'none');
 			$('div.reserve-place-select div.close-btn a').on('click', function(e) {
 				e.preventDefault();
+				$('div.reservation-select .select-date').css('display', 'block');
 				$('div.reserve-place-select').css('display', 'none');
 			});	
 		});
@@ -315,6 +327,27 @@ var AILMP = {
 			}
 			else {
 				$(this).next().addClass('show');
+			}
+		});
+
+		//공간 상세보기 "기본 정보" 전체 보기
+		$('div.detail-view a.place-detail-view-button').on('click', function(e){
+			e.preventDefault();
+			if($(this).hasClass('close')) {
+				$('div.place-view-wrapper div.common-area div.infos div.detail-view div.inner').css({
+					'height' : 'auto',
+					'overflow' : 'visible'
+				});	
+				$(this).text('닫기');
+				$(this).removeClass('close');
+			}
+			else {
+				$('div.place-view-wrapper div.common-area div.infos div.detail-view div.inner').css({
+					'height' : 220,
+					'overflow' : 'hidden'
+				});	
+				$(this).text('전체 보기');
+				$(this).addClass('close');
 			}
 		});
 
@@ -343,7 +376,7 @@ var AILMP = {
 		});
 
 		//상단 검색 영역 활성
-		$('div.header-right a.tops.a').on('click', function(e) {
+		$('div.header-right a.tops.a').on('mouseenter', function(e) {
 			e.stopPropagation();
 			$('div.header-right .search-box').fadeIn(function() {
 				$('div.header-right .search-box').addClass('active');
@@ -587,7 +620,7 @@ var AILMP = {
 		// 초기 변경 : 클릭하면 내용 "1명"으로 변경 + 메인 인원도 1로 세팅
 		$selectPerson.on('click', function (e) {
 			e.preventDefault();
-			setMainCount(1);
+			//setMainCount(1); //counter 초기화 삭제
 		});
 
 		function updateMainByDelta(delta) {
@@ -865,6 +898,9 @@ $('.selectpicker').on('shown.bs.select', function () {
 		],
 		locale: flatpickr.l10ns.ko,
 		monthSelectorType: 'static',
+		onChange: function(selectedDates, dateStr, instance) {
+			$('div.reservation-select div.select-date a').text(dateStr); 
+		},
 		onReady(selectedDates, dateStr, instance) {
 			const monthsEl = instance.calendarContainer.querySelector('.flatpickr-months');
 			if (!instance._fpHeader) {

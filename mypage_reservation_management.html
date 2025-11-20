@@ -339,7 +339,7 @@
 								이용을 완료하셨어요.<br /><span class="txt-black">리뷰를 남겨 다른 사람과 공유</span>해보세요.
 							</div>
 							<div class="both-buttons">
-								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customReservationCancelModal">예약 취소</a><a href="#" class="modal-button green">리뷰 쓰기</a>
+								<a href="#" class="modal-button bluegray-btn" data-bs-toggle="modal" data-bs-target="#customReservationCancelModal">예약 취소</a><a href="#" class="modal-button green"  data-bs-toggle="modal" data-bs-target="#mypageCustomReviewWrite">리뷰 쓰기</a>
 							</div>
 						</div>
 					</div>
@@ -616,6 +616,94 @@
 </div>
 <!-- //footer -->
 
+<!-- Modal : 리뷰쓰기 -->
+<div class="modal fade" id="mypageCustomReviewWrite" tabindex="-1" role="dialog" aria-labelledby="mypageCustomReviewWrite" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-800" role="document">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<h5 class="modal-title">리뷰 쓰기</h5>
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+
+			<div class="modal-body">
+				<div class="custom-host-question">
+					<div class="review-write-title">
+						<p class="t1">잇스튜디오</p>
+						<p class="t2">서울시 강남구 / 펜타스테이지 빈티지 컨셉룸 펜타스테이지 빈티지 컨셉룸</p>
+						<div class="star">
+							<img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_whole.svg" /><img src="img/icons/icon_star_half.svg" /><img src="img/icons/icon_star_empty.svg" />
+						</div>
+					</div>
+
+					<div class="review-picture">
+						<p class="tt">사진이 있다면 첨부해주세요.</p>
+						<ul class="pic clearfix">
+							<li>
+								<a href="#" class="remove-pic">삭제</a>
+								<img src="img/sample/host_img_3.png">
+							</li>
+							<li>
+								<a href="#" class="remove-pic">삭제</a>
+								<img src="img/sample/host_img_3.png">
+							</li>
+							<li>
+								<a href="#" class="remove-pic">삭제</a>
+								<img src="img/sample/host_img_3.png">
+							</li>
+							<li>
+								<a href="#" class="remove-pic">삭제</a>
+								<img src="img/sample/host_img_3.png">
+							</li>
+							<li>
+								<a href="#" class="remove-pic">삭제</a>
+								<img src="img/sample/host_img_3.png">
+							</li>
+							<li>
+								<a href="#" class="remove-pic">삭제</a>
+								<img src="img/sample/host_img_3.png">
+							</li>
+							<li>
+								<a href="#" class="remove-pic">삭제</a>
+								<img src="img/sample/host_img_3.png">
+							</li>
+							<li class="addbtn">
+								<a href="#">파일추가</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="word-count clearfix"><!-- 글자수 초과 시 class="warning" 추가 -->
+						<span class="a">리뷰를 자유롭게 남겨주세요.</span><span class="b">0/150 글자</span>
+					</div>
+					<textarea class="reivew-other" placeholder="내용을 입력해 주세요."></textarea>
+				</div>
+			</div>
+			<div class="modal-footer border-ed custom-reserve-detail-footer">
+				<a href="#" class="modal-button green other">리뷰 등록하기</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 리뷰쓰기 -->
+
+<!-- Modal : 리뷰 등록이 완료되었어요. -->
+<div class="modal fade" id="reviewRegisterCompleted" tabindex="-1" role="dialog" aria-labelledby="reviewRegisterCompleted" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered w-480" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a href="#" class="modal-close-button" data-bs-dismiss="modal">닫기</a>
+			</div>
+			<div class="modal-body">
+				<p class="only-text-center">리뷰 등록이 완료되었어요.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="dp-b modal-button green" data-bs-dismiss="modal">확인</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Modal : 리뷰 등록이 완료되었어요. -->
+
 <!-- Modal : 예약 상세보기 -->
 <div class="modal fade" id="customReservationDetailView" tabindex="-1" role="dialog" aria-labelledby="customReservationDetailView" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered w-800" role="document">
@@ -732,7 +820,7 @@
 
 			<!-- 다시 예약 / 리뷰 쓰기-->
 			 <div class="modal-footer border-ed custom-reserve-detail-footer">
-				<a href="#" class="modal-button bluegray-btn">다시 예약</a><a href="#" class="modal-button green">리뷰 쓰기</a>
+				<a href="#" class="modal-button bluegray-btn">다시 예약</a><a href="#" data-bs-toggle="modal" data-bs-target="#mypageCustomReviewWrite" class="modal-button green">리뷰 쓰기</a>
 			</div>
 
 			<!-- 문의 하기-->

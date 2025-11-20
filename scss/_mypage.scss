@@ -945,6 +945,19 @@ div.custom-host-question {
 		&.warning {
 			color: #E75B3C;
 		}
+
+		span.a {
+			float: left;
+			color: #62717E;
+			font-size: 18px;
+		}
+		span.b {
+			float: right;
+
+			@media screen and (max-width: 767px) {
+				display: none;
+			}
+		}
 	}
 	textarea {
 		background: #F7F7F7;
@@ -956,6 +969,119 @@ div.custom-host-question {
 
 		&::placeholder {
 			color: #A2A2A4;
+		}
+
+		&.reivew-other {
+			background: #fff;
+			border: 1px solid #A2A2A4;
+			height: 230px;
+			
+			@media screen and (max-width: 767px) {
+				padding: 10px;
+			}
+		}
+	}
+
+	div.review-write-title {
+		padding-bottom: 30px;
+		border-bottom: 1px solid #E8E8E8;
+
+		@media screen and (max-width: 767px) {
+			padding-bottom: 15px;
+			border-bottom: 0;
+		}
+
+		p.t1 {
+			color: #62717E;
+			font-size: 18px;
+			font-family: 'Pretendard-SemiBold';
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+			}
+		}
+		p.t2 {
+			color: $title-black;
+			font-size: 24px;
+			font-family: 'Pretendard-SemiBold';
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				line-height: 20px;
+			}
+		}
+		div.star {
+			padding: 15px 0 0px 0;
+
+			img {
+				width: 30px;
+				margin-right: 3px;
+			}
+		}
+	}
+
+	div.review-picture {
+		padding-bottom: 30px;
+
+		@media screen and (max-width: 767px) {
+			padding-bottom: 15px;
+		}
+		
+		p.tt {
+			font-size: 18px;
+			color: #62717E;
+			padding: 30px 0 20px 0; 
+
+			@media screen and (max-width: 767px) {
+				font-size: 16px;
+				padding: 15px 0 10px 0;
+			}
+		}
+		ul.pic {
+
+			li {
+				position: relative;
+				float: left;
+				width: 83px;
+				height: 83px;
+				border-radius: 8px;
+				overflow: hidden;
+				margin-right: 20px;
+				margin-bottom: 20px;
+
+				@media screen and (max-width: 767px) {
+					margin-right: 10px;
+					margin-bottom: 10px;
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+				a.remove-pic {
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					background: url('../img/icons/icon_picture_remove.svg') 0 0 no-repeat;
+					text-indent: -9999px;
+					right: 5px;
+					top: 5px;
+				}
+
+				&.addbtn {
+
+					a {
+						display: inline-block;
+						width: 100%;
+						height: 100%;
+						background: #EAEAEA url('../img/icons/icon_cross_big.svg') 50% 30% no-repeat;
+						color: $title-black;
+						font-size: 14px;
+						padding-top: 50px;
+						text-align: center;
+					}
+				}
+			}
 		}
 	}
 }
@@ -1298,6 +1424,9 @@ div.custom-reserve-detail-footer {
 
 			&:nth-child(1) {
 				margin-right: 10px;
+			}
+			&.other {
+				width: 100%;
 			}
 		}
 	}

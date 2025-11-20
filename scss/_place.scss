@@ -3,7 +3,7 @@ div.place-list-wrapper {
 	p.txt-1 {
 		font-family: 'Pretendard-SemiBold';
 		font-size: 24px;
-		padding-top: 15px;
+		/*padding-top: 15px;*/
 
 		@media screen and (max-width: 768px) {
 			padding-top: 5px;
@@ -14,11 +14,11 @@ div.place-list-wrapper {
 		}
 	}
 	div.place-tag-area {
-		padding: 60px 0 20px 0;
+		padding: 30px 0 20px 0;
 		border-bottom: 1px solid #C6CAD3;
 
 		@media screen and (max-width: 768px) {
-			padding: 45px 0 5px 0;
+			padding: 15px 0 5px 0;
 		}
 
 		ul {
@@ -738,6 +738,8 @@ div.place-view-wrapper {
 					font-size: 16px;
 					line-height: 24px;
 					color: #62717E;
+					height: 240px;
+					overflow: hidden;
 				}
 			}
 			div.map-wrapper {
